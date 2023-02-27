@@ -1,0 +1,45 @@
+@import "../styles/variable";
+.layout {
+  width: 100vw;
+  //   background-color: rgb(190, 190, 190);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.headerBox {
+  width: 70vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 0%;
+  font-family: "Pretendard-Regular";
+  color: $bascitFtcolor;
+  .header_leftBox {
+    display: flex;
+    width: 20vw;
+    p:first-child {
+      width: 30px;
+      height: 30px;
+      background-color: $mainColor;
+      border-radius: 50%;
+      margin-right: 3%;
+    }
+    p {
+      font-weight: bold;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+  }
+
+  .header_rightBox {
+    display: flex;
+    width: 50vw;
+
+    justify-content: flex-end;
+    align-items: center;
+    font-weight: bold;
+    p {
+      cursor: pointer;
+      margin-left: 5%;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.fullBox {
+  margin-top: 250px;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fullBox .topBox {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #f5faff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fullBox .topBox .textBox {
+  text-align: center;
+  transform: translateY(-50%);
+  color: #333436;
+}
+.fullBox .topBox .textBox p:first-child {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.fullBox .topBox .textBox p:last-child {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1%;
+}
+.fullBox .topBox .topImgBox {
+  position: absolute;
+  bottom: 0;
+  width: 90vw;
+  height: 45vh;
+  background-color: rgb(65, 127, 243);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}/*# sourceMappingURL=generate.module.css.map */
