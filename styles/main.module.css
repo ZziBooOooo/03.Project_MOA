@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  z-index: -5;
 }
 
 .headerBox {
@@ -11,7 +13,7 @@
   justify-content: space-between;
   padding: 1% 0%;
   font-family: "Pretendard-Regular";
-  color: #333436;
+  color: #3b3d3f;
 }
 .headerBox .header_leftBox {
   display: flex;
