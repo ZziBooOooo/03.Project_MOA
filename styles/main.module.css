@@ -12,6 +12,7 @@
   padding: 1% 0%;
   font-family: "Pretendard-Regular";
   color: #333436;
+  position: fixed;
 }
 .headerBox .header_leftBox {
   display: flex;
@@ -39,4 +40,56 @@
 .headerBox .header_rightBox p {
   cursor: pointer;
   margin-left: 5%;
+}
+
+.footerBox {
+  position: relative;
+  bottom: 0;
+  width: 100vw;
+  height: 360px;
+  background-color: #333436;
+  color: #fff;
+  padding: 4% 15vw;
+}
+.footerBox .footer_title {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.footerBox .footer_detail {
+  margin-top: 2%;
+}
+.footerBox .footer_detail p {
+  color: #BDB5B5;
+}
+.footerBox .footer_detail p a {
+  text-decoration: underline;
+}
+
+.section01 {
+  font-family: "Pretendard-Regular";
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+.section01 p {
+  font-size: 2rem;
+  margin-top: 32vh;
+  font-weight: bold;
+}
+.section01 h1 {
+  margin-top: 2vh;
+  font-size: 5rem;
+  font-weight: bold;
+}
+.section01 button {
+  color: white;
+  font-size: 1.75rem;
+  margin-top: 3vh;
+  background-color: #2288ff;
+  width: 210px;
+  height: 66px;
+  border-radius: 50px;
+  font-family: "Pretendard-Regular";
+  font-weight: bold;
+  word-spacing: 1%;
 }/*# sourceMappingURL=main.module.css.map */
