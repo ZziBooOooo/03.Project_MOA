@@ -7,7 +7,6 @@
   font-family: "Pretendard-Regular";
   background-color: #f1f1f1;
   color: #3b3d3f;
-  z-index: -2;
 }
 .fullBox .topBox {
   width: 100vw;
@@ -96,6 +95,7 @@
 .fullBox .bottomBox .bottomMainBox .b_textBox .checkIWrap {
   width: 35px;
   height: 35px;
+  margin: 0;
   margin-right: 5px;
   display: flex;
   align-items: center;
@@ -104,6 +104,7 @@
 .fullBox .bottomBox .bottomMainBox .b_textBox .mainText {
   font-size: 1.8rem;
   font-weight: bold;
+  margin: 0;
 }
 .fullBox .bottomBox .bottomMainBox .cardBox {
   width: 100%;
@@ -115,15 +116,16 @@
 .fullBox .bottomBox .bottomMainBox .cardBox .selectCard {
   background-color: rgba(231, 245, 253, 0.5333333333);
   width: 30%;
-  height: 30vh;
-  padding: 3% 5%;
+  height: 32vh;
+  padding: 3% 4%;
   border-radius: 16px;
   box-shadow: 1px 2px 4px rgb(214, 214, 214);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   cursor: pointer;
+  position: relative;
 }
 .fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardTitle {
   display: flex;
@@ -132,7 +134,7 @@
 .fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardTitle .b_iconWrap {
   width: 36px;
   height: 36px;
-  background-color: rgba(247, 160, 189, 0.9607843137);
+  background-color: rgba(177, 219, 253, 0.9607843137);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -141,18 +143,21 @@
 }
 .fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardTitle p {
   font-weight: bold;
-  font-size: 1.6rem;
-}
-.fullBox .bottomBox .bottomMainBox .cardBox .selectCard:nth-child(2) .b_iconWrap {
-  background-color: rgb(250, 190, 112);
-}
-.fullBox .bottomBox .bottomMainBox .cardBox .selectCard:nth-child(3) .b_iconWrap {
-  background-color: rgb(161, 204, 132);
+  font-size: 1.65rem;
+  margin: 0;
 }
 .fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardContent {
-  font-size: 1.65rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #727375;
+}
+.fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardContent p:nth-of-type(2) {
+  font-size: 1rem;
+}
+.fullBox .bottomBox .bottomMainBox .cardBox .selectCard .btnPositionBox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 .fullBox .bottomBox .bottomMainBox .cardBox .selectCard button {
   width: 130px;

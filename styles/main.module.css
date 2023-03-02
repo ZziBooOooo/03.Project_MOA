@@ -4,7 +4,6 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  z-index: -5;
 }
 
 .headerBox {
@@ -14,6 +13,7 @@
   padding: 1% 0%;
   font-family: "Pretendard-Regular";
   color: #3b3d3f;
+  z-index: 100;
 }
 .headerBox .header_leftBox {
   display: flex;
