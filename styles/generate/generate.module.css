@@ -152,6 +152,7 @@
   color: #727375;
 }
 .fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardContent p:nth-of-type(2) {
+  margin-top: 10px;
   font-size: 1rem;
 }
 .fullBox .bottomBox .bottomMainBox .cardBox .selectCard .btnPositionBox {
