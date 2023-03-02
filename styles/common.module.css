@@ -1,0 +1,66 @@
+.layout {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerBox {
+  width: 70vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 0%;
+  font-family: "Pretendard-Regular";
+  color: #333436;
+  position: fixed;
+}
+.headerBox .header_leftBox {
+  display: flex;
+  width: 20vw;
+}
+.headerBox .header_leftBox p:first-child {
+  width: 30px;
+  height: 30px;
+  background-color: #2288ff;
+  border-radius: 50%;
+  margin-right: 3%;
+}
+.headerBox .header_leftBox p {
+  font-weight: bold;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.headerBox .header_rightBox {
+  display: flex;
+  width: 50vw;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+}
+.headerBox .header_rightBox p {
+  cursor: pointer;
+  margin-left: 5%;
+}
+
+.footerBox {
+  position: relative;
+  bottom: 0;
+  width: 100vw;
+  height: 360px;
+  background-color: #333436;
+  color: #fff;
+  padding: 4% 15vw;
+}
+.footerBox .footer_title {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.footerBox .footer_detail {
+  margin-top: 2%;
+}
+.footerBox .footer_detail p {
+  color: #BDB5B5;
+}
+.footerBox .footer_detail p a {
+  text-decoration: underline;
+}/*# sourceMappingURL=common.module.css.map */

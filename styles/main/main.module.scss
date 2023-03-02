@@ -1,0 +1,30 @@
+.section01{
+    font-family: "Pretendard-Regular";
+    width: 100vw;
+    max-height: 100vh;
+    text-align: center;
+    p{
+      font-size: 2rem;
+      margin-top: 32vh;
+      font-weight: bold;
+    }
+  
+    h1{
+      margin-top: 2vh;
+      font-size: 5rem;
+      font-weight: bold;
+    }
+  
+    button{
+      color: #ffff;
+      font-size: 1.75rem;
+      margin-top: 3vh;
+      background-color: $mainColor;
+      width: 210px;
+      height: 66px;
+      border-radius: 50px;
+      font-family: "Pretendard-Regular";
+      font-weight: bold;
+      word-spacing: 1%;
+    }
+  }
