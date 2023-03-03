@@ -1,12 +1,14 @@
 @import "../styles/variable";
 
 .layout {
+  position: relative;
   width: 100vw;
   //   background-color: rgb(190, 190, 190);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .headerBox {
   width: 70vw;
   display: flex;
@@ -29,9 +31,18 @@
       font-weight: bold;
       font-size: 1.3rem;
       cursor: pointer;
+      &:hover {
+        ::after {
+          content: "";
+          position: absolute;
+          width: 147px;
+          height: 43px;
+          background-color: #bdb5b5;
+        }
+      }
     }
   }
-  
+
   .header_rightBox {
     display: flex;
     width: 50vw;
@@ -41,47 +52,32 @@
     p {
       cursor: pointer;
       margin-left: 5%;
-      // position: relative;
-      // &:hover{
-      //   ::after{
-      //     position: inherit;
-      //     z-index: 1;
-      //     content: "";
-      //     width: 100%;
-      //     height: 100%;
-      //     padding: 2px 8px;
-      //     background-color: #E2E8EE;
-      //   }
-      }
+      position: relative;
     }
   }
 
+  .footerBox {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 360px;
+    background-color: $bascitFtcolor;
+    color: #fff;
+    padding: 4% 15vw;
 
-.footerBox{
-  position: relative;
-  bottom: 0;
-  // position : relative;
-  // transform : translateY(-100%);
-  width: 100vw;
-  height: 360px;
-  background-color: $bascitFtcolor;
-  color: #fff;
-  padding: 4% 15vw;
-  
-  .footer_title{
-    font-weight: bold;
-    font-size: 1.1rem;
-  }
+    .footer_title {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
 
-  .footer_detail{
-    margin-top: 2%;
-    p{
-      color: #BDB5B5;
-      a{
-        text-decoration: underline;
+    .footer_detail {
+      margin-top: 2%;
+      p {
+        color: #bdb5b5;
+        a {
+          text-decoration: underline;
+        }
       }
     }
   }
-
 }
-
