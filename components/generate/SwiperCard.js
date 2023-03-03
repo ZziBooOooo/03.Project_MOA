@@ -8,6 +8,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
+//수정하기
+
 const SwiperCard = () => {
   return (
     <Swiper
