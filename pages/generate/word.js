@@ -4,12 +4,16 @@ import w_style from "@/styles/generate/word.module.scss";
 import Image from "next/image";
 import GenerateTop from "@/components/generate/GenerateTop";
 import { useRouter } from "next/router";
-import { TargetIdContext } from "@/context/wordCount";
+import { TargetIdContext } from "@/context/generate/wordCount";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Word = () => {
   // wordArr 페이지 접속시 DB에서 받아오는걸로 변경해야함 - 25개씩 자르기
+
+  // 추가 - 새로고침으로 할지 이전,다음 버튼으로 할지
+  // 출력되는 단어가 바뀌어도 전의 버튼은 selected클래스 유지되어야한다. + 문장에서도 단어들이 유지되도록.
+
   const wordArr = [
     "고양이",
     "딸기",
@@ -25,17 +29,12 @@ const Word = () => {
     "잔다",
     "강아지",
     "간식",
-    "집",
     "강",
     "논다",
     "공",
-    "사람",
-    "아기",
-    "리본",
     "공부한다",
     "파티한다",
     "달린다",
-    "연필",
   ];
 
   const [wordCount, setWordCount] = useState(null);
@@ -69,16 +68,38 @@ const Word = () => {
 
   // wordCount에 따라 카운트개수 변경하기**
   function makeSentence(e) {
-    if (count == 0) {
-      setWord1(e.target.id);
-    } else if (count == 1) {
-      setWord2(e.target.id);
-    } else if (count == 2) {
-      setWord3(e.target.id);
-    } else if (count == 3) {
-      setWord4(e.target.id);
+    if (wordCount == 2) {
+      if (count == 0) {
+        setWord1(e.target.id);
+      } else if (count == 1) {
+        setWord4(e.target.id);
+      }
+      setCount(count + 1);
     }
-    setCount(count + 1);
+
+    if (wordCount == 3) {
+      if (count == 0) {
+        setWord1(e.target.id);
+      } else if (count == 1) {
+        setWord2(e.target.id);
+      } else if (count == 2) {
+        setWord4(e.target.id);
+      }
+      setCount(count + 1);
+    }
+
+    if (wordCount == 4) {
+      if (count == 0) {
+        setWord1(e.target.id);
+      } else if (count == 1) {
+        setWord2(e.target.id);
+      } else if (count == 2) {
+        setWord3(e.target.id);
+      } else if (count == 3) {
+        setWord4(e.target.id);
+      }
+      setCount(count + 1);
+    }
   }
 
   function addSelectedClass(selectWord) {
@@ -153,7 +174,6 @@ const Word = () => {
                       <p>는</p>
                       <p>이</p>
                       <p>가</p>
-                      <p>x</p>
                     </div>
                   </div>
                 </div>
@@ -179,7 +199,6 @@ const Word = () => {
                         <p>를</p>
                         <p>와</p>
                         <p>과</p>
-                        <p>x</p>
                       </div>
                     </div>
                   </div>

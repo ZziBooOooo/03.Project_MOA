@@ -1,0 +1,33 @@
+.fullBox {
+  background-color: white;
+}
+.fullBox .bottomMainBox {
+  background-color: #f1f1f1 !important;
+  display: flex;
+  justify-content: space-between;
+}
+.fullBox .bottomMainBox .cardBox {
+  width: 100%;
+  height: 75%;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: pink;
+}
+.fullBox .bottomMainBox .completeBtnBox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.fullBox .bottomMainBox .completeBtnBox button {
+  background-color: #2288ff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  height: 38px;
+  width: 100px;
+  border-radius: 50px;
+}/*# sourceMappingURL=style.module.css.map */

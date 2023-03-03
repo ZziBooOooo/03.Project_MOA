@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TargetIdContext } from "./wordCount";
+import { TargetIdContext } from "./generate/wordCount";
 
 const ParentComponent = ({ children }) => {
   const [targetId, setTargetId] = useState(null);

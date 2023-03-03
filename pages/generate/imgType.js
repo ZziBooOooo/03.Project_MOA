@@ -7,16 +7,16 @@ import { useRouter } from "next/router";
 
 const ImgType = () => {
   const typeArr = [
-    "디지털 아트",
+    "스테인 글라스",
     "픽셀아트",
     "유화",
-    "3D 렌더링",
     "일러스트",
+    "디지털 아트",
     "수채화",
   ];
   const router = useRouter();
   const goImgResultPage = () => {
-    router.push("/generate/imgResults", undefined, { scroll: false });
+    router.push("/generate/imgStyle", undefined, { scroll: false });
   };
   return (
     <div className={`${style.fullBox} ${t_style.fullBox}`}>

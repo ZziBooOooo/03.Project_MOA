@@ -40,7 +40,7 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          background-image: url("/assets/images/generate/digital.png");
+          background-image: url("/assets/images/generate/glass.png");
           background-position: center;
           background-size: 115%;
           background-repeat: no-repeat;
@@ -58,12 +58,12 @@
         }
         &:nth-child(4) {
           & p:nth-of-type(1) {
-            background-image: url("/assets/images/generate/3d.png");
+            background-image: url("/assets/images/generate/illust.png");
           }
         }
         &:nth-child(5) {
           & p:nth-of-type(1) {
-            background-image: url("/assets/images/generate/illust.png");
+            background-image: url("/assets/images/generate/digital.png");
           }
         }
         &:nth-child(6) {
