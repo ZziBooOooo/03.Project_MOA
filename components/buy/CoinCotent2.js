@@ -1,38 +1,13 @@
 import style from "styles/buy/coin.module.scss";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { buyContext } from "@/pages/context/buy/buyPageContext";
 
-export default function CoinCotent2() {
+export default function CoinCotent2({ onChange }) {
+  const { WoldCoin2 } = useContext(buyContext);
   const [buyWold, setbuyWold] = useState([]);
   const [coinTotal, setcoinTotal] = useState(0);
-  /* 푸쉬 s*/
-  const WoldCoin2 = [
-    {
-      id: 1,
-      isDone: true,
-      coinNum: 2,
-      wold: "고양이",
-    },
-    { id: 2, isDone: true, coinNum: 2, wold: "강아지" },
-    { id: 3, isDone: true, coinNum: 2, wold: "송아지" },
-    { id: 4, isDone: true, coinNum: 2, wold: "병아리" },
-    { id: 5, isDone: true, coinNum: 2, wold: "망아지" },
-    { id: 6, isDone: true, coinNum: 2, wold: "망아지" },
-    { id: 7, isDone: true, coinNum: 2, wold: "망아지" },
-    { id: 8, isDone: true, coinNum: 2, wold: "망아지" },
-    { id: 9, isDone: true, coinNum: 2, wold: "망아지" },
-    { id: 10, isDone: true, coinNum: 2, wold: "망아지" },
-    { id: 11, isDone: true, coinNum: 2, wold: "망아지" },
-    { id: 12, isDone: true, coinNum: 2, wold: "망아지" },
-    { id: 13, isDone: true, coinNum: 2, wold: "망아지" },
-    { id: 14, isDone: true, coinNum: 2, wold: "망아지" },
-    { id: 15, isDone: true, coinNum: 2, wold: "망아지" },
-    { id: 16, isDone: true, coinNum: 2, wold: "망아지" },
-    { id: 17, isDone: true, coinNum: 2, wold: "망아지" },
-    { id: 18, isDone: true, coinNum: 2, wold: "망아지" },
-    { id: 19, isDone: true, coinNum: 2, wold: "망아지" },
-    { id: 20, isDone: true, coinNum: 2, wold: "망아지" },
-  ];
 
   function buyUpdate(id) {
     let buyadd = WoldCoin2.find((res) => res.id === id);
@@ -44,11 +19,11 @@ export default function CoinCotent2() {
       newAdd.push(buyadd);
     }
     setbuyWold(newAdd);
-  }
+  } /* 구매할 단어를 누르면 구매페이지에 추가되고 다시누르면 삭제 */
 
   useEffect(() => {
     setcoinTotal(buyWold.length * 2);
-  }, [buyWold]);
+  }, [buyWold]); /* 구매할 단어를 누르면 총몇코인이 필요한지 표시 */
 
   return (
     <motion.div
@@ -110,6 +85,14 @@ export default function CoinCotent2() {
                   ))}
               </div>
               <button>구매하기</button> {/* 구매시 함수 */}
+            </div>
+          </div>
+          <div className={style.pageButton}>
+            <div onClick={() => onChange("CoinCotent1")}>
+              <img src="/assets/images/buy/pageBack.png" />
+            </div>
+            <div onClick={() => onChange("CoinCotent3")}>
+              <img src="/assets/images/buy/pageNext.png" />
             </div>
           </div>
         </div>

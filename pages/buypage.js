@@ -5,7 +5,7 @@ import CoinCotent3 from "@/components/buy/CoinCotent3";
 import CoinCotent4 from "@/components/buy/CoinCotent4";
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import BuyContextCom from "./context/buyPageContext";
+import BuyContextCom from "./context/buy/buyPageContext";
 
 export default function buypage() {
   const [currentContent, setCurrentContent] = useState("CoinCotent1");
@@ -22,10 +22,16 @@ export default function buypage() {
             <BuyContent onChange={handleContentChange} />
           )}
 
-          {currentContent === "CoinCotent2" && <CoinCotent2 />}
+          {currentContent === "CoinCotent2" && (
+            <CoinCotent2 onChange={handleContentChange} />
+          )}
 
-          {currentContent === "CoinCotent3" && <CoinCotent3 />}
-          {currentContent === "CoinCotent4" && <CoinCotent4 />}
+          {currentContent === "CoinCotent3" && (
+            <CoinCotent3 onChange={handleContentChange} />
+          )}
+          {currentContent === "CoinCotent4" && (
+            <CoinCotent4 onChange={handleContentChange} />
+          )}
         </AnimatePresence>
       </BuyContextCom>
     </>
