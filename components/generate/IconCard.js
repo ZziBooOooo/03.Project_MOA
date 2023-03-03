@@ -1,10 +1,18 @@
 import React from "react";
-import chatImg from "../../assets/images/generate/chat.png";
+import Image from "next/image";
 
-const IconCard = () => {
+const IconCard = ({ imagePath }) => {
   return (
     <div>
-      <img src={chatImg}></img>
+      {
+        <Image
+          src={imagePath}
+          alt="icon"
+          layout="responsive"
+          width={200}
+          height={200}
+        />
+      }
     </div>
   );
 };

@@ -1,0 +1,200 @@
+.subText {
+  font-weight: bold;
+  margin-left: 42px;
+  color: #a3a4a7;
+}
+
+.selectBox {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 3%;
+  padding-bottom: 0;
+}
+.selectBox .sentenceBox {
+  max-width: 580px;
+  height: 60px;
+  padding: 0 20px;
+  background-color: #2288ff;
+  box-shadow: 1px 2px 4px rgb(197, 197, 197);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.selectBox .sentenceBox .sentenceWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.selectBox .sentenceBox p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+.selectBox .sentenceBox svg {
+  color: white;
+  cursor: pointer;
+  font-size: 1.4rem;
+  margin-left: 15px;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.selectBox .sentenceBox svg:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+.selectBox .sentenceBox .fisrtWord,
+.selectBox .sentenceBox .secondWord,
+.selectBox .sentenceBox .thirdWord,
+.selectBox .sentenceBox .fourthWord {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+.selectBox .sentenceBox .fisrtWord .dropdown,
+.selectBox .sentenceBox .secondWord .dropdown,
+.selectBox .sentenceBox .thirdWord .dropdown,
+.selectBox .sentenceBox .fourthWord .dropdown {
+  position: relative;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+}
+.selectBox .sentenceBox .fisrtWord .dropbtn,
+.selectBox .sentenceBox .secondWord .dropbtn,
+.selectBox .sentenceBox .thirdWord .dropbtn,
+.selectBox .sentenceBox .fourthWord .dropbtn {
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  font-weight: 400;
+  color: rgb(37, 37, 37);
+  padding: 3px 6px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 12px;
+}
+.selectBox .sentenceBox .fisrtWord .dropdown_content,
+.selectBox .sentenceBox .secondWord .dropdown_content,
+.selectBox .sentenceBox .thirdWord .dropdown_content,
+.selectBox .sentenceBox .fourthWord .dropdown_content {
+  display: none;
+  position: absolute;
+  top: 105%;
+  z-index: 1;
+  font-weight: 400;
+  background-color: #f9f9f9;
+  min-width: 60px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.selectBox .sentenceBox .fisrtWord .dropdown_content p,
+.selectBox .sentenceBox .secondWord .dropdown_content p,
+.selectBox .sentenceBox .thirdWord .dropdown_content p,
+.selectBox .sentenceBox .fourthWord .dropdown_content p {
+  display: block;
+  text-decoration: none;
+  color: rgb(37, 37, 37);
+  font-size: 1rem;
+  padding: 8px 10px;
+  text-align: center;
+  margin: 0;
+}
+.selectBox .sentenceBox .fisrtWord .dropdown_content p:hover,
+.selectBox .sentenceBox .secondWord .dropdown_content p:hover,
+.selectBox .sentenceBox .thirdWord .dropdown_content p:hover,
+.selectBox .sentenceBox .fourthWord .dropdown_content p:hover {
+  background-color: #2288ff;
+  color: white;
+  border-radius: 6px;
+}
+.selectBox .sentenceBox .fisrtWord .dropdown:hover .dropdown_content,
+.selectBox .sentenceBox .secondWord .dropdown:hover .dropdown_content,
+.selectBox .sentenceBox .thirdWord .dropdown:hover .dropdown_content,
+.selectBox .sentenceBox .fourthWord .dropdown:hover .dropdown_content {
+  display: block;
+}
+.selectBox .sentenceBox .fisrtWord p:nth-of-type(1),
+.selectBox .sentenceBox .secondWord p:nth-of-type(1),
+.selectBox .sentenceBox .thirdWord p:nth-of-type(1) {
+  min-width: 25px;
+}
+.selectBox .sentenceBox .fourthWord {
+  min-width: 70px;
+}
+.selectBox .wordBox {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  position: relative;
+}
+.selectBox .wordBox .refreshBtnBox {
+  position: absolute;
+  top: -12.5%;
+  right: 1%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.selectBox .wordBox .refreshBtnBox p:nth-of-type(2) {
+  width: 24px;
+  height: 24px;
+  background-color: #2288ff;
+  border-radius: 50%;
+}
+.selectBox .wordBox .refreshBtnBox p {
+  margin: 0;
+  margin-left: 5px;
+  font-weight: bold;
+  color: #727375;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.selectBox .wordBox .refreshBtnBox p img {
+  transform: translate(0px, -1px);
+}
+.selectBox .wordBox .wordBtn {
+  height: 36px;
+  padding: 1% 3%;
+  margin: 1%;
+  background-color: rgb(209, 209, 209);
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 2px 4px rgb(231, 231, 231);
+  cursor: pointer;
+}
+.selectBox .wordBox .wordBtn p {
+  margin: 0;
+}
+.selectBox .wordBox .selected {
+  background-color: #2288ff;
+}
+.selectBox .completeBtnBox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.selectBox .completeBtnBox button {
+  background-color: #2288ff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  height: 38px;
+  width: 100px;
+  border-radius: 50px;
+  margin-right: 1%;
+}/*# sourceMappingURL=word.module.css.map */

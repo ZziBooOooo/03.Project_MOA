@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../styles/main.module.css";
+import style from "../styles/common.module.css";
 
 const Header = () => {
   return (

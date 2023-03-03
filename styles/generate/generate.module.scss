@@ -1,10 +1,13 @@
 @import "../../styles/variable";
 .fullBox {
-  margin-top: 250px;
-  width: 70vw;
+  width: 100vw;
+  height: 200vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Pretendard-Regular";
+  background-color: $grayBGColor;
+  color: $bascitFtcolor;
 
   .topBox {
     width: 100vw;
@@ -12,8 +15,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
-    background-color: #f5faff;
+
+    background-color: #e5f1fc;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,11 +25,11 @@
       transform: translateY(-50%);
       color: $bascitFtcolor;
       p:first-child {
-        font-size: 3rem;
+        font-size: 4rem;
         font-weight: bold;
       }
       p:last-child {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         font-weight: bold;
         margin-top: 1%;
       }
@@ -35,11 +38,167 @@
       position: absolute;
       bottom: 0;
       width: 90vw;
-      height: 45vh;
-      background-color: rgb(65, 127, 243);
+      height: 40vh;
+      // background-color: rgb(65, 127, 243);
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      div {
+        background-color: white;
+        border-radius: 16px;
+        width: 15%;
+        min-width: 100px;
+        max-width: 170px;
+        padding: 20px;
+        display: block;
+      }
+
+      div:first-child {
+        transform: translateY(-100%) rotate(6deg);
+      }
+      div:nth-of-type(2) {
+        transform: translateY(25%) rotate(-8deg);
+      }
+      div:nth-of-type(3) {
+        transform: translateY(-75%) rotate(2deg);
+      }
+      div:nth-of-type(4) {
+        transform: translateY(25%) rotate(10deg);
+      }
+      div:last-child {
+        transform: translateY(-100%) rotate(-5deg);
+      }
+    }
+  }
+
+  .bottomBox {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $bascitFtcolor;
+
+    .bottomMainBox {
+      max-width: 1200px;
+      width: 70vw;
+      height: 65vh;
+      background-color: white;
+      border-radius: 24px;
+      padding: 3%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 1px 2px 5px rgb(224, 224, 224);
+
+      .b_textBox {
+        display: flex;
+        align-items: center;
+
+        .checkIWrap {
+          width: 35px;
+          height: 35px;
+          margin: 0;
+          margin-right: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .mainText {
+          font-size: 1.8rem;
+          font-weight: bold;
+          margin: 0;
+        }
+      }
+
+      .cardBox {
+        width: 100%;
+        height: 35vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .selectCard {
+          background-color: #e7f5fd88;
+          width: 30%;
+          height: 32vh;
+          padding: 3% 4%;
+          // height: 0;
+          // padding: 3% 3% 25% 3%;
+          border-radius: 16px;
+          box-shadow: 1px 2px 4px rgb(214, 214, 214);
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: space-between;
+          cursor: pointer;
+          position: relative;
+
+          .cardTitle {
+            display: flex;
+            align-items: center;
+            .b_iconWrap {
+              width: 36px;
+              height: 36px;
+              background-color: #b1dbfdf5;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-right: 10px;
+            }
+
+            p {
+              font-weight: bold;
+              font-size: 1.65rem;
+              margin: 0;
+            }
+          }
+
+          // &:nth-child(2) {
+          //   .b_iconWrap {
+          //     background-color: #b1dbfdf5;
+          //   }
+          // }
+          // &:nth-child(3) {
+          //   .b_iconWrap {
+          //     background-color: #b1dbfdf5;
+          //   }
+          // }
+
+          .cardContent {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: $softGRAYFtColor;
+
+            & p:nth-of-type(2) {
+              margin-top: 10px;
+              font-size: 1rem;
+            }
+          }
+          .btnPositionBox {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+          }
+
+          button {
+            width: 130px;
+            height: 42px;
+            border-radius: 24px;
+            background-color: $mainColor;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+            box-shadow: 1px 2px 4px rgb(214, 214, 214);
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
 }
