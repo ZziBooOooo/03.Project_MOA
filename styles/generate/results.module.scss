@@ -1,0 +1,104 @@
+@import "../../styles/variable";
+
+.fullBox {
+  background-color: white;
+  .bottomBox {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $bascitFtcolor;
+    flex-direction: column;
+  }
+
+  .loadBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+    font-weight: bold;
+    transform: translateY(-10%);
+
+    & p:nth-of-type(1) {
+      font-size: 2.4rem;
+    }
+    & p:nth-of-type(2) {
+      margin-top: 10px;
+      font-size: 1.8rem;
+      color: $softGRAYFtColor;
+    }
+
+    .textLoader {
+      color: $bascitFtcolor;
+      display: inline-block;
+      position: relative;
+      box-sizing: border-box;
+    }
+    .textLoader::after {
+      content: "";
+      width: 5px;
+      height: 5px;
+      background: currentColor;
+      position: absolute;
+      bottom: 10px;
+      right: -10px;
+      box-sizing: border-box;
+      animation: animloader 2.5s linear infinite;
+      border-radius: 2px;
+    }
+
+    @keyframes animloader {
+      0% {
+        box-shadow: 10px 0 rgba(255, 255, 255, 0), 20px 0 rgba(255, 255, 255, 0);
+      }
+      50% {
+        box-shadow: 10px 0 $softGRAYFtColor, 20px 0 rgba(255, 255, 255, 0);
+      }
+      100% {
+        box-shadow: 10px 0 $softGRAYFtColor, 20px 0 $softGRAYFtColor;
+      }
+    }
+
+    .loader {
+      width: 64px;
+      height: 48px;
+      position: relative;
+      animation: split 1s ease-in infinite alternate;
+    }
+    .loader::before,
+    .loader::after {
+      content: "";
+      position: absolute;
+      height: 48px;
+      width: 48px;
+      border-radius: 50%;
+      left: 0;
+      top: 0;
+      transform: translateX(-10px);
+      background: $mainColor;
+      opacity: 0.75;
+      backdrop-filter: blur(20px);
+    }
+
+    .loader::after {
+      left: auto;
+      right: 0;
+      background: #abd9ff;
+      transform: translateX(10px);
+    }
+
+    @keyframes split {
+      0%,
+      25% {
+        width: 64px;
+      }
+      100% {
+        width: 148px;
+      }
+    }
+  }
+}
