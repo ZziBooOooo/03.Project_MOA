@@ -19,14 +19,9 @@
   display: flex;
   width: 20vw;
 }
-.headerBox .header_leftBox p:first-child {
-  width: 30px;
-  height: 30px;
-  background-color: #2288ff;
-  border-radius: 50%;
-  margin-right: 3%;
-}
 .headerBox .header_leftBox p {
+  align-items: center;
+  display: flex;
   font-weight: bold;
   font-size: 1.3rem;
   cursor: pointer;
@@ -50,25 +45,26 @@
   margin-left: 5%;
   position: relative;
 }
-.headerBox .footerBox {
+
+.footer {
   position: absolute;
   bottom: 0;
   width: 100vw;
   height: 360px;
-  background-color: #333436;
+  background-color: #2D3747;
   color: #fff;
   padding: 4% 15vw;
 }
-.headerBox .footerBox .footer_title {
+.footer .footer_title {
   font-weight: bold;
   font-size: 1.1rem;
 }
-.headerBox .footerBox .footer_detail {
+.footer .footer_detail {
   margin-top: 2%;
 }
-.headerBox .footerBox .footer_detail p {
+.footer .footer_detail p {
   color: #bdb5b5;
 }
-.headerBox .footerBox .footer_detail p a {
+.footer .footer_detail p a {
   text-decoration: underline;
 }/*# sourceMappingURL=common.module.css.map */

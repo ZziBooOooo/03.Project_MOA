@@ -3,8 +3,7 @@ import style from "../styles/common.module.css";
 
 const Footer = () => {
   return (
-    <>
-      <div className={style.footerBox}>
+      <footer className={style.footer}>
         <p className={style.footer_title}>고객센터</p>
         <div className={style.footer_detail}>
           <p>
@@ -14,8 +13,7 @@ const Footer = () => {
           대표: 조민서
           </p>    
         </div>
-      </div>
-    </>
+      </footer>
   )
 };
 

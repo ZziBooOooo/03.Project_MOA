@@ -1,6 +1,8 @@
 import React from "react";
 import style from "../styles/common.module.css";
 import { useRouter } from "next/router";
+import Image from "next/image";
+import logo from "../public/assets/images/logo.png";
 
 const Header = () => {
   const router = useRouter();
@@ -8,7 +10,13 @@ const Header = () => {
   return (
     <div className={style.headerBox}>
       <div className={style.header_leftBox} onClick={() => router.push("/")}>
-        <p>{/* <img></img> */}</p>
+        {/* <p><img src="@/public/assets/images/logo.png"/></p> */}
+        <Image
+          src={logo}
+          alt="Logo"
+          width={50}
+          height={50}
+        />
         <p>MOA</p>
       </div>
       <div className={style.header_rightBox}>

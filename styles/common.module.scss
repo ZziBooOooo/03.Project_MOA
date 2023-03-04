@@ -20,14 +20,9 @@
   .header_leftBox {
     display: flex;
     width: 20vw;
-    p:first-child {
-      width: 30px;
-      height: 30px;
-      background-color: $mainColor;
-      border-radius: 50%;
-      margin-right: 3%;
-    }
     p {
+      align-items: center;
+      display: flex;
       font-weight: bold;
       font-size: 1.3rem;
       cursor: pointer;
@@ -56,27 +51,29 @@
     }
   }
 
-  .footerBox {
-    position: absolute;
-    bottom: 0;
-    width: 100vw;
-    height: 360px;
-    background-color: $bascitFtcolor;
-    color: #fff;
-    padding: 4% 15vw;
+}
 
-    .footer_title {
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 360px;
+  // background-color: $bascitFtcolor;
+  background-color: #2D3747;
+  color: #fff;
+  padding: 4% 15vw;
 
-    .footer_detail {
-      margin-top: 2%;
-      p {
-        color: #bdb5b5;
-        a {
-          text-decoration: underline;
-        }
+  .footer_title {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  .footer_detail {
+    margin-top: 2%;
+    p {
+      color: #bdb5b5;
+      a {
+        text-decoration: underline;
       }
     }
   }
