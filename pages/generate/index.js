@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import style from "@/styles/generate/generate.module.scss";
 import GenerateTop from "@/components/generate/GenerateTop";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { TargetIdContext } from "@/context/generate/wordCount";
+import { TargetIdContext } from "@/contexts/generate/wordCount";
 
 const Index = () => {
   const textArray = [

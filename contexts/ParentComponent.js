@@ -27,12 +27,13 @@ UserCountContext 값을 받지 않게 된다.
 불필요한 Context 전파를 방지할 수 있다.
 
 지금 아래 코드에서는 _app.js의 모든 하위컴포넌트에서
-Context를 사용할 수 있는 형태.
+Context를 사용할 수 있는 형태. - > 나중에 수정?
 */
 
 const ParentComponent = ({ children }) => {
   const [targetId, setTargetId] = useState(null);
   const [test, setTest] = useState("");
+
   return (
     <TestContext.Provider value={{ test, setTest }}>
       <TargetIdContext.Provider value={{ targetId, setTargetId }}>

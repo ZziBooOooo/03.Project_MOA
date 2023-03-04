@@ -197,4 +197,6 @@
   width: 100px;
   border-radius: 50px;
   margin-right: 1%;
+  cursor: pointer;
+  z-index: 100;
 }/*# sourceMappingURL=word.module.css.map */

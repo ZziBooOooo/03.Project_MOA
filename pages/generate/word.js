@@ -4,12 +4,12 @@ import w_style from "@/styles/generate/word.module.scss";
 import Image from "next/image";
 import GenerateTop from "@/components/generate/GenerateTop";
 import { useRouter } from "next/router";
-import { TargetIdContext } from "@/context/generate/wordCount";
+import { TargetIdContext } from "@/contexts/generate/wordCount";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Word = () => {
-  // wordArr 페이지 접속시 DB에서 받아오는걸로 변경해야함 - 25개씩 자르기
+  // wordArr 페이지 접속시 DB에서 받아오는걸로 변경해야함 - 20개씩 자르기
 
   // 추가 - 새로고침으로 할지 이전,다음 버튼으로 할지
   // 출력되는 단어가 바뀌어도 전의 버튼은 selected클래스 유지되어야한다. + 문장에서도 단어들이 유지되도록.
@@ -56,6 +56,7 @@ const Word = () => {
   // index.js에서 선택한 단어의 개수를 state에 저장한다. -> 조건에 따라 화면 렌더링이 다르기 때문
   useEffect(() => {
     setWordCount(targetId);
+    console.log(targetId);
   }, []);
 
   // imgType페이지로 이동

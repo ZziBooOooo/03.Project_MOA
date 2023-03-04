@@ -57,13 +57,9 @@ table {
   width: 100vw;
 }
 
-/* 
-
-클래스명 다시 잡아서 레이아웃부터 수정!
-*/
 .swiper-button-prev,
 .swiper-button-next {
-  background-color: red;
+  background-color: rgb(219, 248, 255);
   z-index: 100;
 }
 
