@@ -37,7 +37,7 @@ const ImgType = () => {
           <div className={t_style.cardBox}>
             {typeArr.map((type, key) => {
               return (
-                <div className={t_style.imgTypeCard}>
+                <div className={t_style.imgTypeCard} key={key}>
                   <p></p>
                   <p>{type}</p>
                   <p></p>
