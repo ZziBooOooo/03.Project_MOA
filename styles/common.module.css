@@ -1,9 +1,9 @@
 .layout {
+  position: relative;
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
 }
 
 .headerBox {
@@ -13,23 +13,25 @@
   padding: 1% 0%;
   font-family: "Pretendard-Regular";
   color: #3b3d3f;
-  z-index: 100;
+  position: fixed;
 }
 .headerBox .header_leftBox {
   display: flex;
   width: 20vw;
 }
-.headerBox .header_leftBox p:first-child {
-  width: 30px;
-  height: 30px;
-  background-color: #2288ff;
-  border-radius: 50%;
-  margin-right: 3%;
-}
 .headerBox .header_leftBox p {
+  align-items: center;
+  display: flex;
   font-weight: bold;
   font-size: 1.3rem;
   cursor: pointer;
+}
+.headerBox .header_leftBox p:hover ::after {
+  content: "";
+  position: absolute;
+  width: 147px;
+  height: 43px;
+  background-color: #bdb5b5;
 }
 .headerBox .header_rightBox {
   display: flex;
@@ -41,4 +43,28 @@
 .headerBox .header_rightBox p {
   cursor: pointer;
   margin-left: 5%;
+  position: relative;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 360px;
+  background-color: #2D3747;
+  color: #fff;
+  padding: 4% 15vw;
+}
+.footer .footer_title {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.footer .footer_detail {
+  margin-top: 2%;
+}
+.footer .footer_detail p {
+  color: #bdb5b5;
+}
+.footer .footer_detail p a {
+  text-decoration: underline;
 }/*# sourceMappingURL=common.module.css.map */
