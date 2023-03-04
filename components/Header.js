@@ -1,8 +1,5 @@
 import React from "react";
-import style from "../styles/common.module.css";
-import { useRouter } from "next/router";
-import Image from "next/image";
-import logo from "../public/assets/images/logo.png";
+import style from "../styles/main.module.css";
 
 const Header = () => {
   const router = useRouter();

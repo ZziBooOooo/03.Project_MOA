@@ -1,0 +1,228 @@
+@import "../../styles/variable";
+
+.content_box {
+  margin-top: 300px;
+  background-color: #ffff;
+  width: 100%;
+  height: 1000px;
+  font-family: "Pretendard-Regular";
+
+  .content_item {
+    margin: 150px auto 0;
+    width: 1200px;
+    > h3 {
+      margin: 0 auto;
+      font-size: 2rem;
+      color: $bascitFtcolor;
+      font-weight: bold;
+    }
+    .content_coinlist {
+      margin: 80px auto 0;
+      width: 100%;
+      height: 620px;
+      border-radius: 20px;
+      background-color: #f7f7f7;
+      box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.06);
+
+      .content_coinlist_top {
+        margin: 0 auto;
+        padding-top: 100px;
+        width: 1050px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .check_list {
+          display: flex;
+          width: 50%;
+
+          > img {
+            width: 40px;
+            height: 40px;
+          }
+          > p {
+            margin-left: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4a4a4a;
+          }
+        }
+        .coin_count {
+          display: flex;
+          align-items: center;
+          width: 7%;
+
+          > img {
+            width: 35px;
+            height: 35px;
+            margin-right: 10px;
+          }
+          > span {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #353535;
+          }
+        }
+        > p {
+          width: 90%;
+          font-size: 1.2rem;
+          color: #a7a7a7;
+          font-weight: 500;
+          margin-left: 52px;
+        }
+      } /* 컨텐츠 영역 상단 부분 */
+      .content_coinlist_bot {
+        margin: 70px auto 0;
+        width: 1050px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .content_wold {
+          width: 55%;
+          height: 325px;
+
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          > .isd {
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            width: 22.3%;
+            background: #ffffff;
+            box-shadow: 1px 3px 5px 1px rgba(0, 0, 0, 0.05);
+            border-radius: 5px;
+            cursor: pointer;
+          }
+          > .nod {
+            cursor: pointer;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            width: 22.3%;
+            background: #ffffff;
+            border: solid 2px #3f8efc;
+            box-shadow: 1px 3px 5px 1px rgba(0, 0, 0, 0.05);
+            border-radius: 5px;
+            position: relative;
+            &::before {
+              content: "";
+              background-image: url("../../public/assets/images/buy/checklist.png");
+              background-size: cover;
+              width: 24px;
+              height: 24px;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              left: 4%;
+            }
+          }
+        } /* 단어 리스트들  */
+        .content_buy_wold {
+          width: 34%;
+          height: 270px;
+          background-color: #ffffff;
+          box-shadow: 1px 3px 5px 1px rgba(0, 0, 0, 0.11);
+          border-radius: 20px;
+          .totalCoin {
+            margin: 30px auto 0;
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            > p {
+              color: #a1a1a1;
+              font-size: 1.2rem;
+              font-weight: bold;
+            }
+            > div {
+              display: flex;
+              align-items: center;
+              > img {
+                width: 30px;
+                margin-right: 8px;
+              }
+              > span {
+                font-size: 1.1rem;
+                font-weight: bold;
+                color: #353535;
+              }
+            }
+          } /* 구매할 총비용 */
+          .buyWold_list {
+            margin: 40px auto 0;
+            width: 80%;
+            height: 100px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1px;
+            border-bottom: 1px solid #edebeb;
+            overflow-y: auto;
+            overflow-x: hidden;
+            &::-webkit-scrollbar {
+              width: 6px; /* 스크롤바의 너비 */
+            }
+
+            &::-webkit-scrollbar-thumb {
+              height: 10%; /* 스크롤바의 길이 */
+              background: #3f8efc; /* 스크롤바의 색상 */
+              border-radius: 10px;
+            }
+
+            &::-webkit-scrollbar-track {
+              background-color: none; /*스크롤바 뒷 배경 색상*/
+            }
+            .buyWold_item {
+              width: 48%;
+              display: flex;
+              align-items: center;
+              margin-bottom: 20px;
+
+              > div {
+                display: flex;
+                align-items: center;
+                > img {
+                  width: 25px;
+                  margin-right: 5px;
+                }
+                > span {
+                  font-weight: bold;
+                  color: #8a8686;
+                  font-size: 1rem;
+                }
+              }
+              > P {
+                margin-left: 10px;
+                font-weight: bold;
+                font-size: 1.2rem;
+                color: #4a4a4a;
+              }
+            }
+          } /* 구매할 리스트 단어들 */
+          > button {
+            display: block;
+            margin: 20px auto 0;
+            width: 95px;
+            height: 30px;
+            border-radius: 50px;
+            background-color: #3f8efc;
+            color: #fff;
+          } /* 구매버튼 */
+        } /* 구매할 단어들  */
+      } /* 컨텐츠 영역 하단 부분 */
+      .pageButton {
+        width: 1050px;
+        margin: 10px auto 0;
+        display: flex;
+        justify-content: right;
+        gap: 10px;
+        > div {
+          cursor: pointer;
+          > img {
+            width: 28px;
+            height: 28px;
+          }
+        }
+      } /* 컨텐츠 페이지 이동 버튼 */
+    }
+  }
+} /* ======== 구매 컨텐츠  카테고리 =================== */

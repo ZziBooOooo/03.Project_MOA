@@ -57,3 +57,16 @@ table {
 .layout {
   width: 100vw;
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: rgb(219, 248, 255);
+  z-index: 100;
+}
+
+.swiper-button-prev {
+  transform: translateX(-25px);
+}
+.swiper-button-next {
+  transform: translateX(25px);
+}
