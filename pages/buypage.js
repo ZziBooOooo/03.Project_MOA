@@ -5,7 +5,7 @@ import CoinCotent3 from "@/components/buy/CoinCotent3";
 import CoinCotent4 from "@/components/buy/CoinCotent4";
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import BuyContextCom from "./context/buy/buyPageContext";
+import BuyContextCom from "@/contexts/buy/buyPageContext";
 
 export default function buypage() {
   const [currentContent, setCurrentContent] = useState("CoinCotent1");

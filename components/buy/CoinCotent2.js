@@ -2,7 +2,7 @@ import style from "styles/buy/coin.module.scss";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
-import { buyContext } from "@/pages/context/buy/buyPageContext";
+import { buyContext } from "@/contexts/buy/buyPageContext";
 
 export default function CoinCotent2({ onChange }) {
   const { WoldCoin2 } = useContext(buyContext);
