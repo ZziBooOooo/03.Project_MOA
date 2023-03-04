@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 .headerBox {
   width: 70vw;
@@ -13,6 +14,7 @@
   padding: 1% 0%;
   font-family: "Pretendard-Regular";
   color: $bascitFtcolor;
+  z-index: 100;
   .header_leftBox {
     display: flex;
     width: 20vw;

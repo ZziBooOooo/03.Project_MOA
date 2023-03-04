@@ -1,0 +1,80 @@
+.fullBox {
+  background-color: white;
+}
+.fullBox .bottomMainBox {
+  background-color: #f1f1f1 !important;
+  display: flex;
+  justify-content: space-between;
+}
+.fullBox .bottomMainBox .cardBox {
+  width: 100%;
+  height: 75%;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard {
+  width: 28%;
+  height: 40%;
+  padding: 0% 3%;
+  background-color: white;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 1px 2px 5px rgb(224, 224, 224);
+  cursor: pointer;
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard p:nth-of-type(1) {
+  width: 5.2631578947vw;
+  height: 5.2631578947vw;
+  min-width: 70px;
+  min-height: 70px;
+  background-color: blue;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/assets/images/generate/glass.png");
+  background-position: center;
+  background-size: 115%;
+  background-repeat: no-repeat;
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard:nth-child(2) p:nth-of-type(1) {
+  background-image: url("/assets/images/generate/pixel.png");
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard:nth-child(3) p:nth-of-type(1) {
+  background-image: url("/assets/images/generate/oil.png");
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard:nth-child(4) p:nth-of-type(1) {
+  background-image: url("/assets/images/generate/illust.png");
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard:nth-child(5) p:nth-of-type(1) {
+  background-image: url("/assets/images/generate/digital.png");
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard:nth-child(6) p:nth-of-type(1) {
+  background-image: url("/assets/images/generate/water.png");
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard p:nth-of-type(2) {
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin: 0;
+  margin-left: 10px;
+}
+.fullBox .bottomMainBox .completeBtnBox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.fullBox .bottomMainBox .completeBtnBox button {
+  background-color: #2288ff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  height: 38px;
+  width: 100px;
+  border-radius: 50px;
+}/*# sourceMappingURL=type.module.css.map */
