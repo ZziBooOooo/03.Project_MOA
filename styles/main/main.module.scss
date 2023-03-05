@@ -119,14 +119,13 @@
 
 
 .section02 {
-  border: 5px solid pink;
   width: 100vw;
   height: 100vh;
   .guideBox {
     width: 70vw;
     margin: 0 auto;
     .section_title {
-      margin-top: 15vh;
+      margin-top: 24vh;
       font-size: 2.25rem;
       color: #4c9eff;
     }
@@ -142,7 +141,7 @@
         flex-direction: column;
       }
       .coinGif{
-        opacity: 0;
+        // opacity: 0;
         position: absolute;
         transform: translate(50%, -60%);
         z-index: -1;

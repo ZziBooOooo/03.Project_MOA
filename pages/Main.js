@@ -44,7 +44,11 @@ const Main = () => {
 
           <div className={style.guide_content}>
             <div className={style.try_guide}>
-              <img src="../public/assets/images/main/checkCircle.png" />
+            <Image src="/assets/images/main/checkCircle.png"
+              alt='check'
+              width={50}
+              height={50}
+              className={style.checkCircle}/>
               <p className={style.mission_title}>하루 한번 참여</p>
               <p className={style.mission_detail}>
                 미션은 하루에 한번 참여할 수 있어요.
@@ -52,7 +56,11 @@ const Main = () => {
             </div>
 
             <div className={style.random_guide}>
-              <img scr="../public/assets/images/main/slot.png" />
+            <Image src="/assets/images/main/slot.png"
+              alt='slot'
+              width={50}
+              height={50}
+              className={style.slot}/>
               <p className={style.mission_title}>랜덤 참여</p>
               <p className={style.mission_detail}>
                 미션은 매일 랜덤으로 주어져요.
@@ -60,7 +68,11 @@ const Main = () => {
             </div>
 
             <div className={style.save_guide}>
-              <img scr="../public/assets/images/main/moneypocket.png" />
+            <Image src="/assets/images/main/moneypocket.png"
+              alt='moneypocket'
+              width={50}
+              height={50}
+              className={style.moneypocket}/>
               <p className={style.mission_title}>코인 적립</p>
               <p className={style.mission_detail}>
                 미션에 성공하면 코인을 적립해드려요.
