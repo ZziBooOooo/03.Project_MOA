@@ -22,26 +22,28 @@
     font-weight: bold;
     color: #4a4a4a;
   } /* 배너 텍스트 */
-  .mywold_count {
+  .myword_count {
     margin: 80px auto 0;
     width: 203px;
     height: 58px;
     background: #e6f3ff;
     border-radius: 50px;
     display: flex;
+    justify-content: center;
     > span {
       font-size: 20px;
       color: #4a4a4a;
       line-height: 58px;
       font-weight: bold;
-      padding-left: 20px;
+      margin-right: 15px;
     }
     > div {
       width: 14px;
       height: 14px;
       border-radius: 100%;
       background-color: #2288ff;
-      margin: auto 10px;
+      margin: auto 0;
+      margin-right: 10px;
     }
     > p {
       font-size: 20px;
@@ -66,7 +68,8 @@
 } /*====== 배너 =========*/
 
 .content_box {
-  margin-top: 300px;
+  margin-top: 200px;
+  margin-bottom: 200px;
   background-color: #f7f7f7;
   width: 100%;
   height: 1000px;

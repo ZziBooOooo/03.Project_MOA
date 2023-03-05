@@ -1,29 +1,52 @@
 import style from "styles/buy/coin.module.scss";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { buyContext } from "@/contexts/buy/buyPageContext";
+import BuyNotModal from "./BuyNotModal";
+import BuyComplete from "./BuyComplete";
 
 export default function CoinCotent3({ onChange }) {
-  const { WoldCoin3 } = useContext(buyContext);
-  const [buyWold, setbuyWold] = useState([]);
-  const [coinTotal, setcoinTotal] = useState(0);
+  const { WordCoin3, userData, setuserData, userCoin, setuserCoin } =
+    useContext(buyContext);
+  const [buyWord, setbuyWord] = useState([]); /* 구매할 단어 배열 */
+  const [coinTotal, setcoinTotal] = useState(0); /* 구매할 단어 코인 합계 */
+  const [buyNot, setbuyNot] = useState(false); /* 구매 부족 모달 */
+  const [buyCom, setbuyCom] = useState(false); /* 구매 완료 모달 */
 
   function buyUpdate(id) {
-    let buyadd = WoldCoin3.find((res) => res.id === id);
-    let newAdd = [...buyWold];
+    let buyadd = WordCoin3.find((res) => res.id === id);
+    let newAdd = [...buyWord];
     if (newAdd.some((item) => item.id === buyadd.id)) {
       newAdd = newAdd.filter((item) => item.id !== buyadd.id);
       /* some = true, false 값을 반환 */
     } else {
       newAdd.push(buyadd);
     }
-    setbuyWold(newAdd);
+    setbuyWord(newAdd);
   } /* 구매할 단어를 누르면 구매페이지에 추가되고 다시누르면 삭제 */
 
+  function buyDecision() {
+    if (userCoin < buyWord.length * 3) {
+      setbuyNot(true); /* 코인이 부족할시 모달 */
+    } else {
+      setuserData([
+        ...userData,
+        ...buyWord,
+      ]); /* 여기에 사용자가 구매한 단어 들어감 */
+      setuserCoin(
+        userCoin <= 0 ? 0 : userCoin - buyWord.length * 3
+      ); /* 사용자 구매후 코인수 */
+      if (buyWord.length > 0) {
+        setbuyCom(true);
+      }
+      setbuyWord([]); /* 구매되면 구매할 목록 초기화 */
+    }
+  } /* 구매 버튼 */
+
   useEffect(() => {
-    setcoinTotal(buyWold.length * 3);
-  }, [buyWold]); /* 구매할 단어를 누르면 총몇코인이 필요한지 표시 */
+    setcoinTotal(buyWord.length * 3);
+  }, [buyWord]); /* 구매할 단어를 누르면 총몇코인이 필요한지 표시 */
 
   return (
     <motion.div
@@ -43,27 +66,29 @@ export default function CoinCotent3({ onChange }) {
             </div>
             <div className={style.coin_count}>
               <img src="/assets/images/buy/smallcoin.png" />
-              <span>24</span> {/* 코인 카운터 들어갈곳 */}
+              <span>{userCoin}</span> {/* 코인 카운터 들어갈곳 */}
             </div>
             <p>이 단어들은 3개의 코인이 필요해요</p>
           </div>
           <div className={style.content_coinlist_bot}>
-            <div className={style.content_wold}>
-              {WoldCoin3.map((res) => (
-                <div
+            <div className={style.content_word}>
+              {WordCoin3.map((res) => (
+                <button
                   className={
-                    buyWold.find((tes) => tes.id === res.id)
+                    buyWord.find((tes) => tes.id === res.id)
                       ? style.nod
                       : style.isd
                   }
                   key={res.id}
                   onClick={() => buyUpdate(res.id)}
+                  disabled={userData.some((el) => el.word === res.word)}
+                  /* 사용자가 이미 데이터가 있는경우 */
                 >
-                  {res.wold}
-                </div>
+                  {res.word}
+                </button>
               ))}
             </div>
-            <div className={style.content_buy_wold}>
+            <div className={style.content_buy_word}>
               <div className={style.totalCoin}>
                 <p>총 코인 개수</p>
                 <div>
@@ -72,19 +97,20 @@ export default function CoinCotent3({ onChange }) {
                   {/* 구매할 코인 개수 */}
                 </div>
               </div>
-              <div className={style.buyWold_list}>
-                {buyWold &&
-                  buyWold.map((res) => (
-                    <div className={style.buyWold_item} key={res.id}>
+              <div className={style.buyword_list}>
+                {buyWord &&
+                  buyWord.map((res) => (
+                    <div className={style.buyword_item} key={res.id}>
                       <div>
                         <img src="/assets/images/buy/smallcoin.png" />
                         <span>{res.coinNum}</span>
                       </div>
-                      <p>{res.wold}</p>
+                      <p>{res.word}</p>
                     </div>
                   ))}
               </div>
-              <button>구매하기</button> {/* 구매시 함수 */}
+              <button onClick={buyDecision}>구매하기</button>{" "}
+              {/* 구매시 함수 */}
             </div>
           </div>
           <div className={style.pageButton}>
@@ -95,6 +121,16 @@ export default function CoinCotent3({ onChange }) {
               <img src="/assets/images/buy/pageNext.png" />
             </div>
           </div>
+          {buyNot && (
+            <AnimatePresence mode="wait">
+              <BuyNotModal setbuyNot={setbuyNot} />
+            </AnimatePresence>
+          )}
+          {buyCom && (
+            <AnimatePresence mode="wait">
+              <BuyComplete setbuyCom={setbuyCom} />
+            </AnimatePresence>
+          )}
         </div>
       </div>
     </motion.div>
