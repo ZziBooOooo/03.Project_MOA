@@ -18,6 +18,7 @@
   position: fixed;
 }
 .headerBox .header_leftBox {
+  cursor: pointer;
   display: flex;
   width: 20vw;
 }

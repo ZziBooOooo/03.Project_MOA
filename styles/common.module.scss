@@ -20,6 +20,7 @@
   color: $bascitFtcolor;
   position: fixed;
   .header_leftBox {
+    cursor: pointer;
     display: flex;
     width: 20vw;
     p {

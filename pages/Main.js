@@ -1,27 +1,46 @@
 import React from "react";
 import style from "../styles/main/main.module.css";
+import Image from "next/image";
+import { useRouter } from "next/router";
 
 const Main = () => {
+  const router = useRouter();
   return (
     <>
       <section className={style.section01}>
         <p>모아서 그리자!</p>
         <h1>아티스트가 되는 공간. 모아 </h1>
-        <button>시작하기</button>
+        <button onClick={() => router.push("/generate")} >시작하기</button>
+        <div className={style.scrolldown}>
+          <div className={style.chevrons}>
+            <div className={style.chevrondown}></div>
+            <div className={style.chevrondown}></div>
+          </div>
+        </div>
       </section>
 
       <section className={style.section02}>
         <div className={style.guideBox}>
           <p className={style.section_title}>COIN</p>
-          <h2>
-            모으는 재미!<br></br>
-            매일 다른 미션
-          </h2>
-          <img src="../public/assets/images/main/coin.gif" />
-          <p className={style.guide_detail}>
-            모아에서는 매일 다른 미션이 제공돼요.<br></br>
-            미션에 성공하면 코인을 받을 수 있어요.{" "}
-          </p>
+          <div className={style.titleBox}>
+            <h2>
+              모으는 재미!<br></br>
+              매일 다른 미션
+            </h2>
+            <div>
+              <Image src="/assets/images/main/coin.gif"
+              alt='coin'
+              width={400}
+              height={280}
+              className={style.coinGif}/>
+            <p className={style.guide_detail}>
+              모아에서는 매일 다른 미션이 제공돼요.<br></br>
+              미션에 성공하면 코인을 받을 수 있어요.{" "}
+            </p>
+            </div>
+
+          </div>
+        
 
           <div className={style.guide_content}>
             <div className={style.try_guide}>
