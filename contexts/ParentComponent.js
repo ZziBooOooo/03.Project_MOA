@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { TargetIdContext } from "./generate/wordCount";
-import { TestContext } from "./generate/testContext";
+import { wordCountContext } from "./generate/wordCountContext";
+import { userWordContext } from "./generate/userWordContext";
+import { userSentenceContext } from "./generate/userSentenceContext";
 
 /* 
 ** ParentComponent를 만든 이유
@@ -31,15 +32,18 @@ Context를 사용할 수 있는 형태. - > 나중에 수정?
 */
 
 const ParentComponent = ({ children }) => {
-  const [targetId, setTargetId] = useState(null);
-  const [test, setTest] = useState("");
+  const [wordCount, setWordCount] = useState(null);
+  const [userWords, setUserWords] = useState("");
+  const [userSentence, setUserSentence] = useState("");
 
   return (
-    <TestContext.Provider value={{ test, setTest }}>
-      <TargetIdContext.Provider value={{ targetId, setTargetId }}>
-        {children}
-      </TargetIdContext.Provider>
-    </TestContext.Provider>
+    <userSentenceContext.Provider value={{ userSentence, setUserSentence }}>
+      <userWordContext.Provider value={{ userWords, setUserWords }}>
+        <wordCountContext.Provider value={{ wordCount, setWordCount }}>
+          {children}
+        </wordCountContext.Provider>
+      </userWordContext.Provider>
+    </userSentenceContext.Provider>
   );
 };
 

@@ -11,9 +11,10 @@
 .fullBox .topBox {
   width: 100vw;
   height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #e5f1fc;
   display: flex;
   align-items: center;
@@ -21,8 +22,8 @@
 }
 .fullBox .topBox .textBox {
   text-align: center;
-  transform: translateY(-50%);
   color: #3b3d3f;
+  transform: translateY(10%);
 }
 .fullBox .topBox .textBox p:first-child {
   font-size: 4rem;
@@ -34,13 +35,12 @@
   margin-top: 1%;
 }
 .fullBox .topBox .topImgBox {
-  position: absolute;
-  bottom: 0;
   width: 90vw;
   height: 40vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transform: translateY(35%);
 }
 .fullBox .topBox .topImgBox div {
   background-color: white;
@@ -68,9 +68,7 @@
 }
 .fullBox .bottomBox {
   width: 100vw;
-  height: 200vh;
-  position: absolute;
-  bottom: 0;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;

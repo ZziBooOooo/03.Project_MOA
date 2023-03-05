@@ -1,18 +1,38 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Scrollbar } from "swiper";
 import "swiper/css/bundle";
 import s_style from "@/styles/generate/style.module.scss";
 import Image from "next/image";
-// Import Swiper styles
+import { userSentenceContext } from "@/contexts/generate/userSentenceContext";
 
 SwiperCore.use([Navigation, Pagination]);
 
-const SwiperCard = () => {
+const SwiperCard = ({ setSelectStyle }) => {
+  const imgStyleArr = [
+    "귀여움",
+    "마법",
+    "사이버펑크",
+    "컬러풀",
+    "우주",
+    "몬스터",
+    "빛나는",
+    "디즈니",
+    "슈퍼히어로",
+    "파스텔 색감",
+    "따뜻한 색감",
+    "차가운 색감",
+    "판타지",
+    "레트로",
+    "네온",
+  ];
+
+  const { userSentence, setUserSentence } = useContext(userSentenceContext);
+
   return (
     <Swiper
       style={{ width: "100%", height: "110%" }}
-      spaceBetween={30}
+      spaceBetween={10}
       slidesPerView={3}
       navigation
       pagination={{
@@ -22,51 +42,28 @@ const SwiperCard = () => {
         },
       }}
     >
-      <SwiperSlide>
-        <div className={s_style.cardContent}>
-          <p className={s_style.imgIWrap}>
-            <Image
-              src="/assets/images/generate/glass.png"
-              alt="checkIcon"
-              width={300}
-              height={240}
-            />
-          </p>
-          <p className={s_style.typeText}>귀여움</p>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className={s_style.cardContent}>
-          <p className={s_style.imgIWrap}>
-            <Image
-              src="/assets/images/generate/glass.png"
-              alt="checkIcon"
-              width={300}
-              height={240}
-            />
-          </p>
-          <p className={s_style.typeText}>귀여움</p>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className={s_style.cardContent}>
-          <p className={s_style.imgIWrap}>
-            <Image
-              src="/assets/images/generate/glass.png"
-              alt="checkIcon"
-              width={300}
-              height={240}
-            />
-          </p>
-          <p className={s_style.typeText}>귀여움</p>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      <SwiperSlide>Slide 5</SwiperSlide>
-      <SwiperSlide>Slide 6</SwiperSlide>
-      <SwiperSlide>Slide 7</SwiperSlide>
-      <SwiperSlide>Slide 8</SwiperSlide>
-      <SwiperSlide>Slide 9</SwiperSlide>
+      {imgStyleArr.map((style, key) => {
+        return (
+          <SwiperSlide key={style}>
+            <div
+              className={s_style.cardContent}
+              onClick={() => {
+                setSelectStyle(style);
+              }}
+            >
+              <p className={s_style.imgIWrap}>
+                <Image
+                  src={`/assets/images/generate/${style}.png`}
+                  alt={`이미지 컨셉 : ${style}`}
+                  width={275}
+                  height={240}
+                />
+              </p>
+              <p className={s_style.typeText}>{style}</p>
+            </div>
+          </SwiperSlide>
+        );
+      })}
     </Swiper>
   );
 };

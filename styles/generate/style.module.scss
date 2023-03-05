@@ -9,6 +9,11 @@
     justify-content: space-between;
     position: relative;
     display: flex;
+    padding: 3% 1% !important;
+
+    .b_textBox {
+      padding-left: 2%;
+    }
 
     .cardBox {
       width: 100%;
@@ -19,7 +24,8 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      // background-color: pink;
+
+      //background-color: pink;
 
       .pagination {
         // transform: translateY(0%);
@@ -47,6 +53,8 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+        box-shadow: 1px 2px 6px rgb(223, 223, 223);
+        cursor: pointer;
 
         .imgIWrap {
           width: 100%;
@@ -70,7 +78,7 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-
+      padding-right: 2%;
       button {
         background-color: $mainColor;
         font-size: 1.25rem;

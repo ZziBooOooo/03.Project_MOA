@@ -7,6 +7,10 @@
   justify-content: space-between;
   position: relative;
   display: flex;
+  padding: 3% 1% !important;
+}
+.fullBox .bottomMainBox .b_textBox {
+  padding-left: 2%;
 }
 .fullBox .bottomMainBox .cardBox {
   width: 100%;
@@ -39,6 +43,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  box-shadow: 1px 2px 6px rgb(223, 223, 223);
+  cursor: pointer;
 }
 .fullBox .bottomMainBox .cardBox .cardContent .imgIWrap {
   width: 100%;
@@ -57,6 +63,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding-right: 2%;
 }
 .fullBox .bottomMainBox .completeBtnBox button {
   background-color: #2288ff;

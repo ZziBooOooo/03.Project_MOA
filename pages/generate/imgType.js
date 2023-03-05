@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import style from "@/styles/generate/generate.module.scss";
 import t_style from "@/styles/generate/type.module.scss";
 import Image from "next/image";
 import GenerateTop from "@/components/generate/GenerateTop";
+
 import { useRouter } from "next/router";
+import { userSentenceContext } from "@/contexts/generate/userSentenceContext";
 
 const ImgType = () => {
   const typeArr = [
@@ -14,10 +16,19 @@ const ImgType = () => {
     "디지털 아트",
     "수채화",
   ];
+
+  const [selectType, setSelectType] = useState("");
+
+  const { userSentence, setUserSentence } = useContext(userSentenceContext);
+
   const router = useRouter();
   const goImgResultPage = () => {
     router.push("/generate/imgStyle", undefined, { scroll: false });
   };
+
+  function saveTypeToContext() {
+    setUserSentence(`${userSentence},${selectType}`);
+  }
   return (
     <div className={`${style.fullBox} ${t_style.fullBox}`}>
       <GenerateTop />
@@ -37,7 +48,11 @@ const ImgType = () => {
           <div className={t_style.cardBox}>
             {typeArr.map((type, key) => {
               return (
-                <div className={t_style.imgTypeCard} key={key}>
+                <div
+                  className={t_style.imgTypeCard}
+                  key={key}
+                  onClick={() => setSelectType(type)}
+                >
                   <p></p>
                   <p>{type}</p>
                   <p></p>
@@ -48,7 +63,14 @@ const ImgType = () => {
           </div>
           <div className={t_style.completeBtnBox}>
             <p></p>
-            <button onClick={goImgResultPage}>다음</button>
+            <button
+              onClick={() => {
+                goImgResultPage();
+                saveTypeToContext();
+              }}
+            >
+              다음
+            </button>
           </div>
         </div>
       </div>
