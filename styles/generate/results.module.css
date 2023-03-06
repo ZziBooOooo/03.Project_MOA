@@ -4,8 +4,6 @@
 .fullBox .bottomBox {
   width: 100vw;
   height: 100vh;
-  position: absolute;
-  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,7 +28,7 @@
   color: #727375;
 }
 .fullBox .loadBox .textLoader {
-  color: #3b3d3f;
+  color: rgb(78, 78, 78);
   display: inline-block;
   position: relative;
   box-sizing: border-box;
@@ -113,4 +111,20 @@
   100% {
     width: 148px;
   }
+}
+.fullBox .imgBox {
+  width: 70vw;
+  max-width: 1200px;
+  background-color: rgba(171, 217, 255, 0.1019607843);
+  display: flex;
+  justify-content: space-between;
+}
+.fullBox .imgBox img {
+  cursor: pointer;
+  border-radius: 16px;
+  transition: 0.2s;
+  box-shadow: 0px 3px 5px rgb(219, 219, 219);
+}
+.fullBox .imgBox img:hover {
+  transform: translateY(-5px);
 }/*# sourceMappingURL=results.module.css.map */

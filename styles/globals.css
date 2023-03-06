@@ -31,6 +31,7 @@
 html,
 body {
   height: 100%;
+  font-family: "Pretendard-Regular";
 }
 img,
 picture,
@@ -52,7 +53,25 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+.swiper {
+  position: relative;
+  padding: 0px 60px !important; /* 버튼의 높이만큼 값을 추가 */
+}
+.swiper-button-prev,
+.swiper-button-next {
+  width: 32px !important;
+  height: 32px !important;
+}
 
-.layout {
-  width: 100vw;
+.swiper-button-next:hover {
+  color: white;
+}
+.swiper-button-next:after:hover {
+  color: white;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 32px !important;
+  font-weight: bold;
+  color: rgb(174, 177, 185);
 }

@@ -1,0 +1,184 @@
+@charset "UTF-8";
+.banner_box {
+  width: 100%;
+  text-align: center;
+  font-family: "Pretendard-Regular";
+  /* 배너 텍스트 */
+  /* 나의 단어 카운터  */
+  /* 배너 아이콘  */
+}
+.banner_box > h3 {
+  margin-top: 15%;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #3b3d3f;
+}
+.banner_box > p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding-top: 20px;
+  color: #4a4a4a;
+}
+.banner_box > span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+.banner_box .mywold_count {
+  margin: 80px auto 0;
+  width: 203px;
+  height: 58px;
+  background: #e6f3ff;
+  border-radius: 50px;
+  display: flex;
+}
+.banner_box .mywold_count > span {
+  font-size: 20px;
+  color: #4a4a4a;
+  line-height: 58px;
+  font-weight: bold;
+  padding-left: 20px;
+}
+.banner_box .mywold_count > div {
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  background-color: #2288ff;
+  margin: auto 10px;
+}
+.banner_box .mywold_count > p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2288ff;
+  line-height: 58px;
+}
+.banner_box .banner_icons {
+  list-style: none;
+  display: flex;
+}
+.banner_box .banner_icons > li:nth-child(1) {
+  transform: translate(250px, -330px);
+}
+.banner_box .banner_icons > li:nth-child(2) {
+  transform: translate(400px, 110px);
+}
+.banner_box .banner_icons > li:nth-child(3) {
+  transform: translate(1250px, -200px);
+}
+
+/*====== 배너 =========*/
+.content_box {
+  margin-top: 300px;
+  background-color: #f7f7f7;
+  width: 100%;
+  height: 1000px;
+  font-family: "Pretendard-Regular";
+}
+.content_box .content_item {
+  margin: 150px auto 0;
+  width: 1200px;
+}
+.content_box .content_item > h3 {
+  margin: 0 auto;
+  font-size: 2rem;
+  color: #3b3d3f;
+  font-weight: bold;
+}
+.content_box .content_item .content_coinlist {
+  margin: 80px auto 0;
+  width: 100%;
+  height: 620px;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.06);
+  /* 컨텐츠 영역 상단 부분 */
+  /* 컨텐츠 영역 하단 부분 */
+}
+.content_box .content_item .content_coinlist .content_coinlist_top {
+  margin: 0 auto;
+  padding-top: 100px;
+  width: 1050px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.content_box .content_item .content_coinlist .content_coinlist_top .check_list {
+  display: flex;
+  width: 50%;
+}
+.content_box .content_item .content_coinlist .content_coinlist_top .check_list > img {
+  width: 40px;
+  height: 40px;
+}
+.content_box .content_item .content_coinlist .content_coinlist_top .check_list > p {
+  margin-left: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+.content_box .content_item .content_coinlist .content_coinlist_top .coin_count {
+  display: flex;
+  align-items: center;
+  width: 7%;
+}
+.content_box .content_item .content_coinlist .content_coinlist_top .coin_count > img {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
+.content_box .content_item .content_coinlist .content_coinlist_top .coin_count > span {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #353535;
+}
+.content_box .content_item .content_coinlist .content_coinlist_top > p {
+  width: 90%;
+  font-size: 1.2rem;
+  color: #a7a7a7;
+  font-weight: 500;
+  margin-left: 52px;
+}
+.content_box .content_item .content_coinlist .content_coinlist_bot {
+  margin: 90px auto 0;
+  width: 1050px;
+  display: flex;
+  justify-content: space-between;
+}
+.content_box .content_item .content_coinlist .content_coinlist_bot .coin2 {
+  width: 30%;
+  background-color: #e6f3ff;
+  height: 240px;
+  border-radius: 20px;
+  box-shadow: 1px 3px 5px 1px rgba(0, 0, 0, 0.11);
+  text-align: center;
+  cursor: pointer;
+}
+.content_box .content_item .content_coinlist .content_coinlist_bot .coin2:hover {
+  transition: 0.3s;
+  background-color: #3f8efc;
+}
+.content_box .content_item .content_coinlist .content_coinlist_bot .coin2:hover > p {
+  color: #e6f3ff;
+  transition: 0.3s;
+}
+.content_box .content_item .content_coinlist .content_coinlist_bot .coin2:hover > span {
+  color: #e6f3ff;
+  transition: 0.3s;
+}
+.content_box .content_item .content_coinlist .content_coinlist_bot .coin2 > img {
+  width: 70px;
+  margin: 60px auto 5px;
+}
+.content_box .content_item .content_coinlist .content_coinlist_bot .coin2 > p {
+  color: #4c9eff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.content_box .content_item .content_coinlist .content_coinlist_bot .coin2 > span {
+  color: #4c9eff;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* ======== 구매 컨텐츠  카테고리 =================== *//*# sourceMappingURL=buy.module.css.map */

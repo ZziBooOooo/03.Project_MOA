@@ -1,31 +1,71 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import SwiperCore, { Navigation, Pagination, Scrollbar } from "swiper";
+import "swiper/css/bundle";
+import s_style from "@/styles/generate/style.module.scss";
+import Image from "next/image";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+SwiperCore.use([Navigation, Pagination]);
 
-//수정하기
+const SwiperCard = ({ selectStyle, setSelectStyle, setActiveBtnClass }) => {
+  const imgStyleArr = [
+    "귀여움",
+    "마법",
+    "사이버펑크",
+    "컬러풀",
+    "우주 컨셉",
+    "몬스터",
+    "빛나는",
+    "디즈니",
+    "슈퍼히어로",
+    "파스텔 색감",
+    "따뜻한 색감",
+    "차가운 색감",
+    "판타지",
+    "레트로",
+    "네온",
+  ];
 
-const SwiperCard = () => {
   return (
     <Swiper
-      modules={[Navigation, Pagination]}
-      spaceBetween={50}
+      style={{ width: "100%", height: "110%" }}
+      spaceBetween={10}
       slidesPerView={3}
       navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
+      pagination={{
+        clickable: true,
+        renderBullet: function (index, className) {
+          return `<span class="${className} ${s_style.pagination}"></span>`;
+        },
+      }}
     >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      <SwiperSlide>Slide 5</SwiperSlide>
-      <SwiperSlide>Slide 6</SwiperSlide>
+      {imgStyleArr.map((style, key) => {
+        return (
+          <SwiperSlide key={style}>
+            <div
+              className={
+                selectStyle == style
+                  ? `${s_style.cardContent} ${s_style.currentSelect}`
+                  : `${s_style.cardContent}`
+              }
+              onClick={() => {
+                setSelectStyle(style);
+                setActiveBtnClass(true);
+              }}
+            >
+              <p className={s_style.imgIWrap}>
+                <Image
+                  src={`/assets/images/generate/${style}.png`}
+                  alt={`이미지 컨셉 : ${style}`}
+                  width={275}
+                  height={240}
+                />
+              </p>
+              <p className={s_style.typeText}>{style}</p>
+            </div>
+          </SwiperSlide>
+        );
+      })}
     </Swiper>
   );
 };

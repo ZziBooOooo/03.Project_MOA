@@ -1,4 +1,4 @@
-@import "../../styles/variable";
+@import "../variable";
 .fullBox {
   width: 100vw;
   height: 200vh;
@@ -12,9 +12,10 @@
   .topBox {
     width: 100vw;
     height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     background-color: #e5f1fc;
     display: flex;
@@ -22,8 +23,10 @@
     justify-content: center;
     .textBox {
       text-align: center;
-      transform: translateY(-50%);
       color: $bascitFtcolor;
+
+      transform: translateY(10%);
+
       p:first-child {
         font-size: 4rem;
         font-weight: bold;
@@ -35,14 +38,15 @@
       }
     }
     .topImgBox {
-      position: absolute;
-      bottom: 0;
+      // position: absolute;
+      // bottom: 0;
       width: 90vw;
       height: 40vh;
-      // background-color: rgb(65, 127, 243);
+
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transform: translateY(35%);
 
       div {
         background-color: white;
@@ -74,9 +78,11 @@
 
   .bottomBox {
     width: 100vw;
+    // height: 100vh;
     height: 100vh;
-    position: absolute;
-    bottom: 0;
+    // position: absolute;
+    // bottom: 0;
+    // margin-bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -137,6 +143,21 @@
           justify-content: space-between;
           cursor: pointer;
           position: relative;
+          transition: 0.2s;
+          &:hover {
+            background-color: $mainColor;
+            color: white;
+            transform: translateY(-6px);
+            .cardContent {
+              color: rgb(242, 246, 255);
+            }
+
+            button {
+              background-color: white;
+              color: $mainColor;
+              box-shadow: none;
+            }
+          }
 
           .cardTitle {
             display: flex;
@@ -174,6 +195,7 @@
             font-size: 1.5rem;
             font-weight: bold;
             color: $softGRAYFtColor;
+            transition: 0.2s;
 
             & p:nth-of-type(2) {
               margin-top: 10px;
@@ -196,6 +218,7 @@
             font-weight: bold;
             box-shadow: 1px 2px 4px rgb(214, 214, 214);
             cursor: pointer;
+            z-index: 100;
           }
         }
       }

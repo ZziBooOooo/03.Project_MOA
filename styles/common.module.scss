@@ -1,47 +1,82 @@
 @import "../styles/variable";
+
 .layout {
-  width: 100vw;
+  position: relative;
+  width: 100%;
   //   background-color: rgb(190, 190, 190);
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  flex: 1;
 }
+
 .headerBox {
+  z-index:9999;
   width: 70vw;
   display: flex;
   justify-content: space-between;
   padding: 1% 0%;
   font-family: "Pretendard-Regular";
   color: $bascitFtcolor;
-  z-index: 100;
+  position: fixed;
   .header_leftBox {
     display: flex;
     width: 20vw;
-    p:first-child {
-      width: 30px;
-      height: 30px;
-      background-color: $mainColor;
-      border-radius: 50%;
-      margin-right: 3%;
-    }
     p {
+      align-items: center;
+      display: flex;
       font-weight: bold;
       font-size: 1.3rem;
       cursor: pointer;
+      &:hover {
+        ::after {
+          content: "";
+          position: absolute;
+          width: 147px;
+          height: 43px;
+          background-color: #bdb5b5;
+        }
+      }
     }
   }
 
   .header_rightBox {
     display: flex;
     width: 50vw;
-
     justify-content: flex-end;
     align-items: center;
     font-weight: bold;
     p {
       cursor: pointer;
       margin-left: 5%;
+      position: relative;
+    }
+  }
+
+}
+
+.footer {
+  // position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 360px;
+  // background-color: $bascitFtcolor;
+  background-color: #2D3747;
+  color: #fff;
+  padding: 4% 15vw;
+
+  .footer_title {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  .footer_detail {
+    margin-top: 2%;
+    p {
+      color: #bdb5b5;
+      a {
+        text-decoration: underline;
+      }
     }
   }
 }

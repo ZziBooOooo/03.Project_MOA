@@ -27,6 +27,13 @@
   justify-content: space-between;
   box-shadow: 1px 2px 5px rgb(224, 224, 224);
   cursor: pointer;
+  transition: transform 0.2s;
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard:hover {
+  transform: translateY(-6px);
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard:hover:active {
+  transform: translateY(0px);
 }
 .fullBox .bottomMainBox .cardBox .imgTypeCard p:nth-of-type(1) {
   width: 5.2631578947vw;
@@ -42,6 +49,7 @@
   background-position: center;
   background-size: 115%;
   background-repeat: no-repeat;
+  transition: 0.3s;
 }
 .fullBox .bottomMainBox .cardBox .imgTypeCard:nth-child(2) p:nth-of-type(1) {
   background-image: url("/assets/images/generate/pixel.png");
@@ -70,11 +78,25 @@
   width: 100%;
 }
 .fullBox .bottomMainBox .completeBtnBox button {
-  background-color: #2288ff;
+  background-color: rgb(192, 190, 190);
   font-size: 1.25rem;
   font-weight: bold;
   color: white;
   height: 38px;
   width: 100px;
   border-radius: 50px;
+  transition: 0.2s;
+}
+.fullBox .bottomMainBox .completeBtnBox button:hover {
+  transform: translateY(-2px);
+}
+.fullBox .bottomMainBox .completeBtnBox button:active {
+  transform: translateY(0px);
+}
+.fullBox .bottomMainBox .completeBtnBox .activeBtn {
+  background-color: #2288ff;
+}
+
+.currentSelect {
+  outline: 4px solid #2288ff;
 }/*# sourceMappingURL=type.module.css.map */

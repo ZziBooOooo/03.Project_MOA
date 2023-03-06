@@ -17,9 +17,18 @@
   padding: 3%;
   padding-bottom: 0;
 
+  .word2Box {
+    min-width: 380px;
+  }
+  .word3Box {
+    min-width: 530px;
+  }
+  .word4Box {
+    min-width: 640px;
+  }
   .sentenceBox {
     // width: 70%;
-    max-width: 580px;
+    max-width: 680px;
     // min-width: 500px;
     height: 60px;
     padding: 0 20px;
@@ -29,6 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     .sentenceWrap {
       // width: 90%;
       display: flex;
@@ -42,6 +52,7 @@
       font-weight: bold;
       color: white;
       margin: 0;
+      text-align: end;
     }
 
     svg {
@@ -64,7 +75,7 @@
     .fourthWord {
       display: flex;
       align-items: center;
-      margin: 0 10px;
+      margin: 0px 10px;
 
       .dropdown {
         position: relative;
@@ -120,12 +131,12 @@
     .secondWord,
     .thirdWord {
       & p:nth-of-type(1) {
-        min-width: 25px;
+        min-width: 60px;
       }
     }
 
     .fourthWord {
-      min-width: 70px;
+      min-width: 60px;
     }
   }
 
@@ -141,29 +152,39 @@
     position: relative;
     .refreshBtnBox {
       position: absolute;
-      top: -12.5%;
+      top: -16%;
       right: 1%;
       display: flex;
       align-items: center;
       cursor: pointer;
 
-      & p:nth-of-type(2) {
-        width: 24px;
-        height: 24px;
-        background-color: $mainColor;
-        border-radius: 50%;
+      width: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        background-color: rgb(211, 211, 211);
+        color: white;
+        font-weight: bold;
+        padding: 3px 8px;
+        border-radius: 6px;
+        transition: 0.2s;
+
+        &:hover {
+          background-color: $mainColor;
+          transform: translateY(-1px);
+        }
+
+        &:active {
+          transform: translateY(1px);
+        }
       }
 
-      p {
-        margin: 0;
-        margin-left: 5px;
-        font-weight: bold;
-        color: $softGRAYFtColor;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        img {
-          transform: translate(0px, -1px);
+      .disableBtn {
+        opacity: 0.5;
+        &:hover {
+          background-color: rgb(211, 211, 211);
         }
       }
     }
@@ -182,6 +203,16 @@
       justify-content: center;
       box-shadow: 1px 2px 4px rgb(231, 231, 231);
       cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        transform: translateY(-2px);
+        background-color: $mainColor;
+        color: white;
+      }
+
+      &:active {
+        transform: translateY(0px);
+      }
 
       p {
         margin: 0;
@@ -198,7 +229,7 @@
     width: 100%;
 
     button {
-      background-color: $mainColor;
+      background-color: rgb(192, 190, 190);
       font-size: 1.25rem;
       font-weight: bold;
       color: white;
@@ -206,6 +237,20 @@
       width: 100px;
       border-radius: 50px;
       margin-right: 1%;
+      cursor: pointer;
+      z-index: 100;
+      transition: 0.2s;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(0px);
+      }
+    }
+    .activeBtn {
+      background-color: $mainColor;
     }
   }
 }

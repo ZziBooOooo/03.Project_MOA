@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import style from "@/styles/generate/generate.module.scss";
 import t_style from "@/styles/generate/type.module.scss";
 import Image from "next/image";
 import GenerateTop from "@/components/generate/GenerateTop";
+
 import { useRouter } from "next/router";
+import { userSentenceContext } from "@/contexts/generate/userSentenceContext";
 
 const ImgType = () => {
   const typeArr = [
@@ -14,10 +16,27 @@ const ImgType = () => {
     "디지털 아트",
     "수채화",
   ];
+
+  const [selectType, setSelectType] = useState(null);
+  const [activeBtnClass, setActiveBtnClass] = useState(false);
+
+  const { userSentence, setUserSentence } = useContext(userSentenceContext);
+
   const router = useRouter();
+
   const goImgResultPage = () => {
-    router.push("/generate/imgStyle", undefined, { scroll: false });
+    if (selectType) {
+      router.push("/generate/imgStyle", undefined, { scroll: false });
+    }
   };
+
+  function saveTypeToContext() {
+    setUserSentence(`${userSentence},${selectType}`);
+  }
+
+  function selectTypeStyle() {
+    setActiveBtnClass(true);
+  }
   return (
     <div className={`${style.fullBox} ${t_style.fullBox}`}>
       <GenerateTop />
@@ -34,10 +53,24 @@ const ImgType = () => {
             </p>
             <p className={style.mainText}>이미지 타입을 선택해 주세요</p>
           </div>
+          {/* 
+          선택한 타입을 state에 저장시킨다.
+          */}
           <div className={t_style.cardBox}>
             {typeArr.map((type, key) => {
               return (
-                <div className={t_style.imgTypeCard}>
+                <div
+                  className={
+                    selectType == type
+                      ? `${t_style.imgTypeCard} ${t_style.currentSelect}`
+                      : `${t_style.imgTypeCard}`
+                  }
+                  key={key}
+                  onClick={() => {
+                    setSelectType(type);
+                    selectTypeStyle();
+                  }}
+                >
                   <p></p>
                   <p>{type}</p>
                   <p></p>
@@ -48,7 +81,15 @@ const ImgType = () => {
           </div>
           <div className={t_style.completeBtnBox}>
             <p></p>
-            <button onClick={goImgResultPage}>다음</button>
+            <button
+              className={activeBtnClass ? `${t_style.activeBtn}` : ""}
+              onClick={() => {
+                goImgResultPage();
+                saveTypeToContext();
+              }}
+            >
+              다음
+            </button>
           </div>
         </div>
       </div>
