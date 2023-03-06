@@ -7,20 +7,27 @@ export default async function handler(req, res) {
 
   if (req.method === "POST") {
     try {
-      console.log(req.body);
+      const moaData = req.body;
+      console.log(moaData);
 
       const currentUser = await userCollection.findOne({
         _id: req.body.currentUserId,
       });
-      console.log(currentUser);
+      // console.log(currentUser);
 
-      // 유저의 imgUrl객체 안에 배열의 형태로
-      // title, type, style, url을 저장시켜야 한다.
-
-      // const updateUserUrl = await userCollection.updateOne(
-      //   { _id: req.body.currentUserId },
-      //   { $push: { imgUrl: req.body.url } }
-      // );
+      const updateUserUrl = await userCollection.updateOne(
+        { _id: req.body.currentUserId },
+        {
+          $push: {
+            imgUrl: {
+              title: moaData.title,
+              type: moaData.type,
+              style: moaData.style,
+              url: moaData.url,
+            },
+          },
+        }
+      );
 
       res.status(200).json({ status: "success" });
     } catch (error) {

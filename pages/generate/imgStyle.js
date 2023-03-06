@@ -6,12 +6,14 @@ import GenerateTop from "@/components/generate/GenerateTop";
 import { useRouter } from "next/router";
 import SwiperCard from "@/components/generate/SwiperCard";
 import { userSentenceContext } from "@/contexts/generate/userSentenceContext";
+import { selectStyleContext } from "@/contexts/generate/selectStyleContext";
 
 const ImgStyle = () => {
   const [selectStyle, setSelectStyle] = useState("");
   const [activeBtnClass, setActiveBtnClass] = useState(false);
 
   const { userSentence, setUserSentence } = useContext(userSentenceContext);
+  const { setImgStyle } = useContext(selectStyleContext);
 
   const router = useRouter();
 
@@ -22,6 +24,7 @@ const ImgStyle = () => {
   };
 
   function saveStyleToContext() {
+    setImgStyle(selectStyle);
     setUserSentence(`${selectStyle},${userSentence}`);
   }
 

@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
   const { Configuration, OpenAIApi } = require("openai");
   const configuration = new Configuration({
-    apiKey: req.query.t,
+    apiKey: process.env.OPENAI_APIKEY,
   });
   const openai = new OpenAIApi(configuration);
   const response = await openai.createImage({

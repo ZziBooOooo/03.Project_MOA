@@ -2,13 +2,14 @@
   background-color: white;
 }
 .fullBox .bottomBox {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #3b3d3f;
   flex-direction: column;
+  position: relative;
 }
 .fullBox .loadBox {
   display: flex;
@@ -42,20 +43,8 @@
   bottom: 10px;
   right: -10px;
   box-sizing: border-box;
-  -webkit-animation: animloader 2.5s linear infinite;
-          animation: animloader 2.5s linear infinite;
+  animation: animloader 2.5s linear infinite;
   border-radius: 2px;
-}
-@-webkit-keyframes animloader {
-  0% {
-    box-shadow: 10px 0 rgba(255, 255, 255, 0), 20px 0 rgba(255, 255, 255, 0);
-  }
-  50% {
-    box-shadow: 10px 0 #727375, 20px 0 rgba(255, 255, 255, 0);
-  }
-  100% {
-    box-shadow: 10px 0 #727375, 20px 0 #727375;
-  }
 }
 @keyframes animloader {
   0% {
@@ -72,8 +61,7 @@
   width: 64px;
   height: 48px;
   position: relative;
-  -webkit-animation: split 1s ease-in infinite alternate;
-          animation: split 1s ease-in infinite alternate;
+  animation: split 1s ease-in infinite alternate;
 }
 .fullBox .loadBox .loader::before,
 .fullBox .loadBox .loader::after {
@@ -96,14 +84,6 @@
   background: #abd9ff;
   transform: translateX(10px);
 }
-@-webkit-keyframes split {
-  0%, 25% {
-    width: 64px;
-  }
-  100% {
-    width: 148px;
-  }
-}
 @keyframes split {
   0%, 25% {
     width: 64px;
@@ -115,16 +95,64 @@
 .fullBox .imgBox {
   width: 70vw;
   max-width: 1200px;
-  background-color: rgba(171, 217, 255, 0.1019607843);
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 0;
 }
-.fullBox .imgBox img {
+.fullBox .imgBox .card {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
+  position: relative;
+  z-index: 0;
+}
+.fullBox .imgBox .card img {
   cursor: pointer;
   border-radius: 16px;
   transition: 0.2s;
   box-shadow: 0px 3px 5px rgb(219, 219, 219);
+  width: 100%;
+  position: relative;
+  z-index: 0;
 }
-.fullBox .imgBox img:hover {
+.fullBox .imgBox .card img:hover {
   transform: translateY(-5px);
+}
+
+.modalContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 20;
+}
+
+.modalBox {
+  background-color: white;
+  width: 400px;
+  height: 230px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgb(66, 64, 64);
+}
+
+.darkBg {
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.1s;
+}
+
+.bgOn {
+  background-color: rgba(179, 77, 77, 0.644);
+  z-index: 10000;
 }/*# sourceMappingURL=results.module.css.map */

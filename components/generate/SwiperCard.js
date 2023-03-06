@@ -31,6 +31,7 @@ const SwiperCard = ({ selectStyle, setSelectStyle, setActiveBtnClass }) => {
       style={{ width: "100%", height: "110%" }}
       spaceBetween={10}
       slidesPerView={3}
+      loop={true}
       navigation
       pagination={{
         clickable: true,

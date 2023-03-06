@@ -6,6 +6,7 @@ import GenerateTop from "@/components/generate/GenerateTop";
 
 import { useRouter } from "next/router";
 import { userSentenceContext } from "@/contexts/generate/userSentenceContext";
+import { selectTypeContext } from "@/contexts/generate/selectTypeContext";
 
 const ImgType = () => {
   const typeArr = [
@@ -21,6 +22,7 @@ const ImgType = () => {
   const [activeBtnClass, setActiveBtnClass] = useState(false);
 
   const { userSentence, setUserSentence } = useContext(userSentenceContext);
+  const { setImgType } = useContext(selectTypeContext);
 
   const router = useRouter();
 
@@ -31,6 +33,7 @@ const ImgType = () => {
   };
 
   function saveTypeToContext() {
+    setImgType(selectType);
     setUserSentence(`${userSentence},${selectType}`);
   }
 
