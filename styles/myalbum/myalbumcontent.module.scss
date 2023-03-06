@@ -1,0 +1,33 @@
+@import "../../styles/variable";
+
+.myalbumContent {
+  margin-top: 80px;
+  margin-bottom: 120px;
+  width: 100%;
+  font-family: "Pretendard-Regular";
+
+  .myalbum_box {
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8%;
+    row-gap: 0.5%;
+  }
+  .myalbum_img {
+    width: 17%;
+    height: 235px;
+    border-radius: 16px;
+
+    > img {
+      width: 100%;
+      height: auto;
+      display: block;
+      box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+    }
+  }
+}

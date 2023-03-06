@@ -11,7 +11,7 @@
 }
 
 .headerBox {
-  z-index:9999;
+  z-index: 9999;
   width: 70vw;
   display: flex;
   justify-content: space-between;
@@ -52,7 +52,6 @@
       position: relative;
     }
   }
-
 }
 
 .footer {
@@ -61,7 +60,7 @@
   width: 100vw;
   height: 360px;
   // background-color: $bascitFtcolor;
-  background-color: #2D3747;
+  background-color: #2d3747;
   color: #fff;
   padding: 4% 15vw;
 

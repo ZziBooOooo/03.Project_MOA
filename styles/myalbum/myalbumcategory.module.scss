@@ -1,0 +1,30 @@
+@import "../../styles/variable";
+
+.myalbumCategory {
+  width: 100%;
+  background-color: #f7f7f7;
+  height: 120px;
+  font-family: "Pretendard-Regular";
+
+  .Category_box {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    > li {
+      cursor: pointer;
+      width: 12%;
+      height: 50px;
+      background: #fff;
+      box-shadow: 0px 5px 4px rgba(51, 51, 51, 0.03);
+      border-radius: 20px;
+      text-align: center;
+      line-height: 50px;
+      color: #8e8b8b;
+      font-weight: bold;
+    }
+  }
+}
