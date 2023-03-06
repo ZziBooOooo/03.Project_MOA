@@ -36,9 +36,9 @@ const Header = () => {
   };
 
   const headerStyle = {
-    backgroundColor: scrollPosition > 100? "rgba(255, 255, 255, 0.8)" : "transparent",
+    backgroundColor: scrollPosition > 100? "rgba(255, 255, 255, 1)" : "transparent",
     borderBottom: scrollPosition > 100? "1px solid #E2E8EE": "transparent",
-    backdropFilter: scrollPosition > 100? "blur(30px)": "blur(0px)"
+    // backdropFilter: scrollPosition > 100? "blur(30px)": "blur(0px)"
   };
   
   return (

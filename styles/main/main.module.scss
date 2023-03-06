@@ -122,9 +122,11 @@
   width: 100vw;
   height: 100vh;
   .guideBox {
+    max-width: 1200px;
     width: 70vw;
     margin: 0 auto;
     .section_title {
+      font-weight: bold;
       margin-top: 24vh;
       font-size: 2.25rem;
       color: #4c9eff;
@@ -134,6 +136,7 @@
       margin-top: 2.5vh;
       justify-content: space-between;
       h2{
+        line-height: 120%;
         font-size: 2.9rem;
         font-weight: bold;
       }
@@ -141,31 +144,181 @@
         flex-direction: column;
       }
       .coinGif{
-        // opacity: 0;
+        opacity: 0;
         position: absolute;
         transform: translate(50%, -60%);
         z-index: -1;
-  
+        transition: opacity 1s ease-in-out;
+      }
+      
+      .coinGif img[data-loaded="true"] {
+        opacity: 0;
       }
       .guide_detail{
-        padding-top: 50px;
+        padding-top: 7%;
         font-size: 1.75rem;
         font-weight: bold;
       }
     }
     
     .guide_content{
-      .try_guide{
-        Image{
+      max-width: 1200px;
+      width: 70vw;
+      height: 38vh;
+      background-color: #F5F5F5;
+      border-radius: 20px;
+      margin: 0 auto;
+      margin-top: 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 6.4%;
+      padding-right: 6.4%;
+
+      .guide_container{
+        width: 30%;
+        height: 68%;
+        background-color: white;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2%;
+        .guide_icon{
+          margin-bottom: 5%;
+        }
+        .mission_title{
+          font-size: 1.65rem;
+          font-weight: bold;
+          margin-bottom: 5%;
+        }
+        .mission_detail{
+          font-size: 1.3rem;
+          // font-weight: bold;
+          margin-bottom: 5%;
+
         }
       }
-      .random_guide{}
-      .save_guide{}
 
-      .mission_title{}
-      .mission_detail{}
     }
     
 
   }
 }
+
+.section03 {
+  width: 100vw;
+  height: 90vh;
+  .guideBox {
+    max-width: 1200px;
+    width: 70vw;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    .contentBox{
+      width: 50%;
+      .section_title {
+        font-weight: bold;
+        margin-top: 15vh;
+        font-size: 2.25rem;
+        color: #4c9eff;
+      }
+      .titleBox{
+        margin-top: 2.5vh;
+        h2{
+          line-height: 120%;
+          font-size: 2.9rem;
+          font-weight: bold;
+        }
+  
+        .guide_detail{
+          padding-top: 21vh;
+          font-size: 1.75rem;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .guide_content{
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      .guide_container{
+        width: 338px;
+        height: 332px;
+        background-color: #F5F5F5;
+        border-radius: 20px;
+        display: flex;
+        position: relative;
+        right: 0px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.section04 {
+  width: 100vw;
+  height: 120vh;
+  background-color: #F5F5F5;
+  .guideBox {
+    max-width: 1200px;
+    width: 70vw;
+    height: 100%;
+    margin: 0 auto;
+    .contentBox{
+      width: 50%;
+      .section_title {
+        font-weight: bold;
+        margin-top: 20vh;
+        font-size: 2.25rem;
+        color: #4c9eff;
+      }
+      .titleBox{
+        margin-top: 2.5vh;
+        h2{
+          line-height: 120%;
+          font-size: 2.9rem;
+          font-weight: bold;
+        }
+  
+        .guide_detail{
+          padding-top: 21vh;
+          font-size: 1.75rem;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .guide_content{
+      max-width: 1200px;
+      width: 70vw;
+      background-color: pink;
+      margin-top: 13vh;
+      .detail_container{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 13vh;
+        .content{
+          display: flex;
+          width: 50%;
+          .iconBox{
+            width: 13vw;
+            height: 20vh;
+            background-color: #ffff;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}
+

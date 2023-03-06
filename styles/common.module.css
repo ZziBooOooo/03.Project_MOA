@@ -18,8 +18,8 @@
   display: flex;
   justify-content: space-between;
   padding: 1% 0%;
-  max-width: 70vw;
-  width: 100%;
+  max-width: 1200px;
+  width: 70vw;
   height: 100%;
   margin: 0 auto;
 }
@@ -44,7 +44,7 @@
 }
 .headerBox .headerContainer .header_rightBox {
   display: flex;
-  width: 50vw;
+  width: 30vw;
   justify-content: flex-end;
   align-items: center;
   font-weight: bold;
