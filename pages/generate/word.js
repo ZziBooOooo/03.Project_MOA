@@ -279,6 +279,7 @@ const Word = () => {
                         <p>를</p>
                         <p>와</p>
                         <p>과</p>
+                        <p>에서</p>
                       </div>
                     </div>
                   </div>

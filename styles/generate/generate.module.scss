@@ -94,8 +94,9 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 1px 2px 5px rgb(224, 224, 224);
-
+      // box-shadow: 1px 2px 5px rgb(224, 224, 224);
+      //   0 12px 8px rgba(161, 161, 161, 0.3);
+      box-shadow: $grayBGshadow;
       .b_textBox {
         display: flex;
         align-items: center;
@@ -132,7 +133,7 @@
           // height: 0;
           // padding: 3% 3% 25% 3%;
           border-radius: 16px;
-          box-shadow: 1px 2px 4px rgb(214, 214, 214);
+          box-shadow: $grayBGshadow;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
@@ -212,7 +213,7 @@
             color: white;
             font-size: 1.3rem;
             font-weight: bold;
-            box-shadow: 1px 2px 4px rgb(214, 214, 214);
+            box-shadow: $grayBGshadow;
             cursor: pointer;
             z-index: 100;
           }

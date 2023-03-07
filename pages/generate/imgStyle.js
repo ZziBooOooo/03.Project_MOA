@@ -28,10 +28,6 @@ const ImgStyle = () => {
     setUserSentence(`${selectStyle},${userSentence}`);
   }
 
-  function selectStyleStyle() {
-    setActiveBtnClass(true);
-  }
-
   return (
     <div className={`${style.fullBox} ${s_style.fullBox}`}>
       <GenerateTop />

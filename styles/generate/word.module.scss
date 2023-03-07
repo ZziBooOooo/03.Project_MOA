@@ -33,7 +33,7 @@
     height: 60px;
     padding: 0 20px;
     background-color: $mainColor;
-    box-shadow: 1px 2px 4px rgb(197, 197, 197);
+    box-shadow: $grayBGshadow;
     border-radius: 12px;
     display: flex;
     justify-content: center;
@@ -201,7 +201,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 1px 2px 4px rgb(231, 231, 231);
+      box-shadow: $grayBGshadow;
       cursor: pointer;
       transition: 0.2s;
       &:hover {
