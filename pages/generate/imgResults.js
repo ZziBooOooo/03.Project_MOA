@@ -14,7 +14,7 @@ const ImgResults = () => {
   const currentUserId = 1;
   const [prompt, setPrompt] = useState(null);
   const [enPrompt, setEnPrompt] = useState(null);
-  const [number, setNumber] = useState(1);
+  const [number, setNumber] = useState(3);
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -110,7 +110,7 @@ const ImgResults = () => {
     }
   }, [prompt]);
 
-  function openModal() {
+  function openModal(url) {
     setShowModal(true);
     const bottomBoxTop = bottomBoxRef.current.offsetTop;
     window.scrollTo({ left: 0, top: bottomBoxTop, behavior: "smooth" });
@@ -118,6 +118,8 @@ const ImgResults = () => {
     setTimeout(() => {
       setShowModal(false);
     }, 2000);
+
+    saveImage(url);
   }
 
   function closeModal() {
@@ -160,14 +162,11 @@ const ImgResults = () => {
             <div className={r_style.imgBox}>
               {results.map((result) => {
                 return (
-                  <div className={r_style.card} key={new Date()}>
+                  <div className={r_style.card} key={result.url}>
                     <img
                       src={result.url}
                       alt="ai-result-image"
-                      onClick={() => {
-                        saveImage(result.url);
-                        openModal();
-                      }}
+                      onClick={() => openModal(result.url)}
                     />
                   </div>
                 );
