@@ -23,7 +23,7 @@
       height: 620px;
       border-radius: 20px;
       background-color: #f7f7f7;
-      box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.06);
+      box-shadow: $grayBGshadow;
       position: relative;
 
       .buyComModal {
@@ -35,7 +35,7 @@
         .buyComModal_box {
           margin: 20% auto 0;
           background: #ffffff;
-          box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.18);
+          box-shadow: $grayBGshadow;
           border-radius: 12px;
           width: 420px;
           height: 180px;
@@ -89,7 +89,7 @@
         .buyNotModal_box {
           margin: 20% auto 0;
           background: #ffffff;
-          box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.18);
+          box-shadow: $grayBGshadow;
           border-radius: 12px;
           width: 420px;
           height: 180px;
@@ -213,7 +213,7 @@
             text-align: center;
             width: 22.3%;
             background: #ffffff;
-            box-shadow: 1px 3px 5px 1px rgba(0, 0, 0, 0.05);
+            box-shadow: $grayBGshadow;
             border-radius: 5px;
             cursor: pointer;
           }
@@ -225,7 +225,7 @@
             width: 22.3%;
             background: #ffffff;
             border: solid 2px #3f8efc;
-            box-shadow: 1px 3px 5px 1px rgba(0, 0, 0, 0.05);
+            box-shadow: $grayBGshadow;
             border-radius: 5px;
             position: relative;
             &::before {
@@ -245,7 +245,7 @@
           width: 34%;
           height: 270px;
           background-color: #ffffff;
-          box-shadow: 1px 3px 5px 1px rgba(0, 0, 0, 0.11);
+          box-shadow: $grayBGshadow;
           border-radius: 20px;
           .totalCoin {
             margin: 30px auto 0;
