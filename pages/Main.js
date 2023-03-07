@@ -3,6 +3,7 @@ import style from  "@/styles/main/main.module.css";
 import CoinImage from  "@/components/main/CoinImage";
 import Image from  "next/image";
 import { useRouter } from  "next/router";
+import Slider from '@/components/main/Slider'
 
 const Main = () => {
   const router = useRouter();
@@ -101,13 +102,14 @@ const Main = () => {
             </div>
             <div className={style.guide_content}>
                 <div className={style.guide_container}>
-                <Image src="/assets/images/main/slot.png"
+                {/* <Image src="/assets/images/main/slot.png"
                   alt='slot'
                   width={55}
                   height={55}
                   className={style.guide_icon}/>
-                  <p className={style.mission_title}>랜덤 참여</p>
+                  <p className={style.mission_title}>랜덤 참여</p> */}
                 </div>
+                <Slider />
             </div>
         </div>
       </section>

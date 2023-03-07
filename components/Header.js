@@ -31,8 +31,13 @@ const Header = () => {
   ];
 
   const handlePageClick = (index) => {
-    setSelectedPage(index);
-    router.push(pages[index].path);
+    if( index === 0) {
+      setSelectedPage(0);
+      router.push('/');
+    }else{
+      setSelectedPage(index);
+      router.push(pages[index].path);
+    }
   };
 
   const headerStyle = {
@@ -58,7 +63,7 @@ const Header = () => {
           {pages.map((page, index)=>(
             <p
               key={index}
-              className={selectedPage === index ? style.selectedPage : undefined}
+              className={selectedPage === index ? style.selectedPage : undefined }
               onClick={() => handlePageClick(index)}
             >
             {page.title}
