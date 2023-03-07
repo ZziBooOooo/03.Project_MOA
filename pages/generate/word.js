@@ -254,6 +254,8 @@ const Word = () => {
                       <p>는</p>
                       <p>이</p>
                       <p>가</p>
+                      <p>와</p>
+                      <p>과</p>
                     </div>
                   </div>
                 </div>

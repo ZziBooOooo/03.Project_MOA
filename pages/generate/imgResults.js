@@ -55,8 +55,16 @@ const ImgResults = () => {
       setLoading(true);
       const translatedText = await translateKoreanToEnglish(prompt);
       console.log(translatedText);
+      let fullUserSentenceKR = prompt;
+      const regex = /(?<=^[^,]+,)[^,]+(?=,[^,]+$)/g;
+      const UserSentenceKR = fullUserSentenceKR.match(regex);
       axios
-        .post(`/api/generate/images?&p=${translatedText}&n=${number}`)
+        .post(`/api/generate/images?&p=${translatedText}&n=${number}`, {
+          currentUserId: currentUserId,
+          title: UserSentenceKR[0],
+          type: imgType,
+          style: imgStyle,
+        })
         .then(async (res) => {
           setResults(res.data.result);
           setLoading(false);
@@ -93,14 +101,14 @@ const ImgResults = () => {
   }
 
   // propmt는 번역, 이미지 생성시에 사용됨
-  // useEffect(() => {
-  //   console.log(results);
-  //   if (prompt) {
-  //     generateImages();
-  //   } else {
-  //     setPrompt(userSentence);
-  //   }
-  // }, [prompt]);
+  useEffect(() => {
+    console.log(results);
+    if (prompt) {
+      generateImages();
+    } else {
+      setPrompt(userSentence);
+    }
+  }, [prompt]);
 
   function openModal() {
     setShowModal(true);
