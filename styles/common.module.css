@@ -35,16 +35,9 @@
   font-size: 1.3rem;
   cursor: pointer;
 }
-.headerBox .headerContainer .header_leftBox p:hover ::after {
-  content: "";
-  position: absolute;
-  width: 147px;
-  height: 43px;
-  background-color: #bdb5b5;
-}
 .headerBox .headerContainer .header_rightBox {
   display: flex;
-  width: 30vw;
+  width: 50%;
   justify-content: flex-end;
   align-items: center;
   font-weight: bold;
@@ -66,24 +59,29 @@
   background-color: pink;
 }
 
-.footer {
+.footerBox {
   bottom: 0;
   width: 100vw;
   height: 360px;
   background-color: #2D3747;
   color: #fff;
-  padding: 4% 15vw;
 }
-.footer .footer_title {
+.footerBox .footerContainer {
+  max-width: 1200px;
+  width: 70vw;
+  margin: 0 auto;
+  padding-top: 6vh;
+}
+.footerBox .footerContainer .footer_title {
   font-weight: bold;
   font-size: 1.1rem;
 }
-.footer .footer_detail {
+.footerBox .footerContainer .footer_detail {
   margin-top: 2%;
 }
-.footer .footer_detail p {
+.footerBox .footerContainer .footer_detail p {
   color: #bdb5b5;
 }
-.footer .footer_detail p a {
+.footerBox .footerContainer .footer_detail p a {
   text-decoration: underline;
 }/*# sourceMappingURL=common.module.css.map */

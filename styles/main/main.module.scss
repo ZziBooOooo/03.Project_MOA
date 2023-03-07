@@ -164,7 +164,7 @@
     .guide_content{
       max-width: 1200px;
       width: 70vw;
-      height: 38vh;
+      height: 44vh;
       background-color: #F5F5F5;
       border-radius: 20px;
       margin: 0 auto;
@@ -174,16 +174,18 @@
       align-items: center;
       padding-left: 6.4%;
       padding-right: 6.4%;
+      box-shadow: $grayBGshadow;
 
       .guide_container{
         width: 30%;
-        height: 68%;
+        height: 60%;
         background-color: white;
         border-radius: 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 2%;
+        padding: 4%;
+        box-shadow: $grayBGshadow;
         .guide_icon{
           margin-bottom: 5%;
         }
@@ -208,7 +210,7 @@
 
 .section03 {
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   .guideBox {
     max-width: 1200px;
     width: 70vw;
@@ -220,7 +222,7 @@
       width: 50%;
       .section_title {
         font-weight: bold;
-        margin-top: 15vh;
+        margin-top: 20vh;
         font-size: 2.25rem;
         color: #4c9eff;
       }
@@ -252,10 +254,11 @@
         border-radius: 20px;
         display: flex;
         position: relative;
-        right: 0px;
+        left: 20%;
         justify-content: center;
         align-items: center;
         margin: 0 auto;
+        box-shadow: $grayBGshadow;
       }
     }
   }
@@ -263,7 +266,7 @@
 
 .section04 {
   width: 100vw;
-  height: 120vh;
+  height: 128vh;
   background-color: #F5F5F5;
   .guideBox {
     max-width: 1200px;
@@ -297,7 +300,6 @@
     .guide_content{
       max-width: 1200px;
       width: 70vw;
-      background-color: pink;
       margin-top: 13vh;
       .detail_container{
         display: flex;
@@ -315,10 +317,103 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            // box-shadow: 2px 5px 40px 0 rgb(0 0 0 / 8%);
+            box-shadow: $grayBGshadow;
+          }
+          .textBox{
+            margin-left: 2.5vw;
+            padding: 5%;
+            .icon_title{
+              font-size: 1.75rem;
+              font-weight: bold;
+              margin-bottom: 3vh;
+            }
+            p:nth-child(2){
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+      .detail_container02{
+        .content{
+          .iconBox{
+            order: 1;
+          }
+          div:nth-child(2){
+            margin-left: 0;
+            margin-right: 2.5vw;
+            padding: 5% 5% 5% 0%; 
+          }
+
+        }
+        
+
+      }
+    }
+  }
+}
+
+.section05 {
+  width: 100vw;
+  height: 150vh;
+  .guideBox{
+    max-width: 1200px;
+    width: 70vw;
+    height: 100%;
+    margin: 0 auto;
+    .contentBox{
+      .section_title{
+        font-weight: bold;
+        margin-top: 20vh;
+        font-size: 2.25rem;
+        color: #4c9eff;
+      }
+      .titleBox{
+        margin-top: 2.5vh;
+        .title_detail{
+          line-height: 120%;
+          font-size: 2.9rem;
+          font-weight: bold;
+        }
+      }
+    }
+    .guide_content{
+      max-width: 1200px;
+      min-height: 728px;
+      width: 70vw;
+      height: 77vh;
+      margin-top: 5%;      
+      background-color: #F5F5F5;
+      border-radius: 20px;
+      // box-shadow: 1px 2px 5px rgb(224 224 224);
+      box-shadow: $grayBGshadow;
+      .albumBox{
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        .album_content{
+          width: 280px; //23%;
+          height: 290px; //40%;
+          background-color: #ffff;
+          border-radius: 10px;
+          margin: 4% 3% 0% 3%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding-bottom: 2%;
+          // box-shadow: 1px 2px 4px rgb(214 214 214);
+          box-shadow: $grayBGshadow;
+          p{
+            margin-top: 8%;
+            font-weight: bold;
           }
         }
       }
     }
   }
+
 }
 

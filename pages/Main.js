@@ -1,8 +1,8 @@
 import React from "react";
-import style from "@/styles/main/main.module.css";
-import CoinImage from "@/components/main/CoinImage";
-import Image from "next/image";
-import { useRouter } from "next/router";
+import style from  "@/styles/main/main.module.css";
+import CoinImage from  "@/components/main/CoinImage";
+import Image from  "next/image";
+import { useRouter } from  "next/router";
 
 const Main = () => {
   const router = useRouter();
@@ -99,8 +99,6 @@ const Main = () => {
                   </p>
                 </div>
             </div>
-          
-
             <div className={style.guide_content}>
                 <div className={style.guide_container}>
                 <Image src="/assets/images/main/slot.png"
@@ -115,7 +113,7 @@ const Main = () => {
       </section>
 
       <section className={style.section04}>
-      <div className={style.guideBox}>
+        <div className={style.guideBox}>
             <div className={style.contentBox}>
                 <p className={style.section_title}>IMAGE</p>
                 <div className={style.titleBox}>
@@ -125,16 +123,15 @@ const Main = () => {
                   </h2>
                 </div>
             </div>
-          
 
             <div className={style.guide_content}>
-                <div className={[style.detail_container01, style.detail_container].join(' ')}>
+                <div className={`${style.detail_container01}, ${style.detail_container}`}>
                   <div className={style.content}>
                     <div className={style.iconBox}>
                       <Image src="/assets/images/main/thumbs-up 4.png"
                         alt='thumbs'
-                        width={95}
-                        height={95}
+                        width={75}
+                        height={75}
                         className={style.guide_icon}/>
                     </div>
                     <div className={style.textBox}>
@@ -147,8 +144,8 @@ const Main = () => {
                     <div className={style.iconBox}>
                       <Image src="/assets/images/main/star (1) 4 (1).png"
                         alt='star'
-                        width={95}
-                        height={95}
+                        width={75}
+                        height={75}
                         className={style.guide_icon}/>
                     </div>
                     <div className={style.textBox}>
@@ -158,13 +155,13 @@ const Main = () => {
                   </div>
                 </div>
 
-                <div className={[style.detail_container02, style.detail_container].join(' ')}>
+                <div className={`${style.detail_container02} ${style.detail_container}`}>
                   <div className={style.content}>
                       <div className={style.iconBox}>
                         <Image src="/assets/images/main/pxArt.png"
                           alt='star'
-                          width={95}
-                          height={95}
+                          width={75}
+                          height={75}
                           className={style.guide_icon}/>
                       </div>
                       <div className={style.textBox}>
@@ -176,8 +173,8 @@ const Main = () => {
                       <div className={style.iconBox}>
                         <Image src="/assets/images/main/down.png"
                           alt='star'
-                          width={95}
-                          height={95}
+                          width={75}
+                          height={75}
                           className={style.guide_icon}/>
                       </div>
                       <div className={style.textBox}>
@@ -190,6 +187,90 @@ const Main = () => {
         </div>
       </section>
 
+      <section className={style.section05}>
+        <div className={style.guideBox}>
+            <div className={style.contentBox}>
+                <p className={style.section_title}>ALBUM</p>
+                <div className={style.titleBox}>
+                  <h2 className={style.title_detail}>
+                    나만의 이미지들을<br></br>
+                    모아보자
+                  </h2>
+                </div>
+            </div>
+
+            <div className={style.guide_content}>
+              <ul className={style.albumBox}>
+                <li className={style.album_content}>
+                  <Image src="/assets/images/main/img01.png"
+                          alt='img01'
+                          width={239}
+                          height={139}
+                          className={style.picture} />
+                  <p> A computer from <br></br>
+                      the 90s in the style <br></br>
+                      of vaporwave
+                  </p>
+                </li>
+                <li className={style.album_content}>
+                  <Image src="/assets/images/main/img02.png"
+                            alt='img02'
+                            width={239}
+                            height={139}
+                            className={style.picture} />
+                  <p> A computer from <br></br> 
+                      the 90s in the style <br></br>
+                      of vaporwave
+                  </p>
+                </li>
+                <li className={style.album_content}>
+                  <Image src="/assets/images/main/img03.png"
+                              alt='img03'
+                              width={239}
+                              height={139}
+                              className={style.picture} />
+                    <p> A computer from <br></br> 
+                        the 90s in the style <br></br>
+                        of vaporwave
+                    </p>
+                </li>
+                <li className={style.album_content}>
+                    <Image src="/assets/images/main/img04.png"
+                              alt='img04'
+                              width={239}
+                              height={139}
+                              className={style.picture} />
+                    <p> A computer from <br></br> 
+                        the 90s in the style <br></br>
+                        of vaporwave
+                    </p>
+                </li>
+                <li className={style.album_content}>
+                  <Image src="/assets/images/main/img05.png"
+                              alt='img05'
+                              width={239}
+                              height={139}
+                              className={style.picture} />
+                    <p> A computer from <br></br> 
+                        the 90s in the style <br></br>
+                        of vaporwave
+                    </p> 
+                </li>
+                <li className={style.album_content}>
+                  <Image src="/assets/images/main/img06.png"
+                              alt='img06'
+                              width={239}
+                              height={139}
+                              className={style.picture} />
+                    <p> A computer from <br></br> 
+                        the 90s in the style <br></br>
+                        of vaporwave
+                    </p>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </section>
     </>
   );
 };

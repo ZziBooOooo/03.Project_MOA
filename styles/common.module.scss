@@ -33,22 +33,13 @@
         display: flex;
         font-weight: bold;
         font-size: 1.3rem;
-        cursor: pointer;
-        &:hover {
-          ::after {
-            content: "";
-            position: absolute;
-            width: 147px;
-            height: 43px;
-            background-color: #bdb5b5;
-          }
-        }
+        cursor: pointer;   
       }
     }
   
     .header_rightBox {
       display: flex;
-      width: 30vw;
+      width: 50%;
       justify-content: flex-end;
       align-items: center;
       font-weight: bold;
@@ -73,28 +64,31 @@
 }
 
 
-.footer {
-  // position: absolute;
+
+.footerBox{
   bottom: 0;
   width: 100vw;
   height: 360px;
-  // background-color: $bascitFtcolor;
   background-color: #2D3747;
   color: #fff;
-  padding: 4% 15vw;
-
-  .footer_title {
-    font-weight: bold;
-    font-size: 1.1rem;
-  }
-
-  .footer_detail {
-    margin-top: 2%;
-    p {
-      color: #bdb5b5;
-      a {
-        text-decoration: underline;
+  .footerContainer{
+    max-width: 1200px;
+    width: 70vw;
+    margin: 0 auto;
+    padding-top: 6vh;
+      .footer_title {
+        font-weight: bold;
+        font-size: 1.1rem;
       }
-    }
+  
+      .footer_detail {
+        margin-top: 2%;
+        p {
+          color: #bdb5b5;
+          a {
+            text-decoration: underline;
+          }
+        }
+      }
   }
 }

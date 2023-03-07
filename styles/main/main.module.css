@@ -184,7 +184,7 @@
 .section02 .guideBox .guide_content {
   max-width: 1200px;
   width: 70vw;
-  height: 38vh;
+  height: 44vh;
   background-color: #F5F5F5;
   border-radius: 20px;
   margin: 0 auto;
@@ -194,16 +194,18 @@
   align-items: center;
   padding-left: 6.4%;
   padding-right: 6.4%;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05), 0 20px 40px rgba(145, 145, 145, 0.05);
 }
 .section02 .guideBox .guide_content .guide_container {
   width: 30%;
-  height: 68%;
+  height: 60%;
   background-color: white;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2%;
+  padding: 4%;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05), 0 20px 40px rgba(145, 145, 145, 0.05);
 }
 .section02 .guideBox .guide_content .guide_container .guide_icon {
   margin-bottom: 5%;
@@ -220,7 +222,7 @@
 
 .section03 {
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
 }
 .section03 .guideBox {
   max-width: 1200px;
@@ -235,7 +237,7 @@
 }
 .section03 .guideBox .contentBox .section_title {
   font-weight: bold;
-  margin-top: 15vh;
+  margin-top: 20vh;
   font-size: 2.25rem;
   color: #4c9eff;
 }
@@ -265,15 +267,16 @@
   border-radius: 20px;
   display: flex;
   position: relative;
-  right: 0px;
+  left: 20%;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05), 0 20px 40px rgba(145, 145, 145, 0.05);
 }
 
 .section04 {
   width: 100vw;
-  height: 120vh;
+  height: 128vh;
   background-color: #F5F5F5;
 }
 .section04 .guideBox {
@@ -307,7 +310,6 @@
 .section04 .guideBox .guide_content {
   max-width: 1200px;
   width: 70vw;
-  background-color: pink;
   margin-top: 13vh;
 }
 .section04 .guideBox .guide_content .detail_container {
@@ -328,4 +330,84 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05), 0 20px 40px rgba(145, 145, 145, 0.05);
+}
+.section04 .guideBox .guide_content .detail_container .content .textBox {
+  margin-left: 2.5vw;
+  padding: 5%;
+}
+.section04 .guideBox .guide_content .detail_container .content .textBox .icon_title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 3vh;
+}
+.section04 .guideBox .guide_content .detail_container .content .textBox p:nth-child(2) {
+  font-size: 1.2rem;
+}
+.section04 .guideBox .guide_content .detail_container02 .content .iconBox {
+  order: 1;
+}
+.section04 .guideBox .guide_content .detail_container02 .content div:nth-child(2) {
+  margin-left: 0;
+  margin-right: 2.5vw;
+  padding: 5% 5% 5% 0%;
+}
+
+.section05 {
+  width: 100vw;
+  height: 150vh;
+}
+.section05 .guideBox {
+  max-width: 1200px;
+  width: 70vw;
+  height: 100%;
+  margin: 0 auto;
+}
+.section05 .guideBox .contentBox .section_title {
+  font-weight: bold;
+  margin-top: 20vh;
+  font-size: 2.25rem;
+  color: #4c9eff;
+}
+.section05 .guideBox .contentBox .titleBox {
+  margin-top: 2.5vh;
+}
+.section05 .guideBox .contentBox .titleBox .title_detail {
+  line-height: 120%;
+  font-size: 2.9rem;
+  font-weight: bold;
+}
+.section05 .guideBox .guide_content {
+  max-width: 1200px;
+  min-height: 728px;
+  width: 70vw;
+  height: 77vh;
+  margin-top: 5%;
+  background-color: #F5F5F5;
+  border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05), 0 20px 40px rgba(145, 145, 145, 0.05);
+}
+.section05 .guideBox .guide_content .albumBox {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.section05 .guideBox .guide_content .albumBox .album_content {
+  width: 280px;
+  height: 290px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 4% 3% 0% 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2%;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05), 0 20px 40px rgba(145, 145, 145, 0.05);
+}
+.section05 .guideBox .guide_content .albumBox .album_content p {
+  margin-top: 8%;
+  font-weight: bold;
 }/*# sourceMappingURL=main.module.css.map */
