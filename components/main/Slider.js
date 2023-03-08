@@ -27,9 +27,9 @@ const settings = {
         settings.setPaused(true);
     },
     setPaused: () => {}, // default value
-  };
+};
   
-  const SliderComponent = () => {
+    const SliderComponent = () => {
     const [paused, setPaused] = useState(false);
 
     settings.setPaused = setPaused;
@@ -39,10 +39,10 @@ const settings = {
         <Slider {...settings}>
           <div className={`slider-item ${paused ? "paused" : ""}`}>
           <Image src="/assets/images/main/img01.png"
-                          alt='img01'
-                          width={239}
-                          height={139}
-                          className={style.picture} />
+                alt='img01'
+                width={239}
+                height={139}
+                className={style.picture} />
           </div>
           <div className={`slider-item ${paused ? "paused" : ""}`}>
             <img src="https://via.placeholder.com/600x300/00ff00/ffffff" alt="Slide 2" />

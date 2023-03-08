@@ -108,8 +108,8 @@ const Main = () => {
                   height={55}
                   className={style.guide_icon}/>
                   <p className={style.mission_title}>랜덤 참여</p> */}
+                  <Slider />
                 </div>
-                <Slider />
             </div>
         </div>
       </section>
