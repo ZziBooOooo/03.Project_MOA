@@ -1,9 +1,15 @@
 import { buyContext } from "@/contexts/buy/buyPageContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import style from "styles/buy/buy.module.scss";
 
 export default function Banner() {
   const { userData } = useContext(buyContext);
+  const [io, setio] = useState(false);
+
+  const time = setTimeout(() => {
+    setio(true);
+  }, "500");
+  console.log(io);
 
   return (
     <div className={style.banner_box}>
@@ -20,7 +26,10 @@ export default function Banner() {
           <img src="/assets/images/buy/banner_icons01.png" />
         </li>
         <li>
-          <img src="/assets/images/buy/banner_icons02.png" />
+          <img
+            src="/assets/images/buy/banner_icons02.png"
+            className={io ? style.te : style.imgs}
+          />
         </li>
         <li>
           <img src="/assets/images/buy/banner_icons03.png" />

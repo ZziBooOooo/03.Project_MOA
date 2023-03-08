@@ -66,12 +66,12 @@ export default function MyalbumCategory({ onChange, catePage }) {
         </li>
         <li
           style={
-            catePage === "스테인 글라스"
+            catePage === "스테인글라스"
               ? { background: "#2288FF", color: "#FFFFFF" }
               : {}
           }
           onClick={() => {
-            onChange("스테인 글라스");
+            onChange("스테인글라스");
           }}
         >
           스테인 글라스

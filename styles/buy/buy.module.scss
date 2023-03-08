@@ -57,9 +57,54 @@
     display: flex;
     > li:nth-child(1) {
       transform: translate(250px, -330px);
+      > img {
+        animation: tests ease 0.5s;
+        @keyframes tests {
+          0% {
+            transform: scale(0);
+          }
+          75% {
+            transform: scale(1);
+          }
+          90% {
+            transform: scale(0.8);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+      }
     }
     > li:nth-child(2) {
       transform: translate(400px, 110px);
+      > .imgs {
+        transform: scale(0);
+        opacity: 0;
+      }
+      .te {
+        animation: test ease 0.5s;
+
+        @keyframes test {
+          0% {
+            transform: scale(0);
+            opacity: 0;
+          }
+          25% {
+            transform: scale(0.3);
+            opacity: 0.3;
+          }
+          75% {
+            transform: scale(1);
+          }
+          90% {
+            transform: scale(0.8);
+          }
+          100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+      }
     }
     > li:nth-child(3) {
       transform: translate(1250px, -200px);
