@@ -84,7 +84,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05), 0 20px 40px rgba(145, 145, 145, 0.05);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
 }
 .fullBox .bottomBox .bottomMainBox .b_textBox {
   display: flex;
@@ -117,7 +117,7 @@
   height: 32vh;
   padding: 3% 4%;
   border-radius: 16px;
-  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05), 0 20px 40px rgba(145, 145, 145, 0.05);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -181,7 +181,7 @@
   color: white;
   font-size: 1.3rem;
   font-weight: bold;
-  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05), 0 20px 40px rgba(145, 145, 145, 0.05);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
   cursor: pointer;
   z-index: 100;
 }/*# sourceMappingURL=generate.module.css.map */

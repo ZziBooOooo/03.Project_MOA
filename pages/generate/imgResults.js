@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import SaveModal from "@/components/generate/SaveModal";
 
 const ImgResults = () => {
-  const currentUserId = 1;
+  const currentUserId = 2;
   const [prompt, setPrompt] = useState(null);
   const [enPrompt, setEnPrompt] = useState(null);
   const [number, setNumber] = useState(3);
@@ -56,12 +56,12 @@ const ImgResults = () => {
       const translatedText = await translateKoreanToEnglish(prompt);
       console.log(translatedText);
       let fullUserSentenceKR = prompt;
-      const regex = /(?<=^[^,]+,)[^,]+(?=,[^,]+$)/g;
-      const UserSentenceKR = fullUserSentenceKR.match(regex);
+      // const regex = /(?<=^[^,]+,)[^,]+(?=,[^,]+$)/g;
+      // const UserSentenceKR = fullUserSentenceKR.match(regex);
       axios
         .post(`/api/generate/images?&p=${translatedText}&n=${number}`, {
           currentUserId: currentUserId,
-          title: UserSentenceKR[0],
+          title: fullUserSentenceKR,
           type: imgType,
           style: imgStyle,
         })

@@ -10,7 +10,7 @@ import { selectTypeContext } from "@/contexts/generate/selectTypeContext";
 
 const ImgType = () => {
   const typeArr = [
-    "스테인 글라스",
+    "포토리얼리즘",
     "픽셀아트",
     "유화",
     "일러스트",

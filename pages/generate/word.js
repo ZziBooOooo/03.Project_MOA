@@ -30,7 +30,7 @@ const Word = () => {
   const [activeBtnClass, setActiveBtnClass] = useState(false);
 
   // ** 나중에 현재 로그인한 유저의 id 값으로 변경해야한다.
-  const currentUserId = 1;
+  const currentUserId = 2;
 
   const { wordCount, setWordCount } = useContext(wordCountContext);
   const { userWords, setUserWords } = useContext(userWordContext);
@@ -305,6 +305,7 @@ const Word = () => {
                         onClick={(e) => selectPostPosition3(e)}
                       >
                         <p>에서</p>
+                        <p>으로</p>
                         <p>&nbsp;</p>
                       </div>
                     </div>
