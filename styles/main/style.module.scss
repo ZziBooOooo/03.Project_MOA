@@ -1,17 +1,41 @@
 @import "../../styles/variable";
+// @import "node_modules/slick-carousel/slick/slick-theme.css";
+// @import "node_modules/slick-carousel/slick/slick.css";
 
-.slider-container {
-    margin: 50px auto;
-    width: 80%;
-    position: absolute;
-    left: 50%;
+// .slick-slider {
+//   composes: slickSlider;
+// }
+
+// .slick-slider {
+//   composes: slickSlider;
+// }
+
+// .slider_container {
+//   composes: slickContainer;
+// }
+
+// .slickContainer {
+//   background-color: pink;
+// }
+
+.slider_container {
+  margin: 0 auto;
+  width: 80%;
+  position: absolute;
 }
-  
+
 .slick-dots li button:before {
-    color: transparent;
-    cursor: none;
+  display: none;
 }
 
 .paused {
-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.slick-arrow {
+  display: none;
+}
+
+.slick-track {
+  display: flex;
 }

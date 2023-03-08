@@ -1,15 +1,22 @@
-.slider-container {
-  margin: 50px auto;
+.slider_container {
+  margin: 0 auto;
   width: 80%;
   position: absolute;
-  left: 50%;
 }
 
 .slick-dots li button:before {
-  color: transparent;
-  cursor: none;
+  display: none;
 }
 
 .paused {
-  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.slick-arrow {
+  display: none;
+}
+
+.slick-track {
+  display: flex;
 }/*# sourceMappingURL=style.module.css.map */
