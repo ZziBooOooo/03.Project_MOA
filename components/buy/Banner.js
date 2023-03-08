@@ -5,11 +5,14 @@ import style from "styles/buy/buy.module.scss";
 export default function Banner() {
   const { userData } = useContext(buyContext);
   const [io, setio] = useState(false);
+  const [so, setso] = useState(false);
 
   const time = setTimeout(() => {
     setio(true);
-  }, "500");
-  console.log(io);
+  }, "800");
+  const times = setTimeout(() => {
+    setso(true);
+  }, "1200");
 
   return (
     <div className={style.banner_box}>
@@ -32,7 +35,10 @@ export default function Banner() {
           />
         </li>
         <li>
-          <img src="/assets/images/buy/banner_icons03.png" />
+          <img
+            src="/assets/images/buy/banner_icons03.png"
+            className={so ? style.so : style.imgss}
+          />
         </li>
       </ul>
     </div>
