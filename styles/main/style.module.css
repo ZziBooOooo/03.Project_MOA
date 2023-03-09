@@ -1,22 +1,7 @@
-.slider_container {
-  margin: 0 auto;
-  width: 80%;
-  position: absolute;
+.slickPicture {
+  margin-bottom: 5%;
 }
 
-.slick-dots li button:before {
-  display: none;
-}
-
-.paused {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-}
-
-.slick-arrow {
-  display: none;
-}
-
-.slick-track {
-  display: flex;
+.slickTitle {
+  padding-left: 15%;
 }/*# sourceMappingURL=style.module.css.map */

@@ -88,7 +88,7 @@ import logo from "../public/assets/images/logo.png";
 const Header = () => {
   const router = useRouter();
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [selectedPage, setSelectedPage] = useState(0);
+  const [selectedPage, setSelectedPage] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {

@@ -3,7 +3,7 @@ import style from "@/styles/main/main.module.css";
 import CoinImage from "@/components/main/CoinImage";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import Slick from "@/components/main/slick";
+import Slick from "../components/main/Slick";
 
 const Main = () => {
   const router = useRouter();
