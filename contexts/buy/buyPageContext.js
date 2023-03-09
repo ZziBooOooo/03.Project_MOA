@@ -70,21 +70,36 @@ const BuyContextCom = (props) => {
     { id: 59, isDone: true, coinNum: 4, word: "상상한다" },
   ]; /* 4코인 단어 배열 */
 
-  const [userData, setuserData] = useState(); /* 몽고디비 테스트 get */
+  const [userData, setuserData] = useState();
 
-  const saveData = async () => {
+  const userGetData = async () => {
     try {
-      const response = await axios.get("/api/test/userData");
+      const response = await axios.get("/api/buy/userBuy");
       console.log(response.data[0]);
       setuserData(response.data[0]);
     } catch (error) {
       console.error(error);
     }
-  }; /* 몽고디비 테스트 get */
+  }; /* 몽고디비 Buyget */
+
+  const useBuyData = async (coinTotal, buyWord, wordName) => {
+    try {
+      const response = await axios.put("/api/buy/userBuy", {
+        userId: userData._id,
+        updateCoin: userData.coin <= 0 ? 0 : userData.coin - coinTotal,
+        updateWord: buyWord,
+        wordName,
+      });
+
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }; /* 구매했을때 코인차감과 단어 주기 */
 
   useEffect(() => {
-    saveData();
-  }, []); /* 몽고디비 테스트 get */
+    userGetData();
+  }, []); /* DB  */
 
   return (
     <buyContext.Provider
@@ -92,6 +107,8 @@ const BuyContextCom = (props) => {
         WordCoin2,
         WordCoin3,
         WordCoin4,
+        userGetData,
+        useBuyData,
         userData,
         setuserData,
       }}

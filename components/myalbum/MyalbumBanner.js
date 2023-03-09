@@ -27,6 +27,7 @@ export default function MyAlbumBanner() {
           height={583}
           className={style.phoneImg02}
           ref={myPhone01}
+          alt="핸드폰이미지1"
         />
         <Image
           src="/assets/images/myalbum/phone1.png"
@@ -34,6 +35,7 @@ export default function MyAlbumBanner() {
           height={583}
           className={style.phoneImg01}
           ref={myPhone02}
+          alt="핸드폰이미지2"
         />
       </div>
       <div className={style.myalbum_textbox} ref={myText}>

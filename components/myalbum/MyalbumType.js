@@ -1,22 +1,22 @@
 import Image from "next/image";
 import style from "styles/myalbum/myalbumcontent.module.scss";
-import axios from "axios";
 import { useEffect, useState } from "react";
+import axios from "axios";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
 
-export default function MyalbumType1({ myalbumImg, catePage }) {
-  const [data, setData] = useState(); /* 몽고디비 테스트 get */
+export default function MyalbumType({ catePage }) {
+  const [userData, setuserData] = useState();
 
-  const saveData = async () => {
+  const userGetData = async () => {
     try {
-      const response = await axios.get("/api/test/userData");
+      const response = await axios.get("/api/buy/userBuy");
       console.log(response.data[0]);
-      setData(response.data[0]);
+      setuserData(response.data[0]);
     } catch (error) {
       console.error(error);
     }
-  }; /* 몽고디비 테스트 get */
+  }; /* 몽고디비 userData */
 
   function imgDown(res) {
     let image = document.createElement("img");
@@ -34,13 +34,13 @@ export default function MyalbumType1({ myalbumImg, catePage }) {
   } /* 이미지 다운로드 */
 
   useEffect(() => {
-    saveData();
+    userGetData();
   }, []); /* 몽고디비 테스트 get */
 
   return (
     <>
-      {data ? (
-        data.imgUrl.map(
+      {userData ? (
+        userData.imgUrl.map(
           (res, key) =>
             res.type === catePage &&
             res.url /* <= 이미지url이 일주일후에 사라지면 */ && (
@@ -54,7 +54,6 @@ export default function MyalbumType1({ myalbumImg, catePage }) {
                     className="as"
                     unoptimized={true}
                   />
-                  <img src={res.url} />
                 </div>
                 <div className={style.myalbum_back}>
                   <p>{res.title}</p>

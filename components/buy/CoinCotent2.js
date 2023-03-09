@@ -7,11 +7,13 @@ import BuyNotModal from "./BuyNotModal";
 import BuyComplete from "./BuyComplete";
 
 export default function CoinCotent2({ onChange }) {
-  const { WordCoin2, userData, setuserData } = useContext(buyContext);
+  const { WordCoin2, userData, userGetData, useBuyData } =
+    useContext(buyContext);
   const [buyWord, setbuyWord] = useState([]); /* 구매할 단어 배열 */
   const [coinTotal, setcoinTotal] = useState(0); /* 구매할 단어 코인 합계 */
   const [buyNot, setbuyNot] = useState(false); /* 구매 부족 모달 */
   const [buyCom, setbuyCom] = useState(false); /* 구매 완료 모달 */
+  const wordName = "words.WordCoin2"; /* 단어 추가 분류 */
 
   function buyUpdate(id) {
     let buyadd = WordCoin2.find((res) => res.id === id);
@@ -19,6 +21,7 @@ export default function CoinCotent2({ onChange }) {
     if (newAdd.some((item) => item.id === buyadd.id)) {
       newAdd = newAdd.filter((item) => item.id !== buyadd.id);
       /* some = true, false 값을 반환 */
+      /*  구매할 단어 다시 누르면 삭제 */
     } else {
       newAdd.push(buyadd);
     }
@@ -26,16 +29,12 @@ export default function CoinCotent2({ onChange }) {
   } /* 구매할 단어를 누르면 구매페이지에 추가되고 다시누르면 삭제 */
 
   function buyDecision() {
-    if (userCoin < buyWord.length * 2) {
+    if (userData && userData.coin < buyWord.length * 2) {
       setbuyNot(true); /* 코인이 부족할시 모달 */
     } else {
-      setuserData([
-        ...userData,
-        ...buyWord,
-      ]); /* 여기에 사용자가 구매한 단어 들어감 */
-      setuserCoin(
-        userCoin <= 0 ? 0 : userCoin - buyWord.length * 2
-      ); /* 사용자 구매후 코인수 */
+      useBuyData(coinTotal, buyWord, wordName);
+      userGetData();
+      /* 사용자 구매후 코인수 */
       if (buyWord.length > 0) {
         setbuyCom(true);
       }

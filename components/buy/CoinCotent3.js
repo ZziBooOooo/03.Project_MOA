@@ -7,12 +7,13 @@ import BuyNotModal from "./BuyNotModal";
 import BuyComplete from "./BuyComplete";
 
 export default function CoinCotent3({ onChange }) {
-  const { WordCoin3, userData, setuserData, userCoin, setuserCoin } =
+  const { WordCoin3, userData, userGetData, useBuyData } =
     useContext(buyContext);
   const [buyWord, setbuyWord] = useState([]); /* 구매할 단어 배열 */
   const [coinTotal, setcoinTotal] = useState(0); /* 구매할 단어 코인 합계 */
   const [buyNot, setbuyNot] = useState(false); /* 구매 부족 모달 */
   const [buyCom, setbuyCom] = useState(false); /* 구매 완료 모달 */
+  const wordName = "words.WordCoin3"; /* 단어 추가 분류 */
 
   function buyUpdate(id) {
     let buyadd = WordCoin3.find((res) => res.id === id);
@@ -20,6 +21,7 @@ export default function CoinCotent3({ onChange }) {
     if (newAdd.some((item) => item.id === buyadd.id)) {
       newAdd = newAdd.filter((item) => item.id !== buyadd.id);
       /* some = true, false 값을 반환 */
+      /*  구매할 단어 다시 누르면 삭제 */
     } else {
       newAdd.push(buyadd);
     }
@@ -27,16 +29,12 @@ export default function CoinCotent3({ onChange }) {
   } /* 구매할 단어를 누르면 구매페이지에 추가되고 다시누르면 삭제 */
 
   function buyDecision() {
-    if (userCoin < buyWord.length * 3) {
+    if (userData && userData.coin < buyWord.length * 3) {
       setbuyNot(true); /* 코인이 부족할시 모달 */
     } else {
-      setuserData([
-        ...userData,
-        ...buyWord,
-      ]); /* 여기에 사용자가 구매한 단어 들어감 */
-      setuserCoin(
-        userCoin <= 0 ? 0 : userCoin - buyWord.length * 3
-      ); /* 사용자 구매후 코인수 */
+      useBuyData(coinTotal, buyWord, wordName);
+      userGetData();
+      /* 사용자 구매후 코인수 */
       if (buyWord.length > 0) {
         setbuyCom(true);
       }
@@ -66,7 +64,8 @@ export default function CoinCotent3({ onChange }) {
             </div>
             <div className={style.coin_count}>
               <img src="/assets/images/buy/smallcoin.png" />
-              <span>{userCoin}</span> {/* 코인 카운터 들어갈곳 */}
+              <span>{userData && userData.coin}</span>{" "}
+              {/* 코인 카운터 들어갈곳 */}
             </div>
             <p>이 단어들은 3개의 코인이 필요해요</p>
           </div>
@@ -81,7 +80,10 @@ export default function CoinCotent3({ onChange }) {
                   }
                   key={res.id}
                   onClick={() => buyUpdate(res.id)}
-                  disabled={userData.some((el) => el.word === res.word)}
+                  disabled={
+                    userData &&
+                    userData.words.WordCoin3.some((el) => el.word === res.word)
+                  }
                   /* 사용자가 이미 데이터가 있는경우 */
                 >
                   {res.word}
