@@ -16,4 +16,24 @@ export default async function handler(req, res) {
       res.status(500).json({ error: "Internal Server Error" });
     }
   }
+
+  if (req.method === "POST") {
+    try {
+      const { likeData } = req.body;
+      console.log(likeData);
+      const filter = {
+        $and: [{ "imgUrl.url": likeData.url }, { name: likeData.name }],
+      };
+      const update = { $inc: { "imgUrl.$.like": 1 } };
+      userCollection.updateOne(filter, update, (err, res) => {
+        console.log(res.matchedCount);
+        if (err) throw err;
+        console.log(`document updated`);
+      });
+      res.status(200).json({ dd: "dd" });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  }
 }

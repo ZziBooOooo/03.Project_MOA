@@ -1,7 +1,7 @@
 @import "../../styles/variable";
 .fullBox {
   width: 100%;
-  height: 200vh;
+  // height: 200vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,7 +29,9 @@
 
   .bottomBox {
     width: 100%;
-    height: 100vh;
+    max-width: 1200px;
+    // height: 100vh;
+    margin: 200px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,6 +63,27 @@
         max-width: 400px;
         height: 100%;
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        img {
+          width: 100%;
+          border-radius: 16px;
+          box-shadow: $grayBGshadow;
+        }
+      }
+    }
+    .randomImgBox {
+      display: flex;
+      width: 70vw;
+      height: 50vh;
+      flex-wrap: wrap;
+
+      .imgWrap {
+        max-width: 200px;
+
         flex-direction: column;
         align-items: center;
         justify-content: space-between;

@@ -58,7 +58,7 @@ const Word = () => {
   // index.js에서 선택한 단어의 개수를 state에 저장한다. -> 조건에 따라 화면 렌더링이 다르기 때문
   useEffect(() => {
     setWordCount(wordCount);
-    getUserWords();
+    // getUserWords();
   }, []);
 
   // imgType페이지로 이동
