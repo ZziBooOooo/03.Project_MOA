@@ -1,7 +1,6 @@
 import { connectToDatabase } from "@/database/connect";
 import fs from "fs";
 import path from "path";
-import cloudinary from "cloudinary";
 
 export default async function handler(req, res) {
   const { client } = await connectToDatabase();
@@ -48,6 +47,7 @@ export default async function handler(req, res) {
               type: type,
               style: style,
               url: result.secure_url,
+              like: 0,
             },
           },
         }

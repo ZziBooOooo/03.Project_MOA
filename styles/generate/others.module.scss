@@ -1,0 +1,77 @@
+@import "../../styles/variable";
+.fullBox {
+  width: 100%;
+  height: 200vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Pretendard-Regular";
+  background-color: rgb(243, 243, 243);
+  color: $bascitFtcolor;
+  .topBox {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $mainColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .textBox {
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+    }
+  }
+
+  .bottomBox {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $bascitFtcolor;
+
+    .b_textBox {
+    }
+    .top3ImgBox {
+      width: 70vw;
+      max-width: 1200px;
+      background-color: rgba(135, 207, 235, 0.473);
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .imgBox {
+      width: 30%;
+      height: 35vh;
+      // background-color: rgba(245, 119, 140, 0.87);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      .imgWrap {
+        width: 100%;
+        max-width: 400px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        img {
+          width: 100%;
+          border-radius: 16px;
+          box-shadow: $grayBGshadow;
+        }
+      }
+    }
+  }
+}

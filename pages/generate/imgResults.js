@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import SaveModal from "@/components/generate/SaveModal";
 
 const ImgResults = () => {
-  const currentUserId = 2;
+  const currentUserId = 3;
   const [prompt, setPrompt] = useState(null);
   const [enPrompt, setEnPrompt] = useState(null);
   const [number, setNumber] = useState(3);
@@ -148,7 +148,7 @@ const ImgResults = () => {
         {loading == 0 && error == 0 ? (
           <>
             <div className={r_style.textBox}>
-              <p className={r_style.firstTextBox}>
+              <div className={r_style.firstTextBox}>
                 <Image
                   src="/assets/images/generate/check.png"
                   alt="checkIcon"
@@ -156,7 +156,7 @@ const ImgResults = () => {
                   height={45}
                 />
                 <p>마음에 드는 이미지를 선택해주세요</p>
-              </p>
+              </div>
               <p>저장한 이미지는 앨범에서 볼 수 있어요</p>
             </div>
             <div className={r_style.imgBox}>
