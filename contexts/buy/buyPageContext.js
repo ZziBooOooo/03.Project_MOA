@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-
+import axios from "axios";
 export const buyContext = createContext(null);
 
 const BuyContextCom = (props) => {
@@ -70,8 +70,21 @@ const BuyContextCom = (props) => {
     { id: 59, isDone: true, coinNum: 4, word: "상상한다" },
   ]; /* 4코인 단어 배열 */
 
-  const [userData, setuserData] = useState([]); /* 사용자가 갖고있는 단어*/
-  const [userCoin, setuserCoin] = useState(10); /*  사용자의 코인 수 */
+  const [userData, setuserData] = useState(); /* 몽고디비 테스트 get */
+
+  const saveData = async () => {
+    try {
+      const response = await axios.get("/api/test/userData");
+      console.log(response.data[0]);
+      setuserData(response.data[0]);
+    } catch (error) {
+      console.error(error);
+    }
+  }; /* 몽고디비 테스트 get */
+
+  useEffect(() => {
+    saveData();
+  }, []); /* 몽고디비 테스트 get */
 
   return (
     <buyContext.Provider
@@ -81,8 +94,6 @@ const BuyContextCom = (props) => {
         WordCoin4,
         userData,
         setuserData,
-        userCoin,
-        setuserCoin,
       }}
     >
       {props.children}

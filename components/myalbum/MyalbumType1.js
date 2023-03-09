@@ -39,18 +39,18 @@ export default function MyalbumType1({ myalbumImg, catePage }) {
 
   return (
     <>
-      {" "}
       {data ? (
         data.imgUrl.map(
-          (res) =>
+          (res, key) =>
             res.type === catePage &&
             res.url /* <= 이미지url이 일주일후에 사라지면 */ && (
-              <div className={style.myalbum_img} key={res.id}>
+              <div className={style.myalbum_img} key={key}>
                 <div className={style.myalbum_front}>
                   <Image
                     src={res.url}
                     width={225}
                     height={225}
+                    alt="마이이미지"
                     className="as"
                     unoptimized={true}
                   />

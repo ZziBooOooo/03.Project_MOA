@@ -7,8 +7,7 @@ import BuyNotModal from "./BuyNotModal";
 import BuyComplete from "./BuyComplete";
 
 export default function CoinCotent2({ onChange }) {
-  const { WordCoin2, userData, setuserData, userCoin, setuserCoin } =
-    useContext(buyContext);
+  const { WordCoin2, userData, setuserData } = useContext(buyContext);
   const [buyWord, setbuyWord] = useState([]); /* 구매할 단어 배열 */
   const [coinTotal, setcoinTotal] = useState(0); /* 구매할 단어 코인 합계 */
   const [buyNot, setbuyNot] = useState(false); /* 구매 부족 모달 */
@@ -66,7 +65,8 @@ export default function CoinCotent2({ onChange }) {
             </div>
             <div className={style.coin_count}>
               <img src="/assets/images/buy/smallcoin.png" />
-              <span>{userCoin}</span> {/* 코인 카운터 들어갈곳 */}
+              <span>{userData && userData.coin}</span>{" "}
+              {/* 유저 코인 갯수 들어갈곳 */}
             </div>
             <p>이 단어들은 2개의 코인이 필요해요</p>
           </div>
@@ -81,7 +81,10 @@ export default function CoinCotent2({ onChange }) {
                   }
                   key={res.id}
                   onClick={() => buyUpdate(res.id)}
-                  disabled={userData.some((el) => el.word === res.word)}
+                  disabled={
+                    userData &&
+                    userData.words.WordCoin2.some((el) => el.word === res.word)
+                  }
                   /* 사용자가 이미 데이터가 있는경우 */
                 >
                   {res.word}

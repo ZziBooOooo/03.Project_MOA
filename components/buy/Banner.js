@@ -1,9 +1,17 @@
 import { buyContext } from "@/contexts/buy/buyPageContext";
 import { useContext, useState } from "react";
 import style from "styles/buy/buy.module.scss";
+import axios from "axios";
 
 export default function Banner() {
   const { userData } = useContext(buyContext);
+
+  const wordLength =
+    userData &&
+    userData.words.WordCoin2.length +
+      userData.words.WordCoin3.length +
+      userData.words.WordCoin4.length; /* 나의 단어 몇개인지 */
+
   const [io, setio] = useState(false);
   const [so, setso] = useState(false);
 
@@ -22,7 +30,7 @@ export default function Banner() {
       <div className={style.myword_count}>
         <span>나의 단어</span>
         <div></div>
-        <p>{userData.length}개</p> {/* 나의 단어 갯수 들어갈곳 */}
+        <p>{wordLength}개</p> {/* 나의 단어 갯수 들어갈곳 */}
       </div>
       <ul className={style.banner_icons}>
         <li>

@@ -1,18 +1,19 @@
 import { connectToDatabase } from "@/database/connect";
 
 export default async (req, res) => {
-  try {
-    const { client } = await connectToDatabase();
-    const db = client.db("DataMoa"); /* 큰제목 */
-    const users = await db
-      .collection("user") /* 작은제목 */
-      .find({ _id: 2 })
-      .sort({ metacritic: -1 })
-      .limit(10)
-      .toArray();
-
-    res.json(users);
-  } catch (e) {
-    console.error(e);
+  if (req.method === "GET") {
+    try {
+      const { client } = await connectToDatabase();
+      const db = client.db("DataMoa");
+      const users = await db
+        .collection("user")
+        .find({ _id: 1 })
+        .sort({ metacritic: -1 })
+        .limit(10)
+        .toArray();
+      res.status(200).json(users);
+    } catch (e) {
+      console.error(e);
+    }
   }
 };
