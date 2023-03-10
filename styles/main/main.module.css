@@ -50,9 +50,29 @@
   margin-left: -3px;
   background-color: var(--color);
   border-radius: 100%;
-  animation: scrolldown-anim 2s infinite;
+  -webkit-animation: scrolldown-anim 2s infinite;
+          animation: scrolldown-anim 2s infinite;
   box-sizing: border-box;
   box-shadow: 0px -5px 3px 1px rgba(255, 255, 255, 0.4);
+}
+@-webkit-keyframes scrolldown-anim {
+  0% {
+    opacity: 0;
+    height: 6px;
+  }
+  40% {
+    opacity: 1;
+    height: 10px;
+  }
+  80% {
+    transform: translate(0, 20px);
+    height: 10px;
+    opacity: 0;
+  }
+  100% {
+    height: 3px;
+    opacity: 0;
+  }
 }
 @keyframes scrolldown-anim {
   0% {
@@ -94,10 +114,20 @@
   transform: rotate(45deg);
 }
 .section01 .chevrondown:nth-child(odd) {
-  animation: pulse 500ms ease infinite alternate;
+  -webkit-animation: pulse 500ms ease infinite alternate;
+          animation: pulse 500ms ease infinite alternate;
 }
 .section01 .chevrondown:nth-child(even) {
-  animation: pulse 500ms ease infinite alternate 250ms;
+  -webkit-animation: pulse 500ms ease infinite alternate 250ms;
+          animation: pulse 500ms ease infinite alternate 250ms;
+}
+@-webkit-keyframes pulse {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
 }
 @keyframes pulse {
   from {
@@ -164,7 +194,7 @@
   align-items: center;
   padding-left: 6.4%;
   padding-right: 6.4%;
-  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05), 0 20px 40px rgba(145, 145, 145, 0.05);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
 }
 .section02 .guideBox .guide_content .guide_container {
   width: 30%;
@@ -175,7 +205,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 4%;
-  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05), 0 20px 40px rgba(145, 145, 145, 0.05);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
 }
 .section02 .guideBox .guide_content .guide_container .guide_icon {
   margin-bottom: 5%;
@@ -241,7 +271,7 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05), 0 20px 40px rgba(145, 145, 145, 0.05);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
 }
 
 .section04 {
@@ -300,7 +330,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05), 0 20px 40px rgba(145, 145, 145, 0.05);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
 }
 .section04 .guideBox .guide_content .detail_container .content .textBox {
   margin-left: 2.5vw;
@@ -355,7 +385,7 @@
   margin-top: 5%;
   background-color: #F5F5F5;
   border-radius: 20px;
-  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05), 0 20px 40px rgba(145, 145, 145, 0.05);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
 }
 .section05 .guideBox .guide_content .albumBox {
   list-style: none;
@@ -375,7 +405,7 @@
   align-items: center;
   justify-content: center;
   padding-bottom: 2%;
-  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05), 0 20px 40px rgba(145, 145, 145, 0.05);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
 }
 .section05 .guideBox .guide_content .albumBox .album_content p {
   margin-top: 8%;
