@@ -3,7 +3,7 @@ import style from "@/styles/generate/others.module.scss";
 import Image from "next/image";
 import axios, { all } from "axios";
 
-const ImageAndLikeBtn = ({ idx, data }) => {
+const SmallImgAndLikeBtn = ({ idx, data }) => {
   const currentUserId = 4;
   const currentName = "네번째";
   const [liked, setLiked] = useState("");
@@ -49,4 +49,4 @@ const ImageAndLikeBtn = ({ idx, data }) => {
   );
 };
 
-export default smallImgAndLikeBtn;
+export default SmallImgAndLikeBtn;
