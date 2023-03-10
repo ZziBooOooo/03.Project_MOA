@@ -3,7 +3,7 @@ import style from "@/styles/generate/others.module.scss";
 import Image from "next/image";
 import axios, { all } from "axios";
 
-const smallImgAndLikeBtn = ({ data, idx }) => {
+const ImageAndLikeBtn = ({ idx, data }) => {
   const currentUserId = 4;
   const currentName = "네번째";
   const [liked, setLiked] = useState("");
@@ -15,7 +15,7 @@ const smallImgAndLikeBtn = ({ data, idx }) => {
       .post("/api/generate/userData", {
         likeData: data,
         liked: newLiked,
-        currentUserId,
+        _id: currentUserId,
         currentName,
       })
       .then((response) => {
