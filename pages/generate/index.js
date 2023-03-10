@@ -3,7 +3,7 @@ import style from "@/styles/generate/generate.module.scss";
 import GenerateTop from "@/components/generate/GenerateTop";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { TargetIdContext } from "@/contexts/generate/wordCount";
+import { wordCountContext } from "@/contexts/generate/wordCountContext";
 
 const Index = () => {
   const textArray = [
@@ -28,11 +28,11 @@ const Index = () => {
   ];
 
   const router = useRouter();
-  const { setTargetId } = useContext(TargetIdContext);
+  const { setWordCount } = useContext(wordCountContext);
 
   // 단어개수 선택값을 context 이용해서 저장 + 페이지넘김
   const handleClick = (e) => {
-    setTargetId(e.target.id);
+    setWordCount(e.target.id);
     router.push("/generate/word", undefined, { scroll: false });
   };
 

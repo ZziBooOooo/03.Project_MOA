@@ -1,0 +1,87 @@
+.fullBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Pretendard-Regular";
+  background-color: rgb(243, 243, 243);
+  color: #3b3d3f;
+}
+.fullBox .topBox {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #2288ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fullBox .topBox .textBox {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+}
+.fullBox .bottomBox {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 150vh;
+  padding: 600px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #3b3d3f;
+}
+.fullBox .bottomBox .top3ImgBox {
+  width: 70vw;
+  max-width: 1200px;
+  background-color: rgba(135, 207, 235, 0.473);
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fullBox .bottomBox .imgBox {
+  width: 30%;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.fullBox .bottomBox .imgBox .imgWrap {
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.fullBox .bottomBox .imgBox .imgWrap img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+}
+.fullBox .bottomBox .randomImgBox {
+  display: flex;
+  width: 70vw;
+  height: 50vh;
+  flex-wrap: wrap;
+}
+.fullBox .bottomBox .randomImgBox .imgWrap {
+  max-width: 200px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.fullBox .bottomBox .randomImgBox .imgWrap img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+}/*# sourceMappingURL=others.module.css.map */

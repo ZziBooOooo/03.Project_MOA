@@ -4,40 +4,14 @@ import w_style from "@/styles/generate/word.module.scss";
 import Image from "next/image";
 import GenerateTop from "@/components/generate/GenerateTop";
 import { useRouter } from "next/router";
-import { TargetIdContext } from "@/contexts/generate/wordCount";
+import { wordCountContext } from "@/contexts/generate/wordCountContext";
+import { userWordContext } from "@/contexts/generate/userWordContext";
+import { userSentenceContext } from "@/contexts/generate/userSentenceContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 const Word = () => {
-  // wordArr 페이지 접속시 DB에서 받아오는걸로 변경해야함 - 20개씩 자르기
-
-  // 추가 - 새로고침으로 할지 이전,다음 버튼으로 할지
-  // 출력되는 단어가 바뀌어도 전의 버튼은 selected클래스 유지되어야한다. + 문장에서도 단어들이 유지되도록.
-
-  const wordArr = [
-    "고양이",
-    "딸기",
-    "먹는다",
-    "소파",
-    "다람쥐",
-    "나무",
-    "춤춘다",
-    "도토리",
-    "새",
-    "물고기",
-    "바다",
-    "잔다",
-    "강아지",
-    "간식",
-    "강",
-    "논다",
-    "공",
-    "공부한다",
-    "파티한다",
-    "달린다",
-  ];
-
-  const [wordCount, setWordCount] = useState(null);
   const [count, setCount] = useState(0);
   const [word1, setWord1] = useState("");
   const [word2, setWord2] = useState("");
@@ -46,17 +20,45 @@ const Word = () => {
 
   const [postPosition1, setPostPosition1] = useState("");
   const [postPosition2, setPostPosition2] = useState("");
+  const [postPosition3, setPostPosition3] = useState("");
 
   const [selected, setSelected] = useState("");
   const [saveSelected, setSaveSelected] = useState([]);
 
-  const { targetId } = useContext(TargetIdContext);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const [activeBtnClass, setActiveBtnClass] = useState(false);
+
+  // ** 나중에 현재 로그인한 유저의 id 값으로 변경해야한다.
+  const currentUserId = 3;
+
+  const { wordCount, setWordCount } = useContext(wordCountContext);
+  const { userWords, setUserWords } = useContext(userWordContext);
+  const { userSentence, setUserSentence } = useContext(userSentenceContext);
   const router = useRouter();
+
+  // 유저의 단어목록을 받아오는 함수
+  // 코인개수별로 나눠진 데이터를 한개의 배열로 합쳤다.
+  function getUserWords() {
+    axios
+      .get("/api/generate/wordcontroll", {
+        params: {
+          currentUserId,
+        },
+      })
+      .then((res) => {
+        const UserWord_DB = res.data;
+        const userWordArr = Object.values(UserWord_DB).flat();
+        if (userWordArr) {
+          setUserWords(userWordArr);
+        }
+      });
+  }
 
   // index.js에서 선택한 단어의 개수를 state에 저장한다. -> 조건에 따라 화면 렌더링이 다르기 때문
   useEffect(() => {
-    setWordCount(targetId);
-    console.log(targetId);
+    setWordCount(wordCount);
+    // getUserWords();
   }, []);
 
   // imgType페이지로 이동
@@ -67,13 +69,14 @@ const Word = () => {
   // 단어 누르면 문장박스에 출력하도록 하는 함수
   // count state를 만들어 단어의 순서를 관리한다.
 
-  // wordCount에 따라 카운트개수 변경하기**
+  // wordCount에 따라 카운트개수 변경
   function makeSentence(e) {
     if (wordCount == 2) {
       if (count == 0) {
         setWord1(e.target.id);
       } else if (count == 1) {
         setWord4(e.target.id);
+        setActiveBtnClass(true);
       }
       setCount(count + 1);
     }
@@ -85,6 +88,7 @@ const Word = () => {
         setWord2(e.target.id);
       } else if (count == 2) {
         setWord4(e.target.id);
+        setActiveBtnClass(true);
       }
       setCount(count + 1);
     }
@@ -98,18 +102,31 @@ const Word = () => {
         setWord3(e.target.id);
       } else if (count == 3) {
         setWord4(e.target.id);
+        setActiveBtnClass(true);
       }
       setCount(count + 1);
     }
   }
-
+  // 유저가 선택한 단어를 state에 저장
   function addSelectedClass(selectWord) {
     setSelected(selectWord);
   }
 
+  // 저장된 state를 바탕으로 배열을 만들고 이를 활용해 선택했던 버튼의 클릭을 유지시킨다.
   function saveSelectedClass(selectWord) {
-    setSaveSelected([...saveSelected, selectWord]);
-    console.log(saveSelected);
+    if (wordCount == 2) {
+      if (saveSelected.length < 2) {
+        setSaveSelected([...saveSelected, selectWord]);
+      }
+    } else if (wordCount == 3) {
+      if (saveSelected.length < 3) {
+        setSaveSelected([...saveSelected, selectWord]);
+      }
+    } else if (wordCount == 4) {
+      if (saveSelected.length < 4) {
+        setSaveSelected([...saveSelected, selectWord]);
+      }
+    }
   }
 
   // 조사버튼 누르면 누른값으로 조사 변경
@@ -119,6 +136,9 @@ const Word = () => {
   function selectPostPosition2(e) {
     setPostPosition2(e.target.innerText);
   }
+  function selectPostPosition3(e) {
+    setPostPosition3(e.target.innerText);
+  }
 
   function deleteSentence() {
     setCount(0);
@@ -126,8 +146,59 @@ const Word = () => {
     setWord2("");
     setWord3("");
     setWord4("");
+    setPostPosition1("");
+    setPostPosition2("");
+    setPostPosition3("");
     setSaveSelected([]);
+    setActiveBtnClass(false);
   }
+
+  function nextPage() {
+    if (currentPage < Math.ceil(userWords.length / wordsPerPage) - 1) {
+      setCurrentPage(currentPage + 1);
+    }
+  }
+
+  function prevPage() {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+    }
+  }
+
+  // 빈 단어 없이 단어선택이 완료되면 페이지 이동
+  function checkWordCount() {
+    if (wordCount == 2) {
+      if (word1 === "" || word4 === "") {
+        alert("단어 2개를 모두 선택해주세요");
+      } else {
+        goTypePage();
+        setUserSentence(`${word1}${postPosition1} ${word4}`);
+      }
+    } else if (wordCount == 3) {
+      if (word1 === "" || word2 === "" || word4 === "") {
+        alert("단어 3개를 모두 선택해주세요");
+      } else {
+        goTypePage();
+        setUserSentence(
+          `${word1}${postPosition1} ${word2}${postPosition2} ${word4}`
+        );
+      }
+    } else if (wordCount == 4) {
+      if (word1 === "" || word2 === "" || word3 === "" || word4 === "") {
+        alert("단어 4개를 모두 선택해주세요");
+      } else {
+        goTypePage();
+        setUserSentence(
+          `${word1}${postPosition1} ${word2}${postPosition2} ${word3}${postPosition3} ${word4}`
+        );
+      }
+    }
+  }
+
+  const wordsPerPage = 20;
+  const startIndex = currentPage * wordsPerPage;
+  const endIndex = startIndex + wordsPerPage;
+  const currentWords = userWords.slice(startIndex, endIndex);
 
   return (
     <div className={style.fullBox}>
@@ -153,7 +224,15 @@ const Word = () => {
           </div>
 
           <div className={w_style.selectBox}>
-            <div className={w_style.sentenceBox}>
+            <div
+              className={
+                wordCount && wordCount == 2
+                  ? `${w_style.sentenceBox} ${w_style.word2Box}`
+                  : wordCount == 3
+                  ? `${w_style.sentenceBox} ${w_style.word3Box}`
+                  : `${w_style.sentenceBox} ${w_style.word4Box}`
+              }
+            >
               <div className={w_style.sentenceWrap}>
                 <div className={w_style.fisrtWord}>
                   <p>{word1}</p>
@@ -175,6 +254,8 @@ const Word = () => {
                       <p>는</p>
                       <p>이</p>
                       <p>가</p>
+                      <p>와</p>
+                      <p>과</p>
                     </div>
                   </div>
                 </div>
@@ -200,6 +281,7 @@ const Word = () => {
                         <p>를</p>
                         <p>와</p>
                         <p>과</p>
+                        <p>에서</p>
                       </div>
                     </div>
                   </div>
@@ -208,7 +290,25 @@ const Word = () => {
                 {wordCount && wordCount == 4 ? (
                   <div className={w_style.thirdWord}>
                     <p>{word3}</p>
-                    <p>에서</p>
+                    <p>{postPosition3}</p>
+                    <div className={w_style.dropdown}>
+                      <button className={w_style.dropbtn}>
+                        <Image
+                          src="/assets/images/generate/down.png"
+                          alt="downIcon"
+                          width={16}
+                          height={16}
+                        />
+                      </button>
+                      <div
+                        className={w_style.dropdown_content}
+                        onClick={(e) => selectPostPosition3(e)}
+                      >
+                        <p>에서</p>
+                        <p>으로</p>
+                        <p>&nbsp;</p>
+                      </div>
+                    </div>
                   </div>
                 ) : null}
 
@@ -221,44 +321,56 @@ const Word = () => {
 
             <div className={w_style.wordBox}>
               <div className={w_style.refreshBtnBox}>
-                <p>새로고침</p>
-                <p>
-                  <Image
-                    src="/assets/images/generate/refresh.png"
-                    alt="downIcon"
-                    width={16}
-                    height={16}
-                  />
-                </p>
+                <button
+                  onClick={prevPage}
+                  className={currentPage == 0 ? `${w_style.disableBtn}` : ""}
+                >
+                  ←
+                </button>
+                <button
+                  onClick={nextPage}
+                  className={currentPage == 2 ? `${w_style.disableBtn}` : ""}
+                >
+                  {" "}
+                  →{" "}
+                </button>
               </div>
-              {wordArr.map((word, key) => {
-                const isSelected =
-                  selected === key || saveSelected.includes(word);
-                return (
-                  <div
-                    key={key}
-                    className={`${w_style.wordBtn} ${
-                      isSelected ? w_style.selected : ""
-                    }`}
-                  >
-                    <p
-                      id={word}
-                      onClick={(e) => {
-                        makeSentence(e);
-                        addSelectedClass(word);
-                        saveSelectedClass(word);
-                      }}
+              {currentWords &&
+                currentWords.map((word, key) => {
+                  const isSelected =
+                    selected === key || saveSelected.includes(word.word);
+                  return (
+                    <div
+                      key={key}
+                      className={`${w_style.wordBtn} ${
+                        isSelected ? w_style.selected : ""
+                      }`}
                     >
-                      {word}
-                    </p>
-                  </div>
-                );
-              })}
+                      <p
+                        id={word.word}
+                        onClick={(e) => {
+                          makeSentence(e);
+                          addSelectedClass(word.word);
+                          saveSelectedClass(word.word);
+                        }}
+                      >
+                        {word.word}
+                      </p>
+                    </div>
+                  );
+                })}
             </div>
 
             <div className={w_style.completeBtnBox}>
               <p></p>
-              <button onClick={goTypePage}>다음</button>
+              <button
+                onClick={() => {
+                  checkWordCount();
+                }}
+                className={activeBtnClass ? `${w_style.activeBtn}` : ""}
+              >
+                다음
+              </button>
             </div>
           </div>
         </div>

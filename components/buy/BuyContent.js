@@ -1,7 +1,10 @@
 import style from "styles/buy/buy.module.scss";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { buyContext } from "@/contexts/buy/buyPageContext";
 
 export default function BuyContent({ onChange }) {
+  const { userData } = useContext(buyContext);
   return (
     <motion.div
       key="CoinCotent1"
@@ -20,7 +23,8 @@ export default function BuyContent({ onChange }) {
             </div>
             <div className={style.coin_count}>
               <img src="/assets/images/buy/smallcoin.png" />
-              <span>24</span> {/* 코인 카운터 들어갈곳 */}
+              <span>{userData && userData.coin}</span>{" "}
+              {/* 코인 카운터 들어갈곳 */}
             </div>
             <p>코인별로 단어의 내용이 조금씩 달라요</p>
           </div>
