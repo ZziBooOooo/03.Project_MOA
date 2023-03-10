@@ -25,16 +25,12 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+
 # local env files
 .env*.local
 
 # vercel
 .vercel
 
-<<<<<<< HEAD
-#env
-.env
-=======
 # env
 .env
->>>>>>> 753dc3044f152b3429d9e8be2ce30c057d7dda01
