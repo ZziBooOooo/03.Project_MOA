@@ -7,6 +7,10 @@
   justify-content: space-between;
   position: relative;
   display: flex;
+  padding: 3% 1% !important;
+}
+.fullBox .bottomMainBox .b_textBox {
+  padding-left: 2%;
 }
 .fullBox .bottomMainBox .cardBox {
   width: 100%;
@@ -39,6 +43,12 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.fullBox .bottomMainBox .cardBox .cardContent:hover {
+  transform: translateY(-6px);
 }
 .fullBox .bottomMainBox .cardBox .cardContent .imgIWrap {
   width: 100%;
@@ -49,7 +59,7 @@
   border-radius: 12px 12px 0px 0px;
 }
 .fullBox .bottomMainBox .cardBox .cardContent .typeText {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
   margin: 20px;
 }
@@ -57,9 +67,10 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding-right: 2%;
 }
 .fullBox .bottomMainBox .completeBtnBox button {
-  background-color: #2288ff;
+  background-color: rgb(192, 190, 190);
   font-size: 1.25rem;
   font-weight: bold;
   color: white;
@@ -68,4 +79,18 @@
   border-radius: 50px;
   cursor: pointer;
   z-index: 100;
+  transition: 0.2s;
+}
+.fullBox .bottomMainBox .completeBtnBox button:hover {
+  transform: translateY(-2px);
+}
+.fullBox .bottomMainBox .completeBtnBox button:active {
+  transform: translateY(0px);
+}
+.fullBox .bottomMainBox .completeBtnBox .activeBtn {
+  background-color: #2288ff;
+}
+
+.currentSelect {
+  outline: 4px solid #2288ff;
 }/*# sourceMappingURL=style.module.css.map */

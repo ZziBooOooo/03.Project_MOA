@@ -14,12 +14,21 @@
   padding: 3%;
   padding-bottom: 0;
 }
+.selectBox .word2Box {
+  min-width: 380px;
+}
+.selectBox .word3Box {
+  min-width: 530px;
+}
+.selectBox .word4Box {
+  min-width: 640px;
+}
 .selectBox .sentenceBox {
-  max-width: 580px;
+  max-width: 680px;
   height: 60px;
   padding: 0 20px;
   background-color: #2288ff;
-  box-shadow: 1px 2px 4px rgb(197, 197, 197);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
   border-radius: 12px;
   display: flex;
   justify-content: center;
@@ -35,6 +44,7 @@
   font-weight: bold;
   color: white;
   margin: 0;
+  text-align: end;
 }
 .selectBox .sentenceBox svg {
   color: white;
@@ -54,7 +64,7 @@
 .selectBox .sentenceBox .fourthWord {
   display: flex;
   align-items: center;
-  margin: 0 10px;
+  margin: 0px 10px;
 }
 .selectBox .sentenceBox .fisrtWord .dropdown,
 .selectBox .sentenceBox .secondWord .dropdown,
@@ -121,10 +131,10 @@
 .selectBox .sentenceBox .fisrtWord p:nth-of-type(1),
 .selectBox .sentenceBox .secondWord p:nth-of-type(1),
 .selectBox .sentenceBox .thirdWord p:nth-of-type(1) {
-  min-width: 25px;
+  min-width: 60px;
 }
 .selectBox .sentenceBox .fourthWord {
-  min-width: 70px;
+  min-width: 60px;
 }
 .selectBox .wordBox {
   width: 100%;
@@ -138,29 +148,36 @@
 }
 .selectBox .wordBox .refreshBtnBox {
   position: absolute;
-  top: -12.5%;
+  top: -16%;
   right: 1%;
   display: flex;
   align-items: center;
   cursor: pointer;
-}
-.selectBox .wordBox .refreshBtnBox p:nth-of-type(2) {
-  width: 24px;
-  height: 24px;
-  background-color: #2288ff;
-  border-radius: 50%;
-}
-.selectBox .wordBox .refreshBtnBox p {
-  margin: 0;
-  margin-left: 5px;
-  font-weight: bold;
-  color: #727375;
+  width: 80px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
 }
-.selectBox .wordBox .refreshBtnBox p img {
-  transform: translate(0px, -1px);
+.selectBox .wordBox .refreshBtnBox button {
+  background-color: rgb(211, 211, 211);
+  color: white;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+.selectBox .wordBox .refreshBtnBox button:hover {
+  background-color: #2288ff;
+  transform: translateY(-1px);
+}
+.selectBox .wordBox .refreshBtnBox button:active {
+  transform: translateY(1px);
+}
+.selectBox .wordBox .refreshBtnBox .disableBtn {
+  opacity: 0.5;
+}
+.selectBox .wordBox .refreshBtnBox .disableBtn:hover {
+  background-color: rgb(211, 211, 211);
 }
 .selectBox .wordBox .wordBtn {
   height: 36px;
@@ -174,8 +191,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 1px 2px 4px rgb(231, 231, 231);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
   cursor: pointer;
+  transition: 0.2s;
+}
+.selectBox .wordBox .wordBtn:hover {
+  transform: translateY(-2px);
+  background-color: #2288ff;
+  color: white;
+}
+.selectBox .wordBox .wordBtn:active {
+  transform: translateY(0px);
 }
 .selectBox .wordBox .wordBtn p {
   margin: 0;
@@ -189,7 +215,7 @@
   width: 100%;
 }
 .selectBox .completeBtnBox button {
-  background-color: #2288ff;
+  background-color: rgb(192, 190, 190);
   font-size: 1.25rem;
   font-weight: bold;
   color: white;
@@ -199,4 +225,14 @@
   margin-right: 1%;
   cursor: pointer;
   z-index: 100;
+  transition: 0.2s;
+}
+.selectBox .completeBtnBox button:hover {
+  transform: translateY(-2px);
+}
+.selectBox .completeBtnBox button:active {
+  transform: translateY(0px);
+}
+.selectBox .completeBtnBox .activeBtn {
+  background-color: #2288ff;
 }/*# sourceMappingURL=word.module.css.map */

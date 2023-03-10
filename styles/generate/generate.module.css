@@ -1,5 +1,5 @@
 .fullBox {
-  width: 100vw;
+  width: 100%;
   height: 200vh;
   display: flex;
   flex-direction: column;
@@ -9,11 +9,12 @@
   color: #3b3d3f;
 }
 .fullBox .topBox {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #e5f1fc;
   display: flex;
   align-items: center;
@@ -21,8 +22,8 @@
 }
 .fullBox .topBox .textBox {
   text-align: center;
-  transform: translateY(-50%);
   color: #3b3d3f;
+  transform: translateY(10%);
 }
 .fullBox .topBox .textBox p:first-child {
   font-size: 4rem;
@@ -34,13 +35,12 @@
   margin-top: 1%;
 }
 .fullBox .topBox .topImgBox {
-  position: absolute;
-  bottom: 0;
   width: 90vw;
   height: 40vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transform: translateY(35%);
 }
 .fullBox .topBox .topImgBox div {
   background-color: white;
@@ -67,10 +67,8 @@
   transform: translateY(-100%) rotate(-5deg);
 }
 .fullBox .bottomBox {
-  width: 100vw;
-  height: 200vh;
-  position: absolute;
-  bottom: 0;
+  width: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,7 +84,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 1px 2px 5px rgb(224, 224, 224);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
 }
 .fullBox .bottomBox .bottomMainBox .b_textBox {
   display: flex;
@@ -119,13 +117,27 @@
   height: 32vh;
   padding: 3% 4%;
   border-radius: 16px;
-  box-shadow: 1px 2px 4px rgb(214, 214, 214);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
   cursor: pointer;
   position: relative;
+  transition: 0.2s;
+}
+.fullBox .bottomBox .bottomMainBox .cardBox .selectCard:hover {
+  background-color: #2288ff;
+  color: white;
+  transform: translateY(-6px);
+}
+.fullBox .bottomBox .bottomMainBox .cardBox .selectCard:hover .cardContent {
+  color: rgb(242, 246, 255);
+}
+.fullBox .bottomBox .bottomMainBox .cardBox .selectCard:hover button {
+  background-color: white;
+  color: #2288ff;
+  box-shadow: none;
 }
 .fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardTitle {
   display: flex;
@@ -150,6 +162,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: #727375;
+  transition: 0.2s;
 }
 .fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardContent p:nth-of-type(2) {
   margin-top: 10px;
@@ -168,7 +181,7 @@
   color: white;
   font-size: 1.3rem;
   font-weight: bold;
-  box-shadow: 1px 2px 4px rgb(214, 214, 214);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
   cursor: pointer;
   z-index: 100;
 }/*# sourceMappingURL=generate.module.css.map */
