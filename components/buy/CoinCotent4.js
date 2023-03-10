@@ -55,7 +55,7 @@ export default function CoinCotent4({ onChange }) {
       className={style.content_box}
     >
       <div className={style.content_item}>
-        <h3>문구 생각해보기</h3>
+        <h3>4코인 단어</h3>
         <div className={style.content_coinlist}>
           <div className={style.content_coinlist_top}>
             <div className={style.check_list}>
