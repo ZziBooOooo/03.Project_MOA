@@ -3,46 +3,47 @@ import style from "@/styles/generate/others.module.scss";
 import Image from "next/image";
 import axios, { all } from "axios";
 
-const ImageAndLikeBtn = ({ idx, data }) => {
+const smallImgAndLikeBtn = ({ data, idx }) => {
   const [liked, setLiked] = useState(false);
 
   function addImgToLike() {
-    setLiked(!liked);
-  }
+    const isLiked = !liked;
 
-  useEffect(() => {
     if (liked == true) {
+      console.log("liked가 true");
       try {
         const response = axios.post("/api/generate/userData", {
           likeData: data,
           liked: "true",
         });
+        setLiked(isLiked);
         return response.data;
       } catch (error) {
         console.log(error);
       }
     } else if (liked == false) {
-      console.log("ff");
+      console.log("liked가 false");
       try {
         const response = axios.post("/api/generate/userData", {
           likeData: data,
           liked: "false",
         });
+        setLiked(isLiked);
         return response.data;
       } catch (error) {
         console.log(error);
       }
     }
-  }, [liked]);
+  }
+
   return (
-    <div className={style.imgBox} key={idx}>
+    <div className={style.s_imgBox} key={idx}>
       <div className={style.imgWrap}>
-        <div className={style.rank}></div>
         <Image
           src={data.url}
-          alt={`top Image`}
-          width={300}
-          height={300}
+          alt={`${data.name}_${data.title} Image`}
+          width={200}
+          height={200}
           unoptimized={true}
         />
       </div>
@@ -58,4 +59,4 @@ const ImageAndLikeBtn = ({ idx, data }) => {
   );
 };
 
-export default ImageAndLikeBtn;
+export default smallImgAndLikeBtn;

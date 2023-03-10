@@ -9,26 +9,46 @@ export default async function handler(req, res) {
   if (req.method === "GET") {
     try {
       const fullDBData = await userCollection.find().toArray();
-
       res.status(200).json(fullDBData);
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: "Internal Server Error" });
     }
   }
-
-  if (req.method === "POST") {
+  console.log(req.body.liked);
+  if (req.method === "POST" && req.body.liked == "true") {
+    console.log("true 실행");
     try {
       const { likeData } = req.body;
-      console.log(likeData);
+
       const filter = {
         $and: [{ "imgUrl.url": likeData.url }, { name: likeData.name }],
       };
       const update = { $inc: { "imgUrl.$.like": 1 } };
       userCollection.updateOne(filter, update, (err, res) => {
-        console.log(res.matchedCount);
+        console.log(res.matchedCount); // 이미지 url과 이름이 동일한 결과의 수
         if (err) throw err;
-        console.log(`document updated`);
+        console.log(`document add complete`);
+      });
+      res.status(200).json({ dd: "dd" });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  }
+
+  if (req.method === "POST" && req.body.liked == "false") {
+    console.log("false 실행");
+    try {
+      const { likeData } = req.body;
+      const filter = {
+        $and: [{ "imgUrl.url": likeData.url }, { name: likeData.name }],
+      };
+      const update = { $inc: { "imgUrl.$.like": -1 } };
+      userCollection.updateOne(filter, update, (err, res) => {
+        console.log(res.matchedCount); // 이미지 url과 이름이 동일한 결과의 수
+        if (err) throw err;
+        console.log(`document delete complete`);
       });
       res.status(200).json({ dd: "dd" });
     } catch (error) {

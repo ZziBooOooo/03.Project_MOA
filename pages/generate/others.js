@@ -3,6 +3,7 @@ import style from "@/styles/generate/others.module.scss";
 import Image from "next/image";
 import axios, { all } from "axios";
 import ImageAndLikeBtn from "@/components/generate/ImageAndLikeBtn";
+import SmallImgAndLikeBtn from "@/components/generate/SmallImgAndLikeBtn";
 
 // 좋아요해제하면 개수줄이기
 // 이미지 저장할때도 id같이 저장하기
@@ -972,7 +973,7 @@ const others = () => {
         console.error(err);
       }
     }
-    // fetchData();
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -1008,22 +1009,12 @@ const others = () => {
         </div>
         <div className={style.randomImgBox}>
           {randomData &&
-            randomData.map((item, key) => {
-              return (
-                <div className={style.imgWrap} key={`${key}_${item.name}`}>
-                  <Image
-                    src={item.url}
-                    alt={`${item.name}_${item.title} Image`}
-                    width={200}
-                    height={200}
-                    unoptimized={true}
-                  />
-                </div>
-              );
+            randomData.map((data, key) => {
+              return <SmallImgAndLikeBtn data={data} key={key} />;
             })}
         </div>
-        <button onClick={refreshRandomImg}>새로고침</button>
       </div>
+      <button onClick={refreshRandomImg}>새로고침</button>
     </div>
   );
 };
