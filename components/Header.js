@@ -2,7 +2,9 @@ import React, {useEffect, useState } from "react";
 import style from "../styles/common.module.css";
 import { useRouter} from "next/router";
 import Image from "next/image";
-import logo from "../public/assets/images/logo.png";
+import logo from "../public/assets/images/logo.svg";
+import { faSignIn } from "@fortawesome/free-solid-svg-icons";
+import { useSession, signIn, signOut } from "next-auth/react"
 
 const Header = () => {
   const router = useRouter();
@@ -36,9 +38,10 @@ const Header = () => {
       router.push('/');
     }else{
       setSelectedPage(index);
-      router.push(pages[index].path);
       if(index === 4){
-        {googleLoginHandler};
+        router.push('/api/auth/signin')
+      }else{
+        router.push(pages[index].path);
       }
     }
   };
@@ -48,12 +51,18 @@ const Header = () => {
     borderBottom: scrollPosition > 100? "1px solid #E2E8EE": "transparent",
     // backdropFilter: scrollPosition > 100? "blur(30px)": "blur(0px)"
   };
+
+  // const googleLoginHandler = () => {
+  //   const redirectUri = window.location.origin + "/login";
+  //   const authUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${process.env.GOOGLE_CLIENT_ID}&redirect_uri=${redirectUri}&response_type=code&scope=openid%20email%20profile`;
+  //   window.location.href = authUrl;
+  //   // window.location.href = "https://accounts.google.com/o/oauth2/auth?client_id=<imserimkim>&redirect_uri=<http://localhost:3000/auth/callback>&response_type=code&scope=https://www.googleapis.com/auth/userinfo.profile";
+  // }
   
   return (
     <div className= {style.headerBox} style={headerStyle} >
       <div className = {style.headerContainer}>
         <div className={style.header_leftBox} onClick={() => router.push("/")}>
-          {/* <p><img src="@/public/assets/images/logo.png"/></p> */}
           <Image
             src={logo}
             alt="Logo"
@@ -71,6 +80,9 @@ const Header = () => {
               onClick={() => handlePageClick(index)}
             >
             {page.title}
+            {index===4 && (
+              <button onClick={()=>faSignIn("google")}></button>
+            )}
             </p>
           ))}
         </div>
@@ -80,3 +92,4 @@ const Header = () => {
 };
 
 export default Header;
+
