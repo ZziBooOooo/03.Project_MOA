@@ -1,5 +1,5 @@
 .section01 {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   text-align: center;
 }
@@ -109,7 +109,7 @@
 }
 
 .section02 {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 .section02 .guideBox {
@@ -191,7 +191,7 @@
 }
 
 .section03 {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 .section03 .guideBox {
@@ -245,7 +245,7 @@
 }
 
 .section04 {
-  width: 100vw;
+  width: 100%;
   height: 128vh;
   background-color: #F5F5F5;
 }
@@ -324,7 +324,7 @@
 }
 
 .section05 {
-  width: 100vw;
+  width: 100%;
   height: 150vh;
 }
 .section05 .guideBox {

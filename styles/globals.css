@@ -75,6 +75,7 @@ table {
 /* slick plug-in */
 
 .slider_container {
+  overflow: hidden;
   margin: 0 auto;
   width: 200%;
   left: -0%;
