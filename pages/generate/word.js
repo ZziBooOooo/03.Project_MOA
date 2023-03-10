@@ -30,7 +30,7 @@ const Word = () => {
   const [activeBtnClass, setActiveBtnClass] = useState(false);
 
   // ** 나중에 현재 로그인한 유저의 id 값으로 변경해야한다.
-  const currentUserId = 3;
+  const currentUserId = 4;
 
   const { wordCount, setWordCount } = useContext(wordCountContext);
   const { userWords, setUserWords } = useContext(userWordContext);
@@ -58,7 +58,7 @@ const Word = () => {
   // index.js에서 선택한 단어의 개수를 state에 저장한다. -> 조건에 따라 화면 렌더링이 다르기 때문
   useEffect(() => {
     setWordCount(wordCount);
-    // getUserWords();
+    getUserWords();
   }, []);
 
   // imgType페이지로 이동

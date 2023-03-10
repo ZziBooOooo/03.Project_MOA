@@ -20,10 +20,10 @@ export default async function handler(req, res) {
     }
     // try {
     //   const insertResult = await userCollection.insertOne({
-    //     _id: 3,
-    //     name: "세림공",
-    //     email: "moakim1234@gmail.com",
-    //     coin: 24,
+    //     _id: 4,
+    //     name: "네번째",
+    //     email: "moakim44@gmail.com",
+    //     coin: 14,
     //     words: {
     //       WordCoin2: [
     //         {
@@ -172,6 +172,7 @@ export default async function handler(req, res) {
     //         like: 0,
     //       },
     //     ],
+    //     likeImgs: [],
     //   });
     //   return res.status(200).send("User saved successfully");
     // } catch {}

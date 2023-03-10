@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import SaveModal from "@/components/generate/SaveModal";
 
 const ImgResults = () => {
-  const currentUserId = 3;
+  const currentUserId = 4;
   const [prompt, setPrompt] = useState(null);
   const [enPrompt, setEnPrompt] = useState(null);
   const [number, setNumber] = useState(3);

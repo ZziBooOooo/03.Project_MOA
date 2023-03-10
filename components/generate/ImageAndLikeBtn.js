@@ -4,36 +4,43 @@ import Image from "next/image";
 import axios, { all } from "axios";
 
 const ImageAndLikeBtn = ({ idx, data }) => {
-  const [liked, setLiked] = useState(false);
+  const currentUserId = 4;
+  const currentName = "네번째";
+  const [liked, setLiked] = useState("");
 
   function addImgToLike() {
-    setLiked(!liked);
+    const newLiked = !liked;
+    setLiked(newLiked);
+    axios
+      .post("/api/generate/userData", {
+        likeData: data,
+        liked: newLiked,
+        _id: currentUserId,
+        currentName,
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
-  useEffect(() => {
-    if (liked == true) {
-      try {
-        const response = axios.post("/api/generate/userData", {
-          likeData: data,
-          liked: "true",
-        });
-        return response.data;
-      } catch (error) {
-        console.log(error);
-      }
-    } else if (liked == false) {
-      console.log("ff");
-      try {
-        const response = axios.post("/api/generate/userData", {
-          likeData: data,
-          liked: "false",
-        });
-        return response.data;
-      } catch (error) {
-        console.log(error);
-      }
-    }
-  }, [liked]);
+  // useEffect(() => {
+  //   async function sendLikeData() {
+  //     try {
+  //       const response = await axios.post("/api/generate/userData", {
+  //         likeData: data,
+  //         liked,
+  //       });
+  //       console.log(response.data); // 성공 메시지 출력
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+  //   sendLikeData();
+  // }, [liked]);
+
   return (
     <div className={style.imgBox} key={idx}>
       <div className={style.imgWrap}>

@@ -4,36 +4,26 @@ import Image from "next/image";
 import axios, { all } from "axios";
 
 const smallImgAndLikeBtn = ({ data, idx }) => {
-  const [liked, setLiked] = useState(false);
+  const currentUserId = 4;
+  const currentName = "네번째";
+  const [liked, setLiked] = useState("");
 
   function addImgToLike() {
-    const isLiked = !liked;
-
-    if (liked == true) {
-      console.log("liked가 true");
-      try {
-        const response = axios.post("/api/generate/userData", {
-          likeData: data,
-          liked: "true",
-        });
-        setLiked(isLiked);
-        return response.data;
-      } catch (error) {
+    const newLiked = !liked;
+    setLiked(newLiked);
+    axios
+      .post("/api/generate/userData", {
+        likeData: data,
+        liked: newLiked,
+        currentUserId,
+        currentName,
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
         console.log(error);
-      }
-    } else if (liked == false) {
-      console.log("liked가 false");
-      try {
-        const response = axios.post("/api/generate/userData", {
-          likeData: data,
-          liked: "false",
-        });
-        setLiked(isLiked);
-        return response.data;
-      } catch (error) {
-        console.log(error);
-      }
-    }
+      });
   }
 
   return (
