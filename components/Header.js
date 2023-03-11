@@ -10,6 +10,7 @@ const Header = () => {
   const router = useRouter();
   const [scrollPosition, setScrollPosition] = useState(0);
   const [selectedPage, setSelectedPage] = useState(null);
+  const { data: session } = useSession()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,17 +34,15 @@ const Header = () => {
   ];
 
   const handlePageClick = (index) => {
-    if( index === 0) {
-      setSelectedPage(0);
-      router.push('/');
-    }else{
-      setSelectedPage(index);
+      // setSelectedPage(0);
+      // router.push('/');
       if(index === 4){
-        router.push('/api/auth/signin')
+        // router.push('/api/auth/signin/google')
+        // window.location.href='https://accounts.google.com/o/oauth2/auth';
+        <button type="button" onClick={()=>{signIn('google')}}>google login</button>
       }else{
         router.push(pages[index].path);
       }
-    }
   };
 
   const headerStyle = {
@@ -52,12 +51,6 @@ const Header = () => {
     // backdropFilter: scrollPosition > 100? "blur(30px)": "blur(0px)"
   };
 
-  // const googleLoginHandler = () => {
-  //   const redirectUri = window.location.origin + "/login";
-  //   const authUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${process.env.GOOGLE_CLIENT_ID}&redirect_uri=${redirectUri}&response_type=code&scope=openid%20email%20profile`;
-  //   window.location.href = authUrl;
-  //   // window.location.href = "https://accounts.google.com/o/oauth2/auth?client_id=<imserimkim>&redirect_uri=<http://localhost:3000/auth/callback>&response_type=code&scope=https://www.googleapis.com/auth/userinfo.profile";
-  // }
   
   return (
     <div className= {style.headerBox} style={headerStyle} >
@@ -79,9 +72,22 @@ const Header = () => {
               className={selectedPage === index ? style.selectedPage : undefined }
               onClick={() => handlePageClick(index)}
             >
-            {page.title}
-            {index===4 && (
-              <button onClick={()=>faSignIn("google")}></button>
+            {/* {page.title} */}
+            {index === 4 ? (
+                <>
+                  {session ? (
+                    <>
+                      Signed in as {session.user.email} <br />
+                      <button onClick={() => signOut()}>로그아웃하기</button>
+                    </>
+                  ) : (
+                    <>
+                      <button onClick={() => signIn()}>로그인</button>
+                    </>
+                  )}
+                </>
+              ) : (
+                page.title
             )}
             </p>
           ))}
