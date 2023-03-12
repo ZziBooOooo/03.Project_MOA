@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
 .content_box {
   margin-top: 200px;
   margin-bottom: 200px;
@@ -23,7 +25,7 @@
   height: 620px;
   border-radius: 20px;
   background-color: #f7f7f7;
-  box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
   position: relative;
   /* 구매완료 모달 */
   /* 구매부족 모달 */
@@ -41,7 +43,7 @@
 .content_box .content_item .content_coinlist .buyComModal .buyComModal_box {
   margin: 20% auto 0;
   background: #ffffff;
-  box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
   border-radius: 12px;
   width: 420px;
   height: 180px;
@@ -92,7 +94,7 @@
 .content_box .content_item .content_coinlist .buyNotModal .buyNotModal_box {
   margin: 20% auto 0;
   background: #ffffff;
-  box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
   border-radius: 12px;
   width: 420px;
   height: 180px;
@@ -213,7 +215,7 @@
   text-align: center;
   width: 22.3%;
   background: #ffffff;
-  box-shadow: 1px 3px 5px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
   border-radius: 5px;
   cursor: pointer;
 }
@@ -225,7 +227,7 @@
   width: 22.3%;
   background: #ffffff;
   border: solid 2px #3f8efc;
-  box-shadow: 1px 3px 5px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
   border-radius: 5px;
   position: relative;
 }
@@ -244,7 +246,7 @@
   width: 34%;
   height: 270px;
   background-color: #ffffff;
-  box-shadow: 1px 3px 5px 1px rgba(0, 0, 0, 0.11);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
   border-radius: 20px;
   /* 구매할 총비용 */
   /* 구매할 리스트 단어들 */

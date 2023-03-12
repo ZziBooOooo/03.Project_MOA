@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import SaveModal from "@/components/generate/SaveModal";
 
 const ImgResults = () => {
-  const currentUserId = 4;
+  const currentUserId = 5;
   const [prompt, setPrompt] = useState(null);
   const [enPrompt, setEnPrompt] = useState(null);
   const [number, setNumber] = useState(3);
@@ -84,6 +84,7 @@ const ImgResults = () => {
     let fullUserSentenceKR = prompt;
     const regex = /(?<=^[^,]+,)[^,]+(?=,[^,]+$)/g;
     const UserSentenceKR = fullUserSentenceKR.match(regex);
+    const imgId = new Date().getTime();
     try {
       const response = await axios.post("/api/generate/saveimage", {
         currentUserId: currentUserId,
@@ -91,6 +92,7 @@ const ImgResults = () => {
         type: imgType,
         style: imgStyle,
         url,
+        imgId,
       });
       // console.log(response.data);
       return response.data;

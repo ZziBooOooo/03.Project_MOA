@@ -207,13 +207,13 @@
       cursor: pointer;
       transition: 0.2s;
       &:hover {
-        transform: translateY(-2px);
+        transform: translateY(-2px) !important;
         background-color: $mainColor;
         color: white;
       }
 
       &:active {
-        transform: translateY(0px);
+        transform: translateY(0px) !important;
       }
 
       p {
@@ -253,6 +253,125 @@
     }
     .activeBtn {
       background-color: $mainColor;
+    }
+  }
+}
+
+@include tablet {
+  .topBox {
+    .textBox {
+      .mainTxt {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .selectBox {
+    height: 80%;
+    .sentenceBox {
+      width: 300px;
+      max-width: 400px;
+      .sentenceWrap {
+        p {
+          font-size: 1.4rem;
+        }
+        .fisrtWord,
+        .secondWord,
+        .thirdWord,
+        .fourthWord {
+          margin: 0 5px;
+        }
+      }
+      svg {
+        margin-left: 8px;
+      }
+    }
+    .word3Box {
+      min-width: 450px;
+    }
+    .word4Box {
+      min-width: 530px;
+    }
+    .wordBox {
+      height: 60%;
+      .refreshBtnBox {
+        // right: -4%;
+      }
+    }
+    .completeBtnBox {
+      button {
+        width: 100px;
+        height: 36px;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .topBox {
+    .textBox {
+      .mainTxt {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .selectBox {
+    height: 80%;
+    .sentenceBox {
+      width: 300px;
+      max-width: 400px;
+      .sentenceWrap {
+        p {
+          font-size: 1.2rem;
+        }
+        .fisrtWord,
+        .secondWord,
+        .thirdWord,
+        .fourthWord {
+          margin: 0 5px;
+
+          p:nth-of-type(1) {
+            min-width: 30px;
+          }
+          .dropbtn {
+            padding: 2px 4px;
+            img {
+              width: 14px;
+              height: 13px;
+            }
+          }
+        }
+      }
+      svg {
+        margin-left: 8px;
+      }
+    }
+    .word2Box {
+      min-width: 280px;
+    }
+    .word4Box {
+      min-width: 370px;
+    }
+    .word3Box {
+      min-width: 400px;
+    }
+    .wordBox {
+      height: 60%;
+      .wordBtn {
+        font-size: 1rem;
+      }
+      .refreshBtnBox {
+        // right: -4%;
+      }
+    }
+    .completeBtnBox {
+      button {
+        width: 100px;
+        height: 36px;
+        font-size: 1.1rem;
+      }
     }
   }
 }

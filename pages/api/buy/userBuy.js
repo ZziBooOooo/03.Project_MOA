@@ -8,7 +8,7 @@ export default async (req, res) => {
       try {
         const { client } = await connectToDatabase();
         const db = client.db("DataMoa");
-        const users = await db.collection("user").find({ _id: 2 }).toArray();
+        const users = await db.collection("user").find({ _id: 4 }).toArray();
         res.status(200).json(users);
       } catch (e) {
         console.error(e);

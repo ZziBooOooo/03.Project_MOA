@@ -1,0 +1,285 @@
+@import "../variable";
+.fullBox {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.568);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.missionMotionBox {
+  max-width: 1200px;
+  width: 70vw;
+  height: 700px;
+  background-color: white;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  .timeBox {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: $mainColor;
+    letter-spacing: 2px;
+  }
+  .textBox {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & p:nth-of-type(1) {
+      font-size: 2.1rem;
+      color: $bascitFtcolor;
+    }
+    & p:nth-of-type(2) {
+      font-size: 1.3rem;
+      color: $mainColor;
+    }
+  }
+  .missionBox {
+    width: 75%;
+    height: 400px;
+    background-color: rgb(29, 29, 29);
+    border-radius: 20px;
+    margin-top: 30px;
+    position: relative;
+
+    div {
+      background: white;
+      border-radius: 30px;
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: calc(50% - 150px / 2);
+      left: calc(50% - 150px / 2);
+      z-index: 1;
+      cursor: pointer;
+      &:active {
+        background-color: rgb(189, 223, 252);
+      }
+    }
+
+    img {
+      position: absolute;
+      top: calc(50% - 150px / 2);
+      left: calc(50% - 150px / 2);
+      transform: translate(50%, 50%);
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        transform: translate(50%, 50%) scale(1.1);
+      }
+    }
+  }
+}
+.missionClickCount {
+  max-width: 1200px;
+  width: 70vw;
+  height: 700px;
+  background-color: white;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  transition: 0.5s;
+  .timeBox {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: $mainColor;
+    letter-spacing: 2px;
+  }
+  .textBox {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & p:nth-of-type(1) {
+      font-size: 2.1rem;
+      color: $bascitFtcolor;
+    }
+    & p:nth-of-type(2) {
+      font-size: 1.3rem;
+      color: $mainColor;
+    }
+  }
+  .goalBox {
+    margin-top: 60px;
+    p {
+      font-size: 2rem;
+      color: $bascitFtcolor;
+      font-weight: bold;
+    }
+  }
+
+  .missionBox {
+    width: 300px;
+    height: 300px;
+    background-color: $mainColor;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: $grayBGshadow;
+
+    p {
+      font-size: 5rem;
+      font-weight: bold;
+      color: white;
+    }
+    &.boxAniOn {
+      animation: shakeBox 0.4s linear forwards;
+    }
+    @keyframes shakeBox {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-20px);
+      }
+    }
+  }
+  &.bgOn {
+    animation: complete 12s linear infinite;
+    transition: background-color 3s ease-in-out;
+  }
+  @keyframes complete {
+    0% {
+      background-color: #f79bc1;
+    }
+    25% {
+      background-color: #ffca8d;
+    }
+    50% {
+      background-color: #c2e092;
+    }
+    75% {
+      background-color: #92d0e0;
+    }
+    100% {
+      background-color: #be9bf7;
+    }
+  }
+}
+.missionTypeWithKeyBoard {
+  max-width: 1200px;
+  width: 70vw;
+  height: 700px;
+  background-color: white;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  transition: 0.5s;
+  .timeBox {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: $mainColor;
+    letter-spacing: 2px;
+  }
+  .textBox {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & p:nth-of-type(1) {
+      font-size: 2.1rem;
+      color: $bascitFtcolor;
+    }
+    & p:nth-of-type(2) {
+      font-size: 1.3rem;
+      color: $mainColor;
+    }
+  }
+  .goalBox {
+    margin-top: 60px;
+    background-color: $mainColor;
+    padding: 5px 20px;
+    border-radius: 16px;
+    box-shadow: $grayBGshadow;
+    p {
+      font-size: 2rem;
+      color: white;
+      font-weight: bold;
+    }
+  }
+  .inputBox {
+    margin-top: 100px;
+    width: 60%;
+    position: relative;
+    min-width: 300px;
+
+    form {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      input {
+        background-color: transparent;
+        width: 100%;
+        max-width: 500px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 5px 10px 10px 5px;
+        display: block;
+        border: none;
+        color: $bascitFtcolor;
+        border-bottom: 3px solid rgb(209, 209, 209);
+        position: relative;
+        &:focus {
+          outline: none;
+        }
+      }
+      .highlight {
+        position: absolute;
+        border-radius: 3px;
+        bottom: 0px;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background-color: $mainColor;
+        animation: 1s hightlightOn forwards;
+      }
+      @keyframes hightlightOn {
+        0% {
+          width: 0%;
+          left: 0;
+        }
+        100% {
+          width: 100%;
+          left: 0;
+        }
+      }
+      .shake {
+        animation: 0.3s shakeOn ease-in-out;
+      }
+      @keyframes shakeOn {
+        0% {
+          transform: translateX(0);
+        }
+        20% {
+          transform: translateX(-10px);
+        }
+        40% {
+          transform: translateX(10px);
+        }
+        60% {
+          transform: translateX(-10px);
+        }
+        80% {
+          transform: translateX(10px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}

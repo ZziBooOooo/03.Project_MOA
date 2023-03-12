@@ -1,10 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const mission = () => {
-  return (
-    <div>mission</div>
-  )
-}
+  return <div>mission</div>;
+};
 
-export default mission
-
+export default mission;

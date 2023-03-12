@@ -1,3 +1,6 @@
+@charset "UTF-8";
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
 .fullBox {
   background-color: white;
 }
@@ -43,20 +46,8 @@
   bottom: 10px;
   right: -10px;
   box-sizing: border-box;
-  -webkit-animation: animloader 2.5s linear infinite;
-          animation: animloader 2.5s linear infinite;
+  animation: animloader 2.5s linear infinite;
   border-radius: 2px;
-}
-@-webkit-keyframes animloader {
-  0% {
-    box-shadow: 10px 0 rgba(255, 255, 255, 0), 20px 0 rgba(255, 255, 255, 0);
-  }
-  50% {
-    box-shadow: 10px 0 #727375, 20px 0 rgba(255, 255, 255, 0);
-  }
-  100% {
-    box-shadow: 10px 0 #727375, 20px 0 #727375;
-  }
 }
 @keyframes animloader {
   0% {
@@ -73,8 +64,7 @@
   width: 64px;
   height: 48px;
   position: relative;
-  -webkit-animation: split 1s ease-in infinite alternate;
-          animation: split 1s ease-in infinite alternate;
+  animation: split 1s ease-in infinite alternate;
 }
 .fullBox .loadBox .loader::before,
 .fullBox .loadBox .loader::after {
@@ -96,14 +86,6 @@
   right: 0;
   background: #abd9ff;
   transform: translateX(10px);
-}
-@-webkit-keyframes split {
-  0%, 25% {
-    width: 64px;
-  }
-  100% {
-    width: 148px;
-  }
 }
 @keyframes split {
   0%, 25% {
@@ -160,7 +142,7 @@
   cursor: pointer;
   border-radius: 16px;
   transition: 0.5s;
-  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
   width: 100%;
   position: relative;
   z-index: 0;
@@ -205,5 +187,32 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 2px 4px rgba(145, 145, 145, 0.05), 0 3px 6px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fullBox .textBox .firstTextBox p {
+    font-size: 1.6rem;
+  }
+  .fullBox .imgBox .card img {
+    min-width: 170px;
+  }
+}
+@media (max-width: 767px) {
+  .fullBox .textBox {
+    width: 80vw;
+  }
+  .fullBox .textBox .firstTextBox p {
+    font-size: 1.2rem;
+  }
+  .fullBox .textBox .firstTextBox img {
+    width: 35px;
+    height: 35px;
+  }
+  .fullBox .imgBox {
+    width: 80vw;
+  }
+  .fullBox .imgBox .card img {
+    min-width: 80px;
+  }
 }/*# sourceMappingURL=results.module.css.map */

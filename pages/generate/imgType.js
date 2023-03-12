@@ -10,7 +10,7 @@ import { selectTypeContext } from "@/contexts/generate/selectTypeContext";
 
 const ImgType = () => {
   const typeArr = [
-    "포토리얼리즘",
+    "하이퍼 리얼리즘",
     "픽셀아트",
     "유화",
     "일러스트",
@@ -61,6 +61,7 @@ const ImgType = () => {
           */}
           <div className={t_style.cardBox}>
             {typeArr.map((type, key) => {
+              const isHyperRealism = type === "하이퍼 리얼리즘";
               return (
                 <div
                   className={
@@ -74,10 +75,23 @@ const ImgType = () => {
                     selectTypeStyle();
                   }}
                 >
-                  <p></p>
-                  <p>{type}</p>
-                  <p></p>
-                  <p></p>
+                  {isHyperRealism ? (
+                    <>
+                      <p></p>
+                      <div className={t_style.typeTxt}>
+                        <p className={t_style.typeTxt1}>하이퍼</p>
+                        <p>리얼리즘</p>
+                      </div>
+                      <p></p>
+                    </>
+                  ) : (
+                    <>
+                      <p></p>
+                      <p>{type}</p>
+                      <p></p>
+                      <p></p>
+                    </>
+                  )}
                 </div>
               );
             })}

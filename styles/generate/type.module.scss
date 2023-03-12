@@ -54,11 +54,15 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          background-image: url("/assets/images/generate/glass.png");
           background-position: center;
           background-size: 115%;
           background-repeat: no-repeat;
           transition: 0.3s;
+        }
+        &:nth-child(1) {
+          & p:nth-of-type(1) {
+            background-image: url("/assets/images/generate/realism.png");
+          }
         }
 
         &:nth-child(2) {
@@ -92,6 +96,23 @@
           font-size: 1.6rem;
           margin: 0;
           margin-left: 10px;
+        }
+
+        .typeTxt {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          p {
+            margin-left: 10px;
+          }
+        }
+        .typeTxt1 {
+          background: none !important;
+          font-weight: bold;
+          font-size: 1.6rem;
+          margin: 0;
+          min-height: 0 !important;
+          height: 30px !important;
         }
       }
     }
@@ -127,4 +148,58 @@
 }
 .currentSelect {
   outline: 4px solid $mainColor;
+}
+
+@include tablet {
+  .fullBox {
+    .bottomMainBox {
+      .cardBox {
+        .imgTypeCard {
+          min-width: 185px;
+          .typeTxt {
+            p {
+              font-size: 1.2rem;
+            }
+          }
+          p:nth-of-type(2) {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+@include mobile {
+  .fullBox {
+    .bottomMainBox {
+      .cardBox {
+        .imgTypeCard {
+          // min-width: 185px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 38%;
+          padding: 3%;
+          p:nth-of-type(1) {
+            min-width: 60px;
+            min-height: 60px;
+          }
+          .typeTxt {
+            .typeTxt1 {
+              transform: translateY(10px);
+            }
+            p {
+              font-size: 1rem;
+              margin-left: 0;
+            }
+          }
+          p:nth-of-type(2) {
+            font-size: 1rem;
+            margin-top: 5px;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
 }

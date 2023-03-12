@@ -5,6 +5,8 @@ export default async function handler(req, res) {
   const database = client.db("DataMoa");
   const userCollection = database.collection("user");
 
+  console.log(req.body.liked);
+
   //otehrs 페이지 접속 시 DB에 저장된 유저들의 데이터를 받아온다.
   if (req.method === "GET") {
     try {
@@ -15,13 +17,12 @@ export default async function handler(req, res) {
       res.status(500).json({ error: "Internal Server Error" });
     }
   }
-  console.log(req.body.liked);
 
   if (req.method === "POST" && req.body.liked == true) {
     console.log("추가");
+    console.log(req.body.liked);
     try {
       const { likeData, currentUserId, currentName } = req.body;
-      console.log(currentName);
 
       // 좋아요한 이미지의 likecount를 증가시킨다
       const filter = {
@@ -56,6 +57,7 @@ export default async function handler(req, res) {
 
   if (req.method === "POST" && req.body.liked == false) {
     console.log("삭제");
+    console.log(req.body.liked);
     try {
       const { likeData, currentUserId, currentName } = req.body;
       const filter = {
@@ -73,7 +75,7 @@ export default async function handler(req, res) {
         { $pull: { likeImgs: { url: likeData.url } } }
       );
 
-      res.status(200).json({ dd: "dd" });
+      res.status(200).json({ status: "delete success" });
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: "Internal Server Error" });

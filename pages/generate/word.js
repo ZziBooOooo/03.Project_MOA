@@ -10,6 +10,7 @@ import { userSentenceContext } from "@/contexts/generate/userSentenceContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Word = () => {
   const [count, setCount] = useState(0);
@@ -30,7 +31,7 @@ const Word = () => {
   const [activeBtnClass, setActiveBtnClass] = useState(false);
 
   // ** 나중에 현재 로그인한 유저의 id 값으로 변경해야한다.
-  const currentUserId = 4;
+  const currentUserId = 5;
 
   const { wordCount, setWordCount } = useContext(wordCountContext);
   const { userWords, setUserWords } = useContext(userWordContext);
@@ -224,46 +225,23 @@ const Word = () => {
           </div>
 
           <div className={w_style.selectBox}>
-            <div
-              className={
-                wordCount && wordCount == 2
-                  ? `${w_style.sentenceBox} ${w_style.word2Box}`
-                  : wordCount == 3
-                  ? `${w_style.sentenceBox} ${w_style.word3Box}`
-                  : `${w_style.sentenceBox} ${w_style.word4Box}`
-              }
-            >
-              <div className={w_style.sentenceWrap}>
-                <div className={w_style.fisrtWord}>
-                  <p>{word1}</p>
-                  <p>{postPosition1}</p>
-                  <div className={w_style.dropdown}>
-                    <button className={w_style.dropbtn}>
-                      <Image
-                        src="/assets/images/generate/down.png"
-                        alt="downIcon"
-                        width={16}
-                        height={16}
-                      />
-                    </button>
-                    <div
-                      className={w_style.dropdown_content}
-                      onClick={(e) => selectPostPosition1(e)}
-                    >
-                      <p>은</p>
-                      <p>는</p>
-                      <p>이</p>
-                      <p>가</p>
-                      <p>와</p>
-                      <p>과</p>
-                    </div>
-                  </div>
-                </div>
-
-                {(wordCount && wordCount == 3) || wordCount == 4 ? (
-                  <div className={w_style.secondWord}>
-                    <p>{word2}</p>
-                    <p>{postPosition2}</p>
+            <AnimatePresence>
+              <motion.div
+                className={
+                  wordCount && wordCount == 2
+                    ? `${w_style.sentenceBox} ${w_style.word2Box}`
+                    : wordCount == 3
+                    ? `${w_style.sentenceBox} ${w_style.word3Box}`
+                    : `${w_style.sentenceBox} ${w_style.word4Box}`
+                }
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className={w_style.sentenceWrap}>
+                  <div className={w_style.fisrtWord}>
+                    <p>{word1}</p>
+                    <p>{postPosition1}</p>
                     <div className={w_style.dropdown}>
                       <button className={w_style.dropbtn}>
                         <Image
@@ -275,50 +253,80 @@ const Word = () => {
                       </button>
                       <div
                         className={w_style.dropdown_content}
-                        onClick={(e) => selectPostPosition2(e)}
+                        onClick={(e) => selectPostPosition1(e)}
                       >
-                        <p>을</p>
-                        <p>를</p>
+                        <p>은</p>
+                        <p>는</p>
+                        <p>이</p>
+                        <p>가</p>
                         <p>와</p>
                         <p>과</p>
-                        <p>에서</p>
                       </div>
                     </div>
                   </div>
-                ) : null}
 
-                {wordCount && wordCount == 4 ? (
-                  <div className={w_style.thirdWord}>
-                    <p>{word3}</p>
-                    <p>{postPosition3}</p>
-                    <div className={w_style.dropdown}>
-                      <button className={w_style.dropbtn}>
-                        <Image
-                          src="/assets/images/generate/down.png"
-                          alt="downIcon"
-                          width={16}
-                          height={16}
-                        />
-                      </button>
-                      <div
-                        className={w_style.dropdown_content}
-                        onClick={(e) => selectPostPosition3(e)}
-                      >
-                        <p>에서</p>
-                        <p>으로</p>
-                        <p>&nbsp;</p>
+                  {(wordCount && wordCount == 3) || wordCount == 4 ? (
+                    <div className={w_style.secondWord}>
+                      <p>{word2}</p>
+                      <p>{postPosition2}</p>
+                      <div className={w_style.dropdown}>
+                        <button className={w_style.dropbtn}>
+                          <Image
+                            src="/assets/images/generate/down.png"
+                            alt="downIcon"
+                            width={16}
+                            height={16}
+                          />
+                        </button>
+                        <div
+                          className={w_style.dropdown_content}
+                          onClick={(e) => selectPostPosition2(e)}
+                        >
+                          <p>을</p>
+                          <p>를</p>
+                          <p>와</p>
+                          <p>과</p>
+                          <p>에서</p>
+                          <p>로</p>
+                          <p>으로</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ) : null}
+                  ) : null}
 
-                <div className={w_style.fourthWord}>
-                  <p>{word4}</p>
+                  {wordCount && wordCount == 4 ? (
+                    <div className={w_style.thirdWord}>
+                      <p>{word3}</p>
+                      <p>{postPosition3}</p>
+                      <div className={w_style.dropdown}>
+                        <button className={w_style.dropbtn}>
+                          <Image
+                            src="/assets/images/generate/down.png"
+                            alt="downIcon"
+                            width={16}
+                            height={16}
+                          />
+                        </button>
+                        <div
+                          className={w_style.dropdown_content}
+                          onClick={(e) => selectPostPosition3(e)}
+                        >
+                          <p>에서</p>
+                          <p>으로</p>
+                          <p>로</p>
+                          <p>&nbsp;</p>
+                        </div>
+                      </div>
+                    </div>
+                  ) : null}
+
+                  <div className={w_style.fourthWord}>
+                    <p>{word4}</p>
+                  </div>
                 </div>
-              </div>
-              <FontAwesomeIcon icon={faDeleteLeft} onClick={deleteSentence} />
-            </div>
-
+                <FontAwesomeIcon icon={faDeleteLeft} onClick={deleteSentence} />
+              </motion.div>
+            </AnimatePresence>
             <div className={w_style.wordBox}>
               <div className={w_style.refreshBtnBox}>
                 <button
@@ -335,30 +343,35 @@ const Word = () => {
                   →{" "}
                 </button>
               </div>
-              {currentWords &&
-                currentWords.map((word, key) => {
-                  const isSelected =
-                    selected === key || saveSelected.includes(word.word);
-                  return (
-                    <div
-                      key={key}
-                      className={`${w_style.wordBtn} ${
-                        isSelected ? w_style.selected : ""
-                      }`}
-                    >
-                      <p
-                        id={word.word}
-                        onClick={(e) => {
-                          makeSentence(e);
-                          addSelectedClass(word.word);
-                          saveSelectedClass(word.word);
-                        }}
+              <AnimatePresence>
+                {currentWords &&
+                  currentWords.map((word, key) => {
+                    const isSelected =
+                      selected === key || saveSelected.includes(word.word);
+                    return (
+                      <motion.div
+                        key={key}
+                        className={`${w_style.wordBtn} ${
+                          isSelected ? w_style.selected : ""
+                        }`}
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: 0.1 * key }}
                       >
-                        {word.word}
-                      </p>
-                    </div>
-                  );
-                })}
+                        <p
+                          id={word.word}
+                          onClick={(e) => {
+                            makeSentence(e);
+                            addSelectedClass(word.word);
+                            saveSelectedClass(word.word);
+                          }}
+                        >
+                          {word.word}
+                        </p>
+                      </motion.div>
+                    );
+                  })}
+              </AnimatePresence>
             </div>
 
             <div className={w_style.completeBtnBox}>

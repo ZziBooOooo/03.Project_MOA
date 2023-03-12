@@ -57,6 +57,9 @@ table {
   position: relative;
   padding: 0px 60px !important; /* 버튼의 높이만큼 값을 추가 */
 }
+.swiper-slide {
+  min-width: 150px;
+}
 .swiper-button-prev,
 .swiper-button-next {
   width: 32px !important;
@@ -76,7 +79,6 @@ table {
   color: rgb(174, 177, 185);
 }
 
-
 /* slick plug-in */
 
 .slider_container {
@@ -89,7 +91,7 @@ table {
   /* border: 1px solid black; */
 }
 
-.slider_container::after{
+.slider_container::after {
   content: "";
   height: 250px;
   position: absolute;
@@ -97,7 +99,11 @@ table {
   left: 0%;
   width: 100px;
   z-index: 2;
-  background: linear-gradient(to right, rgba(245,245,245, 1) 0%,rgba(245,245,245,0) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(245, 245, 245, 1) 0%,
+    rgba(245, 245, 245, 0) 100%
+  );
 }
 
 .paused {
@@ -108,15 +114,16 @@ table {
   display: flex;
 }
 
-.slick-prev::before, .slick-next::before{
-    display: none;
-  } 
-
-.slickPicture{
-    margin-bottom: 20%;
+.slick-prev::before,
+.slick-next::before {
+  display: none;
 }
 
-.slider-item.paused{
+.slickPicture {
+  margin-bottom: 20%;
+}
+
+.slider-item.paused {
   font-size: 1.375rem;
   font-weight: bold;
   margin-left: 25%;

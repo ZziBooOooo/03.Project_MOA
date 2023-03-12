@@ -1,19 +1,22 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
-const IconCard = ({ imagePath }) => {
+const IconCard = ({ imagePath, delay }) => {
   return (
-    <div>
-      {
-        <Image
-          src={imagePath}
-          alt="icon"
-          layout="responsive"
-          width={200}
-          height={200}
-        />
-      }
-    </div>
+    <motion.div
+      initial={{ opacity: 0, marginTop: 25 }}
+      animate={{ opacity: 1, marginTop: 0 }}
+      transition={{ delay: delay }}
+    >
+      <Image
+        src={imagePath}
+        alt="icon"
+        layout="responsive"
+        width={200}
+        height={200}
+      />
+    </motion.div>
   );
 };
 
