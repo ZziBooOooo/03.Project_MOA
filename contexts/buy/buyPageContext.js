@@ -90,8 +90,6 @@ const BuyContextCom = (props) => {
         updateWord: buyWord,
         wordName,
       });
-
-      console.log(response.data);
     } catch (error) {
       console.error(error);
     }

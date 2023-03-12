@@ -8,7 +8,7 @@ export default async (req, res) => {
       try {
         const { client } = await connectToDatabase();
         const db = client.db("DataMoa");
-        const users = await db.collection("user").find({ _id: 2 }).toArray();
+        const users = await db.collection("user").find({ _id: 0 });
         res.status(200).json(users);
       } catch (e) {
         console.error(e);
@@ -21,10 +21,7 @@ export default async (req, res) => {
         const { client } = await connectToDatabase();
         const db = client.db("DataMoa");
 
-        // 요청의 body에서 필요한 데이터 추출
         const { userId, updateCoin, updateWord, wordName } = req.body;
-
-        // 수정할 데이터를 찾아서 업데이트
 
         const result = await db.collection("user").updateOne(
           { _id: userId },
