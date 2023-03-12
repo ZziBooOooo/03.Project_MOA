@@ -59,7 +59,8 @@ const ImgResults = () => {
       // const regex = /(?<=^[^,]+,)[^,]+(?=,[^,]+$)/g;
       // const UserSentenceKR = fullUserSentenceKR.match(regex);
       axios
-        .post(`/api/generate/images?&p=${translatedText}&n=${number}`, {
+        .post("/api/generate/images", {
+          p: translatedText,
           currentUserId: currentUserId,
           title: fullUserSentenceKR,
           type: imgType,
@@ -173,37 +174,6 @@ const ImgResults = () => {
                   </div>
                 );
               })}
-
-              {/* <div className={r_style.card} key="1">
-                <img
-                  src="/assets/images/generate/oil.png"
-                  alt="ai-result-image"
-                  onClick={() => {
-                    // saveImage(result.url);
-                    openModal();
-                  }}
-                />
-              </div>
-              <div className={r_style.card} key="2">
-                <img
-                  src="/assets/images/generate/oil.png"
-                  alt="ai-result-image"
-                  onClick={() => {
-                    // saveImage(result.url);
-                    openModal();
-                  }}
-                />
-              </div>
-              <div className={r_style.card} key="3">
-                <img
-                  src="/assets/images/generate/oil.png"
-                  alt="ai-result-image"
-                  onClick={() => {
-                    // saveImage(result.url);
-                    openModal();
-                  }}
-                />
-              </div> */}
             </div>
           </>
         ) : (

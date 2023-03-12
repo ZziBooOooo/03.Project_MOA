@@ -1,4 +1,4 @@
-import { connectToDatabase } from "../../db";
+import { connectToDatabase } from "@/database/connect";
 
 export default async function handler(req, res) {
   const { client } = await connectToDatabase();

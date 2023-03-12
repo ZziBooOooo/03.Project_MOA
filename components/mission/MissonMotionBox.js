@@ -75,6 +75,7 @@ const MissonMotionBox = () => {
                   handleDragStart(color);
                 }}
                 onDragEnd={handleDragEnd}
+                key={key}
               />
             );
           })}

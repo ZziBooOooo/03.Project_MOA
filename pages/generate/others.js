@@ -14,7 +14,7 @@ import { AnimatePresence, motion } from "framer-motion";
 // 이미지 저장할때도 id같이 저장하기
 // 내가 좋아요했는지 확인 -> 유저마다 좋아요필드 만들고 이미지 주소저장?
 
-const others = () => {
+const Others = () => {
   const imgUrlArr = [
     "/assets/images/generate/money.png",
     "/assets/images/generate/fillheart.png",
@@ -236,4 +236,4 @@ const others = () => {
   );
 };
 
-export default others;
+export default Others;
