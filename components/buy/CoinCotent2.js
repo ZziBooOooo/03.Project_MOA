@@ -44,7 +44,7 @@ export default function CoinCotent2({ onChange }) {
 
   useEffect(() => {
     setcoinTotal(buyWord.length * 2);
-  }, [buyWord]); /* 구매할 단어를 누르면 총몇코인이 필요한지 표시 */
+  }, [buyWord, coinTotal]); /* 구매할 단어를 누르면 총몇코인이 필요한지 표시 */
 
   return (
     <motion.div
@@ -55,7 +55,7 @@ export default function CoinCotent2({ onChange }) {
       className={style.content_box}
     >
       <div className={style.content_item}>
-        <h3>문구 생각해보기</h3>
+        <h3>2코인 단어</h3>
         <div className={style.content_coinlist}>
           <div className={style.content_coinlist_top}>
             <div className={style.check_list}>
