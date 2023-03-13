@@ -1,6 +1,6 @@
 import { connectToDatabase } from "@/database/connect";
 
-export default async (req, res) => {
+export default async function handler(req, res) {
   const { method } = req;
 
   switch (method) {
@@ -75,4 +75,4 @@ export default async (req, res) => {
       res.setHeader("Allow", ["GET", "PUT", "POST"]);
       res.status(405).json({ error: `Method ${method} not allowed` });
   }
-};
+}
