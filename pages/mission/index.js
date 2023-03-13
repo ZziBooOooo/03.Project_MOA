@@ -21,7 +21,7 @@ const index = () => {
             />
         </div>
       </div>
-      <button onClick={() => router.push("/missionModal")}>미션 시작하기</button>
+      <button onClick={() => router.push("/mission/missionModal")}>미션 시작하기</button>
 
     </section>
 

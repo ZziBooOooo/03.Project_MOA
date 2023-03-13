@@ -34,4 +34,48 @@
   font-family: "Pretendard-Regular";
   font-weight: bold;
   word-spacing: 0.1rem;
+}
+
+.modalWrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(40, 40, 40, 0.6);
+  z-index: 9100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+.modalWrapper .missionModal {
+  z-index: 9999;
+  max-width: 1200px;
+  width: 70%;
+  height: 70%;
+  background-color: white;
+  border-radius: 20px;
+  filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.15));
+}
+.modalWrapper .missionModal .missionResult {
+  position: absolute;
+  bottom: 30%;
+  background-color: #e6f6ff;
+  cursor: pointer;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1%;
+}
+
+.missionSuccess {
+  max-width: 1200px;
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.missionSuccess .slogan {
+  font-size: 3.125rem;
+  font-weight: bold;
 }/*# sourceMappingURL=mission.module.css.map */
