@@ -2,6 +2,9 @@ import cloudinary from "cloudinary";
 
 export default async function handler(req, res) {
   const { currentUserId, title, type, style } = req.body;
+  // const n = parseInt(req.query.n);
+  // const numImages = isNaN(n) ? 3 : n;
+  // console.log(req.body);
 
   const { Configuration, OpenAIApi } = require("openai");
   const configuration = new Configuration({
@@ -16,6 +19,7 @@ export default async function handler(req, res) {
       size: "256x256",
     });
 
+    // console.log(req.query.p);
     // console.log(parseInt(req.query.n));
     // console.log(response.data.data[0].url);
 

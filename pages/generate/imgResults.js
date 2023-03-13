@@ -9,6 +9,7 @@ import { selectTypeContext } from "@/contexts/generate/selectTypeContext";
 import { selectStyleContext } from "@/contexts/generate/selectStyleContext";
 import { motion, AnimatePresence } from "framer-motion";
 import SaveModal from "@/components/generate/SaveModal";
+import Loading from "@/components/generate/Loading";
 
 const ImgResults = () => {
   const currentUserId = 5;
@@ -141,11 +142,7 @@ const ImgResults = () => {
           <></>
         )}
         {loading && (
-          <div className={r_style.loadBox}>
-            <p className={r_style.textLoader}>로딩중</p>
-            <span className={r_style.loader}></span>
-            <p>잠시만 기다려 주세요</p>
-          </div>
+          <Loading/>
         )}
 
         {loading == 0 && error == 0 ? (
@@ -174,6 +171,37 @@ const ImgResults = () => {
                   </div>
                 );
               })}
+
+              {/* <div className={r_style.card} key="1">
+                <img
+                  src="/assets/images/generate/oil.png"
+                  alt="ai-result-image"
+                  onClick={() => {
+                    // saveImage(result.url);
+                    openModal();
+                  }}
+                />
+              </div>
+              <div className={r_style.card} key="2">
+                <img
+                  src="/assets/images/generate/oil.png"
+                  alt="ai-result-image"
+                  onClick={() => {
+                    // saveImage(result.url);
+                    openModal();
+                  }}
+                />
+              </div>
+              <div className={r_style.card} key="3">
+                <img
+                  src="/assets/images/generate/oil.png"
+                  alt="ai-result-image"
+                  onClick={() => {
+                    // saveImage(result.url);
+                    openModal();
+                  }}
+                />
+              </div> */}
             </div>
           </>
         ) : (

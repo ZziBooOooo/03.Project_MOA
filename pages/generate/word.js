@@ -314,8 +314,6 @@ const Word = () => {
                           <p>에서</p>
                           <p>으로</p>
                           <p>로</p>
-                          <p>을</p>
-                          <p>를</p>
                           <p>&nbsp;</p>
                         </div>
                       </div>

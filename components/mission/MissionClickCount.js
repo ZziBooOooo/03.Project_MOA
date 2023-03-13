@@ -16,7 +16,7 @@ const MissionClickCount = () => {
     if (clickCount == 45) {
       setBoxAni(true);
       setTimeout(() => {
-        router.push("/mission/missionSucess");
+        router.push("/mission/missionSuccess");
       }, 800);
     }
   }

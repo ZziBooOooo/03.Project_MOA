@@ -13,6 +13,18 @@ const MotionBox = ({ constraintsRef, onDragStart, onDragEnd }) => {
         onDragStart={onDragStart}
         onDragEnd={onDragEnd}
       />
+      {/* <motion.div
+        drag
+        dragConstraints={constraintsRef}
+        dragElastic={0.5}
+        dragMomentum={false}
+      />
+      <motion.div
+        drag
+        dragConstraints={constraintsRef}
+        dragElastic={0.5}
+        dragMomentum={false}
+      /> */}
     </>
   );
 };

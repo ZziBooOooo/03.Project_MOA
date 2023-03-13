@@ -51,7 +51,7 @@ const MissionTypeWithKeyBoard = () => {
     if (sentenceArr[randomIdx] == inputRef.current.value) {
       console.log("true");
       setTimeout(() => {
-        router.push("/mission/missionSucess");
+        router.push("/mission/missionSuccess");
       }, 500);
     } else {
       setShakeOn(true);

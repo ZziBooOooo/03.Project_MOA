@@ -82,7 +82,7 @@ const BuyContextCom = (props) => {
     }
   }; /* 몽고디비 Buyget */
 
-  const useBuyData = async (coinTotal, buyWord, wordName) => {
+  const userBuyData = async (coinTotal, buyWord, wordName) => {
     try {
       const response = await axios.put("/api/buy/userBuy", {
         userId: userData._id,
@@ -108,7 +108,7 @@ const BuyContextCom = (props) => {
         WordCoin3,
         WordCoin4,
         userGetData,
-        useBuyData,
+        userBuyData,
         userData,
         setuserData,
       }}

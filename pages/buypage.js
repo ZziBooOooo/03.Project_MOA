@@ -7,7 +7,7 @@ import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import BuyContextCom from "@/contexts/buy/buyPageContext";
 
-export default function buypage() {
+export default function Buypage() {
   const [currentContent, setCurrentContent] = useState("CoinCotent1");
   const handleContentChange = (content) => {
     setCurrentContent(content);

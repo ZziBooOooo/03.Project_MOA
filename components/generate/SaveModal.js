@@ -22,11 +22,7 @@ const SaveModal = ({ openModal, closeModal }) => {
         className={r_style.modalContainer}
       >
         <div className={r_style.modalBox}>
-          <h2>
-            svg 애니메이션?
-            <br />
-            저장완료 출력 후 마이앨범 페이지로 이동
-          </h2>
+          <h2>저장완료 출력 후 마이앨범 페이지로 이동</h2>
           <button
             onClick={() => {
               closeModal();

@@ -49,7 +49,7 @@ const MissonMotionBox = () => {
 
   function goMissionSuccess() {
     setTimeout(() => {
-      router.push("/mission/missionSucess");
+      router.push("/mission/missionSuccess");
     }, 1000);
   }
   return (

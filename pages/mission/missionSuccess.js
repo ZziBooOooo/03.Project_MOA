@@ -1,7 +1,7 @@
 import React from "react";
 
-const missionSucess = () => {
+const missionSuccess = () => {
   return <div>missionSucess</div>;
 };
 
-export default missionSucess;
+export default MissionSuccess;
