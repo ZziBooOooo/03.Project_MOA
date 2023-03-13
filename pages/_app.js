@@ -4,12 +4,18 @@ import Headinfo from "@/components/HeadInfo";
 import ParentComponent from "@/contexts/ParentComponent";
 import "/node_modules/slick-carousel/slick/slick.css";
 import "/node_modules/slick-carousel/slick/slick-theme.css";
+
 import { SessionProvider } from "next-auth/react";
 
-export default function App({ Component, pageProps }) {
+
+
+export default function App({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <>
-      <SessionProvider session={pageProps.session}>
+    
+
+      <SessionProvider session={session}>
+
         <ParentComponent>
           <Headinfo />
           <Layout>
