@@ -14,12 +14,12 @@ export default function BuyContent({ onChange }) {
       className={style.content_box}
     >
       <div className={style.content_item}>
-        <h3>문구 생각해보기</h3>
+        <h3>단어 카테고리</h3>
         <div className={style.content_coinlist}>
           <div className={style.content_coinlist_top}>
             <div className={style.check_list}>
               <img src="/assets/images/buy/checklist.png" />
-              <p>해야하는 일 설명해주기</p>
+              <p>보유한 코인으로 단어를 구매하세요</p>
             </div>
             <div className={style.coin_count}>
               <img src="/assets/images/buy/smallcoin.png" />
@@ -35,7 +35,7 @@ export default function BuyContent({ onChange }) {
             >
               <img src="/assets/images/buy/bigcoin.png" />
               <p>2 코인</p>
-              <span>대략 어떤 단어 있는지 간단한 설명</span>
+              <span>명사의 단어들이 있어요</span>
             </div>
             <div
               className={style.coin2}
@@ -43,7 +43,7 @@ export default function BuyContent({ onChange }) {
             >
               <img src="/assets/images/buy/bigcoin.png" />
               <p>3 코인</p>
-              <span>대략 어떤 단어 있는지 간단한 설명</span>
+              <span>형용사의 단어들이 있어요</span>
             </div>
             <div
               className={style.coin2}
@@ -51,7 +51,7 @@ export default function BuyContent({ onChange }) {
             >
               <img src="/assets/images/buy/bigcoin.png" />
               <p>4 코인</p>
-              <span>대략 어떤 단어 있는지 간단한 설명</span>
+              <span>동사의 단어들이 있어요</span>
             </div>
           </div>
         </div>
