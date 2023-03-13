@@ -5,7 +5,7 @@ import './missionSuccess';
 import style from '@/styles/mission/mission.module.css';
 import {useRouter} from 'next/router';
 import Image from "next/image";
-import MissionCatch from '/components/mission/MissionCatch';
+import MissionCatch from '@/components/mission/MissionCatch';
 
 
 const Mission = () => {
