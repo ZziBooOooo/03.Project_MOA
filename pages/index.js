@@ -1,5 +1,6 @@
 import Headinfo from "@/components/HeadInfo";
-import Main from "./main";
+import Main from "./Main";
+
 
 export default function Home() {
   return (
@@ -9,3 +10,4 @@ export default function Home() {
     </>
   );
 }
+  

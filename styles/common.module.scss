@@ -11,7 +11,7 @@
 }
 
 .headerBox {
-  z-index:9999;
+  z-index:9000;
   width: 100%;
   font-family: "Pretendard-Regular";
   color: $bascitFtcolor;
@@ -45,22 +45,23 @@
       font-weight: bold;
       p {
         cursor: pointer;
-        margin-left: 11%;
+        margin-left: 3%;
         position: relative;
+        padding: 0.8% 3.5%;
       }
       .selectedPage{
         font-weight: bold;
         &::after{
           content: "";
           display: block;
+          min-width: 50px;
           width: 100%;
           height: 100%;
           z-index: -1;
           top: 0px;
           left: 0px;
-          transform: scaleX(2.1) scaleY(1.7);
           position: absolute;
-          border-radius: 50px;
+          border-radius: 24px;
           background-color: #E2E8EE; 
         }
       }
@@ -72,7 +73,7 @@
 .footerBox{
   bottom: 0;
   width: 100%;
-  height: 360px;
+  height: 31vh;
   background-color: #2D3747;
   color: #fff;
   .footerContainer{

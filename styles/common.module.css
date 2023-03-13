@@ -8,7 +8,7 @@
 }
 
 .headerBox {
-  z-index: 9999;
+  z-index: 9000;
   width: 100%;
   font-family: "Pretendard-Regular";
   color: #3b3d3f;
@@ -44,8 +44,9 @@
 }
 .headerBox .headerContainer .header_rightBox p {
   cursor: pointer;
-  margin-left: 11%;
+  margin-left: 3%;
   position: relative;
+  padding: 0.8% 3.5%;
 }
 .headerBox .headerContainer .header_rightBox .selectedPage {
   font-weight: bold;
@@ -53,22 +54,22 @@
 .headerBox .headerContainer .header_rightBox .selectedPage::after {
   content: "";
   display: block;
+  min-width: 50px;
   width: 100%;
   height: 100%;
   z-index: -1;
   top: 0px;
   left: 0px;
-  transform: scaleX(2.1) scaleY(1.7);
   position: absolute;
-  border-radius: 50px;
+  border-radius: 24px;
   background-color: #E2E8EE;
 }
 
 .footerBox {
   bottom: 0;
   width: 100%;
-  height: 360px;
-  background-color: #2d3747;
+  height: 31vh;
+  background-color: #2D3747;
   color: #fff;
 }
 .footerBox .footerContainer {
