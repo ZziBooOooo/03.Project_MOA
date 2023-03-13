@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 export const buyContext = createContext(null);
+import { useSession } from "next-auth/react";
 
 const BuyContextCom = (props) => {
   const WordCoin2 = [
@@ -71,21 +72,24 @@ const BuyContextCom = (props) => {
   ]; /* 4코인 단어 배열 */
 
   const [userData, setuserData] = useState();
+  const { data: session } = useSession(); /* 로그인 세션 */
 
   const userGetData = async () => {
     try {
-      const response = await axios.get("/api/buy/userBuy");
-      console.log(response.data[0]);
-      setuserData(response.data[0]);
+      const response = await axios
+        .get("/api/buy/userBuy", {
+          params: { email: session.user.email },
+        })
+        .then((res) => setuserData(res.data));
     } catch (error) {
       console.error(error);
     }
-  }; /* 몽고디비 Buyget */
+  }; /* 사용자 정보 */
 
   const useBuyData = async (coinTotal, buyWord, wordName) => {
     try {
       const response = await axios.put("/api/buy/userBuy", {
-        userId: userData._id,
+        useremail: userData.useremail,
         updateCoin: userData.coin <= 0 ? 0 : userData.coin - coinTotal,
         updateWord: buyWord,
         wordName,
@@ -93,11 +97,11 @@ const BuyContextCom = (props) => {
     } catch (error) {
       console.error(error);
     }
-  }; /* 구매했을때 코인차감과 단어 주기 */
+  }; /* 사용자 구매 코인차감, 단어 주기*/
 
   useEffect(() => {
     userGetData();
-  }, []); /* DB  */
+  }, [session]); /* DB  */
 
   return (
     <buyContext.Provider

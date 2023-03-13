@@ -44,7 +44,7 @@ export default function CoinCotent4({ onChange }) {
 
   useEffect(() => {
     setcoinTotal(buyWord.length * 4);
-  }, [buyWord]); /* 구매할 단어를 누르면 총몇코인이 필요한지 표시 */
+  }, [buyWord, coinTotal]); /* 구매할 단어를 누르면 총몇코인이 필요한지 표시 */
 
   return (
     <motion.div
