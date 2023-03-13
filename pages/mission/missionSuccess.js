@@ -42,7 +42,7 @@ const MissionSuccess = () => {
           height={height}
           numberOfPieces={70}
         /> */}
-      <p className={style.slogan}>미션에 성공하셨어요!</p>
+      <p className={style.slogan}>미션에 성공하셨어요! 네!</p>
       <p className={style.reward}> +<span>1</span>코인 </p>
       <Image 
             src="/assets/images/mission/success.png"
