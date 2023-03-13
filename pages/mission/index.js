@@ -3,7 +3,7 @@ import style from '@/styles/mission/mission.module.css';
 import { useRouter } from "next/router";
 import Image from "next/image";
 
-const index = () => {
+const Index = () => {
   const router = useRouter();
 
 return(
@@ -28,4 +28,4 @@ return(
 )
 }
 
-export default index;
+export default Index;
