@@ -9,9 +9,10 @@ import { selectTypeContext } from "@/contexts/generate/selectTypeContext";
 import { selectStyleContext } from "@/contexts/generate/selectStyleContext";
 import { motion, AnimatePresence } from "framer-motion";
 import SaveModal from "@/components/generate/SaveModal";
+import Loading from "@/components/generate/Loading";
 
 const ImgResults = () => {
-  const currentUserId = 3;
+  const currentUserId = 5;
   const [prompt, setPrompt] = useState(null);
   const [enPrompt, setEnPrompt] = useState(null);
   const [number, setNumber] = useState(3);
@@ -59,7 +60,8 @@ const ImgResults = () => {
       // const regex = /(?<=^[^,]+,)[^,]+(?=,[^,]+$)/g;
       // const UserSentenceKR = fullUserSentenceKR.match(regex);
       axios
-        .post(`/api/generate/images?&p=${translatedText}&n=${number}`, {
+        .post("/api/generate/images", {
+          p: translatedText,
           currentUserId: currentUserId,
           title: fullUserSentenceKR,
           type: imgType,
@@ -84,6 +86,7 @@ const ImgResults = () => {
     let fullUserSentenceKR = prompt;
     const regex = /(?<=^[^,]+,)[^,]+(?=,[^,]+$)/g;
     const UserSentenceKR = fullUserSentenceKR.match(regex);
+    const imgId = new Date().getTime();
     try {
       const response = await axios.post("/api/generate/saveimage", {
         currentUserId: currentUserId,
@@ -91,6 +94,7 @@ const ImgResults = () => {
         type: imgType,
         style: imgStyle,
         url,
+        imgId,
       });
       // console.log(response.data);
       return response.data;
@@ -138,11 +142,7 @@ const ImgResults = () => {
           <></>
         )}
         {loading && (
-          <div className={r_style.loadBox}>
-            <p className={r_style.textLoader}>로딩중</p>
-            <span className={r_style.loader}></span>
-            <p>잠시만 기다려 주세요</p>
-          </div>
+          <Loading/>
         )}
 
         {loading == 0 && error == 0 ? (

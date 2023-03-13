@@ -1,3 +1,6 @@
+@charset "UTF-8";
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
 .fullBox {
   background-color: white;
 }
@@ -206,4 +209,31 @@
   justify-content: center;
   flex-direction: column;
   box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fullBox .textBox .firstTextBox p {
+    font-size: 1.6rem;
+  }
+  .fullBox .imgBox .card img {
+    min-width: 170px;
+  }
+}
+@media (max-width: 767px) {
+  .fullBox .textBox {
+    width: 80vw;
+  }
+  .fullBox .textBox .firstTextBox p {
+    font-size: 1.2rem;
+  }
+  .fullBox .textBox .firstTextBox img {
+    width: 35px;
+    height: 35px;
+  }
+  .fullBox .imgBox {
+    width: 80vw;
+  }
+  .fullBox .imgBox .card img {
+    min-width: 80px;
+  }
 }/*# sourceMappingURL=results.module.css.map */

@@ -206,3 +206,48 @@
   flex-direction: column;
   box-shadow: $grayBGshadow;
 }
+
+@include tablet {
+  .fullBox {
+    .textBox {
+      .firstTextBox {
+        p {
+          font-size: 1.6rem;
+        }
+      }
+    }
+    .imgBox {
+      .card {
+        img {
+          min-width: 170px;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .fullBox {
+    .textBox {
+      width: 80vw;
+      .firstTextBox {
+        p {
+          font-size: 1.2rem;
+        }
+        img {
+          width: 35px;
+          height: 35px;
+        }
+      }
+    }
+    .imgBox {
+      // flex-direction: column;
+      width: 80vw;
+      .card {
+        img {
+          min-width: 80px;
+        }
+      }
+    }
+  }
+}

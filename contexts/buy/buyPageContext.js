@@ -86,7 +86,7 @@ const BuyContextCom = (props) => {
     }
   }; /* 사용자 정보 */
 
-  const useBuyData = async (coinTotal, buyWord, wordName) => {
+  const userBuyData = async (coinTotal, buyWord, wordName) => {
     try {
       const response = await axios.put("/api/buy/userBuy", {
         useremail: userData.useremail,
@@ -110,7 +110,7 @@ const BuyContextCom = (props) => {
         WordCoin3,
         WordCoin4,
         userGetData,
-        useBuyData,
+        userBuyData,
         userData,
         setuserData,
       }}

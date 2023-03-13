@@ -6,6 +6,9 @@ import style from '@/styles/mission/mission.module.css';
 import {useRouter} from 'next/router';
 import Image from "next/image";
 import MissionCatch from '@/components/mission/MissionCatch';
+import MissonMotionBox from "@/components/mission/MissonMotionBox";
+import MissionClickCount from "@/components/mission/MissionClickCount";
+import MissionTypeWithKeyBoard from "@/components/mission/MissionTypeWithKeyBoard";
 
 
 const Mission = () => {
@@ -29,6 +32,10 @@ const Mission = () => {
           </button> */}
           {/* <MissionRetry />
           <MissionEnd />     */}
+          {/* <MissonMotionBox /> */}
+          {/* <MissionClickCount /> */}
+           {/* <MissionTypeWithKeyBoard /> */}
+          
           <MissionCatch />
         </div>
       </div>
