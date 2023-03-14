@@ -8,8 +8,8 @@ export default function MyAlbumBanner() {
   const myText = useRef();
 
   function myalbumIntro() {
-    myPhone01.current.style.transform = "translateY(-10px)";
-    myPhone02.current.style.transform = "translateY(-10px)";
+    myPhone01.current.style.transform = "translateY(190px)";
+    myPhone02.current.style.transform = "translateY(10px)";
     myPhone01.current.style.opacity = "1";
     myPhone02.current.style.opacity = "1";
     myText.current.style.opacity = "1";

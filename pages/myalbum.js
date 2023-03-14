@@ -1,6 +1,7 @@
 import MyAlbumBanner from "@/components/myalbum/MyalbumBanner";
 import MyalbumCategory from "@/components/myalbum/MyalbumCategory";
 import MyalbumContent from "@/components/myalbum/MyalbumContent";
+import BuyContextCom from "@/contexts/buy/buyPageContext";
 import { useState } from "react";
 
 export default function Myalbum() {
@@ -11,9 +12,11 @@ export default function Myalbum() {
 
   return (
     <>
-      <MyAlbumBanner />
-      <MyalbumCategory onChange={handleCateBtn} catePage={catePage} />
-      <MyalbumContent catePage={catePage} />
+      <BuyContextCom>
+        <MyAlbumBanner />
+        <MyalbumCategory onChange={handleCateBtn} catePage={catePage} />
+        <MyalbumContent catePage={catePage} />
+      </BuyContextCom>
     </>
   );
 }
