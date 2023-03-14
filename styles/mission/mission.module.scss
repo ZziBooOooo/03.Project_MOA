@@ -342,7 +342,6 @@
     // }
 }
 
-
 .modalWrapper{
     width: 100%;
     height: 100vh;
@@ -384,6 +383,7 @@
     height: 100vh;
     z-index: -9999;
 }
+
 .missionSuccess{
     max-width: 1200px;
     width: 70%;
@@ -548,19 +548,19 @@
   p{
     font-size: 1.875rem;
     color: $mainColor;
+    margin-bottom: 10%;
   }
   form{
-    width: 60%;
+    width: 70%;
     border-bottom: 2px solid gray;
     margin: 0 auto;
     display: flex;
     input{
       cursor: pointer;
-      width: 50%;
+      width: 95%;
       margin-bottom: 2%;
       text-align: center;
-      font-size: 1.25rem;
-      margin-top: 15%;
+      font-size: 1.25rem;  
     }
     input:focus {outline: none;}
   }

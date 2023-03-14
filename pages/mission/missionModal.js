@@ -29,6 +29,7 @@ const Mission = () => {
           {/* <MissionTypeWithKeyBoard /> */}
           {/* <MissionTree /> */}
           <MissionDiary />
+          {/* <MissionCatch /> */}
         </div>
       </div>
     </>
