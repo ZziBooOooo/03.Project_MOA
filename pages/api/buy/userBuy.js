@@ -2,16 +2,24 @@ import { connectToDatabase } from "@/database/connect";
 
 export default async function handler(req, res) {
   const { method } = req;
+  const { client } = await connectToDatabase();
+  const db = client.db("DataMoa");
+  const userCollection = db.collection("user");
+  const { name, email, profile } = req.body;
 
   switch (method) {
     case "GET":
+      // console.log(req.query);
       try {
-        const { client } = await connectToDatabase();
-        const db = client.db("DataMoa");
-        const users = await db
-          .collection("user")
-          .findOne({ useremail: req.query.email });
-        res.status(200).json(users);
+        const users = await userCollection.findOne({
+          useremail: req.query.email,
+        });
+        console.log(users);
+        if (users) {
+          res.status(200).json({ status: "exist", email: users.useremail });
+        } else {
+          res.status(200).json({ status: "noExist", email: req.query.email });
+        }
       } catch (e) {
         console.error(e);
         res.status(500).json({ error: "Something went wrong" });
@@ -21,20 +29,17 @@ export default async function handler(req, res) {
 
     case "POST":
       try {
-        const { client } = await connectToDatabase();
-        const db = client.db("DataMoa");
+        const existingUser = await userCollection.findOne({ useremail: email });
 
-        const { name, email, profil } = req.body;
-        const existingUser = await db
-          .collection("user")
-          .findOne({ useremail: email });
+        console.log(existingUser);
         if (existingUser && existingUser.useremail == email) {
           console.log("등록된 사용자");
           return;
         } else {
-          await db.collection("user").insertOne({
+          await userCollection.insertOne({
             useremail: email,
             name: name,
+            profile: profile,
             coin: 10,
             words: {
               WordCoin2: [
@@ -54,7 +59,6 @@ export default async function handler(req, res) {
               ],
             },
             imgUrl: [],
-            profil: profil,
             likeImgs: [],
           });
           console.log("저장완료");

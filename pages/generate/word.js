@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { wordCountContext } from "@/contexts/generate/wordCountContext";
 import { userWordContext } from "@/contexts/generate/userWordContext";
 import { userSentenceContext } from "@/contexts/generate/userSentenceContext";
+import { UserSaveDataContext } from "@/contexts/UserSaveDataComponent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
@@ -31,11 +32,14 @@ const Word = () => {
   const [activeBtnClass, setActiveBtnClass] = useState(false);
 
   // ** 나중에 현재 로그인한 유저의 id 값으로 변경해야한다.
-  const currentUserId = 5;
 
   const { wordCount, setWordCount } = useContext(wordCountContext);
   const { userWords, setUserWords } = useContext(userWordContext);
   const { userSentence, setUserSentence } = useContext(userSentenceContext);
+  const { userSaveData } = useContext(UserSaveDataContext);
+  console.log(userSaveData);
+
+  const currentUserId = 5;
   const router = useRouter();
 
   // 유저의 단어목록을 받아오는 함수
