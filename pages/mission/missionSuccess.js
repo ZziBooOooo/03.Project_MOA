@@ -36,13 +36,13 @@ const MissionSuccess = () => {
             }}
           />
       </div>
-    <div className={style.missionSuccess} ref={wrapper} >
+    <div className={style.missionSuccess} ref={wrapper} > 
         {/* <Confetti
           width={width}
           height={height}
           numberOfPieces={70}
         /> */}
-      <p className={style.slogan}>미션에 성공하셨어요!</p>
+      <p className={style.slogan}>미션에 성공하셨어요! </p>
       <p className={style.reward}> +<span>1</span>코인 </p>
       <Image 
             src="/assets/images/mission/success.png"

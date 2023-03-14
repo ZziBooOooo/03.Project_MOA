@@ -331,19 +331,23 @@
         z-index:9999;
         max-width: 1200px;
         width: 70%;
-        height: 70%;
+        height: 80%;
         background-color: #ffff;
         border-radius: 20px;
         filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.15));
-        .missionResult {
-            position:absolute;
-            bottom: 30%;
-            background-color: $skyBlueColor;
-            cursor: pointer;
-            left: 50%;
-            transform: translateX(-50%     );
-            padding: 1%
-        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        // .missionResult {
+        //     position:absolute;
+        //     bottom: 30%;
+        //     background-color: $skyBlueColor;
+        //     cursor: pointer;
+        //     left: 50%;
+        //     transform: translateX(-50%     );
+        //     padding: 1%
+        // }
     }
 }
 
@@ -447,4 +451,45 @@
         font-weight: bold;
         word-spacing: 0.1rem;
     }
+}
+
+.missionTreeBox{
+  width: 95%;
+  height: 90%;
+  .timer{
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: $mainColor;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 4%;
+  }
+  .quizBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    .quiz{
+      margin-left: 10%;
+      flex-direction: column;
+      .title{
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 2%;
+      }
+      .detail{
+        color: $mainColor;
+        font-size: 1.5625rem;
+        margin-bottom: 10%;
+      }
+    }
+    form{
+      width: 80%;
+      border-bottom: 2px solid gray;
+      margin: 0 auto;
+      input{
+        margin-bottom: 3%;
+      }
+    }
+  }
 }
