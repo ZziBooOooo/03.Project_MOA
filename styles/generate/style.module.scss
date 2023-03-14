@@ -60,6 +60,9 @@
         &:hover {
           transform: translateY(-6px);
         }
+        &:active {
+          transform: translateY(0px);
+        }
 
         .imgIWrap {
           width: 100%;

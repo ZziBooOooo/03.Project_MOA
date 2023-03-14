@@ -23,6 +23,7 @@
         height: 40%;
         padding: 0% 3%;
         background-color: white;
+        min-width: 220px;
         border-radius: 16px;
         display: flex;
         align-items: center;
@@ -35,10 +36,23 @@
           // background-color: rgb(54, 138, 248);
           // color: white;
 
-          // & p:nth-of-type(1) {
-          //   transform: scale(1.1);
-          // }
+          .typeBg {
+            // transform: rotate(3deg);
+            animation: 0.8s scaleAni forwards;
+            transition: 0.8s;
+          }
 
+          @keyframes scaleAni {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.05);
+            }
+            100% {
+              transform: scale(1);
+            }
+          }
           &:active {
             transform: translateY(0px);
           }
@@ -58,6 +72,7 @@
           background-size: 115%;
           background-repeat: no-repeat;
           transition: 0.3s;
+          // box-shadow: $grayBGshadow;
         }
         &:nth-child(1) {
           & p:nth-of-type(1) {
@@ -131,6 +146,7 @@
         width: 100px;
         border-radius: 50px;
         transition: 0.2s;
+        // box-shadow: $grayBGshadow;
 
         &:hover {
           transform: translateY(-2px);
@@ -174,11 +190,11 @@
     .bottomMainBox {
       .cardBox {
         .imgTypeCard {
-          // min-width: 185px;
+          min-width: fit-content;
           display: flex;
           flex-direction: column;
           align-items: center;
-          height: 38%;
+          height: 35%;
           padding: 3%;
           p:nth-of-type(1) {
             min-width: 60px;
