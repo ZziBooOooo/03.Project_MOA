@@ -9,7 +9,7 @@ export default async function handler(req, res) {
 
   if (req.method === "POST") {
     try {
-      const { currentUserId, title, type, style, url, imgId } = req.body;
+      const { currentUserEmail, title, type, style, url, imgId } = req.body;
 
       const cloudinary = require("cloudinary").v2;
       cloudinary.config({
@@ -23,23 +23,23 @@ export default async function handler(req, res) {
         fs.mkdirSync(dirPath, { recursive: true });
       }
 
-      const imagePath = path.join(dirPath, `${currentUserId}_${imgId}.jpg`);
+      const imagePath = path.join(dirPath, `${currentUserEmail}_${imgId}.jpg`);
       const imageBuffer = await fetch(url).then((res) => res.arrayBuffer());
       fs.writeFileSync(imagePath, Buffer.from(imageBuffer));
 
       const result = await cloudinary.uploader.upload(imagePath, {
-        public_id: `user_${currentUserId}/${title}`,
-        folder: `userId_${currentUserId}`,
+        public_id: `user_${currentUserEmail}/${title}`,
+        folder: `userId_${currentUserEmail}`,
         context: { type, style },
       });
 
       const currentUser = await userCollection.findOne({
-        _id: currentUserId,
+        useremail: currentUserEmail,
       });
       // console.log(currentUser);
 
       const updateUserUrl = await userCollection.updateOne(
-        { _id: currentUserId },
+        { useremail: currentUserEmail },
         {
           $push: {
             imgUrl: {

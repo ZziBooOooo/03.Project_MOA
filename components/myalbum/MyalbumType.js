@@ -1,12 +1,35 @@
 import Image from "next/image";
 import style from "styles/myalbum/myalbumcontent.module.scss";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
 import { UserSaveDataContext } from "@/contexts/UserSaveDataComponent";
+import axios from "axios";
 
 export default function MyalbumType({ catePage }) {
   const { userSaveData } = useContext(UserSaveDataContext);
+  const currentUserEmail = userSaveData.useremail;
+  const [userData, setuserData] = useState(); /* 사용자 데이터 */
+
+  console.log(currentUserEmail);
+
+  const userGetData = async () => {
+    try {
+      const response = await axios
+        .get("/api/buy/userBuy", {
+          params: { email: currentUserEmail },
+        })
+        .then((res) => {
+          setuserData(res.data.users);
+        });
+    } catch (error) {
+      console.error(error);
+    }
+  }; /* 사용자 정보 */
+
+  useEffect(() => {
+    userGetData();
+  }, []); /* DB  */
 
   function imgDown(res) {
     let image = document.createElement("img");
@@ -23,10 +46,12 @@ export default function MyalbumType({ catePage }) {
     };
   } /* 이미지 다운로드 */
 
+  console.log(userData);
+
   return (
     <>
-      {userSaveData.imgUrl.length > 0 ? (
-        userSaveData.imgUrl.map(
+      {userData && userData.imgUrl.length > 0 ? (
+        userData.imgUrl.map(
           (res, key) =>
             res.type ===
             catePage(

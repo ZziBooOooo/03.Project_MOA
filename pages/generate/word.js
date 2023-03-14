@@ -39,7 +39,9 @@ const Word = () => {
   const { userSaveData } = useContext(UserSaveDataContext);
   console.log(userSaveData);
 
-  const currentUserId = 5;
+  const currentUserEmail = userSaveData.useremail;
+  console.log(currentUserEmail);
+  // const currentUserId = 5;
   const router = useRouter();
 
   // 유저의 단어목록을 받아오는 함수
@@ -48,7 +50,7 @@ const Word = () => {
     axios
       .get("/api/generate/wordcontroll", {
         params: {
-          currentUserId,
+          currentUserEmail,
         },
       })
       .then((res) => {

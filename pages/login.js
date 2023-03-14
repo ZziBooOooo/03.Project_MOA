@@ -5,16 +5,9 @@ import { UserSaveDataContext } from "@/contexts/UserSaveDataComponent";
 
 export default function LoginPage() {
   const { userSaveData, setuserSaveData } = useContext(UserSaveDataContext);
+  // 새로고침해도 데이터유지 -? 로컬이나 세션에도 저장?-?
 
   const { data, status } = useSession();
-  // if (session) {
-  //   axios.post("/api/buy/userBuy", {
-  //     name: session.user.name,
-  //     email: session.user.email,
-  //     profil: session.user.image,
-  //   });
-  // }
-  console.log(data);
 
   async function saveUserToDB() {
     try {
@@ -23,6 +16,7 @@ export default function LoginPage() {
         email: data.user.email,
         profile: data.user.image,
       });
+      setuserSaveData(response.data.users);
     } catch (error) {
       console.log(error);
     }
@@ -36,10 +30,11 @@ export default function LoginPage() {
     });
     // console.log(dbUser);
     if (dbUser.data.status == "exist") {
-      // 존재하지 않으면 DB에 유저정보 저장
+      console.log(dbUser.data.users);
       console.log("db에 이미 있는 유저");
+      setuserSaveData(dbUser.data.users);
     } else if (dbUser.data.status == "noExist") {
-      console.log("존재하지 않는 유조 -> db에 저장시키기");
+      console.log("존재하지 않는 유저 ");
       saveUserToDB();
     }
   }
@@ -48,7 +43,6 @@ export default function LoginPage() {
     if (data !== undefined && data !== null) {
       // 데이터 비어있지 않으면 (=로그인성공) -> context에 저장시키기
       // db에 유저 저장시키기
-      setuserSaveData(data.user);
       getUserData();
     }
   }, [data]);

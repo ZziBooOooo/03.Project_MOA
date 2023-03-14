@@ -8,11 +8,12 @@ export default async function handler(req, res) {
   // word 페이지 접속 시 DB에 저장된 유저의 단어목록을 받아온다.
   if (req.method === "GET") {
     try {
-      const currentUserId = parseInt(req.query.currentUserId);
+      const currentUserEmail = req.query.currentUserEmail;
+      console.log(currentUserEmail);
       const currentUser = await userCollection.findOne({
-        _id: currentUserId,
+        useremail: currentUserEmail,
       });
-
+      console.log(currentUser);
       res.status(200).json(currentUser.words);
     } catch (error) {
       console.error(error);

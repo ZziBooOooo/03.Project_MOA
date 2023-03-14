@@ -16,9 +16,9 @@ export default async function handler(req, res) {
         });
         console.log(users);
         if (users) {
-          res.status(200).json({ status: "exist", email: users.useremail });
+          res.status(200).json({ status: "exist", users: users });
         } else {
-          res.status(200).json({ status: "noExist", email: req.query.email });
+          res.status(200).json({ status: "noExist" });
         }
       } catch (e) {
         console.error(e);
@@ -30,8 +30,6 @@ export default async function handler(req, res) {
     case "POST":
       try {
         const existingUser = await userCollection.findOne({ useremail: email });
-
-        console.log(existingUser);
         if (existingUser && existingUser.useremail == email) {
           console.log("등록된 사용자");
           return;
@@ -62,7 +60,10 @@ export default async function handler(req, res) {
             likeImgs: [],
           });
           console.log("저장완료");
-          return res.status(200).send("User saved successfully");
+          const savedUser = await userCollection.findOne({ useremail: email });
+          return res
+            .status(200)
+            .json({ message: "User saved successfully", users: savedUser });
         }
       } catch (e) {
         console.error(e);

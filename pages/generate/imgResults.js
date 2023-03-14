@@ -7,12 +7,12 @@ import GenerateTop from "@/components/generate/GenerateTop";
 import { userSentenceContext } from "@/contexts/generate/userSentenceContext";
 import { selectTypeContext } from "@/contexts/generate/selectTypeContext";
 import { selectStyleContext } from "@/contexts/generate/selectStyleContext";
+import { UserSaveDataContext } from "@/contexts/UserSaveDataComponent";
 import { motion, AnimatePresence } from "framer-motion";
 import SaveModal from "@/components/generate/SaveModal";
 import Loading from "@/components/generate/Loading";
 
 const ImgResults = () => {
-  const currentUserId = 5;
   const [prompt, setPrompt] = useState(null);
   const [enPrompt, setEnPrompt] = useState(null);
   const [number, setNumber] = useState(3);
@@ -23,9 +23,12 @@ const ImgResults = () => {
 
   const bottomBoxRef = useRef();
 
+  const { userSaveData } = useContext(UserSaveDataContext);
   const { userSentence, setUserSentence } = useContext(userSentenceContext);
   const { imgType } = useContext(selectTypeContext);
   const { imgStyle } = useContext(selectStyleContext);
+
+  const currentUserEmail = userSaveData.useremail;
 
   // 번역요청 - 파파고 api
   async function translateKoreanToEnglish(koreanText) {
@@ -62,7 +65,7 @@ const ImgResults = () => {
       axios
         .post("/api/generate/images", {
           p: translatedText,
-          currentUserId: currentUserId,
+          currentUserEmail,
           title: fullUserSentenceKR,
           type: imgType,
           style: imgStyle,
@@ -89,7 +92,7 @@ const ImgResults = () => {
     const imgId = new Date().getTime();
     try {
       const response = await axios.post("/api/generate/saveimage", {
-        currentUserId: currentUserId,
+        currentUserEmail,
         title: UserSentenceKR[0],
         type: imgType,
         style: imgStyle,
@@ -141,9 +144,7 @@ const ImgResults = () => {
         ) : (
           <></>
         )}
-        {loading && (
-          <Loading/>
-        )}
+        {loading && <Loading />}
 
         {loading == 0 && error == 0 ? (
           <>

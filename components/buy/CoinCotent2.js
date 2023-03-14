@@ -9,6 +9,7 @@ import BuyComplete from "./BuyComplete";
 export default function CoinCotent2({ onChange }) {
   const { WordCoin2, userData, userGetData, userBuyData } =
     useContext(buyContext);
+
   const [buyWord, setbuyWord] = useState([]); /* 구매할 단어 배열 */
   const [coinTotal, setcoinTotal] = useState(0); /* 구매할 단어 코인 합계 */
   const [buyNot, setbuyNot] = useState(false); /* 구매 부족 모달 */
