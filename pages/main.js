@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import style from "@/styles/main/main.module.css";
 import CoinImage from "@/components/main/CoinImage";
 import Image from "next/image";

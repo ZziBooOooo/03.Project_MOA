@@ -38,7 +38,7 @@ export default function MyalbumCategory({ onChange, catePage }) {
             onChange("수채화");
           }}
         >
-          일러스트
+          수채화
         </li>
         <li
           style={

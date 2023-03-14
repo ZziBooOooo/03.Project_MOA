@@ -146,12 +146,15 @@
             .cardContent {
               color: rgb(242, 246, 255);
             }
-
             button {
               background-color: white;
               color: $mainColor;
               box-shadow: none;
             }
+          }
+
+          &:active {
+            transform: translateY(0px);
           }
 
           .cardTitle {
@@ -281,12 +284,24 @@
           font-size: 1.1rem;
         }
       }
+      .topImgBox {
+        width: 90vw;
+        height: 20vh;
+        div {
+          min-width: 50px;
+          padding: 10px;
+          img {
+            width: 100%;
+          }
+        }
+      }
     }
     .bottomBox {
       .bottomMainBox {
-        height: 60vh;
+        height: 65vh;
         min-height: 550px;
         width: 80vw;
+        min-width: 300px;
         .b_textBox {
           .mainText {
             font-size: 1.3rem;
@@ -294,12 +309,13 @@
         }
         .cardBox {
           flex-direction: column;
-          height: 48vh;
+          height: 51vh;
           .selectCard {
             padding: 3% 3%;
-            height: 15vh;
+            height: 16vh;
             width: 85%;
             .cardTitle {
+              margin-bottom: 8px;
               p {
                 font-size: 1.4rem;
               }

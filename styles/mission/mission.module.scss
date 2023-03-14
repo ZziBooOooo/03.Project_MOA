@@ -290,6 +290,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-top: 5vh;
         .description{
             h1{
                 font-size: 3.125rem;
@@ -303,8 +304,14 @@
             }
         }
     }
+    .alert{
+      color: $softGRAYFtColor;
+      margin-top: 14vh;
+      margin-bottom: 2vh;
+      animation: blink-effect 2s ease-in-out infinite;
+      // animation: moving 1s ease-in-out infinite;
+    }
     button{
-        margin-top: 10vh;
         color: #ffff;
         font-size: 1.75rem;
         background-color: $mainColor;
@@ -315,7 +322,26 @@
         font-weight: bold;
         word-spacing: 0.1rem;
     }
+
+    @keyframes blink-effect {
+      50% {
+        // color: $mainColor;
+        opacity: 0;
+      }
+    }
+    // @keyframes moving {
+    //   0%{
+    //     translateY: 0%;
+    //   }
+    //   50%{
+    //     translateY: -30%;
+    //   }
+    //   100%{
+    //     translateY: 0%;
+    //   }
+    // }
 }
+
 
 .modalWrapper{
     width: 100%;
@@ -331,19 +357,23 @@
         z-index:9999;
         max-width: 1200px;
         width: 70%;
-        height: 70%;
+        height: 700px;
         background-color: #ffff;
         border-radius: 20px;
         filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.15));
-        .missionResult {
-            position:absolute;
-            bottom: 30%;
-            background-color: $skyBlueColor;
-            cursor: pointer;
-            left: 50%;
-            transform: translateX(-50%     );
-            padding: 1%
-        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        // .missionResult {
+        //     position:absolute;
+        //     bottom: 30%;
+        //     background-color: $skyBlueColor;
+        //     cursor: pointer;
+        //     left: 50%;
+        //     transform: translateX(-50%     );
+        //     padding: 1%
+        // }
     }
 }
 
@@ -447,4 +477,95 @@
         font-weight: bold;
         word-spacing: 0.1rem;
     }
+}
+
+.missionTreeBox{
+  width: 70%;
+  height: 90%;
+  .timer{
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: $mainColor;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 7%;
+  }
+  .quizBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    .imgBox{
+      width: 50%;
+      align-items: center;
+
+    }
+    .quiz{
+      width: 50%;
+      flex-direction: column;
+      .title{
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 2%;
+      }
+      .detail{
+        color: $mainColor;
+        font-size: 1.5625rem;
+        margin-bottom: 10%;
+      }
+    }
+    form{
+      width: 80%;
+      border-bottom: 2px solid gray;
+      margin: 0 auto;
+      input{
+        margin-bottom: 3%;
+        text-align: center;
+      }
+      input:focus {outline: none;}
+    }
+  }
+}
+
+.missionDiaryBox{
+  width: 95%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .titleBox{
+    display: flex;
+    h2{
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 2%;
+    }
+    img{
+      margin-left: 3%;
+    }
+  }
+  p{
+    font-size: 1.875rem;
+    color: $mainColor;
+  }
+  form{
+    width: 60%;
+    border-bottom: 2px solid gray;
+    margin: 0 auto;
+    display: flex;
+    input{
+      cursor: pointer;
+      width: 50%;
+      margin-bottom: 2%;
+      text-align: center;
+      font-size: 1.25rem;
+      margin-top: 15%;
+    }
+    input:focus {outline: none;}
+  }
+  form:focus-within {
+    border-bottom: 2px solid $mainColor;
+  }
+
 }

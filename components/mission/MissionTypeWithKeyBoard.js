@@ -34,7 +34,7 @@ const MissionTypeWithKeyBoard = () => {
   useEffect(() => {
     if (time === 0) {
       setTimeout(() => {
-        router.push("/mission/missionEnd");
+        router.push("/mission/missionRetry");
       }, 500);
     }
   }, [time, router]);

@@ -77,7 +77,7 @@ const ImgType = () => {
                 >
                   {isHyperRealism ? (
                     <>
-                      <p></p>
+                      <p className={t_style.typeBg}></p>
                       <div className={t_style.typeTxt}>
                         <p className={t_style.typeTxt1}>하이퍼</p>
                         <p>리얼리즘</p>
@@ -86,7 +86,7 @@ const ImgType = () => {
                     </>
                   ) : (
                     <>
-                      <p></p>
+                      <p className={t_style.typeBg}></p>
                       <p>{type}</p>
                       <p></p>
                       <p></p>

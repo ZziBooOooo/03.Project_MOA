@@ -21,9 +21,7 @@ export default function LoginPage() {
           <p>Hello, {session.user.name}!</p>
           <img src={session?.user?.image}></img>
           <button
-            onClick={() =>
-              signOut({ callbackUrl: "http://localhost:3000/foo" })
-            }
+            onClick={() => signOut({ callbackUrl: "http://localhost:3000" })}
           >
             Sign out
           </button>

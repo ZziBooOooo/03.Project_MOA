@@ -34,7 +34,7 @@ const MissonMotionBox = () => {
   useEffect(() => {
     if (time === 0) {
       setTimeout(() => {
-        router.push("/mission/missionEnd");
+        router.push("/mission/missionRetry");
       }, 1000);
     }
   }, [time, router]);

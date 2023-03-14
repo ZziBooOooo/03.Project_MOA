@@ -2,7 +2,7 @@ import React from 'react'
 
 const MissionCatch = () => {
   return (
-    <div>MissionCatchjs</div>
+    <div>MissionCatch</div>
   )
 }
 

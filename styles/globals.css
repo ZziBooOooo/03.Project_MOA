@@ -62,21 +62,41 @@ table {
 }
 .swiper-button-prev,
 .swiper-button-next {
-  width: 32px !important;
-  height: 32px !important;
+  width: 40px !important;
+  height: 40px !important;
+  background-color: rgba(22, 22, 22, 0.514);
+  border-radius: 5px;
+  z-index: 100;
+  color: rgb(217, 223, 230) !important;
+  transition: 0.2s;
+  box-shadow: 3px 3px 5px solid black;
 }
 
-.swiper-button-next:hover {
-  color: white;
-}
-.swiper-button-next:after:hover {
-  color: white;
-}
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  font-size: 32px !important;
+  /* background-color: rgba(22, 22, 22, 0.356); */
+  font-size: 28px !important;
   font-weight: bold;
-  color: rgb(174, 177, 185);
+  /* color: rgb(255, 255, 255); */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  /* background-color: rgba(22, 22, 22, 0.356); */
+  color: rgb(255, 255, 255) !important;
+  transform: translateY(-2px);
+}
+.swiper-button-next:active,
+.swiper-button-prev:active {
+  /* background-color: rgba(22, 22, 22, 0.356); */
+  color: rgb(22, 150, 255) !important;
+  transform: translateY(0px);
+}
+
+@media (max-width: 768px) {
+  .swiper-pagination-bullets {
+    display: none;
+  }
 }
 
 /* slick plug-in */

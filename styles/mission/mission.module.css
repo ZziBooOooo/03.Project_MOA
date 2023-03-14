@@ -346,6 +346,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 5vh;
 }
 .mainSection .description_container .description h1 {
   font-size: 3.125rem;
@@ -357,8 +358,14 @@
   font-size: 1.75rem;
   font-weight: 500;
 }
+.mainSection .alert {
+  color: #727375;
+  margin-top: 14vh;
+  margin-bottom: 2vh;
+  -webkit-animation: blink-effect 2s ease-in-out infinite;
+          animation: blink-effect 2s ease-in-out infinite;
+}
 .mainSection button {
-  margin-top: 10vh;
   color: white;
   font-size: 1.75rem;
   background-color: #2288ff;
@@ -368,6 +375,16 @@
   font-family: "Pretendard-Regular";
   font-weight: bold;
   word-spacing: 0.1rem;
+}
+@-webkit-keyframes blink-effect {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes blink-effect {
+  50% {
+    opacity: 0;
+  }
 }
 
 .modalWrapper {
@@ -385,19 +402,14 @@
   z-index: 9999;
   max-width: 1200px;
   width: 70%;
-  height: 70%;
+  height: 700px;
   background-color: white;
   border-radius: 20px;
   filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.15));
-}
-.modalWrapper .missionModal .missionResult {
-  position: absolute;
-  bottom: 30%;
-  background-color: #fff0e6;
-  cursor: pointer;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .confettiBox {
@@ -501,4 +513,97 @@
   font-family: "Pretendard-Regular";
   font-weight: bold;
   word-spacing: 0.1rem;
+}
+
+.missionTreeBox {
+  width: 70%;
+  height: 90%;
+}
+.missionTreeBox .timer {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #2288ff;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 7%;
+}
+.missionTreeBox .quizBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.missionTreeBox .quizBox .imgBox {
+  width: 50%;
+  align-items: center;
+}
+.missionTreeBox .quizBox .quiz {
+  width: 50%;
+  flex-direction: column;
+}
+.missionTreeBox .quizBox .quiz .title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+.missionTreeBox .quizBox .quiz .detail {
+  color: #2288ff;
+  font-size: 1.5625rem;
+  margin-bottom: 10%;
+}
+.missionTreeBox .quizBox form {
+  width: 80%;
+  border-bottom: 2px solid gray;
+  margin: 0 auto;
+}
+.missionTreeBox .quizBox form input {
+  margin-bottom: 3%;
+  text-align: center;
+}
+.missionTreeBox .quizBox form input:focus {
+  outline: none;
+}
+
+.missionDiaryBox {
+  width: 95%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.missionDiaryBox .titleBox {
+  display: flex;
+}
+.missionDiaryBox .titleBox h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 2%;
+}
+.missionDiaryBox .titleBox img {
+  margin-left: 3%;
+}
+.missionDiaryBox p {
+  font-size: 1.875rem;
+  color: #2288ff;
+}
+.missionDiaryBox form {
+  width: 60%;
+  border-bottom: 2px solid gray;
+  margin: 0 auto;
+  display: flex;
+}
+.missionDiaryBox form input {
+  cursor: pointer;
+  width: 50%;
+  margin-bottom: 2%;
+  text-align: center;
+  font-size: 1.25rem;
+  margin-top: 15%;
+}
+.missionDiaryBox form input:focus {
+  outline: none;
+}
+.missionDiaryBox form:focus-within {
+  border-bottom: 2px solid #2288ff;
 }/*# sourceMappingURL=mission.module.css.map */

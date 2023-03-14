@@ -236,4 +236,21 @@
   .fullBox .imgBox .card img {
     min-width: 80px;
   }
+  .loadBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+    font-weight: bold;
+    transform: translateY(-10%);
+  }
+  .loadBox p:nth-of-type(1) {
+    font-size: 2rem;
+  }
+  .loadBox p:nth-of-type(2) {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #727375;
+  }
 }/*# sourceMappingURL=results.module.css.map */
