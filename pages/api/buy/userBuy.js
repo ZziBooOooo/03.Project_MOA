@@ -35,10 +35,27 @@ export default async function handler(req, res) {
           await db.collection("user").insertOne({
             useremail: email,
             name: name,
-            coin: 24,
-            words: { WordCoin2: [], WordCoin3: [], WordCoin4: [] },
-            imgeUrl: [],
+            coin: 10,
+            words: {
+              WordCoin2: [
+                { id: 0, isDone: true, coinNum: 2, word: "고양이" },
+                { id: 1, isDone: true, coinNum: 2, word: "강아지" },
+                { id: 2, isDone: true, coinNum: 2, word: "아기" },
+              ],
+              WordCoin3: [
+                { id: 20, isDone: true, coinNum: 3, word: "장난감" },
+                { id: 21, isDone: true, coinNum: 3, word: "간식" },
+                { id: 22, isDone: true, coinNum: 3, word: "과일" },
+              ],
+              WordCoin4: [
+                { id: 40, isDone: true, coinNum: 4, word: "논다" },
+                { id: 41, isDone: true, coinNum: 4, word: "먹는다" },
+                { id: 42, isDone: true, coinNum: 4, word: "즐겁게" },
+              ],
+            },
+            imgUrl: [],
             profil: profil,
+            likeImgs: [],
           });
           console.log("저장완료");
           return res.status(200).send("User saved successfully");
