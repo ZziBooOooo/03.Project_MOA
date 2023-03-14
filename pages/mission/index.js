@@ -34,10 +34,4 @@ const Index = () => {
   );
 };
 
-<<<<<<< HEAD
-=======
-)
-}
-
->>>>>>> master
 export default Index;
