@@ -54,6 +54,9 @@
 .fullBox .bottomMainBox .cardBox .cardContent:hover {
   transform: translateY(-6px);
 }
+.fullBox .bottomMainBox .cardBox .cardContent:active {
+  transform: translateY(0px);
+}
 .fullBox .bottomMainBox .cardBox .cardContent .imgIWrap {
   width: 100%;
   display: flex;

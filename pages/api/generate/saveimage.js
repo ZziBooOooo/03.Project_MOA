@@ -23,7 +23,7 @@ export default async function handler(req, res) {
         fs.mkdirSync(dirPath, { recursive: true });
       }
 
-      const imagePath = path.join(dirPath, `${currentUserId}_${title}.jpg`);
+      const imagePath = path.join(dirPath, `${currentUserId}_${imgId}.jpg`);
       const imageBuffer = await fetch(url).then((res) => res.arrayBuffer());
       fs.writeFileSync(imagePath, Buffer.from(imageBuffer));
 
