@@ -3,6 +3,7 @@ import style from "@/styles/generate/others.module.scss";
 import Image from "next/image";
 import axios from "axios";
 import { UserSaveDataContext } from "@/contexts/UserSaveDataComponent";
+import { likeDataContext } from "@/contexts/generate/likeDataContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
@@ -14,6 +15,7 @@ const ImageAndLikeBtn = ({ idx, data, userDatas }) => {
   const [likeCount, setLikeCount] = useState(data.like);
 
   const { userSaveData } = useContext(UserSaveDataContext);
+  const { likeData, setLikeData } = useContext(likeDataContext);
   const currentUserEmail = userSaveData.useremail;
   const currentName = userSaveData.name;
 
@@ -32,6 +34,7 @@ const ImageAndLikeBtn = ({ idx, data, userDatas }) => {
 
     if (newLiked) {
       setLikeCount(likeCount + 1);
+      // setLikeData(data);
     } else {
       setLikeCount(likeCount - 1);
     }

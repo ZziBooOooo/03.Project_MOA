@@ -3,6 +3,7 @@ import style from "@/styles/generate/others.module.scss";
 import Image from "next/image";
 import axios from "axios";
 import { UserSaveDataContext } from "@/contexts/UserSaveDataComponent";
+import { likeDataContext } from "@/contexts/generate/likeDataContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
@@ -14,9 +15,11 @@ const SmallImgAndLikeBtn = ({ idx, data, userDatas }) => {
   const [likeCount, setLikeCount] = useState(data.like);
 
   const { userSaveData } = useContext(UserSaveDataContext);
+  const { likeData, setLikeData } = useContext(likeDataContext);
   const currentUserEmail = userSaveData.useremail;
   const currentName = userSaveData.name;
 
+  console.log(likeData);
   function addImgToLike() {
     if (isAnimating) {
       return;
@@ -66,9 +69,16 @@ const SmallImgAndLikeBtn = ({ idx, data, userDatas }) => {
     }
   }, [filteredData, data.imgId]);
 
+  // useEffect(() => {
+  //   if (likeData == data) {
+  //     setLiked(true);
+  //     setLikeCount(likeCount + 1);
+  //   }
+  // }, [likeData]);
+
   return (
-    <div className={style.s_imgBox}>
-      <div className={style.imgWrap} key={idx} onClick={addImgToLike}>
+    <div className={style.s_imgBox} key={idx}>
+      <div className={style.imgWrap} onClick={addImgToLike}>
         <Image
           src={data.url}
           alt={`${data.name}_${data.title} Image`}

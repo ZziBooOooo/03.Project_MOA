@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import style from "@/styles/generate/others.module.scss";
 import Image from "next/image";
 import axios, { all } from "axios";
 import ImageAndLikeBtn from "@/components/generate/ImageAndLikeBtn";
 import SmallImgAndLikeBtn from "@/components/generate/SmallImgAndLikeBtn";
+import { likeDataContext } from "@/contexts/generate/likeDataContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRotateRight } from "@fortawesome/free-solid-svg-icons";
 import TypeChart from "@/components/generate/TypeChart";
@@ -24,6 +25,7 @@ const Others = () => {
   const [userDatas, setUserDatas] = useState([]);
   const [top3Data, setTop3Data] = useState([]);
   const [randomData, setRandomData] = useState([]);
+  const { likeData, setLikeData } = useContext(likeDataContext);
 
   function mergeImgUrlArray() {
     // const copyUserData = JSON.parse(JSON.stringify(userDatas));
@@ -230,7 +232,6 @@ const Others = () => {
               return (
                 <SmallImgAndLikeBtn
                   data={data}
-                  key={key}
                   idx={key}
                   userDatas={userDatas}
                 />
