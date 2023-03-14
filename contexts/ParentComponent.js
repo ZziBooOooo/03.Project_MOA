@@ -4,6 +4,7 @@ import { userWordContext } from "./generate/userWordContext";
 import { userSentenceContext } from "./generate/userSentenceContext";
 import { selectTypeContext } from "./generate/selectTypeContext";
 import { selectStyleContext } from "./generate/selectStyleContext";
+
 /* 
 ** ParentComponent를 만든 이유
 

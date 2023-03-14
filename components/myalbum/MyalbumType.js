@@ -1,22 +1,12 @@
 import Image from "next/image";
 import style from "styles/myalbum/myalbumcontent.module.scss";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useContext, useState } from "react";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
+import { UserSaveDataContext } from "@/contexts/UserSaveDataComponent";
 
 export default function MyalbumType({ catePage }) {
-  const [userData, setuserData] = useState();
-
-  const userGetData = async () => {
-    try {
-      const response = await axios.get("/api/buy/userBuy");
-      console.log(response.data[0]);
-      setuserData(response.data[0]);
-    } catch (error) {
-      console.error(error);
-    }
-  }; /* 몽고디비 userData */
+  const { userSaveData } = useContext(UserSaveDataContext);
 
   function imgDown(res) {
     let image = document.createElement("img");
@@ -33,17 +23,13 @@ export default function MyalbumType({ catePage }) {
     };
   } /* 이미지 다운로드 */
 
-  useEffect(() => {
-    userGetData();
-  }, []); /* 몽고디비 테스트 get */
-
   return (
     <>
-      {userData ? (
-        userData.imgUrl.map(
+      {userSaveData.imgUrl.length > 0 ? (
+        userSaveData.imgUrl.map(
           (res, key) =>
-            res.type === catePage &&
-            res.url /* <= 이미지url이 일주일후에 사라지면 */ && (
+            res.type ===
+            catePage(
               <div className={style.myalbum_img} key={key}>
                 <div className={style.myalbum_front}>
                   <Image

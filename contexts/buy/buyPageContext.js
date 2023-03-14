@@ -71,7 +71,7 @@ const BuyContextCom = (props) => {
     { id: 59, isDone: true, coinNum: 4, word: "상상한다" },
   ]; /* 4코인 단어 배열 */
 
-  const [userData, setuserData] = useState();
+  const [userData, setuserData] = useState(); /* 사용자 데이터 */
   const { data: session } = useSession(); /* 로그인 세션 */
 
   const userGetData = async () => {
