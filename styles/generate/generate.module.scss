@@ -23,14 +23,13 @@
     .textBox {
       text-align: center;
       color: $bascitFtcolor;
-
       transform: translateY(10%);
 
-      p:first-child {
+      .mainTxt {
         font-size: 4rem;
         font-weight: bold;
       }
-      p:last-child {
+      .subTxt {
         font-size: 1.3rem;
         font-weight: bold;
         margin-top: 1%;
@@ -41,7 +40,6 @@
       // bottom: 0;
       width: 90vw;
       height: 40vh;
-
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -216,6 +214,109 @@
             box-shadow: $grayBGshadow;
             cursor: pointer;
             z-index: 100;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .fullBox {
+    .topBox {
+      .textBox {
+        .mainTxt {
+          font-size: 3rem;
+        }
+      }
+    }
+    .bottomBox {
+      .bottomMainBox {
+        height: 55vh;
+        min-height: 550px;
+        width: 80vw;
+
+        .b_textBox {
+          .mainText {
+            font-size: 1.6rem;
+          }
+        }
+        .cardBox {
+          .selectCard {
+            padding: 2% 3%;
+            min-height: 250px;
+            height: 28vh;
+            .cardTitle {
+              p {
+                font-size: 1.4rem;
+              }
+            }
+            .cardContent {
+              font-size: 1.2rem;
+
+              p:nth-of-type(2) {
+                font-size: 0.9rem;
+              }
+            }
+            button {
+              width: 100px;
+              height: 36px;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .fullBox {
+    .topBox {
+      .textBox {
+        .mainTxt {
+          font-size: 2rem;
+        }
+        .subTxt {
+          font-size: 1.1rem;
+        }
+      }
+    }
+    .bottomBox {
+      .bottomMainBox {
+        height: 60vh;
+        min-height: 550px;
+        width: 80vw;
+        .b_textBox {
+          .mainText {
+            font-size: 1.3rem;
+          }
+        }
+        .cardBox {
+          flex-direction: column;
+          height: 48vh;
+          .selectCard {
+            padding: 3% 3%;
+            height: 15vh;
+            width: 85%;
+            .cardTitle {
+              p {
+                font-size: 1.4rem;
+              }
+            }
+            .cardContent {
+              font-size: 1rem;
+
+              p:nth-of-type(2) {
+                font-size: 0.9rem;
+                display: none;
+              }
+            }
+            button {
+              width: 100px;
+              height: 36px;
+              font-size: 1rem;
+            }
           }
         }
       }

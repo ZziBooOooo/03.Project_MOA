@@ -9,6 +9,6 @@ export async function connectToDatabase() {
   if (!client.isConnected()) {
     await client.connect();
   }
-  const db = client.db("data");
+  const db = client.db("DataMoa");
   return { client, db };
 }

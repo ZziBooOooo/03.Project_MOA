@@ -1,9 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import style from "@/styles/generate/generate.module.scss";
 import GenerateTop from "@/components/generate/GenerateTop";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { wordCountContext } from "@/contexts/generate/wordCountContext";
+import { AnimatePresence, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Index = () => {
   const textArray = [
@@ -32,7 +34,9 @@ const Index = () => {
 
   // 단어개수 선택값을 context 이용해서 저장 + 페이지넘김
   const handleClick = (e) => {
-    setWordCount(e.target.id);
+    const id = e.currentTarget.id || e.currentTarget.parentElement.id;
+    setWordCount(id);
+
     router.push("/generate/word", undefined, { scroll: false });
   };
 
@@ -40,57 +44,63 @@ const Index = () => {
     <div className={style.fullBox}>
       <GenerateTop />
       <div className={style.bottomBox}>
-        <div className={style.bottomMainBox}>
-          <div className={style.b_textBox}>
-            <p className={style.checkIWrap}>
-              <Image
-                src="/assets/images/generate/check.png"
-                alt="checkIcon"
-                width={35}
-                height={35}
-              />
-            </p>
-            <p className={style.mainText}>단어의 개수를 선택해 주세요</p>
-          </div>
-          <div className={style.cardBox}>
-            {textArray.map((item, key) => {
-              return (
-                <div key={key} className={style.selectCard}>
-                  <div className={style.cardTitle}>
-                    <div className={style.b_iconWrap}>
-                      <Image
-                        src={item.iconPath}
-                        alt="icon"
-                        width={22}
-                        height={22}
-                      />
+        <AnimatePresence>
+          <motion.div
+            className={style.bottomMainBox}
+            initial={{ opacity: 0, y: "100px" }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className={style.b_textBox}>
+              <p className={style.checkIWrap}>
+                <Image
+                  src="/assets/images/generate/check.png"
+                  alt="checkIcon"
+                  width={35}
+                  height={35}
+                />
+              </p>
+              <p className={style.mainText}>단어의 개수를 선택해 주세요</p>
+            </div>
+            <div className={style.cardBox}>
+              {textArray.map((item, key) => {
+                return (
+                  <div
+                    key={key}
+                    id={key + 2}
+                    className={style.selectCard}
+                    onClick={(e) => {
+                      handleClick(e);
+                    }}
+                  >
+                    <div className={style.cardTitle}>
+                      <div className={style.b_iconWrap}>
+                        <Image
+                          src={item.iconPath}
+                          alt="icon"
+                          width={22}
+                          height={22}
+                        />
+                      </div>
+                      <p>{item.title}</p>
                     </div>
-                    <p>{item.title}</p>
-                  </div>
-                  <div className={style.cardContent}>
-                    <p>{item.description}</p>
-                    <p>{item.example}</p>
-                  </div>
+                    <div className={style.cardContent}>
+                      <p>{item.description}</p>
+                      <p>{item.example}</p>
+                    </div>
 
-                  <div className={style.btnPositionBox}>
-                    <p></p>
-                    <button
-                      id={key + 2}
-                      className={style.selectBtn}
-                      onClick={(e) => {
-                        handleClick(e);
-                      }}
-                    >
-                      선택하기
-                    </button>
-                    <p></p>
+                    <div className={style.btnPositionBox}>
+                      <p></p>
+                      <button className={style.selectBtn}>선택하기</button>
+                      <p></p>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
-          <div className={style.dummyBox}></div>
-        </div>
+                );
+              })}
+            </div>
+            <div className={style.dummyBox}></div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   );

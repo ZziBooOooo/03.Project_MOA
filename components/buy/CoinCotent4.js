@@ -7,7 +7,7 @@ import BuyNotModal from "./BuyNotModal";
 import BuyComplete from "./BuyComplete";
 
 export default function CoinCotent4({ onChange }) {
-  const { WordCoin4, userData, userGetData, useBuyData } =
+  const { WordCoin4, userData, userGetData, userBuyData } =
     useContext(buyContext);
   const [buyWord, setbuyWord] = useState([]); /* 구매할 단어 배열 */
   const [coinTotal, setcoinTotal] = useState(0); /* 구매할 단어 코인 합계 */
@@ -32,7 +32,7 @@ export default function CoinCotent4({ onChange }) {
     if (userData && userData.coin < buyWord.length * 4) {
       setbuyNot(true); /* 코인이 부족할시 모달 */
     } else {
-      useBuyData(coinTotal, buyWord, wordName);
+      userBuyData(coinTotal, buyWord, wordName);
       userGetData();
       /* 사용자 구매후 코인수 */
       if (buyWord.length > 0) {
@@ -44,7 +44,7 @@ export default function CoinCotent4({ onChange }) {
 
   useEffect(() => {
     setcoinTotal(buyWord.length * 4);
-  }, [buyWord]); /* 구매할 단어를 누르면 총몇코인이 필요한지 표시 */
+  }, [buyWord, coinTotal]); /* 구매할 단어를 누르면 총몇코인이 필요한지 표시 */
 
   return (
     <motion.div
@@ -55,15 +55,15 @@ export default function CoinCotent4({ onChange }) {
       className={style.content_box}
     >
       <div className={style.content_item}>
-        <h3>문구 생각해보기</h3>
+        <h3>4코인 단어</h3>
         <div className={style.content_coinlist}>
           <div className={style.content_coinlist_top}>
             <div className={style.check_list}>
-              <img src="/assets/images/buy/shopicon.png" />
+              <img src="/assets/images/buy/shopicon.png" alt="aa" />
               <p>단어를 구매하세요!</p>
             </div>
             <div className={style.coin_count}>
-              <img src="/assets/images/buy/smallcoin.png" />
+              <img src="/assets/images/buy/smallcoin.png" alt="aa" />
               <span>{userData && userData.coin}</span>{" "}
               {/* 코인 카운터 들어갈곳 */}
             </div>
@@ -94,7 +94,7 @@ export default function CoinCotent4({ onChange }) {
               <div className={style.totalCoin}>
                 <p>총 코인 개수</p>
                 <div>
-                  <img src="/assets/images/buy/smallcoin.png" />
+                  <img src="/assets/images/buy/smallcoin.png" alt="aa" />
                   <span>{coinTotal}</span>
                   {/* 구매할 코인 개수 */}
                 </div>
@@ -104,7 +104,7 @@ export default function CoinCotent4({ onChange }) {
                   buyWord.map((res) => (
                     <div className={style.buyword_item} key={res.id}>
                       <div>
-                        <img src="/assets/images/buy/smallcoin.png" />
+                        <img src="/assets/images/buy/smallcoin.png" alt="aa" />
                         <span>{res.coinNum}</span>
                       </div>
                       <p>{res.word}</p>
@@ -117,10 +117,10 @@ export default function CoinCotent4({ onChange }) {
           </div>
           <div className={style.pageButton}>
             <div onClick={() => onChange("CoinCotent3")}>
-              <img src="/assets/images/buy/pageBack.png" />
+              <img src="/assets/images/buy/pageBack.png" alt="aa" />
             </div>
             <div onClick={() => onChange("CoinCotent1")}>
-              <img src="/assets/images/buy/pageNext.png" />
+              <img src="/assets/images/buy/pageNext.png" alt="aa" />
             </div>
           </div>
           {buyNot && (

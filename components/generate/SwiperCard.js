@@ -56,7 +56,7 @@ const SwiperCard = ({ selectStyle, setSelectStyle, setActiveBtnClass }) => {
             >
               <p className={s_style.imgIWrap}>
                 <Image
-                  src={`/assets/images/generate/${style}.png`}
+                  src={`/assets/images/generate/${style}.PNG`}
                   alt={`이미지 컨셉 : ${style}`}
                   width={275}
                   height={240}

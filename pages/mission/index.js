@@ -5,7 +5,8 @@ import Image from "next/image";
 
 const index = () => {
   const router = useRouter();
-  return (
+
+return(
     <section className={style.mainSection}>
       <div className={style.description_container}>
         <div className={style.description}>
@@ -22,10 +23,9 @@ const index = () => {
         </div>
       </div>
       <button onClick={() => router.push("/mission/missionModal")}>미션 시작하기</button>
-
     </section>
 
-  )
+)
 }
 
-export default index
+export default index;

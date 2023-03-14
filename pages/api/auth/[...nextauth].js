@@ -1,49 +1,29 @@
-// import NextAuth from "next-auth/next";
-// import GoogleProvider from "next-auth/providers/google";
-
-// export default NextAuth({
-
-//     providers: [
-    
-//         GoogleProvider({
-    
-//         clientId: process.env.GOOGLE_CLIENT_ID,
-    
-//         clientSecret: process.env.GOOGLE_CLIENT_SECRET
-    
-//         })
-    
-//     ],
-
-//     callbacks: {
-//         async signIn({ account, profile }) {
-//           if (account.provider === "google") {
-//             return profile.email_verified && profile.email.endsWith("@example.com")
-//           }
-//           return true // Do different verification for other providers that don't have `email_verified`
-//         },
-//       }
-
-// })  
-
-
-import NextAuth from "next-auth/next";
+import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions = {
-providers: [
-GoogleProvider({
-clientId: process.env.GOOGLE_CLIENT_ID,
-clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-}),
-],
-callbacks: {
-async session({ session, token, user }) {
-session.accessToken = token.accessToken;
+  // Configure one or more authentication providers
+  providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
+    }),
+  ],
 
-return session;
-},
-},
-secret: process.env.SECRET,
+  callbacks: {
+    async jwt({ token, account }) {
+      // Persist the OAuth access_token to the token right after signin
+      if (account) {
+        token.accessToken = account.access_token;
+      }
+      return token;
+    },
+    async session({ session, token, user }) {
+      // Send properties to the client, like an access_token from a provider.
+      session.accessToken = token.accessToken;
+
+      return session;
+    },
+  },
 };
 export default NextAuth(authOptions);

@@ -9,7 +9,7 @@ export default async function handler(req, res) {
 
   if (req.method === "POST") {
     try {
-      const { currentUserId, title, type, style, url } = req.body;
+      const { currentUserId, title, type, style, url, imgId } = req.body;
 
       const cloudinary = require("cloudinary").v2;
       cloudinary.config({
@@ -48,6 +48,7 @@ export default async function handler(req, res) {
               style: style,
               url: result.secure_url,
               like: 0,
+              imgId,
             },
           },
         }
