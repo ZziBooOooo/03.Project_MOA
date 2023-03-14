@@ -6,6 +6,8 @@ import style from '@/styles/mission/mission.module.css';
 import {useRouter} from 'next/router';
 import Image from "next/image";
 import MissionCatch from '@/components/mission/MissionCatch';
+import MissionTree from '@/components/mission/MissionTree';
+import MissionDiary from '@/components/mission/MissionDiary';
 import MissonMotionBox from "@/components/mission/MissonMotionBox";
 import MissionClickCount from "@/components/mission/MissionClickCount";
 import MissionTypeWithKeyBoard from "@/components/mission/MissionTypeWithKeyBoard";
@@ -24,19 +26,11 @@ const Mission = () => {
           {/* <button className={style.success} onClick={()=>router.push("/mission/missionEnd")}>
             success
           </button> */}
-          {/* <button className={style.success} onClick={()=>router.push("/mission/missionSuccess")}>
-            success
-          </button> */}
-          {/* <button className={style.success} onClick={()=>router.push("/mission/missionRetry")}>
-            fail
-          </button> */}
-          {/* <MissionRetry />
-          <MissionEnd />     */}
           {/* <MissonMotionBox /> */}
           {/* <MissionClickCount /> */}
            {/* <MissionTypeWithKeyBoard /> */}
           
-          <MissionCatch />
+          <MissionTree />
         </div>
       </div>
     </>

@@ -385,19 +385,14 @@
   z-index: 9999;
   max-width: 1200px;
   width: 70%;
-  height: 70%;
+  height: 80%;
   background-color: white;
   border-radius: 20px;
   filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.15));
-}
-.modalWrapper .missionModal .missionResult {
-  position: absolute;
-  bottom: 30%;
-  background-color: #fff0e6;
-  cursor: pointer;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .confettiBox {
@@ -501,4 +496,45 @@
   font-family: "Pretendard-Regular";
   font-weight: bold;
   word-spacing: 0.1rem;
+}
+
+.missionTreeBox {
+  width: 95%;
+  height: 90%;
+}
+.missionTreeBox .timer {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #2288ff;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 4%;
+}
+.missionTreeBox .quizBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.missionTreeBox .quizBox .quiz {
+  margin-left: 10%;
+  flex-direction: column;
+}
+.missionTreeBox .quizBox .quiz .title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+.missionTreeBox .quizBox .quiz .detail {
+  color: #2288ff;
+  font-size: 1.5625rem;
+  margin-bottom: 10%;
+}
+.missionTreeBox .quizBox form {
+  width: 80%;
+  border-bottom: 2px solid gray;
+  margin: 0 auto;
+}
+.missionTreeBox .quizBox form input {
+  margin-bottom: 3%;
 }/*# sourceMappingURL=mission.module.css.map */
