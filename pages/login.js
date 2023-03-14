@@ -1,8 +1,11 @@
 import axios from "axios";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import { UserSaveDataContext } from "@/contexts/UserSaveDataComponent";
 
 export default function LoginPage() {
+  const { userSaveData, setuserSaveData } = useContext(UserSaveDataContext);
+
   const { data, status } = useSession();
   // if (session) {
   //   axios.post("/api/buy/userBuy", {
@@ -45,9 +48,12 @@ export default function LoginPage() {
     if (data !== undefined && data !== null) {
       // 데이터 비어있지 않으면 (=로그인성공) -> context에 저장시키기
       // db에 유저 저장시키기
+      setuserSaveData(data.user);
       getUserData();
     }
   }, [data]);
+
+  console.log(userSaveData);
 
   return (
     <>
