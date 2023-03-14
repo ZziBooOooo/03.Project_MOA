@@ -155,6 +155,8 @@ const ImgResults = () => {
                   alt="checkIcon"
                   width={45}
                   height={45}
+                  placeholder="blur" // 추가
+                  blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
                 />
                 <p>마음에 드는 이미지를 선택해주세요</p>
               </div>

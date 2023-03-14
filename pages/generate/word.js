@@ -37,10 +37,10 @@ const Word = () => {
   const { userWords, setUserWords } = useContext(userWordContext);
   const { userSentence, setUserSentence } = useContext(userSentenceContext);
   const { userSaveData } = useContext(UserSaveDataContext);
-  console.log(userSaveData);
+  // console.log(userSaveData);
 
   const currentUserEmail = userSaveData.useremail;
-  console.log(currentUserEmail);
+  // console.log(currentUserEmail);
   // const currentUserId = 5;
   const router = useRouter();
 
@@ -62,7 +62,7 @@ const Word = () => {
       });
   }
 
-  console.log(userWords);
+  // console.log(userWords);
 
   // index.js에서 선택한 단어의 개수를 state에 저장한다. -> 조건에 따라 화면 렌더링이 다르기 때문
   useEffect(() => {

@@ -85,6 +85,10 @@ const Others = () => {
       .sort((a, b) => b.like - a.like)
       .slice(0, 3);
 
+    if (sortedLikes.length >= 2) {
+      [sortedLikes[0], sortedLikes[1]] = [sortedLikes[1], sortedLikes[0]];
+    }
+
     setTop3Data(sortedLikes);
   }
   function refreshRandomImg() {
@@ -110,6 +114,8 @@ const Others = () => {
       getRandomImg();
     }
   }, [userDatas]);
+
+  console.log(top3Data);
 
   return (
     <div className={style.fullBox}>
