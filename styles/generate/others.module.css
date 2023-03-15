@@ -196,12 +196,9 @@
   transform: scale(1.1);
 }
 .fullBox .bottomBox .imgBox .imgWrap .likeField .likeBtnBox .animating {
-  -webkit-animation-name: fillHeart;
-          animation-name: fillHeart;
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-name: fillHeart;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
 }
 .fullBox .bottomBox .imgBox:hover {
   transform: translateY(-8px);
@@ -397,12 +394,9 @@
   transform: scale(1.1);
 }
 .fullBox .bottomBox .randomImgBox .s_imgBox .imgWrap .likeField .likeBtnBox .animating {
-  -webkit-animation-name: fillHeart;
-          animation-name: fillHeart;
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-name: fillHeart;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
 }
 .fullBox .bottomBox .randomImgBox .s_imgBox .creator {
   font-size: 1.1rem;
@@ -453,26 +447,9 @@
   transform: scale(1.1);
 }
 .likeField .likeBtnBox .animating {
-  -webkit-animation-name: fillHeart;
-          animation-name: fillHeart;
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-@-webkit-keyframes fillHeart {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(-10deg);
-  }
-  75% {
-    transform: rotate(8deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+  animation-name: fillHeart;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
 }
 @keyframes fillHeart {
   0% {

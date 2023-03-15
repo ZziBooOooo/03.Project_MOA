@@ -10,6 +10,7 @@ import MissionClickCount from "@/components/mission/MissionClickCount";
 import MissionTypeWithKeyBoard from "@/components/mission/MissionTypeWithKeyBoard";
 
 
+
 const Mission = () => {
   
   const router = useRouter();
@@ -25,9 +26,10 @@ const Mission = () => {
           </button> */}
           {/* <MissonMotionBox /> */}
           {/* <MissionClickCount /> */}
-           {/* <MissionTypeWithKeyBoard /> */}
-          
-          <MissionTree />
+          {/* <MissionTypeWithKeyBoard /> */}
+          {/* <MissionTree /> */}
+          <MissionDiary />
+          {/* <MissionCatch /> */}
         </div>
       </div>
     </>

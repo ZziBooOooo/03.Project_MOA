@@ -125,16 +125,7 @@
   color: white;
 }
 .missionClickCount .missionBox.boxAniOn {
-  -webkit-animation: shakeBox 0.4s linear forwards;
-          animation: shakeBox 0.4s linear forwards;
-}
-@-webkit-keyframes shakeBox {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-20px);
-  }
+  animation: shakeBox 0.4s linear forwards;
 }
 @keyframes shakeBox {
   0% {
@@ -145,26 +136,8 @@
   }
 }
 .missionClickCount.bgOn {
-  -webkit-animation: complete 12s linear infinite;
-          animation: complete 12s linear infinite;
+  animation: complete 12s linear infinite;
   transition: background-color 3s ease-in-out;
-}
-@-webkit-keyframes complete {
-  0% {
-    background-color: #f79bc1;
-  }
-  25% {
-    background-color: #ffca8d;
-  }
-  50% {
-    background-color: #c2e092;
-  }
-  75% {
-    background-color: #92d0e0;
-  }
-  100% {
-    background-color: #be9bf7;
-  }
 }
 @keyframes complete {
   0% {
@@ -264,18 +237,7 @@
   width: 0%;
   height: 3px;
   background-color: #2288ff;
-  -webkit-animation: 1s hightlightOn forwards;
-          animation: 1s hightlightOn forwards;
-}
-@-webkit-keyframes hightlightOn {
-  0% {
-    width: 0%;
-    left: 0;
-  }
-  100% {
-    width: 100%;
-    left: 0;
-  }
+  animation: 1s hightlightOn forwards;
 }
 @keyframes hightlightOn {
   0% {
@@ -288,28 +250,7 @@
   }
 }
 .missionTypeWithKeyBoard .inputBox form .shake {
-  -webkit-animation: 0.3s shakeOn ease-in-out;
-          animation: 0.3s shakeOn ease-in-out;
-}
-@-webkit-keyframes shakeOn {
-  0% {
-    transform: translateX(0);
-  }
-  20% {
-    transform: translateX(-10px);
-  }
-  40% {
-    transform: translateX(10px);
-  }
-  60% {
-    transform: translateX(-10px);
-  }
-  80% {
-    transform: translateX(10px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+  animation: 0.3s shakeOn ease-in-out;
 }
 @keyframes shakeOn {
   0% {
@@ -346,6 +287,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 5vh;
 }
 .mainSection .description_container .description h1 {
   font-size: 3.125rem;
@@ -357,8 +299,13 @@
   font-size: 1.75rem;
   font-weight: 500;
 }
+.mainSection .alert {
+  color: #727375;
+  margin-top: 14vh;
+  margin-bottom: 2vh;
+  animation: blink-effect 2s ease-in-out infinite;
+}
 .mainSection button {
-  margin-top: 10vh;
   color: white;
   font-size: 1.75rem;
   background-color: #2288ff;
@@ -368,6 +315,11 @@
   font-family: "Pretendard-Regular";
   font-weight: bold;
   word-spacing: 0.1rem;
+}
+@keyframes blink-effect {
+  50% {
+    opacity: 0;
+  }
 }
 
 .modalWrapper {
@@ -385,7 +337,7 @@
   z-index: 9999;
   max-width: 1200px;
   width: 70%;
-  height: 80%;
+  height: 700px;
   background-color: white;
   border-radius: 20px;
   filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.15));
@@ -499,7 +451,7 @@
 }
 
 .missionTreeBox {
-  width: 95%;
+  width: 70%;
   height: 90%;
 }
 .missionTreeBox .timer {
@@ -508,7 +460,7 @@
   color: #2288ff;
   letter-spacing: 2px;
   text-align: center;
-  margin-bottom: 4%;
+  margin-bottom: 7%;
 }
 .missionTreeBox .quizBox {
   display: flex;
@@ -516,8 +468,12 @@
   justify-content: center;
   text-align: center;
 }
+.missionTreeBox .quizBox .imgBox {
+  width: 50%;
+  align-items: center;
+}
 .missionTreeBox .quizBox .quiz {
-  margin-left: 10%;
+  width: 50%;
   flex-direction: column;
 }
 .missionTreeBox .quizBox .quiz .title {
@@ -537,4 +493,52 @@
 }
 .missionTreeBox .quizBox form input {
   margin-bottom: 3%;
+  text-align: center;
+}
+.missionTreeBox .quizBox form input:focus {
+  outline: none;
+}
+
+.missionDiaryBox {
+  width: 95%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.missionDiaryBox .titleBox {
+  display: flex;
+}
+.missionDiaryBox .titleBox h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 2%;
+}
+.missionDiaryBox .titleBox img {
+  margin-left: 3%;
+}
+.missionDiaryBox p {
+  font-size: 1.875rem;
+  color: #2288ff;
+  margin-bottom: 10%;
+}
+.missionDiaryBox form {
+  width: 70%;
+  border-bottom: 2px solid gray;
+  margin: 0 auto;
+  display: flex;
+}
+.missionDiaryBox form input {
+  cursor: pointer;
+  width: 95%;
+  margin-bottom: 2%;
+  text-align: center;
+  font-size: 1.25rem;
+}
+.missionDiaryBox form input:focus {
+  outline: none;
+}
+.missionDiaryBox form:focus-within {
+  border-bottom: 2px solid #2288ff;
 }/*# sourceMappingURL=mission.module.css.map */
