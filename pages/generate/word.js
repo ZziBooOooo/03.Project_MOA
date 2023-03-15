@@ -47,7 +47,8 @@ const Word = () => {
     // 로그인성공하면 세션스토리지에 저장하고 받아온다
     const parsedUserEmail =
       typeof window !== "undefined" && window.sessionStorage.getItem("userData")
-        ? JSON.parse(window.sessionStorage.getItem("userData")).useremail
+        ? JSON.parse(window.sessionStorage.getItem("userData")).useremail ||
+          null
         : null;
     // console.log(parsedUserEmail);
     try {

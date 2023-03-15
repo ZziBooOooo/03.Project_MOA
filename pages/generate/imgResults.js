@@ -54,7 +54,8 @@ const ImgResults = () => {
   async function generateImages() {
     const currentUserEmail =
       typeof window !== "undefined" && window.sessionStorage.getItem("userData")
-        ? JSON.parse(window.sessionStorage.getItem("userData")).useremail
+        ? JSON.parse(window.sessionStorage.getItem("userData")).useremail ||
+          null
         : null;
     // console.log(token);
     console.log(prompt);
@@ -92,7 +93,8 @@ const ImgResults = () => {
   async function saveImage(url) {
     const currentUserEmail =
       typeof window !== "undefined" && window.sessionStorage.getItem("userData")
-        ? JSON.parse(window.sessionStorage.getItem("userData")).useremail
+        ? JSON.parse(window.sessionStorage.getItem("userData")).useremail ||
+          null
         : null;
     let fullUserSentenceKR = prompt;
     const regex = /(?<=^[^,]+,)[^,]+(?=,[^,]+$)/g;

@@ -36,7 +36,7 @@ const ImgType = () => {
     setImgType(selectType);
     setUserSentence(`${userSentence},${selectType}`);
     typeof window !== "undefined" && window.sessionStorage.getItem("userData")
-      ? window.sessionStorage.setItem("type", selectType)
+      ? window.sessionStorage.setItem("type", selectType) || null
       : null;
   }
 

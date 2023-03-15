@@ -18,12 +18,12 @@ const SmallImgAndLikeBtn = ({ idx, data, userDatas }) => {
   // const currentName = userSaveData.name;
   const currentUserEmail =
     typeof window !== "undefined" && window.sessionStorage.getItem("userData")
-      ? JSON.parse(window.sessionStorage.getItem("userData")).useremail
+      ? JSON.parse(window.sessionStorage.getItem("userData")).useremail || null
       : null;
 
   const currentName =
     typeof window !== "undefined" && window.sessionStorage.getItem("userData")
-      ? JSON.parse(window.sessionStorage.getItem("userData")).name
+      ? JSON.parse(window.sessionStorage.getItem("userData")).name || null
       : null;
 
   function addImgToLike() {

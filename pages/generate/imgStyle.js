@@ -27,7 +27,7 @@ const ImgStyle = () => {
     setImgStyle(selectStyle);
     setUserSentence(`${selectStyle},${userSentence}`);
     typeof window !== "undefined" && window.sessionStorage.getItem("userData")
-      ? window.sessionStorage.setItem("style", selectStyle)
+      ? window.sessionStorage.setItem("style", selectStyle) || null
       : null;
   }
 
