@@ -119,8 +119,8 @@ export default function CoinCotent4({ onChange }) {
             <div onClick={() => onChange("CoinCotent3")}>
               <img src="/assets/images/buy/pageBack.png" alt="aa" />
             </div>
-            <div onClick={() => onChange("CoinCotent1")}>
-              <img src="/assets/images/buy/pageNext.png" alt="aa" />
+            <div>
+              <img src="/assets/images/buy/nomove.png" alt="aa" />
             </div>
           </div>
           {buyNot && (

@@ -150,6 +150,7 @@
 }
 .fullBox .imgBox .card {
   width: 30%;
+  min-height: 205px;
   display: flex;
   justify-content: center;
   align-items: center;

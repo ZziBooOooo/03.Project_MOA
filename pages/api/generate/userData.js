@@ -7,7 +7,7 @@ export default async function handler(req, res) {
 
   console.log(req.body.liked);
 
-  //others 페이지 접속 시 DB에 저장된 유저들의 데이터를 받아온다.
+  //otehrs 페이지 접속 시 DB에 저장된 유저들의 데이터를 받아온다.
   if (req.method === "GET") {
     try {
       const fullDBData = await userCollection.find().toArray();

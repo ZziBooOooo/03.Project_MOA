@@ -27,6 +27,7 @@ const Index = () => {
           />
         </div>
       </div>
+      <p className={style.alert}>버튼을 클릭하면 미션이 바로 시작돼요.</p>
       <button onClick={() => router.push("/mission/missionModal")}>
         미션 시작하기
       </button>

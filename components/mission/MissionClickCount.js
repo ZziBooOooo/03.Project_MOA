@@ -33,7 +33,7 @@ const MissionClickCount = () => {
   useEffect(() => {
     if (time === 0) {
       setTimeout(() => {
-        router.push("/mission/missionEnd");
+        router.push("/mission/missionRetry");
       }, 800);
     }
   }, [time, router]);

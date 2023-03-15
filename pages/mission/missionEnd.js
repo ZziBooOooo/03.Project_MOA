@@ -11,7 +11,7 @@ const MissionEnd = () => {
       <p className={style.slogan}>오늘은 이미 참여하셨어요.</p>
       <p className={style.end_message}>내일 다시 참여해주세요!</p>
       <Image 
-            src="/assets/images/mission/end.png"
+            src="/assets/images/mission/end.gif"          
             alt="end"
             width={300}
             height={300}

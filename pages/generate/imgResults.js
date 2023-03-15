@@ -28,7 +28,7 @@ const ImgResults = () => {
   const { imgType } = useContext(selectTypeContext);
   const { imgStyle } = useContext(selectStyleContext);
 
-  const currentUserEmail = userSaveData.useremail;
+  // const currentUserEmail = userSaveData.useremail;
 
   // 번역요청 - 파파고 api
   async function translateKoreanToEnglish(koreanText) {
@@ -52,6 +52,11 @@ const ImgResults = () => {
 
   // 이미지 생성요청 -> 번역함수 먼저실행
   async function generateImages() {
+    const currentUserEmail =
+      typeof window !== "undefined" && window.sessionStorage.getItem("userData")
+        ? JSON.parse(window.sessionStorage.getItem("userData")).useremail ||
+          null
+        : null;
     // console.log(token);
     console.log(prompt);
     if (prompt != "") {
@@ -86,6 +91,11 @@ const ImgResults = () => {
   // context에 유저의 선택값(문장,스타일,타입)을 한번에 묶어놔서
   // db저장용 문장은 스타일과 타입을 제외하기 위해 정규식 사용
   async function saveImage(url) {
+    const currentUserEmail =
+      typeof window !== "undefined" && window.sessionStorage.getItem("userData")
+        ? JSON.parse(window.sessionStorage.getItem("userData")).useremail ||
+          null
+        : null;
     let fullUserSentenceKR = prompt;
     const regex = /(?<=^[^,]+,)[^,]+(?=,[^,]+$)/g;
     const UserSentenceKR = fullUserSentenceKR.match(regex);
@@ -113,6 +123,25 @@ const ImgResults = () => {
     if (prompt) {
       generateImages();
     } else {
+      // setPrompt(userSentence);
+
+      const type =
+        typeof window !== "undefined" &&
+        window.sessionStorage.getItem("userData")
+          ? window.sessionStorage.getItem("type")
+          : null;
+      const sentence =
+        typeof window !== "undefined" &&
+        window.sessionStorage.getItem("userData")
+          ? window.sessionStorage.getItem("sentence")
+          : null;
+      const style =
+        typeof window !== "undefined" &&
+        window.sessionStorage.getItem("userData")
+          ? window.sessionStorage.getItem("style")
+          : null;
+      const userSentence = `${style},${sentence},${type}`;
+
       setPrompt(userSentence);
     }
   }, [prompt]);
@@ -155,8 +184,6 @@ const ImgResults = () => {
                   alt="checkIcon"
                   width={45}
                   height={45}
-                  placeholder="blur" // 추가
-                  blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
                 />
                 <p>마음에 드는 이미지를 선택해주세요</p>
               </div>
@@ -174,37 +201,6 @@ const ImgResults = () => {
                   </div>
                 );
               })}
-
-              {/* <div className={r_style.card} key="1">
-                <img
-                  src="/assets/images/generate/oil.png"
-                  alt="ai-result-image"
-                  onClick={() => {
-                    // saveImage(result.url);
-                    openModal();
-                  }}
-                />
-              </div>
-              <div className={r_style.card} key="2">
-                <img
-                  src="/assets/images/generate/oil.png"
-                  alt="ai-result-image"
-                  onClick={() => {
-                    // saveImage(result.url);
-                    openModal();
-                  }}
-                />
-              </div>
-              <div className={r_style.card} key="3">
-                <img
-                  src="/assets/images/generate/oil.png"
-                  alt="ai-result-image"
-                  onClick={() => {
-                    // saveImage(result.url);
-                    openModal();
-                  }}
-                />
-              </div> */}
             </div>
           </>
         ) : (

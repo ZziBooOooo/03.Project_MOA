@@ -2,14 +2,12 @@ import React from 'react'
 import style from '@/styles/mission/mission.module.css';
 import {useRouter} from 'next/router';
 import Image from "next/image";
-// import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
 import { useEffect, useRef, useState } from "react";
 
 
 const MissionSuccess = () => {
   const router = useRouter();
-  // const { width, height } = useWindowSize();
   const [size, setSize] =useState({ width: 0, height: 0 });
   const wrapper =useRef(null);
   
@@ -37,11 +35,6 @@ const MissionSuccess = () => {
           />
       </div>
     <div className={style.missionSuccess} ref={wrapper} > 
-        {/* <Confetti
-          width={width}
-          height={height}
-          numberOfPieces={70}
-        /> */}
       <p className={style.slogan}>미션에 성공하셨어요! </p>
       <p className={style.reward}> +<span>1</span>코인 </p>
       <Image 

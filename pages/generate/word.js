@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { AnimatePresence, motion } from "framer-motion";
+import { useSession } from "next-auth/react";
 
 const Word = () => {
   const [count, setCount] = useState(0);
@@ -36,38 +37,57 @@ const Word = () => {
   const { wordCount, setWordCount } = useContext(wordCountContext);
   const { userWords, setUserWords } = useContext(userWordContext);
   const { userSentence, setUserSentence } = useContext(userSentenceContext);
-  const { userSaveData } = useContext(UserSaveDataContext);
-  // console.log(userSaveData);
 
-  const currentUserEmail = userSaveData.useremail;
-  // console.log(currentUserEmail);
-  // const currentUserId = 5;
+  const { data } = useSession(); /* 로그인 세션 */
   const router = useRouter();
 
+  // 페이지 접속할때마다 데이터 받아오게 해야함
+  async function getUserDatas() {
+    // *** 새로고침하면 session을 바로 못받아온다.
+    // 로그인성공하면 세션스토리지에 저장하고 받아온다
+    const parsedUserEmail =
+      typeof window !== "undefined" && window.sessionStorage.getItem("userData")
+        ? JSON.parse(window.sessionStorage.getItem("userData")).useremail ||
+          null
+        : null;
+    // console.log(parsedUserEmail);
+    try {
+      const response1 = await axios.get("/api/buy/userBuy", {
+        params: { email: parsedUserEmail },
+      });
+
+      const response2 = await axios
+        .get("/api/generate/wordcontroll", {
+          params: {
+            currentUserEmail: response1.data.users.useremail,
+          },
+        })
+        .then((res) => {
+          // console.log(res.data);
+          const UserWord_DB = res.data;
+          const userWordArr = Object.values(UserWord_DB).flat();
+          if (userWordArr) {
+            setUserWords(userWordArr);
+          }
+        });
+      // handle response2
+    } catch (error) {
+      console.error(error);
+    }
+  }
   // 유저의 단어목록을 받아오는 함수
   // 코인개수별로 나눠진 데이터를 한개의 배열로 합쳤다.
-  function getUserWords() {
-    axios
-      .get("/api/generate/wordcontroll", {
-        params: {
-          currentUserEmail,
-        },
-      })
-      .then((res) => {
-        const UserWord_DB = res.data;
-        const userWordArr = Object.values(UserWord_DB).flat();
-        if (userWordArr) {
-          setUserWords(userWordArr);
-        }
-      });
-  }
-
-  // console.log(userWords);
 
   // index.js에서 선택한 단어의 개수를 state에 저장한다. -> 조건에 따라 화면 렌더링이 다르기 때문
   useEffect(() => {
     setWordCount(wordCount);
-    getUserWords();
+    const s_wordCount =
+      typeof window !== "undefined" && window.sessionStorage.getItem("userData")
+        ? sessionStorage.getItem("wordCount")
+        : null;
+    setWordCount(s_wordCount);
+    getUserDatas();
+    // getUserWords();
   }, []);
 
   // imgType페이지로 이동
@@ -182,6 +202,13 @@ const Word = () => {
       } else {
         goTypePage();
         setUserSentence(`${word1}${postPosition1} ${word4}`);
+        typeof window !== "undefined" &&
+        window.sessionStorage.getItem("userData")
+          ? sessionStorage.setItem(
+              "sentence",
+              `${word1}${postPosition1} ${word4}`
+            )
+          : null;
       }
     } else if (wordCount == 3) {
       if (word1 === "" || word2 === "" || word4 === "") {
@@ -191,6 +218,13 @@ const Word = () => {
         setUserSentence(
           `${word1}${postPosition1} ${word2}${postPosition2} ${word4}`
         );
+        typeof window !== "undefined" &&
+        window.sessionStorage.getItem("userData")
+          ? sessionStorage.setItem(
+              "sentence",
+              `${word1}${postPosition1} ${word2}${postPosition2} ${word4}`
+            )
+          : null;
       }
     } else if (wordCount == 4) {
       if (word1 === "" || word2 === "" || word3 === "" || word4 === "") {
@@ -200,6 +234,13 @@ const Word = () => {
         setUserSentence(
           `${word1}${postPosition1} ${word2}${postPosition2} ${word3}${postPosition3} ${word4}`
         );
+        typeof window !== "undefined" &&
+        window.sessionStorage.getItem("userData")
+          ? sessionStorage.setItem(
+              "sentence",
+              `${word1}${postPosition1} ${word2}${postPosition2} ${word3}${postPosition3} ${word4}`
+            )
+          : null;
       }
     }
   }
@@ -365,6 +406,12 @@ const Word = () => {
                         initial={{ opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: 0.1 * key }}
+                        id={word.word}
+                        onClick={(e) => {
+                          makeSentence(e);
+                          addSelectedClass(word.word);
+                          saveSelectedClass(word.word);
+                        }}
                       >
                         <p
                           id={word.word}

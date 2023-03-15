@@ -4,32 +4,12 @@ import { useContext, useEffect, useState } from "react";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
 import { UserSaveDataContext } from "@/contexts/UserSaveDataComponent";
-import axios from "axios";
+import { buyContext } from "@/contexts/buy/buyPageContext";
+// import { useRaf } from "react-use";
 
 export default function MyalbumType({ catePage }) {
-  const { userSaveData } = useContext(UserSaveDataContext);
-  const currentUserEmail = userSaveData.useremail;
-  const [userData, setuserData] = useState(); /* 사용자 데이터 */
-
-  console.log(currentUserEmail);
-
-  const userGetData = async () => {
-    try {
-      const response = await axios
-        .get("/api/buy/userBuy", {
-          params: { email: currentUserEmail },
-        })
-        .then((res) => {
-          setuserData(res.data.users);
-        });
-    } catch (error) {
-      console.error(error);
-    }
-  }; /* 사용자 정보 */
-
-  useEffect(() => {
-    userGetData();
-  }, []); /* DB  */
+  /*  const { userSaveData } = useContext(UserSaveDataContext); */
+  const { userData } = useContext(buyContext);
 
   function imgDown(res) {
     let image = document.createElement("img");
@@ -46,15 +26,12 @@ export default function MyalbumType({ catePage }) {
     };
   } /* 이미지 다운로드 */
 
-  console.log(userData);
-
   return (
     <>
-      {userData && userData.imgUrl.length > 0 ? (
+      {userData && userData.imgUrl.some((res) => res.type === catePage) ? (
         userData.imgUrl.map(
           (res, key) =>
-            res.type ===
-            catePage(
+            res.type === catePage && (
               <div className={style.myalbum_img} key={key}>
                 <div className={style.myalbum_front}>
                   <Image
@@ -79,7 +56,7 @@ export default function MyalbumType({ catePage }) {
           <p>
             나만의 이미지를 만들어 <br />
             앨범에 추가하세요
-          </p>{" "}
+          </p>
           {/* 앨범에 이미지가 없을경우 */}
         </div>
       )}
