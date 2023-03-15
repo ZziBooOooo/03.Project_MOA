@@ -18,6 +18,7 @@ const UserSaveDataComponent = (props) => {
         profile: data.user.image,
       });
       setuserSaveData(response.data.users);
+      sessionStorage.setItem("userData", JSON.stringify(dbUser.data.users));
     } catch (error) {
       console.log(error);
     }
@@ -34,6 +35,7 @@ const UserSaveDataComponent = (props) => {
       /*   console.log(dbUser.data.users);
       console.log("db에 이미 있는 유저"); */
       setuserSaveData(dbUser.data.users);
+      sessionStorage.setItem("userData", JSON.stringify(dbUser.data.users));
     } else if (dbUser.data.status == "noExist") {
       console.log("존재하지 않는 유저 ");
       saveUserToDB();

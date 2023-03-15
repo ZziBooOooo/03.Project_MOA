@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { wordCountContext } from "@/contexts/generate/wordCountContext";
 import { AnimatePresence, motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 const Index = () => {
   const textArray = [
@@ -36,9 +35,11 @@ const Index = () => {
   const handleClick = (e) => {
     const id = e.currentTarget.id || e.currentTarget.parentElement.id;
     setWordCount(id);
-
+    sessionStorage.setItem("wordCount", id);
     router.push("/generate/word", undefined, { scroll: false });
   };
+
+  // 새로고침해도 선택한 단어의 개수가 필요함 -> 이거는 세션스토리지에 저장한다.
 
   return (
     <div className={style.fullBox}>

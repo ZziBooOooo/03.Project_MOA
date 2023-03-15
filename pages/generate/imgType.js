@@ -35,6 +35,7 @@ const ImgType = () => {
   function saveTypeToContext() {
     setImgType(selectType);
     setUserSentence(`${userSentence},${selectType}`);
+    sessionStorage.setItem("type", selectType);
   }
 
   function selectTypeStyle() {

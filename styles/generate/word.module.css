@@ -138,6 +138,9 @@
 .selectBox .sentenceBox .thirdWord p:nth-of-type(1) {
   min-width: 60px;
 }
+.selectBox .sentenceBox .secondWord p:nth-of-type(1) {
+  min-width: 40px;
+}
 .selectBox .sentenceBox .fourthWord {
   min-width: 60px;
 }
@@ -209,7 +212,8 @@
   transform: translateY(0px) !important;
 }
 .selectBox .wordBox .wordBtn p {
-  margin: 0;
+  width: 100%;
+  margin: 0%;
 }
 .selectBox .wordBox .selected {
   background-color: #2288ff;
@@ -257,9 +261,9 @@
     font-size: 1.4rem;
   }
   .selectBox .sentenceBox .sentenceWrap .fisrtWord,
-  .selectBox .sentenceBox .sentenceWrap .secondWord,
-  .selectBox .sentenceBox .sentenceWrap .thirdWord,
-  .selectBox .sentenceBox .sentenceWrap .fourthWord {
+.selectBox .sentenceBox .sentenceWrap .secondWord,
+.selectBox .sentenceBox .sentenceWrap .thirdWord,
+.selectBox .sentenceBox .sentenceWrap .fourthWord {
     margin: 0 5px;
   }
   .selectBox .sentenceBox svg {
@@ -296,27 +300,27 @@
     font-size: 1.2rem;
   }
   .selectBox .sentenceBox .sentenceWrap .fisrtWord,
-  .selectBox .sentenceBox .sentenceWrap .secondWord,
-  .selectBox .sentenceBox .sentenceWrap .thirdWord,
-  .selectBox .sentenceBox .sentenceWrap .fourthWord {
+.selectBox .sentenceBox .sentenceWrap .secondWord,
+.selectBox .sentenceBox .sentenceWrap .thirdWord,
+.selectBox .sentenceBox .sentenceWrap .fourthWord {
     margin: 0 5px;
   }
   .selectBox .sentenceBox .sentenceWrap .fisrtWord p:nth-of-type(1),
-  .selectBox .sentenceBox .sentenceWrap .secondWord p:nth-of-type(1),
-  .selectBox .sentenceBox .sentenceWrap .thirdWord p:nth-of-type(1),
-  .selectBox .sentenceBox .sentenceWrap .fourthWord p:nth-of-type(1) {
+.selectBox .sentenceBox .sentenceWrap .secondWord p:nth-of-type(1),
+.selectBox .sentenceBox .sentenceWrap .thirdWord p:nth-of-type(1),
+.selectBox .sentenceBox .sentenceWrap .fourthWord p:nth-of-type(1) {
     min-width: 30px;
   }
   .selectBox .sentenceBox .sentenceWrap .fisrtWord .dropbtn,
-  .selectBox .sentenceBox .sentenceWrap .secondWord .dropbtn,
-  .selectBox .sentenceBox .sentenceWrap .thirdWord .dropbtn,
-  .selectBox .sentenceBox .sentenceWrap .fourthWord .dropbtn {
+.selectBox .sentenceBox .sentenceWrap .secondWord .dropbtn,
+.selectBox .sentenceBox .sentenceWrap .thirdWord .dropbtn,
+.selectBox .sentenceBox .sentenceWrap .fourthWord .dropbtn {
     padding: 2px 4px;
   }
   .selectBox .sentenceBox .sentenceWrap .fisrtWord .dropbtn img,
-  .selectBox .sentenceBox .sentenceWrap .secondWord .dropbtn img,
-  .selectBox .sentenceBox .sentenceWrap .thirdWord .dropbtn img,
-  .selectBox .sentenceBox .sentenceWrap .fourthWord .dropbtn img {
+.selectBox .sentenceBox .sentenceWrap .secondWord .dropbtn img,
+.selectBox .sentenceBox .sentenceWrap .thirdWord .dropbtn img,
+.selectBox .sentenceBox .sentenceWrap .fourthWord .dropbtn img {
     width: 14px;
     height: 13px;
   }
