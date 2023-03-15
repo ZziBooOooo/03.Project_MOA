@@ -52,9 +52,10 @@ const ImgResults = () => {
 
   // 이미지 생성요청 -> 번역함수 먼저실행
   async function generateImages() {
-    const currentUserEmail = JSON.parse(
-      window.sessionStorage.getItem("userData")
-    ).useremail;
+    const currentUserEmail =
+      typeof window !== "undefined"
+        ? JSON.parse(window.sessionStorage.getItem("userData")).useremail
+        : null;
     // console.log(token);
     console.log(prompt);
     if (prompt != "") {
@@ -89,9 +90,10 @@ const ImgResults = () => {
   // context에 유저의 선택값(문장,스타일,타입)을 한번에 묶어놔서
   // db저장용 문장은 스타일과 타입을 제외하기 위해 정규식 사용
   async function saveImage(url) {
-    const currentUserEmail = JSON.parse(
-      window.sessionStorage.getItem("userData")
-    ).useremail;
+    const currentUserEmail =
+      typeof window !== "undefined"
+        ? JSON.parse(window.sessionStorage.getItem("userData")).useremail
+        : null;
     let fullUserSentenceKR = prompt;
     const regex = /(?<=^[^,]+,)[^,]+(?=,[^,]+$)/g;
     const UserSentenceKR = fullUserSentenceKR.match(regex);
@@ -121,9 +123,18 @@ const ImgResults = () => {
     } else {
       // setPrompt(userSentence);
 
-      const type = window.sessionStorage.getItem("type");
-      const sentence = window.sessionStorage.getItem("sentence");
-      const style = window.sessionStorage.getItem("style");
+      const type =
+        typeof window !== "undefined"
+          ? window.sessionStorage.getItem("type")
+          : null;
+      const sentence =
+        typeof window !== "undefined"
+          ? window.sessionStorage.getItem("sentence")
+          : null;
+      const style =
+        typeof window !== "undefined"
+          ? window.sessionStorage.getItem("style")
+          : null;
       const userSentence = `${style},${sentence},${type}`;
 
       setPrompt(userSentence);

@@ -18,12 +18,15 @@ const ImageAndLikeBtn = ({ idx, data, userDatas }) => {
 
   // const currentUserEmail = userSaveData.useremail;
   // const currentName = userSaveData.name;
-  const currentUserEmail = JSON.parse(
-    window.sessionStorage.getItem("userData")
-  ).useremail;
-  const currentName = JSON.parse(
-    window.sessionStorage.getItem("userData")
-  ).name;
+  const currentUserEmail =
+    typeof window !== "undefined"
+      ? JSON.parse(window.sessionStorage.getItem("userData")).useremail
+      : null;
+
+  const currentName =
+    typeof window !== "undefined"
+      ? JSON.parse(window.sessionStorage.getItem("userData")).name
+      : null;
 
   const rank = ["2", "1", "3"];
 

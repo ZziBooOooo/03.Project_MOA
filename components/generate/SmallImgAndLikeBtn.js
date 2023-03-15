@@ -16,12 +16,15 @@ const SmallImgAndLikeBtn = ({ idx, data, userDatas }) => {
   const { userSaveData } = useContext(UserSaveDataContext);
   // const currentUserEmail = userSaveData.useremail;
   // const currentName = userSaveData.name;
-  const currentUserEmail = JSON.parse(
-    window.sessionStorage.getItem("userData")
-  ).useremail;
-  const currentName = JSON.parse(
-    window.sessionStorage.getItem("userData")
-  ).name;
+  const currentUserEmail =
+    typeof window !== "undefined"
+      ? JSON.parse(window.sessionStorage.getItem("userData")).useremail
+      : null;
+
+  const currentName =
+    typeof window !== "undefined"
+      ? JSON.parse(window.sessionStorage.getItem("userData")).name
+      : null;
 
   function addImgToLike() {
     if (isAnimating) {

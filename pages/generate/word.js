@@ -45,9 +45,10 @@ const Word = () => {
   async function getUserDatas() {
     // *** 새로고침하면 session을 바로 못받아온다.
     // 로그인성공하면 세션스토리지에 저장하고 받아온다
-    const parsedUserEmail = JSON.parse(
-      window.sessionStorage.getItem("userData")
-    ).useremail;
+    const parsedUserEmail =
+      typeof window !== "undefined"
+        ? JSON.parse(window.sessionStorage.getItem("userData")).useremail
+        : null;
     // console.log(parsedUserEmail);
     try {
       const response1 = await axios.get("/api/buy/userBuy", {
@@ -79,7 +80,10 @@ const Word = () => {
   // index.js에서 선택한 단어의 개수를 state에 저장한다. -> 조건에 따라 화면 렌더링이 다르기 때문
   useEffect(() => {
     setWordCount(wordCount);
-    const s_wordCount = sessionStorage.getItem("wordCount");
+    const s_wordCount =
+      typeof window !== "undefined"
+        ? sessionStorage.getItem("wordCount")
+        : null;
     setWordCount(s_wordCount);
     getUserDatas();
     // getUserWords();
@@ -197,7 +201,12 @@ const Word = () => {
       } else {
         goTypePage();
         setUserSentence(`${word1}${postPosition1} ${word4}`);
-        sessionStorage.setItem("sentence", `${word1}${postPosition1} ${word4}`);
+        typeof window !== "undefined"
+          ? sessionStorage.setItem(
+              "sentence",
+              `${word1}${postPosition1} ${word4}`
+            )
+          : null;
       }
     } else if (wordCount == 3) {
       if (word1 === "" || word2 === "" || word4 === "") {
@@ -207,10 +216,12 @@ const Word = () => {
         setUserSentence(
           `${word1}${postPosition1} ${word2}${postPosition2} ${word4}`
         );
-        sessionStorage.setItem(
-          "sentence",
-          `${word1}${postPosition1} ${word2}${postPosition2} ${word4}`
-        );
+        typeof window !== "undefined"
+          ? sessionStorage.setItem(
+              "sentence",
+              `${word1}${postPosition1} ${word2}${postPosition2} ${word4}`
+            )
+          : null;
       }
     } else if (wordCount == 4) {
       if (word1 === "" || word2 === "" || word3 === "" || word4 === "") {
@@ -220,7 +231,12 @@ const Word = () => {
         setUserSentence(
           `${word1}${postPosition1} ${word2}${postPosition2} ${word3}${postPosition3} ${word4}`
         );
-        `${word1}${postPosition1} ${word2}${postPosition2} ${word3}${postPosition3} ${word4}`;
+        typeof window !== "undefined"
+          ? sessionStorage.setItem(
+              "sentence",
+              `${word1}${postPosition1} ${word2}${postPosition2} ${word3}${postPosition3} ${word4}`
+            )
+          : null;
       }
     }
   }
