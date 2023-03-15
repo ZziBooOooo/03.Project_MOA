@@ -42,15 +42,15 @@ export default function MyalbumCategory({ onChange, catePage }) {
         </li>
         <li
           style={
-            catePage === "유화"
+            catePage === "오일 페인팅"
               ? { background: "#2288FF", color: "#FFFFFF" }
               : {}
           }
           onClick={() => {
-            onChange("유화");
+            onChange("오일 페인팅");
           }}
         >
-          유화
+          오일 페인팅
         </li>
         <li
           style={
@@ -66,15 +66,15 @@ export default function MyalbumCategory({ onChange, catePage }) {
         </li>
         <li
           style={
-            catePage === "포토리얼리즘"
+            catePage === "하이퍼 리얼리즘"
               ? { background: "#2288FF", color: "#FFFFFF" }
               : {}
           }
           onClick={() => {
-            onChange("포토리얼리즘");
+            onChange("하이퍼 리얼리즘");
           }}
         >
-          포토리얼리즘
+          하이퍼 리얼리즘
         </li>
       </ul>
     </div>

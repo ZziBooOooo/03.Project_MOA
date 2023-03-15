@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import style from "@/styles/generate/others.module.scss";
 import Image from "next/image";
 import axios from "axios";
+import { UserSaveDataContext } from "@/contexts/UserSaveDataComponent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
 
 const SmallImgAndLikeBtn = ({ idx, data, userDatas }) => {
-  const currentUserId = 5;
-  const currentName = "다섯번째";
   const [liked, setLiked] = useState("");
   const [isAnimating, setIsAnimating] = useState(false);
   const [filteredData, setFilteredData] = useState(null);
   const [likeCount, setLikeCount] = useState(data.like);
+
+  const { userSaveData } = useContext(UserSaveDataContext);
+  const currentUserEmail = userSaveData.useremail;
+  const currentName = userSaveData.name;
 
   function addImgToLike() {
     if (isAnimating) {
@@ -36,7 +39,7 @@ const SmallImgAndLikeBtn = ({ idx, data, userDatas }) => {
         likeData: data,
         imgId: data.imgId,
         liked: newLiked,
-        _id: currentUserId,
+        useremail: currentUserEmail,
         currentName,
       })
       .then((response) => {
@@ -48,7 +51,9 @@ const SmallImgAndLikeBtn = ({ idx, data, userDatas }) => {
   }
 
   useEffect(() => {
-    const filteredData = userDatas.find((obj) => obj._id == currentUserId);
+    const filteredData = userDatas.find(
+      (obj) => obj.useremail == currentUserEmail
+    );
     setFilteredData(filteredData);
   }, [userDatas]);
 

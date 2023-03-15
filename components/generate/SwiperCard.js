@@ -60,6 +60,8 @@ const SwiperCard = ({ selectStyle, setSelectStyle, setActiveBtnClass }) => {
                   alt={`이미지 컨셉 : ${style}`}
                   width={275}
                   height={240}
+                  placeholder="blur" // 추가
+                  blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
                 />
               </p>
               <p className={s_style.typeText}>{style}</p>
