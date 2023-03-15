@@ -53,7 +53,7 @@ const ImgResults = () => {
   // 이미지 생성요청 -> 번역함수 먼저실행
   async function generateImages() {
     const currentUserEmail =
-      typeof window !== "undefined"
+      typeof window !== "undefined" && window.sessionStorage.getItem("userData")
         ? JSON.parse(window.sessionStorage.getItem("userData")).useremail
         : null;
     // console.log(token);
@@ -91,7 +91,7 @@ const ImgResults = () => {
   // db저장용 문장은 스타일과 타입을 제외하기 위해 정규식 사용
   async function saveImage(url) {
     const currentUserEmail =
-      typeof window !== "undefined"
+      typeof window !== "undefined" && window.sessionStorage.getItem("userData")
         ? JSON.parse(window.sessionStorage.getItem("userData")).useremail
         : null;
     let fullUserSentenceKR = prompt;
@@ -124,15 +124,18 @@ const ImgResults = () => {
       // setPrompt(userSentence);
 
       const type =
-        typeof window !== "undefined"
+        typeof window !== "undefined" &&
+        window.sessionStorage.getItem("userData")
           ? window.sessionStorage.getItem("type")
           : null;
       const sentence =
-        typeof window !== "undefined"
+        typeof window !== "undefined" &&
+        window.sessionStorage.getItem("userData")
           ? window.sessionStorage.getItem("sentence")
           : null;
       const style =
-        typeof window !== "undefined"
+        typeof window !== "undefined" &&
+        window.sessionStorage.getItem("userData")
           ? window.sessionStorage.getItem("style")
           : null;
       const userSentence = `${style},${sentence},${type}`;

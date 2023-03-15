@@ -17,12 +17,12 @@ const SmallImgAndLikeBtn = ({ idx, data, userDatas }) => {
   // const currentUserEmail = userSaveData.useremail;
   // const currentName = userSaveData.name;
   const currentUserEmail =
-    typeof window !== "undefined"
+    typeof window !== "undefined" && window.sessionStorage.getItem("userData")
       ? JSON.parse(window.sessionStorage.getItem("userData")).useremail
       : null;
 
   const currentName =
-    typeof window !== "undefined"
+    typeof window !== "undefined" && window.sessionStorage.getItem("userData")
       ? JSON.parse(window.sessionStorage.getItem("userData")).name
       : null;
 

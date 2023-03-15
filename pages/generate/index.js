@@ -36,7 +36,7 @@ const Index = () => {
     const id = e.currentTarget.id || e.currentTarget.parentElement.id;
     setWordCount(id);
 
-    typeof window !== "undefined"
+    typeof window !== "undefined" && window.sessionStorage.getItem("userData")
       ? window.sessionStorage.setItem("wordCount", id)
       : null;
     router.push("/generate/word", undefined, { scroll: false });
