@@ -17,9 +17,11 @@ const SmallImgAndLikeBtn = ({ idx, data, userDatas }) => {
   // const currentUserEmail = userSaveData.useremail;
   // const currentName = userSaveData.name;
   const currentUserEmail = JSON.parse(
-    sessionStorage.getItem("userData")
+    window.sessionStorage.getItem("userData")
   ).useremail;
-  const currentName = JSON.parse(sessionStorage.getItem("userData")).name;
+  const currentName = JSON.parse(
+    window.sessionStorage.getItem("userData")
+  ).name;
 
   function addImgToLike() {
     if (isAnimating) {

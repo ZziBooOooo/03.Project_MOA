@@ -46,7 +46,7 @@ const Word = () => {
     // *** 새로고침하면 session을 바로 못받아온다.
     // 로그인성공하면 세션스토리지에 저장하고 받아온다
     const parsedUserEmail = JSON.parse(
-      sessionStorage.getItem("userData")
+      window.sessionStorage.getItem("userData")
     ).useremail;
     // console.log(parsedUserEmail);
     try {

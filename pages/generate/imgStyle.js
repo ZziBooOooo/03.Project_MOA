@@ -26,7 +26,7 @@ const ImgStyle = () => {
   function saveStyleToContext() {
     setImgStyle(selectStyle);
     setUserSentence(`${selectStyle},${userSentence}`);
-    sessionStorage.setItem("style", selectStyle);
+    window.sessionStorage.setItem("style", selectStyle);
   }
 
   return (

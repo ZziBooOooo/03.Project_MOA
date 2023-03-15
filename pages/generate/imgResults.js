@@ -53,7 +53,7 @@ const ImgResults = () => {
   // 이미지 생성요청 -> 번역함수 먼저실행
   async function generateImages() {
     const currentUserEmail = JSON.parse(
-      sessionStorage.getItem("userData")
+      window.sessionStorage.getItem("userData")
     ).useremail;
     // console.log(token);
     console.log(prompt);
@@ -90,7 +90,7 @@ const ImgResults = () => {
   // db저장용 문장은 스타일과 타입을 제외하기 위해 정규식 사용
   async function saveImage(url) {
     const currentUserEmail = JSON.parse(
-      sessionStorage.getItem("userData")
+      window.sessionStorage.getItem("userData")
     ).useremail;
     let fullUserSentenceKR = prompt;
     const regex = /(?<=^[^,]+,)[^,]+(?=,[^,]+$)/g;
@@ -121,9 +121,9 @@ const ImgResults = () => {
     } else {
       // setPrompt(userSentence);
 
-      const type = sessionStorage.getItem("type");
-      const sentence = sessionStorage.getItem("sentence");
-      const style = sessionStorage.getItem("style");
+      const type = window.sessionStorage.getItem("type");
+      const sentence = window.sessionStorage.getItem("sentence");
+      const style = window.sessionStorage.getItem("style");
       const userSentence = `${style},${sentence},${type}`;
 
       setPrompt(userSentence);

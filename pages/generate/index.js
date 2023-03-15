@@ -35,7 +35,7 @@ const Index = () => {
   const handleClick = (e) => {
     const id = e.currentTarget.id || e.currentTarget.parentElement.id;
     setWordCount(id);
-    sessionStorage.setItem("wordCount", id);
+    window.sessionStorage.setItem("wordCount", id);
     router.push("/generate/word", undefined, { scroll: false });
   };
 
