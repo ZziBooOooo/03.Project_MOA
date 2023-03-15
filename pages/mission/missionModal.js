@@ -1,18 +1,16 @@
-import React from 'react'
-import style from '@/styles/mission/mission.module.css';
-import {useRouter} from 'next/router';
+import React from "react";
+import style from "@/styles/mission/mission.module.css";
+import { useRouter } from "next/router";
 import Image from "next/image";
-import MissionCatch from '@/components/mission/MissionCatch';
-import MissionTree from '@/components/mission/MissionTree';
-import MissionDiary from '@/components/mission/MissionDiary';
+import MissionCatch from "@/components/mission/MissionCatch";
+import MissionTree from "@/components/mission/MissionTree";
+import MissionDiary from "@/components/mission/MissionDiary";
 import MissonMotionBox from "@/components/mission/MissonMotionBox";
 import MissionClickCount from "@/components/mission/MissionClickCount";
 import MissionTypeWithKeyBoard from "@/components/mission/MissionTypeWithKeyBoard";
-
-
+import MissionCoinBox from "@/components/mission/MissionCoinBox";
 
 const Mission = () => {
-  
   const router = useRouter();
   return (
     <>
@@ -28,16 +26,13 @@ const Mission = () => {
           {/* <MissionClickCount /> */}
           {/* <MissionTypeWithKeyBoard /> */}
           {/* <MissionTree /> */}
-          <MissionDiary />
-          {/* <MissionCatch /> */}
+          {/*   <MissionDiary /> */}
+          <MissionCoinBox />
+          {/*  <MissionCatch /> */}
         </div>
       </div>
     </>
+  );
+};
 
-  )
-}
-
-export default Mission
-
-
-
+export default Mission;

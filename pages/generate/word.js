@@ -37,7 +37,7 @@ const Word = () => {
   const { userWords, setUserWords } = useContext(userWordContext);
   const { userSentence, setUserSentence } = useContext(userSentenceContext);
   const { userSaveData } = useContext(UserSaveDataContext);
-  console.log(userSaveData);
+  // console.log(userSaveData);
 
   const currentUserEmail = userSaveData.useremail;
   // console.log(currentUserEmail);

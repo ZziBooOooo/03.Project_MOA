@@ -79,7 +79,7 @@ const BuyContextCom = (props) => {
     try {
       const response = await axios
         .get("/api/buy/userBuy", {
-          params: { email: data.user.email },
+          params: { email: data?.user?.email },
         })
         .then((res) => {
           setuserData(res.data.users);
