@@ -117,7 +117,9 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05),
+    0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05),
+    0 12px 24px rgba(145, 145, 145, 0.05);
 }
 .missionClickCount .missionBox p {
   font-size: 5rem;
@@ -125,16 +127,7 @@
   color: white;
 }
 .missionClickCount .missionBox.boxAniOn {
-  -webkit-animation: shakeBox 0.4s linear forwards;
-          animation: shakeBox 0.4s linear forwards;
-}
-@-webkit-keyframes shakeBox {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-20px);
-  }
+  animation: shakeBox 0.4s linear forwards;
 }
 @keyframes shakeBox {
   0% {
@@ -145,26 +138,8 @@
   }
 }
 .missionClickCount.bgOn {
-  -webkit-animation: complete 12s linear infinite;
-          animation: complete 12s linear infinite;
+  animation: complete 12s linear infinite;
   transition: background-color 3s ease-in-out;
-}
-@-webkit-keyframes complete {
-  0% {
-    background-color: #f79bc1;
-  }
-  25% {
-    background-color: #ffca8d;
-  }
-  50% {
-    background-color: #c2e092;
-  }
-  75% {
-    background-color: #92d0e0;
-  }
-  100% {
-    background-color: #be9bf7;
-  }
 }
 @keyframes complete {
   0% {
@@ -221,7 +196,9 @@
   background-color: #2288ff;
   padding: 5px 20px;
   border-radius: 16px;
-  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05),
+    0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05),
+    0 12px 24px rgba(145, 145, 145, 0.05);
 }
 .missionTypeWithKeyBoard .goalBox p {
   font-size: 2rem;
@@ -264,18 +241,7 @@
   width: 0%;
   height: 3px;
   background-color: #2288ff;
-  -webkit-animation: 1s hightlightOn forwards;
-          animation: 1s hightlightOn forwards;
-}
-@-webkit-keyframes hightlightOn {
-  0% {
-    width: 0%;
-    left: 0;
-  }
-  100% {
-    width: 100%;
-    left: 0;
-  }
+  animation: 1s hightlightOn forwards;
 }
 @keyframes hightlightOn {
   0% {
@@ -288,28 +254,7 @@
   }
 }
 .missionTypeWithKeyBoard .inputBox form .shake {
-  -webkit-animation: 0.3s shakeOn ease-in-out;
-          animation: 0.3s shakeOn ease-in-out;
-}
-@-webkit-keyframes shakeOn {
-  0% {
-    transform: translateX(0);
-  }
-  20% {
-    transform: translateX(-10px);
-  }
-  40% {
-    transform: translateX(10px);
-  }
-  60% {
-    transform: translateX(-10px);
-  }
-  80% {
-    transform: translateX(10px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+  animation: 0.3s shakeOn ease-in-out;
 }
 @keyframes shakeOn {
   0% {
@@ -358,13 +303,6 @@
   font-size: 1.75rem;
   font-weight: 500;
 }
-.mainSection .alert {
-  color: #727375;
-  margin-top: 14vh;
-  margin-bottom: 2vh;
-  -webkit-animation: blink-effect 2s ease-in-out infinite;
-          animation: blink-effect 2s ease-in-out infinite;
-}
 .mainSection button {
   color: white;
   font-size: 1.75rem;
@@ -375,16 +313,6 @@
   font-family: "Pretendard-Regular";
   font-weight: bold;
   word-spacing: 0.1rem;
-}
-@-webkit-keyframes blink-effect {
-  50% {
-    opacity: 0;
-  }
-}
-@keyframes blink-effect {
-  50% {
-    opacity: 0;
-  }
 }
 
 .modalWrapper {
@@ -606,4 +534,4 @@
 }
 .missionDiaryBox form:focus-within {
   border-bottom: 2px solid #2288ff;
-}/*# sourceMappingURL=mission.module.css.map */
+} /*# sourceMappingURL=mission.module.css.map */
