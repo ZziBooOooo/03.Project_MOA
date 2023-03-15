@@ -9,6 +9,7 @@ import MissonMotionBox from "@/components/mission/MissonMotionBox";
 import MissionClickCount from "@/components/mission/MissionClickCount";
 import MissionTypeWithKeyBoard from "@/components/mission/MissionTypeWithKeyBoard";
 import MissionCoinBox from "@/components/mission/MissionCoinBox";
+import MissionJackPot from "@/components/mission/MissionJackPot";
 
 const Mission = () => {
   const router = useRouter();
@@ -27,7 +28,8 @@ const Mission = () => {
           {/* <MissionTypeWithKeyBoard /> */}
           {/* <MissionTree /> */}
           {/*   <MissionDiary /> */}
-          <MissionCoinBox />
+          {/*  <MissionCoinBox /> */}
+          {/*   <MissionJackPot /> */}
           {/*  <MissionCatch /> */}
         </div>
       </div>

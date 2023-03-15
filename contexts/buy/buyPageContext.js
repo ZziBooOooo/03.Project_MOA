@@ -73,7 +73,6 @@ const BuyContextCom = (props) => {
 
   const [userData, setuserData] = useState(); /* 사용자 데이터 */
   const { data } = useSession(); /* 로그인 세션 */
-  console.log(data);
 
   const userGetData = async () => {
     try {
@@ -92,8 +91,8 @@ const BuyContextCom = (props) => {
   const userBuyData = async (coinTotal, buyWord, wordName) => {
     try {
       const response = await axios.put("/api/buy/userBuy", {
-        useremail: userData.useremail,
-        updateCoin: userData.coin <= 0 ? 0 : userData.coin - coinTotal,
+        useremail: userData?.useremail,
+        updateCoin: userData?.coin <= 0 ? 0 : userData.coin - coinTotal,
         updateWord: buyWord,
         wordName,
       });

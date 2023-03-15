@@ -18,7 +18,6 @@ const Header = () => {
       const position = window.pageYOffset;
       setScrollPosition(position);
     };
-    console.log(userData);
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
@@ -37,7 +36,11 @@ const Header = () => {
 
   const handlePageClick = (index) => {
     setSelectedPage(index);
-    router.push(pages[index].path);
+    if (userData) {
+      router.push(pages[index].path);
+    } else {
+      router.push("/login");
+    }
   };
 
   const headerStyle = {
@@ -76,7 +79,9 @@ const Header = () => {
           {userData ? (
             <p>
               <Image
-                onClick={() => signOut()}
+                onClick={() =>
+                  signOut({ callbackUrl: "http://localhost:3000/login" })
+                }
                 src={userData.profile}
                 width={33}
                 height={33}

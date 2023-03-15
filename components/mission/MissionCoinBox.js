@@ -16,13 +16,15 @@ export default function MissionCoinBox() {
   function choiceBtn(e) {
     setisShow(e);
     setTimeout(() => {
-      if (isCoin == 1) {
+      if (isCoin == e) {
         router.push("/mission/missionSuccess");
       } else {
         router.push("/mission/missionRetry");
       }
-    }, 1000);
+    }, 900);
   }
+
+  useEffect(() => {}, [isCoin]);
 
   return (
     <div className={style.missionCoinBox}>
@@ -34,20 +36,22 @@ export default function MissionCoinBox() {
             onClick={() => {
               choiceBtn(res.id);
             }}
+            key={res.id}
           >
             <Image
               src={`/assets/images/mission/luckyBox${res.text}.png`}
               width={175}
               height={136}
-              alt={`행운박스${res.text}`}
+              alt="행운박스"
               className={isShow === res.id ? style.img_ative : ""}
             />
             <p className={isShow === res.id ? style.name_ative : ""}>
-              {isCoin == 1 ? (
+              {isCoin == res.id ? (
                 <Image
                   src="/assets/images/mission/luckyCoin.png"
                   width={50}
                   height={50}
+                  alt="coin"
                 />
               ) : (
                 "꽝!"
