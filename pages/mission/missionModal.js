@@ -1,4 +1,6 @@
 import React , {useState, useEffect} from'react'
+import { connectToDatebase } from '@/database/connect';
+
 import style from '@/styles/mission/mission.module.css';
 import { useRouter } from 'next/router';
 import Image from "next/image";
