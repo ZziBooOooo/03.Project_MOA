@@ -9,7 +9,6 @@ export default async function handler(req, res) {
   // db연결
   if (req.method === "GET") {
     try {
-      const currentUserId = parseInt(req.query.currentUserId);
       const currentUser = await userCollection.findOne({
         _id: currentUserId,
       });
