@@ -10,10 +10,6 @@ import TypeChart from "@/components/generate/TypeChart";
 import StyleChart from "@/components/generate/StyleChart";
 import { AnimatePresence, motion } from "framer-motion";
 
-// 좋아요해제하면 개수줄이기
-// 이미지 저장할때도 id같이 저장하기
-// 내가 좋아요했는지 확인 -> 유저마다 좋아요필드 만들고 이미지 주소저장?
-
 const Others = () => {
   const imgUrlArr = [
     "/assets/images/generate/money.png",
@@ -63,15 +59,7 @@ const Others = () => {
     setRandomData(randomImgArr);
   }
   async function fillterTopImg() {
-    // userDatas에서 각 유저마다 가장 많은 하트 개수의 이미지 객체를 한 배열에 담는다
-    // 정렬되는 이유 >> ?
-
-    // copyUserData는 배열인데 안에 객체가 있다.
-    // 원본과 복사본은 결국 복사해도 같은 객체를 참조하기 때문에 얕은 복사가 된 것.
-    // const copyUserData = JSON.parse(JSON.stringify(userDatas));
-
-    const maxLikeArr = [];
-
+    // userDatas에서 가장 많은 하트 개수의 이미지 객체를 한 배열에 담는다
     const sortedUserDatas =
       userDatas &&
       userDatas.map((data, key) => {
@@ -128,7 +116,7 @@ const Others = () => {
                 animate={{
                   opacity: 1,
                   x: 10,
-                  transition: { duration: 0.5, delay: 1 },
+                  transition: { duration: 0.5, delay: 0.5 },
                 }}
               >
                 모아 갤러리
@@ -138,7 +126,7 @@ const Others = () => {
                 animate={{
                   opacity: 1,
                   x: 0,
-                  transition: { duration: 0.5, delay: 1.5 },
+                  transition: { duration: 0.5, delay: 0.8 },
                 }}
               >
                 다른 사용자들의 작품을 구경해요
@@ -156,7 +144,7 @@ const Others = () => {
                     animate={{
                       opacity: 1,
                       marginTop: 0,
-                      transition: { duration: 0.5, delay: key * 0.4 + 2 },
+                      transition: { duration: 0.5, delay: key * 0.4 + 1.2 },
                     }}
                   >
                     <p className={style.topImgWrap}>

@@ -14,8 +14,17 @@ const SmallImgAndLikeBtn = ({ idx, data, userDatas }) => {
   const [likeCount, setLikeCount] = useState(data.like);
 
   const { userSaveData } = useContext(UserSaveDataContext);
-  const currentUserEmail = userSaveData.useremail;
-  const currentName = userSaveData.name;
+  // const currentUserEmail = userSaveData.useremail;
+  // const currentName = userSaveData.name;
+  const currentUserEmail =
+    typeof window !== "undefined" && window.sessionStorage.getItem("userData")
+      ? JSON.parse(window.sessionStorage.getItem("userData")).useremail || null
+      : null;
+
+  const currentName =
+    typeof window !== "undefined" && window.sessionStorage.getItem("userData")
+      ? JSON.parse(window.sessionStorage.getItem("userData")).name || null
+      : null;
 
   function addImgToLike() {
     if (isAnimating) {

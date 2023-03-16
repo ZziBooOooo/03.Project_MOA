@@ -117,7 +117,9 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05),
+    0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05),
+    0 12px 24px rgba(145, 145, 145, 0.05);
 }
 .missionClickCount .missionBox p {
   font-size: 5rem;
@@ -221,7 +223,9 @@
   background-color: #2288ff;
   padding: 5px 20px;
   border-radius: 16px;
-  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05),
+    0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05),
+    0 12px 24px rgba(145, 145, 145, 0.05);
 }
 .missionTypeWithKeyBoard .goalBox p {
   font-size: 2rem;
@@ -358,6 +362,7 @@
   font-size: 1.75rem;
   font-weight: 500;
 }
+
 .mainSection .alert {
   color: #727375;
   margin-top: 14vh;
@@ -365,6 +370,7 @@
   -webkit-animation: blink-effect 2s ease-in-out infinite;
           animation: blink-effect 2s ease-in-out infinite;
 }
+
 .mainSection button {
   color: white;
   font-size: 1.75rem;
@@ -376,6 +382,7 @@
   font-weight: bold;
   word-spacing: 0.1rem;
 }
+
 @-webkit-keyframes blink-effect {
   50% {
     opacity: 0;
@@ -386,6 +393,7 @@
     opacity: 0;
   }
 }
+
 
 .modalWrapper {
   width: 100%;
@@ -606,6 +614,7 @@
 }
 .missionDiaryBox form:focus-within {
   border-bottom: 2px solid #2288ff;
+
 }
 
 .missionCoinBox {
@@ -669,4 +678,6 @@
 .missionCoinBox .missionCoinBox_item > li .name_ative {
   z-index: 3;
   opacity: 1;
-}/*# sourceMappingURL=mission.module.css.map */
+}
+} 
+

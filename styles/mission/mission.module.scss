@@ -572,6 +572,7 @@
   }
 }
 
+
 .missionCoinBox {
   width: 60%;
   height: 100%;
@@ -636,53 +637,62 @@
   }
 }
 
-.missionJackPotBox {
-  width: 60%;
-  height: 100%;
-  text-align: center;
-  > h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-top: 20%;
-  }
-  > p {
-    margin-top: 1%;
-    font-size: 1.875rem;
-    color: $mainColor;
-    margin-bottom: 10%;
-    font-weight: bold;
-  }
-  .missionJackPot_item {
-    width: 90%;
-    margin: 0 auto;
-    position: relative;
 
-    > img {
-      margin: 0 auto;
+.missionCatchBox{
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .timer{
+      margin-top: 3%;
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: $mainColor;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 2%;
     }
-    .jackPot {
-      position: absolute;
-      top: 25%;
-      left: 50%;
-      width: 20%;
-      transform: translateX(-50%);
-      height: 45px;
-      /* background-color: #2288ff; */
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      gap: 20%;
-      > div {
-        width: 95%;
-        height: 30px;
-        background-color: #78ddff;
-        border-radius: 5px;
-        color: #fff;
-        line-height: 30px;
+    .titleBox{
+        text-align: center;
+        .title{
+          font-size: 2.5rem;
+          font-weight: bold;
+          margin-bottom: 2%;
+        }
+        .detail{
+          color: $mainColor;
+          font-size: 1.5625rem;
+          margin-bottom: 20%;
+        }
+        .guide{
+          color: $bascitFtcolor;
+        font-weight: 200;
+        animation: blink-effect-more 2s ease-in-out infinite;
+        margin-bottom: 5%;
       }
+  
+      @keyframes blink-effect-more {
+        50% {
+          color: $softGRAYFtColor;
+        }
+      }
+    
+    }
+  }
+  .canvas{
+    position: relative;
+    margin: 0 auto;
+    border-radius: 10px;
+    width: 95%;
+    height: 50%;
+    background-color: #1D1D1D;
+    img{
+      cursor: pointer;
     }
   }
 }
+

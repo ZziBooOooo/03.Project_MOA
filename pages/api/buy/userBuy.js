@@ -14,14 +14,14 @@ export default async function handler(req, res) {
         const users = await userCollection.findOne({
           useremail: req.query.email,
         });
-        console.log(users);
+        // console.log(users);
         if (users) {
           res.status(200).json({ status: "exist", users: users });
         } else {
           res.status(200).json({ status: "noExist" });
         }
       } catch (e) {
-        console.error(e);
+        console.error("에러뜸");
         res.status(500).json({ error: "Something went wrong" });
       }
       break;
