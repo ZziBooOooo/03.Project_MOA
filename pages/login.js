@@ -1,8 +1,17 @@
 import { signIn } from "next-auth/react";
 import style from "@/styles/login/login.module.scss";
 import Image from "next/image";
+import { useEffect } from "react";
+import axios from "axios";
 
 export default function LoginPage() {
+  useEffect(() => {
+    axios
+      .get("/api/mission/missionCount")
+      .then((res) => console.log(res))
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <>
       <div className={style.loginBack}>

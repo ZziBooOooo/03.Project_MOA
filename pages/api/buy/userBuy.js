@@ -39,6 +39,7 @@ export default async function handler(req, res) {
             name: name,
             profile: profile,
             coin: 10,
+            missionCount: 0,
             words: {
               WordCoin2: [
                 { id: 0, isDone: true, coinNum: 2, word: "고양이" },
