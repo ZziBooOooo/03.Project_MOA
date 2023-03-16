@@ -1,6 +1,8 @@
-import React from 'react'
+import React , {useState, useEffect} from'react'
+import { connectToDatebase } from '@/database/connect';
+
 import style from '@/styles/mission/mission.module.css';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 import Image from "next/image";
 import MissionCatch from '@/components/mission/MissionCatch';
 import MissionTree from '@/components/mission/MissionTree';
@@ -11,29 +13,35 @@ import MissionTypeWithKeyBoard from "@/components/mission/MissionTypeWithKeyBoar
 
 
 
+//list에 컴포넌트 타입 넣기 
+const componentList = [
+    MissonMotionBox,
+    MissionClickCount,
+    MissionTypeWithKeyBoard,
+    MissionTree,
+    MissionDiary,
+    MissionCatch
+  ];
+
+
+  // 랜덤한 컴포넌트를 생성하여 반환    
+const getRandomComponent = () => {
+  const randomIndex = Math.floor(Math.random() * componentList.length);
+  const RandomComponent = componentList[randomIndex];
+  return <RandomComponent />;
+};
+
 const Mission = () => {
+      const router = useRouter();
   
-  const router = useRouter();
   return (
     <>
       <div className={style.modalWrapper}>
         <div className={style.missionModal}>
-          {/* <button className={style.missionResult} onClick={()=>router.push("/mission/test")}>
-            이동
-          </button> */}
-          {/* <button className={style.success} onClick={()=>router.push("/mission/missionEnd")}>
-            success
-          </button> */}
-          {/* <MissonMotionBox /> */}
-          {/* <MissionClickCount /> */}
-          {/* <MissionTypeWithKeyBoard /> */}
-          {/* <MissionTree /> */}
-          <MissionDiary />
-          {/* <MissionCatch /> */}
+          {getRandomComponent()}
         </div>
       </div>
     </>
-
   )
 }
 
