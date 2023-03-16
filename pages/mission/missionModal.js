@@ -23,14 +23,14 @@ const Mission = () => {
           {/* <button className={style.success} onClick={()=>router.push("/mission/missionEnd")}>
             success
           </button> */}
-          {/* <MissonMotionBox /> */}
-          {/* <MissionClickCount /> */}
+          {/*    <MissonMotionBox /> */}
+          {/*  <MissionClickCount /> */}
           {/* <MissionTypeWithKeyBoard /> */}
-          {/* <MissionTree /> */}
-          {/*   <MissionDiary /> */}
-          {/*  <MissionCoinBox /> */}
+          {/*  <MissionTree /> */}
+          {/*    <MissionDiary /> */}
+          <MissionCoinBox />
           {/*   <MissionJackPot /> */}
-          {/*  <MissionCatch /> */}
+          {/*   <MissionCatch /> */}
         </div>
       </div>
     </>
