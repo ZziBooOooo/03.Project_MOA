@@ -37,8 +37,20 @@
   transform: translateY(-6px);
 }
 .fullBox .bottomMainBox .cardBox .imgTypeCard:hover .typeBg {
-  animation: 0.8s scaleAni forwards;
+  -webkit-animation: 0.8s scaleAni forwards;
+          animation: 0.8s scaleAni forwards;
   transition: 0.8s;
+}
+@-webkit-keyframes scaleAni {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 @keyframes scaleAni {
   0% {
@@ -150,6 +162,7 @@
 }
 @media (max-width: 767px) {
   .fullBox .bottomMainBox .cardBox .imgTypeCard {
+    min-width: -webkit-fit-content;
     min-width: -moz-fit-content;
     min-width: fit-content;
     display: flex;

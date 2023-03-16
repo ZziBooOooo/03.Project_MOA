@@ -1,17 +1,21 @@
-import React , {useState, useEffect} from'react'
-import { connectToDatebase } from '@/database/connect';
 
-import style from '@/styles/mission/mission.module.css';
-import { useRouter } from 'next/router';
+
+import style from "@/styles/mission/mission.module.css";
+import { useRouter } from "next/router";
+
+import React , {useState, useEffect} from'react'
+
+
+
 import Image from "next/image";
-import MissionCatch from '@/components/mission/MissionCatch';
-import MissionTree from '@/components/mission/MissionTree';
-import MissionDiary from '@/components/mission/MissionDiary';
+import MissionCatch from "@/components/mission/MissionCatch";
+import MissionTree from "@/components/mission/MissionTree";
+import MissionDiary from "@/components/mission/MissionDiary";
 import MissonMotionBox from "@/components/mission/MissonMotionBox";
 import MissionClickCount from "@/components/mission/MissionClickCount";
 import MissionTypeWithKeyBoard from "@/components/mission/MissionTypeWithKeyBoard";
-
-
+import MissionCoinBox from "@/components/mission/MissionCoinBox";
+import MissionJackPot from "@/components/mission/MissionJackPot";
 
 //list에 컴포넌트 타입 넣기 
 const componentList = [
@@ -32,8 +36,10 @@ const getRandomComponent = () => {
 };
 
 const Mission = () => {
+
       const router = useRouter();
   
+
   return (
     <>
       <div className={style.modalWrapper}>
@@ -46,6 +52,7 @@ const Mission = () => {
 }
 
 export default Mission
+
 
 
 

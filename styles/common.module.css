@@ -20,6 +20,7 @@
 .headerBox .headerContainer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1% 0%;
   max-width: 1200px;
   width: 70vw;
@@ -29,11 +30,13 @@
 .headerBox .headerContainer .header_leftBox {
   cursor: pointer;
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 20vw;
+  height: 40px;
 }
 .headerBox .headerContainer .header_leftBox p {
-  align-items: center;
-  display: flex;
+  display: block;
   font-weight: bold;
   font-size: 1.3rem;
   cursor: pointer;
@@ -44,6 +47,7 @@
   justify-content: flex-end;
   align-items: center;
   font-weight: bold;
+  height: 40px;
 }
 .headerBox .headerContainer .header_rightBox p {
   cursor: pointer;
@@ -65,14 +69,14 @@
   left: 0px;
   position: absolute;
   border-radius: 24px;
-  background-color: #E2E8EE;
+  background-color: #e2e8ee;
 }
 
 .footerBox {
   bottom: 0;
   width: 100%;
   height: 31vh;
-  background-color: #2D3747;
+  background-color: #2d3747;
   color: #fff;
 }
 .footerBox .footerContainer {
