@@ -61,29 +61,21 @@
   display: flex;
 }
 .banner_box .banner_icons > li:nth-child(1) {
-  transform: translate(250px, -330px);
+  transform: translate(250%, -220%);
   -webkit-animation: liani ease-in-out 0.5s;
           animation: liani ease-in-out 0.5s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
   /* animation-delay: 1.8s; */
-}
-@-webkit-keyframes liani {
-  0% {
-    transform: translate(250px, -330px);
-  }
-  100% {
-    transform: translate(250px, -340px);
-  }
-}
-@keyframes liani {
-  0% {
-    transform: translate(250px, -330px);
-  }
-  100% {
-    transform: translate(250px, -340px);
-  }
+  /*   @keyframes liani {
+    0% {
+      transform: translate(250px, -330px);
+    }
+    100% {
+      transform: translate(250px, -340px);
+    }
+  } */
 }
 .banner_box .banner_icons > li:nth-child(1) > img {
   -webkit-animation: test ease 0.6s;
@@ -354,4 +346,6 @@
   font-size: 1rem;
 }
 
-/* ======== 구매 컨텐츠  카테고리 =================== *//*# sourceMappingURL=buy.module.css.map */
+/* ======== 구매 컨텐츠  카테고리 =================== */
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/* 767px *//*# sourceMappingURL=buy.module.css.map */

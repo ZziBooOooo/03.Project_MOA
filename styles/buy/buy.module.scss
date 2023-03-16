@@ -57,20 +57,20 @@
     list-style: none;
     display: flex;
     > li:nth-child(1) {
-      transform: translate(250px, -330px);
+      transform: translate(250%, -220%);
       animation: liani ease-in-out 0.5s;
       animation-iteration-count: infinite;
       animation-direction: alternate-reverse;
       /* animation-delay: 1.8s; */
 
-      @keyframes liani {
+      /*   @keyframes liani {
         0% {
           transform: translate(250px, -330px);
         }
         100% {
           transform: translate(250px, -340px);
         }
-      }
+      } */
 
       > img {
         animation: test ease 0.6s;
@@ -296,3 +296,17 @@
     }
   }
 } /* ======== 구매 컨텐츠  카테고리 =================== */
+
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+@mixin tablet {
+  @media (min-width: ($mobile+1)) and (max-width: $tablet) {
+    @content;
+  }
+}
+
+/* 767px */
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
