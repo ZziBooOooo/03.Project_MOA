@@ -1,12 +1,16 @@
-import axios from "axios";
-import { signIn, signOut, useSession } from "next-auth/react";
-import { useEffect, useContext } from "react";
-import { UserSaveDataContext } from "@/contexts/UserSaveDataComponent";
+import { signIn } from "next-auth/react";
 import style from "@/styles/login/login.module.scss";
 import Image from "next/image";
+import { useEffect } from "react";
+import axios from "axios";
 
 export default function LoginPage() {
-  const { userSaveData, setuserSaveData } = useContext(UserSaveDataContext);
+  useEffect(() => {
+    axios
+      .get("/api/mission/missionCount")
+      .then((res) => console.log(res))
+      .catch((err) => console.error(err));
+  }, []);
 
   return (
     <>
@@ -21,19 +25,12 @@ export default function LoginPage() {
           <div
             className={style.googleBtn}
             onClick={() => {
-              signIn("google");
+              signIn("google", { callbackUrl: "http://localhost:3000" });
             }}
           >
             <img src="/assets/images/login/btn_google_signin_light_normal_web@2x.png" />
           </div>
         </div>
-        <button
-          onClick={() => {
-            signOut();
-          }}
-        >
-          일단 여기 로그아웃
-        </button>
       </div>
     </>
   );

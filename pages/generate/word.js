@@ -38,6 +38,10 @@ const Word = () => {
   const { userWords, setUserWords } = useContext(userWordContext);
   const { userSentence, setUserSentence } = useContext(userSentenceContext);
 
+
+  
+
+
   const { data } = useSession(); /* 로그인 세션 */
   const router = useRouter();
 

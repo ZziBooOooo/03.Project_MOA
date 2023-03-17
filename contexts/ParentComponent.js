@@ -39,6 +39,8 @@ const ParentComponent = ({ children }) => {
   const [userSentence, setUserSentence] = useState("");
   const [imgType, setImgType] = useState("");
   const [imgStyle, setImgStyle] = useState("");
+  const [userCoin, setUserCoin] = useState(null);
+  const [userWord, setUserWord] = useState(null);
 
   return (
     <selectStyleContext.Provider value={{ imgStyle, setImgStyle }}>

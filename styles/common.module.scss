@@ -11,14 +11,15 @@
 }
 
 .headerBox {
-  z-index:9000;
+  z-index: 9000;
   width: 100%;
   font-family: "Pretendard-Regular";
   color: $bascitFtcolor;
   position: fixed;
-  .headerContainer{
+  .headerContainer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1% 0%;
     max-width: 1200px;
     width: 70vw;
@@ -27,31 +28,103 @@
     .header_leftBox {
       cursor: pointer;
       display: flex;
-      width: 20vw;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
       p {
-        align-items: center;
-        display: flex;
+        display: block;
         font-weight: bold;
         font-size: 1.3rem;
-        cursor: pointer;   
+        cursor: pointer;
       }
     }
-  
+
     .header_rightBox {
       display: flex;
       width: 50%;
       justify-content: flex-end;
       align-items: center;
       font-weight: bold;
+      height: 40px;
       p {
+        position: relative;
         cursor: pointer;
         margin-left: 3%;
-        position: relative;
         padding: 0.8% 3.5%;
       }
-      .selectedPage{
+      .profileWrap {
+        position: relative;
+        cursor: pointer;
+        margin-left: 3%;
+        padding: 0.8% 3.5%;
+        min-width: 70px;
+        display: flex;
+        justify-content: center;
+        // z-index: 10;
+        .myInfoDiv {
+          width: 160px;
+          height: 190px;
+          padding-top: 10px;
+          position: absolute;
+          top: 110%;
+          left: 0%;
+          border-radius: 16px;
+          background-color: white;
+          box-shadow: 5px 5px 15px rgb(192, 192, 192);
+          z-index: 5;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          transition: 0.5s;
+          transform: translateY(-8px);
+          transform-origin: 100% 0%;
+          opacity: 0;
+          hr {
+            width: 80%;
+            height: 2px;
+            background-color: rgb(238, 238, 238);
+            margin: 5px 0 8px 0;
+            border: 0;
+          }
+
+          div {
+            width: 75%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+
+            &:last-child {
+              p {
+                opacity: 0.5;
+                transition: 0.2s;
+              }
+
+              &:hover {
+                p {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+        &:hover {
+          .myInfoDiv {
+            // display: flex;
+            transform: translateY(0px);
+            opacity: 1;
+          }
+          .profileImg {
+            transition: 0.5s;
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .selectedPage {
         font-weight: bold;
-        &::after{
+        &::after {
           content: "";
           display: block;
           min-width: 50px;
@@ -62,38 +135,38 @@
           left: 0px;
           position: absolute;
           border-radius: 24px;
-          background-color: #E2E8EE; 
+          // background-color: #e2e8ee;
+          background-color: #d6e7f8;
         }
       }
     }
   }
 }
 
-
-.footerBox{
+.footerBox {
   bottom: 0;
   width: 100%;
   height: 31vh;
-  background-color: #2D3747;
+  background-color: #2d3747;
   color: #fff;
-  .footerContainer{
+  .footerContainer {
     max-width: 1200px;
     width: 70vw;
     margin: 0 auto;
     padding-top: 6vh;
-      .footer_title {
-        font-weight: bold;
-        font-size: 1.1rem;
-      }
-  
-      .footer_detail {
-        margin-top: 2%;
-        p {
-          color: #bdb5b5;
-          a {
-            text-decoration: underline;
-          }
+    .footer_title {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .footer_detail {
+      margin-top: 2%;
+      p {
+        color: #bdb5b5;
+        a {
+          text-decoration: underline;
         }
       }
+    }
   }
 }

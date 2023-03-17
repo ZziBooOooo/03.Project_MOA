@@ -3,6 +3,7 @@ import style from "@/styles/generate/generate.module.scss";
 import r_style from "@/styles/generate/results.module.scss";
 import Image from "next/image";
 import axios from "axios";
+import { useRouter } from "next/router";
 import GenerateTop from "@/components/generate/GenerateTop";
 import { userSentenceContext } from "@/contexts/generate/userSentenceContext";
 import { selectTypeContext } from "@/contexts/generate/selectTypeContext";
@@ -22,6 +23,7 @@ const ImgResults = () => {
   const [showModal, setShowModal] = useState(false);
 
   const bottomBoxRef = useRef();
+  const router = useRouter();
 
   const { userSaveData } = useContext(UserSaveDataContext);
   const { userSentence, setUserSentence } = useContext(userSentenceContext);
@@ -148,14 +150,16 @@ const ImgResults = () => {
 
   function openModal(url) {
     setShowModal(true);
+    saveImage(url);
+
     const bottomBoxTop = bottomBoxRef.current.offsetTop;
     window.scrollTo({ left: 0, top: bottomBoxTop, behavior: "smooth" });
-
     setTimeout(() => {
       setShowModal(false);
     }, 2000);
-
-    saveImage(url);
+    setTimeout(() => {
+      router.push("/myalbum");
+    }, 2200);
   }
 
   function closeModal() {

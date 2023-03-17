@@ -277,295 +277,422 @@
   }
 }
 
-.mainSection{
-    max-width: 1200px;
-    width: 70%;
-    min-height: 100vh;
+.mainSection {
+  max-width: 1200px;
+  width: 70%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .description_container {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
-    .description_container{
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 5vh;
-        .description{
-            h1{
-                font-size: 3.125rem;
-                font-weight: bold;
-                line-height: 1.4;
-                margin-bottom: 70px;
-            }
-            p{
-                font-size: 1.75rem;
-                font-weight: 500;
-            }
-        }
-    }
-    .alert{
-      color: $softGRAYFtColor;
-      margin-top: 14vh;
-      margin-bottom: 2vh;
-      animation: blink-effect 2s ease-in-out infinite;
-      // animation: moving 1s ease-in-out infinite;
-    }
-    button{
-        color: #ffff;
-        font-size: 1.75rem;
-        background-color: $mainColor;
-        width: 210px;
-        height: 66px;
-        border-radius: 50px;
-        font-family: "Pretendard-Regular";
+    margin-top: 5vh;
+    .description {
+      h1 {
+        font-size: 3.125rem;
         font-weight: bold;
-        word-spacing: 0.1rem;
-    }
-
-    @keyframes blink-effect {
-      50% {
-        // color: $mainColor;
-        opacity: 0;
+        line-height: 1.4;
+        margin-bottom: 70px;
+      }
+      p {
+        font-size: 1.75rem;
+        font-weight: 500;
       }
     }
-    // @keyframes moving {
-    //   0%{
-    //     translateY: 0%;
-    //   }
-    //   50%{
-    //     translateY: -30%;
-    //   }
-    //   100%{
-    //     translateY: 0%;
-    //   }
+  }
+  .alert {
+    color: $softGRAYFtColor;
+    margin-top: 14vh;
+    margin-bottom: 2vh;
+    animation: blink-effect 2s ease-in-out infinite;
+    // animation: moving 1s ease-in-out infinite;
+  }
+  button {
+    color: #ffff;
+    font-size: 1.75rem;
+    background-color: $mainColor;
+    width: 210px;
+    height: 66px;
+    border-radius: 50px;
+    font-family: "Pretendard-Regular";
+    font-weight: bold;
+    word-spacing: 0.1rem;
+  }
+
+  @keyframes blink-effect {
+    50% {
+      // color: $mainColor;
+      opacity: 0;
+    }
+  }
+  // @keyframes moving {
+  //   0%{
+  //     translateY: 0%;
+  //   }
+  //   50%{
+  //     translateY: -30%;
+  //   }
+  //   100%{
+  //     translateY: 0%;
+  //   }
+  // }
+}
+
+.modalWrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(40, 40, 40, 0.6);
+  z-index: 9100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: hidden;
+  .missionModal {
+    z-index: 9999;
+    max-width: 1200px;
+    width: 70%;
+    height: 700px;
+    background-color: #ffff;
+    border-radius: 20px;
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.15));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    // .missionResult {
+    //     position:absolute;
+    //     bottom: 30%;
+    //     background-color: $skyBlueColor;
+    //     cursor: pointer;
+    //     left: 50%;
+    //     transform: translateX(-50%     );
+    //     padding: 1%
     // }
+  }
 }
 
-.modalWrapper{
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(40, 40, 40, 0.6);
-    z-index: 9100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow-y: hidden;
-    .missionModal{
-        z-index:9999;
-        max-width: 1200px;
-        width: 70%;
-        height: 700px;
-        background-color: #ffff;
-        border-radius: 20px;
-        filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.15));
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        // .missionResult {
-        //     position:absolute;
-        //     bottom: 30%;
-        //     background-color: $skyBlueColor;
-        //     cursor: pointer;
-        //     left: 50%;
-        //     transform: translateX(-50%     );
-        //     padding: 1%
-        // }
-    }
+.confettiBox {
+  position: absolute;
+  max-width: 1920px;
+  width: 100%;
+  height: 100vh;
+  z-index: -9999;
 }
 
-.confettiBox{
-    position: absolute;
-    max-width: 1920px;
-    width: 100%;
-    height: 100vh;
-    z-index: -9999;
+.missionSuccess {
+  max-width: 1200px;
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .slogan {
+    font-size: 3.125rem;
+    font-weight: bold;
+    margin-bottom: 4%;
+  }
+  .reward {
+    font-size: 1.875rem;
+    font-weight: 600;
+    span {
+      color: $mainColor;
+      font-weight: bold;
+      padding: 10px;
+    }
+  }
+  button {
+    background-color: #2288ff;
+    color: #fff;
+    font-size: 1.375rem;
+    width: 270px;
+    height: 66px;
+    border-radius: 50px;
+    font-family: "Pretendard-Regular";
+    font-weight: bold;
+    word-spacing: 0.1rem;
+    cursor: pointer;
+  }
 }
 
-.missionSuccess{
-    max-width: 1200px;
-    width: 70%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-        .slogan{
-            font-size: 3.125rem;
-            font-weight: bold;
-            margin-bottom: 4%;
-        }
-        .reward{
-            font-size: 1.875rem;
-            font-weight: 600;
-            span{
-                color: $mainColor;
-                font-weight: bold;
-                padding: 10px;
-            }
-        }
-        button{
-            background-color: #2288ff;
-            color: #fff;
-            font-size: 1.375rem;
-            width: 270px;
-            height: 66px;
-            border-radius: 50px;
-            font-family: "Pretendard-Regular";
-            font-weight: bold;
-            word-spacing: 0.1rem;
-            cursor: pointer;
-        }
+.missionRetry {
+  max-width: 1200px;
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .slogan {
+    font-size: 3.125rem;
+    font-weight: bold;
+    margin-bottom: 4%;
+  }
+  button {
+    margin-top: 4%;
+    background-color: #2288ff;
+    color: #fff;
+    font-size: 1.375rem;
+    width: 270px;
+    height: 66px;
+    border-radius: 50px;
+    font-family: "Pretendard-Regular";
+    font-weight: bold;
+    word-spacing: 0.1rem;
+  }
 }
 
-.missionRetry{
-    max-width: 1200px;
-    width: 70%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    .slogan{
-        font-size: 3.125rem;
-        font-weight: bold;
-        margin-bottom: 4%;
-    }
-    button{
-        margin-top: 4%;
-        background-color: #2288ff;
-        color: #fff;
-        font-size: 1.375rem;
-        width: 270px;
-        height: 66px;
-        border-radius: 50px;
-        font-family: "Pretendard-Regular";
-        font-weight: bold;
-        word-spacing: 0.1rem;
-    }
+.missionEnd {
+  max-width: 1200px;
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .slogan {
+    font-size: 3.125rem;
+    font-weight: bold;
+    margin-bottom: 4%;
+  }
+  .end_message {
+    font-size: 1.875rem;
+    font-weight: 400;
+    margin-bottom: 2%;
+  }
+  button {
+    margin-top: 4%;
+    background-color: #2288ff;
+    color: #fff;
+    font-size: 1.375rem;
+    width: 270px;
+    height: 66px;
+    border-radius: 50px;
+    font-family: "Pretendard-Regular";
+    font-weight: bold;
+    word-spacing: 0.1rem;
+  }
 }
 
-.missionEnd{
-    max-width: 1200px;
-    width: 70%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    .slogan{
-        font-size: 3.125rem;
-        font-weight: bold;
-        margin-bottom: 4%;
-    }
-    .end_message{
-        font-size: 1.875rem;
-        font-weight: 400;
-        margin-bottom: 2%;
-    }
-    button{
-        margin-top: 4%;
-        background-color: #2288ff;
-        color: #fff;
-        font-size: 1.375rem;
-        width:  270px;
-        height: 66px;
-        border-radius: 50px;
-        font-family: "Pretendard-Regular";
-        font-weight: bold;
-        word-spacing: 0.1rem;
-    }
-}
-
-.missionTreeBox{
+.missionTreeBox {
   width: 70%;
   height: 90%;
-  .timer{
-      font-size: 2.8rem;
-      font-weight: bold;
-      color: $mainColor;
-      letter-spacing: 2px;
-      text-align: center;
-      margin-bottom: 7%;
+  .timer {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: $mainColor;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 7%;
   }
-  .quizBox{
+  .quizBox {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    .imgBox{
+    .imgBox {
       width: 50%;
       align-items: center;
-
     }
-    .quiz{
+    .quiz {
       width: 50%;
       flex-direction: column;
-      .title{
+      .title {
         font-size: 2.5rem;
         font-weight: bold;
         margin-bottom: 2%;
       }
-      .detail{
+      .detail {
         color: $mainColor;
         font-size: 1.5625rem;
         margin-bottom: 10%;
       }
     }
-    form{
+    form {
       width: 80%;
       border-bottom: 2px solid gray;
       margin: 0 auto;
-      input{
+      input {
         margin-bottom: 3%;
         text-align: center;
       }
-      input:focus {outline: none;}
+      input:focus {
+        outline: none;
+      }
     }
   }
 }
 
-.missionDiaryBox{
+.missionDiaryBox {
   width: 95%;
   height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  .titleBox{
+  .titleBox {
     display: flex;
-    h2{
+    h2 {
       font-size: 2.5rem;
       font-weight: 800;
       margin-bottom: 2%;
     }
-    img{
+    img {
       margin-left: 3%;
     }
   }
-  p{
+  p {
     font-size: 1.875rem;
     color: $mainColor;
     margin-bottom: 10%;
   }
-  form{
+  form {
     width: 70%;
     border-bottom: 2px solid gray;
     margin: 0 auto;
     display: flex;
-    input{
+    input {
       cursor: pointer;
       width: 95%;
       margin-bottom: 2%;
       text-align: center;
-      font-size: 1.25rem;  
+      font-size: 1.25rem;
     }
-    input:focus {outline: none;}
+    input:focus {
+      outline: none;
+    }
   }
   form:focus-within {
     border-bottom: 2px solid $mainColor;
   }
-
 }
+
+
+.missionCoinBox {
+  width: 60%;
+  height: 100%;
+  text-align: center;
+  > h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-top: 20%;
+  }
+  > p {
+    margin-top: 1%;
+    font-size: 1.875rem;
+    color: $mainColor;
+    margin-bottom: 10%;
+    font-weight: bold;
+  }
+  .missionCoinBox_item {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    > li {
+      width: 26%;
+      height: 180px;
+      background-color: #e2e8ee;
+      border-radius: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      transition: 0.5s;
+      &:hover {
+        transition: 0.5s;
+        transform: translateY(-10px);
+        background-color: #be9bf7;
+      }
+
+      > img {
+        transition: 0.5s ease-in;
+      }
+      .img_ative {
+        opacity: 0;
+      }
+      > p {
+        color: #020202;
+        font-size: 1.6rem;
+        opacity: 0;
+        z-index: -1;
+        position: absolute;
+        font-weight: bold;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition-delay: 0.5s;
+      }
+      .name_ative {
+        z-index: 3;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.missionCatchBox{
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .timer{
+      margin-top: 3%;
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: $mainColor;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 2%;
+    }
+    .titleBox{
+        text-align: center;
+        .title{
+          font-size: 2.5rem;
+          font-weight: bold;
+          margin-bottom: 2%;
+        }
+        .detail{
+          color: $mainColor;
+          font-size: 1.5625rem;
+          margin-bottom: 20%;
+        }
+        .guide{
+          color: $bascitFtcolor;
+        font-weight: 200;
+        animation: blink-effect-more 2s ease-in-out infinite;
+        margin-bottom: 5%;
+      }
+  
+      @keyframes blink-effect-more {
+        50% {
+          color: $softGRAYFtColor;
+        }
+      }
+    
+    }
+  }
+  .canvas{
+    position: relative;
+    margin: 0 auto;
+    border-radius: 10px;
+    width: 95%;
+    height: 50%;
+    background-color: #1D1D1D;
+    img{
+      cursor: pointer;
+    }
+  }
+}
+

@@ -606,4 +606,129 @@
 }
 .missionDiaryBox form:focus-within {
   border-bottom: 2px solid #2288ff;
+}
+
+.missionCoinBox {
+  width: 60%;
+  height: 100%;
+  text-align: center;
+}
+.missionCoinBox > h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-top: 20%;
+}
+.missionCoinBox > p {
+  margin-top: 1%;
+  font-size: 1.875rem;
+  color: #2288ff;
+  margin-bottom: 10%;
+  font-weight: bold;
+}
+.missionCoinBox .missionCoinBox_item {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.missionCoinBox .missionCoinBox_item > li {
+  width: 26%;
+  height: 180px;
+  background-color: #e2e8ee;
+  border-radius: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.missionCoinBox .missionCoinBox_item > li:hover {
+  transition: 0.5s;
+  transform: translateY(-10px);
+  background-color: #be9bf7;
+}
+.missionCoinBox .missionCoinBox_item > li > img {
+  transition: 0.5s ease-in;
+}
+.missionCoinBox .missionCoinBox_item > li .img_ative {
+  opacity: 0;
+}
+.missionCoinBox .missionCoinBox_item > li > p {
+  color: #020202;
+  font-size: 1.6rem;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition-delay: 0.5s;
+}
+.missionCoinBox .missionCoinBox_item > li .name_ative {
+  z-index: 3;
+  opacity: 1;
+}
+
+.missionCatchBox {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+.missionCatchBox .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.missionCatchBox .content .timer {
+  margin-top: 3%;
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #2288ff;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 2%;
+}
+.missionCatchBox .content .titleBox {
+  text-align: center;
+}
+.missionCatchBox .content .titleBox .title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+.missionCatchBox .content .titleBox .detail {
+  color: #2288ff;
+  font-size: 1.5625rem;
+  margin-bottom: 20%;
+}
+.missionCatchBox .content .titleBox .guide {
+  color: #3b3d3f;
+  font-weight: 200;
+  -webkit-animation: blink-effect-more 2s ease-in-out infinite;
+          animation: blink-effect-more 2s ease-in-out infinite;
+  margin-bottom: 5%;
+}
+@-webkit-keyframes blink-effect-more {
+  50% {
+    color: #727375;
+  }
+}
+@keyframes blink-effect-more {
+  50% {
+    color: #727375;
+  }
+}
+.missionCatchBox .canvas {
+  position: relative;
+  margin: 0 auto;
+  border-radius: 10px;
+  width: 95%;
+  height: 50%;
+  background-color: #1D1D1D;
+}
+.missionCatchBox .canvas img {
+  cursor: pointer;
 }/*# sourceMappingURL=mission.module.css.map */
