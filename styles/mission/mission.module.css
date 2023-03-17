@@ -1,0 +1,734 @@
+@charset "UTF-8";
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+.missionMotionBox {
+  max-width: 1200px;
+  width: 70vw;
+  height: 700px;
+  background-color: white;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+.missionMotionBox .timeBox {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #2288ff;
+  letter-spacing: 2px;
+}
+.missionMotionBox .textBox {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.missionMotionBox .textBox p:nth-of-type(1) {
+  font-size: 2.1rem;
+  color: #3b3d3f;
+}
+.missionMotionBox .textBox p:nth-of-type(2) {
+  font-size: 1.3rem;
+  color: #2288ff;
+}
+.missionMotionBox .missionBox {
+  width: 75%;
+  height: 400px;
+  background-color: rgb(29, 29, 29);
+  border-radius: 20px;
+  margin-top: 30px;
+  position: relative;
+}
+.missionMotionBox .missionBox div {
+  background: white;
+  border-radius: 30px;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: calc(50% - 75px);
+  left: calc(50% - 75px);
+  z-index: 1;
+  cursor: pointer;
+}
+.missionMotionBox .missionBox div:active {
+  background-color: rgb(189, 223, 252);
+}
+.missionMotionBox .missionBox img {
+  position: absolute;
+  top: calc(50% - 75px);
+  left: calc(50% - 75px);
+  transform: translate(50%, 50%);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.missionMotionBox .missionBox img:hover {
+  transform: translate(50%, 50%) scale(1.1);
+}
+
+.missionClickCount {
+  max-width: 1200px;
+  width: 70vw;
+  height: 700px;
+  background-color: white;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  transition: 0.5s;
+}
+.missionClickCount .timeBox {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #2288ff;
+  letter-spacing: 2px;
+}
+.missionClickCount .textBox {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.missionClickCount .textBox p:nth-of-type(1) {
+  font-size: 2.1rem;
+  color: #3b3d3f;
+}
+.missionClickCount .textBox p:nth-of-type(2) {
+  font-size: 1.3rem;
+  color: #2288ff;
+}
+.missionClickCount .goalBox {
+  margin-top: 60px;
+}
+.missionClickCount .goalBox p {
+  font-size: 2rem;
+  color: #3b3d3f;
+  font-weight: bold;
+}
+.missionClickCount .missionBox {
+  width: 300px;
+  height: 300px;
+  background-color: #2288ff;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+}
+.missionClickCount .missionBox p {
+  font-size: 5rem;
+  font-weight: bold;
+  color: white;
+}
+.missionClickCount .missionBox.boxAniOn {
+  -webkit-animation: shakeBox 0.4s linear forwards;
+          animation: shakeBox 0.4s linear forwards;
+}
+@-webkit-keyframes shakeBox {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes shakeBox {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+.missionClickCount.bgOn {
+  -webkit-animation: complete 12s linear infinite;
+          animation: complete 12s linear infinite;
+  transition: background-color 3s ease-in-out;
+}
+@-webkit-keyframes complete {
+  0% {
+    background-color: #f79bc1;
+  }
+  25% {
+    background-color: #ffca8d;
+  }
+  50% {
+    background-color: #c2e092;
+  }
+  75% {
+    background-color: #92d0e0;
+  }
+  100% {
+    background-color: #be9bf7;
+  }
+}
+@keyframes complete {
+  0% {
+    background-color: #f79bc1;
+  }
+  25% {
+    background-color: #ffca8d;
+  }
+  50% {
+    background-color: #c2e092;
+  }
+  75% {
+    background-color: #92d0e0;
+  }
+  100% {
+    background-color: #be9bf7;
+  }
+}
+
+.missionTypeWithKeyBoard {
+  max-width: 1200px;
+  width: 70vw;
+  height: 700px;
+  background-color: white;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  transition: 0.5s;
+}
+.missionTypeWithKeyBoard .timeBox {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #2288ff;
+  letter-spacing: 2px;
+}
+.missionTypeWithKeyBoard .textBox {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.missionTypeWithKeyBoard .textBox p:nth-of-type(1) {
+  font-size: 2.1rem;
+  color: #3b3d3f;
+}
+.missionTypeWithKeyBoard .textBox p:nth-of-type(2) {
+  font-size: 1.3rem;
+  color: #2288ff;
+}
+.missionTypeWithKeyBoard .goalBox {
+  margin-top: 60px;
+  background-color: #2288ff;
+  padding: 5px 20px;
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+}
+.missionTypeWithKeyBoard .goalBox p {
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+}
+.missionTypeWithKeyBoard .inputBox {
+  margin-top: 100px;
+  width: 60%;
+  position: relative;
+  min-width: 300px;
+}
+.missionTypeWithKeyBoard .inputBox form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.missionTypeWithKeyBoard .inputBox form input {
+  background-color: transparent;
+  width: 100%;
+  max-width: 500px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 5px 10px 10px 5px;
+  display: block;
+  border: none;
+  color: #3b3d3f;
+  border-bottom: 3px solid rgb(209, 209, 209);
+  position: relative;
+}
+.missionTypeWithKeyBoard .inputBox form input:focus {
+  outline: none;
+}
+.missionTypeWithKeyBoard .inputBox form .highlight {
+  position: absolute;
+  border-radius: 3px;
+  bottom: 0px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #2288ff;
+  -webkit-animation: 1s hightlightOn forwards;
+          animation: 1s hightlightOn forwards;
+}
+@-webkit-keyframes hightlightOn {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  100% {
+    width: 100%;
+    left: 0;
+  }
+}
+@keyframes hightlightOn {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  100% {
+    width: 100%;
+    left: 0;
+  }
+}
+.missionTypeWithKeyBoard .inputBox form .shake {
+  -webkit-animation: 0.3s shakeOn ease-in-out;
+          animation: 0.3s shakeOn ease-in-out;
+}
+@-webkit-keyframes shakeOn {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes shakeOn {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.mainSection {
+  max-width: 1200px;
+  width: 70%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mainSection .description_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5vh;
+}
+.mainSection .description_container .description h1 {
+  font-size: 3.125rem;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 70px;
+}
+.mainSection .description_container .description p {
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+.mainSection .alert {
+  color: #727375;
+  margin-top: 14vh;
+  margin-bottom: 2vh;
+  -webkit-animation: blink-effect 2s ease-in-out infinite;
+          animation: blink-effect 2s ease-in-out infinite;
+}
+.mainSection button {
+  color: white;
+  font-size: 1.75rem;
+  background-color: #2288ff;
+  width: 210px;
+  height: 66px;
+  border-radius: 50px;
+  font-family: "Pretendard-Regular";
+  font-weight: bold;
+  word-spacing: 0.1rem;
+}
+@-webkit-keyframes blink-effect {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes blink-effect {
+  50% {
+    opacity: 0;
+  }
+}
+
+.modalWrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(40, 40, 40, 0.6);
+  z-index: 9100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+.modalWrapper .missionModal {
+  z-index: 9999;
+  max-width: 1200px;
+  width: 70%;
+  height: 700px;
+  background-color: white;
+  border-radius: 20px;
+  filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.15));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.confettiBox {
+  position: absolute;
+  max-width: 1920px;
+  width: 100%;
+  height: 100vh;
+  z-index: -9999;
+}
+
+.missionSuccess {
+  max-width: 1200px;
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.missionSuccess .slogan {
+  font-size: 3.125rem;
+  font-weight: bold;
+  margin-bottom: 4%;
+}
+.missionSuccess .reward {
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+.missionSuccess .reward span {
+  color: #2288ff;
+  font-weight: bold;
+  padding: 10px;
+}
+.missionSuccess button {
+  background-color: #2288ff;
+  color: #fff;
+  font-size: 1.375rem;
+  width: 270px;
+  height: 66px;
+  border-radius: 50px;
+  font-family: "Pretendard-Regular";
+  font-weight: bold;
+  word-spacing: 0.1rem;
+  cursor: pointer;
+}
+
+.missionRetry {
+  max-width: 1200px;
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.missionRetry .slogan {
+  font-size: 3.125rem;
+  font-weight: bold;
+  margin-bottom: 4%;
+}
+.missionRetry button {
+  margin-top: 4%;
+  background-color: #2288ff;
+  color: #fff;
+  font-size: 1.375rem;
+  width: 270px;
+  height: 66px;
+  border-radius: 50px;
+  font-family: "Pretendard-Regular";
+  font-weight: bold;
+  word-spacing: 0.1rem;
+}
+
+.missionEnd {
+  max-width: 1200px;
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.missionEnd .slogan {
+  font-size: 3.125rem;
+  font-weight: bold;
+  margin-bottom: 4%;
+}
+.missionEnd .end_message {
+  font-size: 1.875rem;
+  font-weight: 400;
+  margin-bottom: 2%;
+}
+.missionEnd button {
+  margin-top: 4%;
+  background-color: #2288ff;
+  color: #fff;
+  font-size: 1.375rem;
+  width: 270px;
+  height: 66px;
+  border-radius: 50px;
+  font-family: "Pretendard-Regular";
+  font-weight: bold;
+  word-spacing: 0.1rem;
+}
+
+.missionTreeBox {
+  width: 70%;
+  height: 90%;
+}
+.missionTreeBox .timer {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #2288ff;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 7%;
+}
+.missionTreeBox .quizBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.missionTreeBox .quizBox .imgBox {
+  width: 50%;
+  align-items: center;
+}
+.missionTreeBox .quizBox .quiz {
+  width: 50%;
+  flex-direction: column;
+}
+.missionTreeBox .quizBox .quiz .title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+.missionTreeBox .quizBox .quiz .detail {
+  color: #2288ff;
+  font-size: 1.5625rem;
+  margin-bottom: 10%;
+}
+.missionTreeBox .quizBox form {
+  width: 80%;
+  border-bottom: 2px solid gray;
+  margin: 0 auto;
+}
+.missionTreeBox .quizBox form input {
+  margin-bottom: 3%;
+  text-align: center;
+}
+.missionTreeBox .quizBox form input:focus {
+  outline: none;
+}
+
+.missionDiaryBox {
+  width: 95%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.missionDiaryBox .titleBox {
+  display: flex;
+}
+.missionDiaryBox .titleBox h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 2%;
+}
+.missionDiaryBox .titleBox img {
+  margin-left: 3%;
+}
+.missionDiaryBox p {
+  font-size: 1.875rem;
+  color: #2288ff;
+  margin-bottom: 10%;
+}
+.missionDiaryBox form {
+  width: 70%;
+  border-bottom: 2px solid gray;
+  margin: 0 auto;
+  display: flex;
+}
+.missionDiaryBox form input {
+  cursor: pointer;
+  width: 95%;
+  margin-bottom: 2%;
+  text-align: center;
+  font-size: 1.25rem;
+}
+.missionDiaryBox form input:focus {
+  outline: none;
+}
+.missionDiaryBox form:focus-within {
+  border-bottom: 2px solid #2288ff;
+}
+
+.missionCoinBox {
+  width: 60%;
+  height: 100%;
+  text-align: center;
+}
+.missionCoinBox > h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-top: 20%;
+}
+.missionCoinBox > p {
+  margin-top: 1%;
+  font-size: 1.875rem;
+  color: #2288ff;
+  margin-bottom: 10%;
+  font-weight: bold;
+}
+.missionCoinBox .missionCoinBox_item {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.missionCoinBox .missionCoinBox_item > li {
+  width: 26%;
+  height: 180px;
+  background-color: #e2e8ee;
+  border-radius: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.missionCoinBox .missionCoinBox_item > li:hover {
+  transition: 0.5s;
+  transform: translateY(-10px);
+  background-color: #be9bf7;
+}
+.missionCoinBox .missionCoinBox_item > li > img {
+  transition: 0.5s ease-in;
+}
+.missionCoinBox .missionCoinBox_item > li .img_ative {
+  opacity: 0;
+}
+.missionCoinBox .missionCoinBox_item > li > p {
+  color: #020202;
+  font-size: 1.6rem;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition-delay: 0.5s;
+}
+.missionCoinBox .missionCoinBox_item > li .name_ative {
+  z-index: 3;
+  opacity: 1;
+}
+
+.missionCatchBox {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+.missionCatchBox .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.missionCatchBox .content .timer {
+  margin-top: 3%;
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #2288ff;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 2%;
+}
+.missionCatchBox .content .titleBox {
+  text-align: center;
+}
+.missionCatchBox .content .titleBox .title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+.missionCatchBox .content .titleBox .detail {
+  color: #2288ff;
+  font-size: 1.5625rem;
+  margin-bottom: 20%;
+}
+.missionCatchBox .content .titleBox .guide {
+  color: #3b3d3f;
+  font-weight: 200;
+  -webkit-animation: blink-effect-more 2s ease-in-out infinite;
+          animation: blink-effect-more 2s ease-in-out infinite;
+  margin-bottom: 5%;
+}
+@-webkit-keyframes blink-effect-more {
+  50% {
+    color: #727375;
+  }
+}
+@keyframes blink-effect-more {
+  50% {
+    color: #727375;
+  }
+}
+.missionCatchBox .canvas {
+  position: relative;
+  margin: 0 auto;
+  border-radius: 10px;
+  width: 95%;
+  height: 50%;
+  background-color: #1D1D1D;
+}
+.missionCatchBox .canvas img {
+  cursor: pointer;
+}/*# sourceMappingURL=mission.module.css.map */

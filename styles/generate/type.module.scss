@@ -1,0 +1,221 @@
+@import "../../styles/variable";
+.fullBox {
+  background-color: white;
+
+  .bottomMainBox {
+    background-color: $grayBGColor !important;
+    display: flex;
+    // align-items: center;
+    justify-content: space-between;
+
+    .cardBox {
+      width: 100%;
+      height: 75%;
+      margin: 0 auto;
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .imgTypeCard {
+        width: 28%;
+        height: 40%;
+        padding: 0% 3%;
+        background-color: white;
+        min-width: 220px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: $grayBGshadow;
+        cursor: pointer;
+        transition: transform 0.2s;
+        &:hover {
+          transform: translateY(-6px);
+          // background-color: rgb(54, 138, 248);
+          // color: white;
+
+          .typeBg {
+            // transform: rotate(3deg);
+            animation: 0.8s scaleAni forwards;
+            transition: 0.8s;
+          }
+
+          @keyframes scaleAni {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.05);
+            }
+            100% {
+              transform: scale(1);
+            }
+          }
+          &:active {
+            transform: translateY(0px);
+          }
+        }
+
+        & p:nth-of-type(1) {
+          width: calc(100vw / 19);
+          height: calc(100vw / 19);
+          min-width: 70px;
+          min-height: 70px;
+          // background-color: blue;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-position: center;
+          background-size: 115%;
+          background-repeat: no-repeat;
+          transition: 0.3s;
+          // box-shadow: $grayBGshadow;
+        }
+        &:nth-child(1) {
+          & p:nth-of-type(1) {
+            background-image: url("/assets/images/generate/realism.png");
+          }
+        }
+
+        &:nth-child(2) {
+          & p:nth-of-type(1) {
+            background-image: url("/assets/images/generate/pixel.png");
+          }
+        }
+        &:nth-child(3) {
+          & p:nth-of-type(1) {
+            background-image: url("/assets/images/generate/oil.png");
+          }
+        }
+        &:nth-child(4) {
+          & p:nth-of-type(1) {
+            background-image: url("/assets/images/generate/illust.png");
+          }
+        }
+        &:nth-child(5) {
+          & p:nth-of-type(1) {
+            background-image: url("/assets/images/generate/digital.png");
+          }
+        }
+        &:nth-child(6) {
+          & p:nth-of-type(1) {
+            background-image: url("/assets/images/generate/water.png");
+          }
+        }
+
+        & p:nth-of-type(2) {
+          font-weight: bold;
+          font-size: 1.6rem;
+          margin: 0;
+          margin-left: 10px;
+        }
+
+        .typeTxt {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          p {
+            margin-left: 10px;
+          }
+        }
+        .typeTxt1 {
+          background: none !important;
+          font-weight: bold;
+          font-size: 1.6rem;
+          margin: 0;
+          min-height: 0 !important;
+          height: 30px !important;
+        }
+      }
+    }
+
+    .completeBtnBox {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      button {
+        background-color: rgb(192, 190, 190);
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: white;
+        height: 38px;
+        width: 100px;
+        border-radius: 50px;
+        transition: 0.2s;
+        // box-shadow: $grayBGshadow;
+
+        &:hover {
+          transform: translateY(-2px);
+        }
+
+        &:active {
+          transform: translateY(0px);
+        }
+      }
+      .activeBtn {
+        background-color: $mainColor;
+      }
+    }
+  }
+}
+.currentSelect {
+  outline: 4px solid $mainColor;
+}
+
+@include tablet {
+  .fullBox {
+    .bottomMainBox {
+      .cardBox {
+        .imgTypeCard {
+          min-width: 185px;
+          .typeTxt {
+            p {
+              font-size: 1.2rem;
+            }
+          }
+          p:nth-of-type(2) {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+@include mobile {
+  .fullBox {
+    .bottomMainBox {
+      .cardBox {
+        .imgTypeCard {
+          min-width: fit-content;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 35%;
+          padding: 3%;
+          p:nth-of-type(1) {
+            min-width: 60px;
+            min-height: 60px;
+          }
+          .typeTxt {
+            .typeTxt1 {
+              transform: translateY(10px);
+            }
+            p {
+              font-size: 1rem;
+              margin-left: 0;
+            }
+          }
+          p:nth-of-type(2) {
+            font-size: 1rem;
+            margin-top: 5px;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+.slickPicture {
+  margin-bottom: 5%;
+}
+
+.slickTitle {
+  padding-left: 15%;
+}/*# sourceMappingURL=style.module.css.map */

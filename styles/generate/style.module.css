@@ -1,0 +1,139 @@
+@charset "UTF-8";
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+.fullBox {
+  background-color: white;
+}
+.fullBox .bottomMainBox {
+  background-color: #f1f1f1 !important;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  display: flex;
+  padding: 3% 1% !important;
+}
+.fullBox .bottomMainBox .b_textBox {
+  padding-left: 2%;
+}
+.fullBox .bottomMainBox .cardBox {
+  width: 100%;
+  height: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.fullBox .bottomMainBox .cardBox .pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.fullBox .bottomMainBox .cardBox .pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #333;
+}
+.fullBox .bottomMainBox .cardBox .cardContent {
+  width: 80%;
+  min-width: 185px;
+  height: 72.5%;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 12px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.fullBox .bottomMainBox .cardBox .cardContent:hover {
+  transform: translateY(-6px);
+}
+.fullBox .bottomMainBox .cardBox .cardContent:active {
+  transform: translateY(0px);
+}
+.fullBox .bottomMainBox .cardBox .cardContent .imgIWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.fullBox .bottomMainBox .cardBox .cardContent .imgIWrap img {
+  border-radius: 12px 12px 0px 0px;
+}
+.fullBox .bottomMainBox .cardBox .cardContent .typeText {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 20px;
+}
+.fullBox .bottomMainBox .completeBtnBox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 2%;
+}
+.fullBox .bottomMainBox .completeBtnBox button {
+  background-color: rgb(192, 190, 190);
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  height: 38px;
+  width: 100px;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 100;
+  transition: 0.2s;
+}
+.fullBox .bottomMainBox .completeBtnBox button:hover {
+  transform: translateY(-2px);
+}
+.fullBox .bottomMainBox .completeBtnBox button:active {
+  transform: translateY(0px);
+}
+.fullBox .bottomMainBox .completeBtnBox .activeBtn {
+  background-color: #2288ff;
+}
+
+.currentSelect {
+  outline: 4px solid #2288ff;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fullBox .bottomMainBox .cardBox {
+    height: 70%;
+  }
+  .fullBox .bottomMainBox .cardBox .cardContent {
+    width: 90%;
+    height: 67%;
+  }
+  .fullBox .bottomMainBox .cardBox .cardContent .typeText {
+    font-size: 1.3rem;
+    margin: 0;
+    margin-top: 10px;
+  }
+  .fullBox .bottomMainBox .cardBox .cardContent .imgIWrap img {
+    height: 200px;
+  }
+}
+@media (max-width: 767px) {
+  .fullBox .bottomMainBox .cardBox {
+    height: 70%;
+  }
+  .fullBox .bottomMainBox .cardBox .cardContent {
+    width: 100%;
+    height: 65%;
+    min-width: 150px;
+  }
+  .fullBox .bottomMainBox .cardBox .cardContent .typeText {
+    font-size: 1.2rem;
+    margin: 0;
+    margin-top: 10px;
+  }
+  .fullBox .bottomMainBox .cardBox .cardContent .imgIWrap img {
+    height: 200px;
+  }
+}/*# sourceMappingURL=style.module.css.map */

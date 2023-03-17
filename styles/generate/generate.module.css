@@ -1,0 +1,281 @@
+@charset "UTF-8";
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+.fullBox {
+  width: 100%;
+  height: 200vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Pretendard-Regular";
+  background-color: #f1f1f1;
+  color: #3b3d3f;
+}
+.fullBox .topBox {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e5f1fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fullBox .topBox .textBox {
+  text-align: center;
+  color: #3b3d3f;
+  transform: translateY(10%);
+}
+.fullBox .topBox .textBox .mainTxt {
+  font-size: 4rem;
+  font-weight: bold;
+}
+.fullBox .topBox .textBox .subTxt {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 1%;
+}
+.fullBox .topBox .topImgBox {
+  width: 90vw;
+  height: 40vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(35%);
+}
+.fullBox .topBox .topImgBox div {
+  background-color: white;
+  border-radius: 16px;
+  width: 15%;
+  min-width: 100px;
+  max-width: 170px;
+  padding: 20px;
+  display: block;
+}
+.fullBox .topBox .topImgBox div:first-child {
+  transform: translateY(-100%) rotate(6deg);
+}
+.fullBox .topBox .topImgBox div:nth-of-type(2) {
+  transform: translateY(25%) rotate(-8deg);
+}
+.fullBox .topBox .topImgBox div:nth-of-type(3) {
+  transform: translateY(-75%) rotate(2deg);
+}
+.fullBox .topBox .topImgBox div:nth-of-type(4) {
+  transform: translateY(25%) rotate(10deg);
+}
+.fullBox .topBox .topImgBox div:last-child {
+  transform: translateY(-100%) rotate(-5deg);
+}
+.fullBox .bottomBox {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b3d3f;
+}
+.fullBox .bottomBox .bottomMainBox {
+  max-width: 1200px;
+  width: 70vw;
+  height: 65vh;
+  background-color: white;
+  border-radius: 24px;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+}
+.fullBox .bottomBox .bottomMainBox .b_textBox {
+  display: flex;
+  align-items: center;
+}
+.fullBox .bottomBox .bottomMainBox .b_textBox .checkIWrap {
+  width: 35px;
+  height: 35px;
+  margin: 0;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fullBox .bottomBox .bottomMainBox .b_textBox .mainText {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+.fullBox .bottomBox .bottomMainBox .cardBox {
+  width: 100%;
+  height: 35vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fullBox .bottomBox .bottomMainBox .cardBox .selectCard {
+  background-color: rgba(231, 245, 253, 0.5333333333);
+  width: 30%;
+  height: 32vh;
+  padding: 3% 4%;
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+}
+.fullBox .bottomBox .bottomMainBox .cardBox .selectCard:hover {
+  background-color: #2288ff;
+  color: white;
+  transform: translateY(-6px);
+}
+.fullBox .bottomBox .bottomMainBox .cardBox .selectCard:hover .cardContent {
+  color: rgb(242, 246, 255);
+}
+.fullBox .bottomBox .bottomMainBox .cardBox .selectCard:hover button {
+  background-color: white;
+  color: #2288ff;
+  box-shadow: none;
+}
+.fullBox .bottomBox .bottomMainBox .cardBox .selectCard:active {
+  transform: translateY(0px);
+}
+.fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardTitle {
+  display: flex;
+  align-items: center;
+}
+.fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardTitle .b_iconWrap {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(177, 219, 253, 0.9607843137);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+.fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardTitle p {
+  font-weight: bold;
+  font-size: 1.65rem;
+  margin: 0;
+}
+.fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardContent {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #727375;
+  transition: 0.2s;
+}
+.fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardContent p:nth-of-type(2) {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+.fullBox .bottomBox .bottomMainBox .cardBox .selectCard .btnPositionBox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.fullBox .bottomBox .bottomMainBox .cardBox .selectCard button {
+  width: 130px;
+  height: 42px;
+  border-radius: 24px;
+  background-color: #2288ff;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+  cursor: pointer;
+  z-index: 100;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fullBox .topBox .textBox .mainTxt {
+    font-size: 3rem;
+  }
+  .fullBox .bottomBox .bottomMainBox {
+    height: 55vh;
+    min-height: 550px;
+    width: 80vw;
+  }
+  .fullBox .bottomBox .bottomMainBox .b_textBox .mainText {
+    font-size: 1.6rem;
+  }
+  .fullBox .bottomBox .bottomMainBox .cardBox .selectCard {
+    padding: 2% 3%;
+    min-height: 250px;
+    height: 28vh;
+  }
+  .fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardTitle p {
+    font-size: 1.4rem;
+  }
+  .fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardContent {
+    font-size: 1.2rem;
+  }
+  .fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardContent p:nth-of-type(2) {
+    font-size: 0.9rem;
+  }
+  .fullBox .bottomBox .bottomMainBox .cardBox .selectCard button {
+    width: 100px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 767px) {
+  .fullBox .topBox .textBox .mainTxt {
+    font-size: 2rem;
+  }
+  .fullBox .topBox .textBox .subTxt {
+    font-size: 1.1rem;
+  }
+  .fullBox .topBox .topImgBox {
+    width: 90vw;
+    height: 20vh;
+  }
+  .fullBox .topBox .topImgBox div {
+    min-width: 50px;
+    padding: 10px;
+  }
+  .fullBox .topBox .topImgBox div img {
+    width: 100%;
+  }
+  .fullBox .bottomBox .bottomMainBox {
+    height: 65vh;
+    min-height: 550px;
+    width: 80vw;
+    min-width: 300px;
+  }
+  .fullBox .bottomBox .bottomMainBox .b_textBox .mainText {
+    font-size: 1.3rem;
+  }
+  .fullBox .bottomBox .bottomMainBox .cardBox {
+    flex-direction: column;
+    height: 51vh;
+  }
+  .fullBox .bottomBox .bottomMainBox .cardBox .selectCard {
+    padding: 3% 3%;
+    height: 16vh;
+    width: 85%;
+  }
+  .fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardTitle {
+    margin-bottom: 8px;
+  }
+  .fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardTitle p {
+    font-size: 1.4rem;
+  }
+  .fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardContent {
+    font-size: 1rem;
+  }
+  .fullBox .bottomBox .bottomMainBox .cardBox .selectCard .cardContent p:nth-of-type(2) {
+    font-size: 0.9rem;
+    display: none;
+  }
+  .fullBox .bottomBox .bottomMainBox .cardBox .selectCard button {
+    width: 100px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=generate.module.css.map */

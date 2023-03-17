@@ -1,0 +1,298 @@
+@import "../../styles/variable";
+
+.banner_box {
+  width: 100%;
+  text-align: center;
+  font-family: "Pretendard-Regular";
+
+  > h3 {
+    margin-top: 15%;
+    font-size: 4rem;
+    font-weight: bold;
+    color: $bascitFtcolor;
+  }
+  > p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-top: 20px;
+    color: #4a4a4a;
+  }
+  > span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4a4a4a;
+  } /* 배너 텍스트 */
+  .myword_count {
+    margin: 80px auto 0;
+    width: 203px;
+    height: 58px;
+    background: #e6f3ff;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+
+    > span {
+      font-size: 20px;
+      color: #4a4a4a;
+      line-height: 58px;
+      font-weight: bold;
+      margin-right: 15px;
+    }
+    > div {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      background-color: #2288ff;
+      margin: auto 0;
+      margin-right: 10px;
+    }
+    > p {
+      font-size: 20px;
+      font-weight: bold;
+      color: #2288ff;
+      line-height: 58px;
+    }
+  } /* 나의 단어 카운터  */
+  .banner_icons {
+    list-style: none;
+    display: flex;
+    > li:nth-child(1) {
+      transform: translate(250px, -330px);
+      animation: liani ease-in-out 0.5s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate-reverse;
+      /* animation-delay: 1.8s; */
+
+      @keyframes liani {
+        0% {
+          transform: translate(250px, -330px);
+        }
+        100% {
+          transform: translate(250px, -340px);
+        }
+      }
+
+      > img {
+        animation: test ease 0.6s;
+
+        @keyframes tests {
+          0% {
+            transform: scale(0);
+          }
+          75% {
+            transform: scale(1);
+          }
+          90% {
+            transform: scale(0.8);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+    > li:nth-child(2) {
+      transform: translate(400px, 110px);
+      animation: liani2 ease-in-out 0.5s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate-reverse;
+      /* animation-delay: 2s; */
+
+      @keyframes liani2 {
+        0% {
+          transform: translate(400px, 110px);
+        }
+        100% {
+          transform: translate(400px, 120px);
+        }
+      }
+      > .imgs {
+        transform: scale(0);
+        opacity: 0;
+      }
+      .te {
+        animation: test ease 0.5s;
+
+        @keyframes test {
+          0% {
+            transform: scale(0) translateY(-100px);
+          }
+          25% {
+            transform: scale(0.3);
+          }
+          75% {
+            transform: scale(1);
+          }
+          90% {
+            transform: scale(0.8);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+    > li:nth-child(3) {
+      transform: translate(1250px, -200px);
+      animation: liani3 ease-in-out 0.5s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate-reverse;
+      /*  animation-delay: 2s; */
+
+      @keyframes liani3 {
+        0% {
+          transform: translate(1250px, -200px);
+        }
+        100% {
+          transform: translate(1250px, -210px);
+        }
+      }
+      > .imgs {
+        transform: scale(0);
+        opacity: 0;
+      }
+      > .imgss {
+        transform: scale(0);
+        opacity: 0;
+      }
+      .so {
+        animation: test ease 0.5s;
+
+        @keyframes test {
+          0% {
+            transform: scale(0) translateY(-100px);
+          }
+          25% {
+            transform: scale(0.3);
+          }
+          75% {
+            transform: scale(1);
+          }
+          90% {
+            transform: scale(0.8);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  } /* 배너 아이콘  */
+} /*====== 배너 =========*/
+
+.content_box {
+  margin-top: 200px;
+  background-color: #f7f7f7;
+  width: 100%;
+  height: 1000px;
+  font-family: "Pretendard-Regular";
+
+  .content_item {
+    margin: 100px auto 0;
+    width: 1200px;
+    > h3 {
+      margin: 0 auto;
+      font-size: 2rem;
+      color: $bascitFtcolor;
+      font-weight: bold;
+    }
+    .content_coinlist {
+      margin: 60px auto 0;
+      width: 100%;
+      height: 620px;
+      border-radius: 20px;
+      background-color: #ffff;
+      box-shadow: $grayBGshadow;
+
+      .content_coinlist_top {
+        margin: 0 auto;
+        padding-top: 100px;
+        width: 1050px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .check_list {
+          display: flex;
+          width: 50%;
+
+          > img {
+            width: 40px;
+            height: 40px;
+          }
+          > p {
+            margin-left: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4a4a4a;
+          }
+        }
+        .coin_count {
+          display: flex;
+          align-items: center;
+          width: 7%;
+
+          > img {
+            width: 35px;
+            height: 35px;
+            margin-right: 10px;
+          }
+          > span {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #353535;
+          }
+        }
+        > p {
+          width: 90%;
+          font-size: 1.2rem;
+          color: #a7a7a7;
+          font-weight: 500;
+          margin-left: 52px;
+        }
+      } /* 컨텐츠 영역 상단 부분 */
+      .content_coinlist_bot {
+        margin: 90px auto 0;
+        width: 1050px;
+        display: flex;
+        justify-content: space-between;
+        .coin2 {
+          width: 30%;
+          background-color: #e6f3ff;
+          height: 240px;
+          border-radius: 20px;
+          box-shadow: $grayBGshadow;
+          text-align: center;
+          cursor: pointer;
+          &:hover {
+            transition: 0.3s;
+            background-color: #3f8efc;
+            > p {
+              color: #e6f3ff;
+              transition: 0.3s;
+            }
+            > span {
+              color: #e6f3ff;
+              transition: 0.3s;
+            }
+          }
+
+          > img {
+            width: 70px;
+            margin: 60px auto 5px;
+          }
+          > p {
+            color: #4c9eff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+          }
+          > span {
+            color: #4c9eff;
+            font-weight: 600;
+            font-size: 1rem;
+          }
+        }
+      } /* 컨텐츠 영역 하단 부분 */
+    }
+  }
+} /* ======== 구매 컨텐츠  카테고리 =================== */
