@@ -16,10 +16,13 @@
     box-shadow: $grayBGshadow;
     border-radius: 12px;
     text-align: center;
-    > img {
-      margin: 140px auto 0;
-      transform: rotate(70deg);
+    .loginAni {
+      > img {
+        margin: 140px auto 0;
+        transform: rotate(70deg);
+      }
     }
+
     > div {
       width: 40%;
       margin: 80px auto 0;
