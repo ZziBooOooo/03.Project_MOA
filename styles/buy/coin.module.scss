@@ -9,7 +9,7 @@
 
   .content_item {
     margin: 100px auto;
-    width: 1200px;
+    width: 70vw;
     > h3 {
       margin: 0 auto;
       font-size: 2rem;
@@ -145,7 +145,7 @@
       .content_coinlist_top {
         margin: 0 auto;
         padding-top: 100px;
-        width: 1050px;
+        width: 78%;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -190,7 +190,7 @@
       } /* 컨텐츠 영역 상단 부분 */
       .content_coinlist_bot {
         margin: 70px auto 0;
-        width: 1050px;
+        width: 78%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -332,7 +332,7 @@
         } /* 구매할 단어들  */
       } /* 컨텐츠 영역 하단 부분 */
       .pageButton {
-        width: 1050px;
+        width: 78%;
         margin: 10px auto 0;
         display: flex;
         justify-content: right;
