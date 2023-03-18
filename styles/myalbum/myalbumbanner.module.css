@@ -7,9 +7,8 @@
   font-family: "Pretendard-Regular";
   overflow: hidden;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 4%;
+  justify-content: center;
 }
 .myalbum_banner .myalbum_phone {
   width: 40%;
@@ -23,6 +22,9 @@
   transform: translateY(750px);
   transition: 1.3s;
   opacity: 0;
+  width: 40%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .myalbum_banner .myalbum_phone .phoneImg02 {
   display: block;
@@ -31,6 +33,9 @@
   transform: translateY(600px);
   transition: 1.8s;
   opacity: 0;
+  width: 40%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .myalbum_banner .myalbum_textbox {
   width: 33%;
@@ -48,4 +53,8 @@
   padding-top: 30px;
   color: #bababa;
   margin-left: 8px;
-}/*# sourceMappingURL=myalbumbanner.module.css.map */
+}
+
+/* ================================================================ */
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/* 767px *//*# sourceMappingURL=myalbumbanner.module.css.map */
