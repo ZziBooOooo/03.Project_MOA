@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     const client_secret = "XU3nPVAzaA";
     const api_url = "https://openapi.naver.com/v1/papago/n2mt";
     const headers = {
-      "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+      "Content-Type": "application/x-www-form-urlencoded; charSet=UTF-8",
       "X-Naver-Client-Id": client_id,
       "X-Naver-Client-Secret": client_secret,
     };

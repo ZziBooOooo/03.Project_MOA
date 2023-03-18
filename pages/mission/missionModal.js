@@ -1,7 +1,8 @@
-import React from "react";
+
+import axios from "axios";
 import style from "@/styles/mission/mission.module.css";
 import { useRouter } from "next/router";
-
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import MissionCatch from "@/components/mission/MissionCatch";
 import MissionTree from "@/components/mission/MissionTree";
@@ -20,6 +21,7 @@ const componentList = [
   MissionDiary,
   MissionCatch,
   MissionCoinBox,
+
 ];
 
 // 랜덤한 컴포넌트를 생성하여 반환
@@ -29,8 +31,29 @@ const getRandomComponent = () => {
   return <RandomComponent />;
 };
 
-const Mission = () => {
+
+const MissionModal = () => {
   const router = useRouter();
+
+  const parsedUserEmail =
+    typeof window !== "undefined" && window.sessionStorage.getItem("userData")
+      ? JSON.parse(window.sessionStorage.getItem("userData")).useremail || null
+      : null;
+
+  async function addCount() {
+    try {
+      await axios.post("/api/mission/addCounter", {
+        email: parsedUserEmail,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  useEffect(() => {
+    addCount();
+  }, []);
+
 
   return (
     <>
@@ -41,4 +64,7 @@ const Mission = () => {
   );
 };
 
-export default Mission;
+
+export default MissionModal;
+
+

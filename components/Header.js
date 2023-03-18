@@ -13,6 +13,18 @@ const Header = () => {
   const [selectedPage, setSelectedPage] = useState(0);
   const { userData } = useContext(buyContext);
 
+  const userCoin =
+    typeof window !== "undefined" && window.sessionStorage.getItem("userData")
+      ? JSON.parse(window.sessionStorage.getItem("totalCoinCount")) || null
+      : null;
+
+  const userWord =
+    typeof window !== "undefined" && window.sessionStorage.getItem("userData")
+      ? JSON.parse(window.sessionStorage.getItem("totalWordCount")) || null
+      : null;
+
+  console.log(userData);
+
   useEffect(() => {
     const handleScroll = () => {
       const position = window.pageYOffset;
@@ -77,19 +89,77 @@ const Header = () => {
             </p>
           ))}
           {userData ? (
-            <p>
-              <Image
-                onClick={() =>
-                  signOut({ callbackUrl: "http://localhost:3000/login" })
-                }
-                src={userData.profile}
-                width={33}
-                height={33}
-                alt="프로필"
-                unoptimized={true}
-                style={{ borderRadius: "50%" }}
-              />
-            </p>
+            <>
+              <div className={style.profileWrap}>
+                <Image
+                  src={userData.profile}
+                  width={36}
+                  height={36}
+                  alt="프로필 이미지"
+                  className={style.profileImg}
+                  unoptimized={true}
+                  style={{ borderRadius: "50%" }}
+                />
+                <div className={style.myInfoDiv}>
+                  <div>
+                    <p>
+                      <Image
+                        src={"/assets/images/main/user.png"}
+                        alt="유저 아이콘 이미지"
+                        width={24}
+                        height={24}
+                      />
+                    </p>
+                    <p>{userData.name}</p>
+                  </div>
+                  <div>
+                    <p>
+                      <Image
+                        src={"/assets/images/main/cent.png"}
+                        alt="동전 이미지"
+                        width={24}
+                        height={24}
+                      />
+                    </p>
+                    <p>{userCoin ? userCoin : userData.coin}개</p>
+                  </div>
+                  <div>
+                    <p>
+                      <Image
+                        src={"/assets/images/main/book.png"}
+                        alt="책 이미지"
+                        width={24}
+                        height={24}
+                      />
+                    </p>
+                    <p>
+                      {userWord
+                        ? userWord
+                        : userData.words.WordCoin2.length +
+                          userData.words.WordCoin3.length +
+                          userData.words.WordCoin4.length}
+                      개
+                    </p>
+                  </div>
+                  <hr />
+                  <div
+                    onClick={() =>
+                      signOut({ callbackUrl: "http://localhost:3000/login" })
+                    }
+                  >
+                    <p>
+                      <Image
+                        src={"/assets/images/main/out.png"}
+                        alt="로그아웃 아이콘 "
+                        width={24}
+                        height={24}
+                      />
+                    </p>
+                    <p>로그아웃</p>
+                  </div>
+                </div>
+              </div>
+            </>
           ) : (
             <p onClick={() => router.push("/login")}>로그인</p>
           )}

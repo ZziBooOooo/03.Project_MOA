@@ -39,6 +39,7 @@ export default async function handler(req, res) {
             name: name,
             profile: profile,
             coin: 10,
+            missionCount: 0,
             words: {
               WordCoin2: [
                 { id: 0, isDone: true, coinNum: 2, word: "고양이" },
@@ -74,8 +75,6 @@ export default async function handler(req, res) {
 
     case "PUT":
       try {
-        const { client } = await connectToDatabase();
-        const db = client.db("DataMoa");
         const { useremail, updateCoin, updateWord, wordName } = req.body;
 
         const result = await db.collection("user").updateOne(

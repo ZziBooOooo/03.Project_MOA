@@ -11,6 +11,8 @@ export default function Banner() {
       userData.words.WordCoin3.length +
       userData.words.WordCoin4.length; /* 나의 단어 몇개인지 */
 
+  sessionStorage.setItem("totalWordCount", wordLength);
+
   const [io, setio] = useState(false);
   const [so, setso] = useState(false);
 
