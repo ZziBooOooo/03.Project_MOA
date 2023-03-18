@@ -14,7 +14,7 @@
   color: #817a7a;
 }
 .myalbumContent .myalbum_box {
-  width: 1200px;
+  width: 63%;
   height: 600px;
   margin: 0 auto;
   display: flex;
@@ -86,4 +86,8 @@
   background-color: #2288ff;
   color: azure;
   border-radius: 30px;
-}/*# sourceMappingURL=myalbumcontent.module.css.map */
+}
+
+/* ================================================================ */
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/* 767px *//*# sourceMappingURL=myalbumcontent.module.css.map */

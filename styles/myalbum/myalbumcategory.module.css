@@ -2,14 +2,13 @@
 /*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
 /*반응형, 브라우저 크기가 1024px 이상일때*/
 .myalbumCategory {
-  margin-top: 0px;
   width: 100%;
   background-color: #f7f7f7;
   height: 120px;
   font-family: "Pretendard-Regular";
 }
 .myalbumCategory .Category_box {
-  width: 1200px;
+  width: 63%;
   height: 100%;
   margin: 0 auto;
   display: flex;
@@ -28,4 +27,8 @@
   line-height: 50px;
   color: #8e8b8b;
   font-weight: bold;
-}/*# sourceMappingURL=myalbumcategory.module.css.map */
+}
+
+/* ================================================================ */
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/* 767px *//*# sourceMappingURL=myalbumcategory.module.css.map */
