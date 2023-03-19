@@ -1,0 +1,177 @@
+@charset "UTF-8";
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+.fullBox {
+  background-color: white;
+}
+.fullBox .bottomMainBox {
+  background-color: #f1f1f1 !important;
+  display: flex;
+  justify-content: space-between;
+}
+.fullBox .bottomMainBox .cardBox {
+  width: 100%;
+  height: 75%;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard {
+  width: 28%;
+  height: 40%;
+  padding: 0% 3%;
+  background-color: white;
+  min-width: 220px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard:hover {
+  transform: translateY(-6px);
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard:hover .typeBg {
+  animation: 0.8s scaleAni forwards;
+  transition: 0.8s;
+}
+@keyframes scaleAni {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard:hover:active {
+  transform: translateY(0px);
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard p:nth-of-type(1) {
+  width: 5.2631578947vw;
+  height: 5.2631578947vw;
+  min-width: 70px;
+  min-height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-size: 115%;
+  background-repeat: no-repeat;
+  transition: 0.3s;
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard:nth-child(1) p:nth-of-type(1) {
+  background-image: url("/assets/images/generate/realism.png");
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard:nth-child(2) p:nth-of-type(1) {
+  background-image: url("/assets/images/generate/pixel.png");
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard:nth-child(3) p:nth-of-type(1) {
+  background-image: url("/assets/images/generate/oil.png");
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard:nth-child(4) p:nth-of-type(1) {
+  background-image: url("/assets/images/generate/illust.png");
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard:nth-child(5) p:nth-of-type(1) {
+  background-image: url("/assets/images/generate/digital.png");
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard:nth-child(6) p:nth-of-type(1) {
+  background-image: url("/assets/images/generate/water.png");
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard p:nth-of-type(2) {
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin: 0;
+  margin-left: 10px;
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard .typeTxt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard .typeTxt p {
+  margin-left: 10px;
+}
+.fullBox .bottomMainBox .cardBox .imgTypeCard .typeTxt1 {
+  background: none !important;
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin: 0;
+  min-height: 0 !important;
+  height: 30px !important;
+}
+.fullBox .bottomMainBox .completeBtnBox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.fullBox .bottomMainBox .completeBtnBox button {
+  background-color: rgb(192, 190, 190);
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  height: 38px;
+  width: 100px;
+  border-radius: 50px;
+  transition: 0.2s;
+}
+.fullBox .bottomMainBox .completeBtnBox button:hover {
+  transform: translateY(-2px);
+}
+.fullBox .bottomMainBox .completeBtnBox button:active {
+  transform: translateY(0px);
+}
+.fullBox .bottomMainBox .completeBtnBox .activeBtn {
+  background-color: #2288ff;
+}
+
+.currentSelect {
+  outline: 4px solid #2288ff;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fullBox .bottomMainBox .cardBox .imgTypeCard {
+    min-width: 185px;
+  }
+  .fullBox .bottomMainBox .cardBox .imgTypeCard .typeTxt p {
+    font-size: 1.2rem;
+  }
+  .fullBox .bottomMainBox .cardBox .imgTypeCard p:nth-of-type(2) {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 767px) {
+  .fullBox .bottomMainBox .cardBox .imgTypeCard {
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 35%;
+    padding: 3%;
+  }
+  .fullBox .bottomMainBox .cardBox .imgTypeCard p:nth-of-type(1) {
+    min-width: 60px;
+    min-height: 60px;
+  }
+  .fullBox .bottomMainBox .cardBox .imgTypeCard .typeTxt .typeTxt1 {
+    transform: translateY(10px);
+  }
+  .fullBox .bottomMainBox .cardBox .imgTypeCard .typeTxt p {
+    font-size: 1rem;
+    margin-left: 0;
+  }
+  .fullBox .bottomMainBox .cardBox .imgTypeCard p:nth-of-type(2) {
+    font-size: 1rem;
+    margin-top: 5px;
+    margin-left: 0;
+  }
+}/*# sourceMappingURL=type.module.css.map */

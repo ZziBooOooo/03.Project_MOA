@@ -1,0 +1,41 @@
+$mainColor: #2288ff;
+$bascitFtcolor: #3b3d3f;
+$softGRAYFtColor: #727375;
+$moreSoftGRAYFtColor: #a3a4a7;
+$grayBGColor: #f1f1f1;
+$skyBlueColor: #fff0e6;
+$grayBGshadow: 0 1px 2px rgba(145, 145, 145, 0.05),
+  0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05),
+  0 12px 24px rgba(145, 145, 145, 0.05);
+// $grayshadow:1px 2px 5px rgb(224, 224, 224);
+
+$minimobile: 375px;
+$mobile: 767px;
+$tablet: 1023px;
+$desktop: 1024px;
+
+@mixin minimobile {
+  @media (max-width: $minimobile) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+@mixin tablet {
+  @media (min-width: ($mobile+1)) and (max-width: $tablet) {
+    @content;
+  }
+}
+
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}

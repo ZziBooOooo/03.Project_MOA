@@ -1,0 +1,34 @@
+@charset "UTF-8";
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+.myalbumCategory {
+  width: 100%;
+  background-color: #f7f7f7;
+  height: 120px;
+  font-family: "Pretendard-Regular";
+}
+.myalbumCategory .Category_box {
+  width: 63%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+}
+.myalbumCategory .Category_box > li {
+  cursor: pointer;
+  width: 12%;
+  height: 50px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+  border-radius: 20px;
+  text-align: center;
+  line-height: 50px;
+  color: #8e8b8b;
+  font-weight: bold;
+}
+
+/* ================================================================ */
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/* 767px *//*# sourceMappingURL=myalbumcategory.module.css.map */

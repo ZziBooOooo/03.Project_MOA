@@ -1,0 +1,722 @@
+@charset "UTF-8";
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+.fullBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Pretendard-Regular";
+  background-color: rgb(250, 250, 250);
+  color: #3b3d3f;
+}
+.fullBox .topBox {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2288ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fullBox .topBox .topContentBox {
+  max-width: 1200px;
+  width: 70vw;
+  display: flex;
+  align-items: center;
+}
+.fullBox .topBox .textBox {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  width: 50%;
+}
+.fullBox .topBox .textBox p:nth-of-type(2) {
+  font-size: 2rem;
+}
+.fullBox .topBox .imgBox {
+  width: 50%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fullBox .topBox .imgBox .topImgBox {
+  width: 225px;
+  height: 225px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+  padding: 20px;
+}
+.fullBox .topBox .imgBox div:nth-of-type(1) {
+  transform: translate(-80%, 20%);
+}
+.fullBox .topBox .imgBox div:nth-of-type(2) {
+  transform: translate(100%, -35%);
+}
+.fullBox .topBox .imgBox div:nth-of-type(3) {
+  transform: translate(-40%, -10%);
+}
+.fullBox .bottomBox {
+  width: 70vw;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 200px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #3b3d3f;
+}
+.fullBox .bottomBox .b_textBox {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+.fullBox .bottomBox .b_textBox div {
+  display: flex;
+  flex-direction: column;
+}
+.fullBox .bottomBox .b_textBox p:nth-of-type(1) {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #3b3d3f;
+  margin-bottom: 5px;
+}
+.fullBox .bottomBox .b_textBox p:nth-of-type(2) {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #727375;
+}
+.fullBox .bottomBox .top3ImgBox {
+  width: 70vw;
+  max-width: 1200px;
+  border-radius: 20px;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fullBox .bottomBox .imgBox {
+  width: 28%;
+  min-width: 200px;
+  margin: 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+.fullBox .bottomBox .imgBox:nth-child(1) .rank {
+  background-color: #fdbc16;
+}
+.fullBox .bottomBox .imgBox:nth-child(2) {
+  transform: scale(1.2);
+}
+.fullBox .bottomBox .imgBox:nth-child(2) .rank {
+  background-color: #ff3d6b;
+  font-size: 2rem !important;
+}
+.fullBox .bottomBox .imgBox:nth-child(2):hover {
+  transform: scale(1.2) translateY(-8px);
+}
+.fullBox .bottomBox .imgBox:nth-child(3) .rank {
+  background-color: #2288ff;
+}
+.fullBox .bottomBox .imgBox .imgWrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+}
+.fullBox .bottomBox .imgBox .imgWrap img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+}
+.fullBox .bottomBox .imgBox .imgWrap .rank {
+  position: absolute;
+  left: 10%;
+  top: -5%;
+  width: 40px;
+  height: 60px;
+  border-radius: 8px 8px 50px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+}
+.fullBox .bottomBox .imgBox .imgWrap .likeField {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px 15px;
+  min-width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 12px 2px 12px 2px;
+}
+.fullBox .bottomBox .imgBox .imgWrap .likeField p {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.fullBox .bottomBox .imgBox .imgWrap .likeField .likeBtnBox {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+}
+.fullBox .bottomBox .imgBox .imgWrap .likeField .likeBtnBox .heartIcon {
+  position: absolute;
+  font-size: 26px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.fullBox .bottomBox .imgBox .imgWrap .likeField .likeBtnBox .solidHeart {
+  color: rgb(255, 0, 106);
+}
+.fullBox .bottomBox .imgBox .imgWrap .likeField .likeBtnBox .regularHeart:hover {
+  color: rgb(255, 0, 106);
+  transform: scale(1.1);
+}
+.fullBox .bottomBox .imgBox .imgWrap .likeField .likeBtnBox .animating {
+  animation-name: fillHeart;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+.fullBox .bottomBox .imgBox:hover {
+  transform: translateY(-8px);
+}
+.fullBox .bottomBox .b_chartTextBox {
+  width: 70vw;
+  max-width: 1200px;
+  margin-top: 200px;
+}
+.fullBox .bottomBox .b_chartTextBox p:nth-of-type(1) {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #3b3d3f;
+  margin-bottom: 5px;
+}
+.fullBox .bottomBox .b_chartTextBox p:nth-of-type(2) {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #727375;
+}
+.fullBox .bottomBox .allChartBox {
+  width: 70vw;
+  max-width: 1200px;
+  height: 50vh;
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+.fullBox .bottomBox .allChartBox .typeChartBox,
+.fullBox .bottomBox .allChartBox .styleChartBox {
+  width: 45%;
+  min-width: 270px;
+  height: 100%;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+  padding: 50px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.fullBox .bottomBox .allChartBox .typeChartBox p,
+.fullBox .bottomBox .allChartBox .styleChartBox p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+  position: absolute;
+  top: 0;
+}
+.fullBox .bottomBox .allChartBox .typeChartBox canvas,
+.fullBox .bottomBox .allChartBox .styleChartBox canvas {
+  min-width: 250px;
+  min-height: 250px;
+  max-width: 380px;
+  max-height: 380px;
+}
+.fullBox .bottomBox .randomImgBox {
+  display: flex;
+  width: 70vw;
+  height: 50vh;
+  flex-wrap: wrap;
+  position: relative;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+  padding: 30px 20px;
+}
+.fullBox .bottomBox .randomImgBox .imgWrap {
+  max-width: 200px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+}
+.fullBox .bottomBox .randomImgBox .imgWrap img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+}
+.fullBox .bottomBox .randomImgBox .refreshBtnBox {
+  position: absolute;
+  top: -6%;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  min-width: 100px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #727375;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+.fullBox .bottomBox .randomImgBox .refreshBtnBox svg {
+  color: #2288ff;
+  width: 20px;
+  margin-right: 5px;
+}
+.fullBox .bottomBox .randomImgBox .refreshBtnBox:hover {
+  opacity: 1;
+}
+.fullBox .bottomBox .randomImgBox .refreshBtnBox:active {
+  transform: translateY(3px);
+}
+.fullBox .bottomBox .creator {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.fullBox .bottomBox .otherUserTxtBox {
+  width: 70vw;
+  max-width: 1200px;
+  margin-top: 200px;
+}
+.fullBox .bottomBox .otherUserTxtBox p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3b3d3f;
+}
+.fullBox .bottomBox .otherUserTxtBox p:nth-of-type(2) {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #727375;
+}
+.fullBox .bottomBox .randomImgBox {
+  width: 70vw;
+  max-width: 1200px;
+  margin: 60px auto;
+  height: 55vh;
+  min-height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.fullBox .bottomBox .randomImgBox .s_imgBox {
+  width: 24%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.fullBox .bottomBox .randomImgBox .s_imgBox .imgWrap {
+  margin: 0px 15px;
+  width: 100%;
+  min-width: 125px;
+}
+.fullBox .bottomBox .randomImgBox .s_imgBox .imgWrap img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+}
+.fullBox .bottomBox .randomImgBox .s_imgBox .imgWrap .likeField {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 6px 12px;
+  min-width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 12px 2px 12px 2px;
+}
+.fullBox .bottomBox .randomImgBox .s_imgBox .imgWrap .likeField p {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.fullBox .bottomBox .randomImgBox .s_imgBox .imgWrap .likeField .likeBtnBox {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+}
+.fullBox .bottomBox .randomImgBox .s_imgBox .imgWrap .likeField .likeBtnBox .heartIcon {
+  position: absolute;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.fullBox .bottomBox .randomImgBox .s_imgBox .imgWrap .likeField .likeBtnBox .solidHeart {
+  color: rgb(255, 0, 106);
+}
+.fullBox .bottomBox .randomImgBox .s_imgBox .imgWrap .likeField .likeBtnBox .regularHeart:hover {
+  color: rgb(255, 0, 106);
+  transform: scale(1.1);
+}
+.fullBox .bottomBox .randomImgBox .s_imgBox .imgWrap .likeField .likeBtnBox .animating {
+  animation-name: fillHeart;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+.fullBox .bottomBox .randomImgBox .s_imgBox .creator {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.fullBox .bottomBox .randomImgBox .s_imgBox:hover {
+  transform: translateY(-8px);
+}
+
+.likeField {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px 15px;
+  min-width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 12px 2px 12px 2px;
+}
+.likeField p {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.likeField .likeBtnBox {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+}
+.likeField .likeBtnBox .heartIcon {
+  position: absolute;
+  font-size: 26px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.likeField .likeBtnBox .solidHeart {
+  color: rgb(255, 0, 106);
+}
+.likeField .likeBtnBox .regularHeart:hover {
+  color: rgb(255, 0, 106);
+  transform: scale(1.1);
+}
+.likeField .likeBtnBox .animating {
+  animation-name: fillHeart;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+@keyframes fillHeart {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(8deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fullBox .topBox .textBox {
+    font-size: 3rem;
+  }
+  .fullBox .topBox .textBox p:nth-of-type(2) {
+    font-size: 1.5rem;
+    min-width: 310px;
+  }
+  .fullBox .topBox .imgBox {
+    width: 60%;
+    height: 70vh;
+    justify-content: space-around;
+    transform: translateY(5%);
+  }
+  .fullBox .topBox .imgBox .topImgBox {
+    width: 180px;
+    height: 180px;
+  }
+  .fullBox .topBox .imgBox div:nth-of-type(1) {
+    transform: translate(-20%, 0%);
+  }
+  .fullBox .topBox .imgBox div:nth-of-type(2) {
+    transform: translate(40%, 0%);
+  }
+  .fullBox .topBox .imgBox div:nth-of-type(3) {
+    transform: translate(-20%, 0%);
+  }
+  .fullBox .bottomBox .b_textBox {
+    margin-bottom: 30px;
+  }
+  .fullBox .bottomBox .b_textBox p:nth-of-type(1) {
+    font-size: 1.8rem;
+  }
+  .fullBox .bottomBox .b_textBox p:nth-of-type(2) {
+    font-size: 1.3rem;
+  }
+  .fullBox .bottomBox .top3ImgBox .imgBox {
+    min-width: 170px;
+  }
+  .fullBox .bottomBox .b_chartTextBox {
+    margin-top: 100px;
+  }
+  .fullBox .bottomBox .b_chartTextBox p:nth-of-type(1) {
+    font-size: 1.8rem;
+  }
+  .fullBox .bottomBox .b_chartTextBox p:nth-of-type(2) {
+    font-size: 1.3rem;
+  }
+  .fullBox .bottomBox .allChartBox .styleChartBox {
+    min-width: 150px;
+    height: 80%;
+  }
+  .fullBox .bottomBox .allChartBox .styleChartBox div {
+    min-width: 150px;
+  }
+  .fullBox .bottomBox .allChartBox .styleChartBox div canvas {
+    min-width: 150px;
+    max-width: 250px;
+  }
+  .fullBox .bottomBox .allChartBox .typeChartBox {
+    min-width: 150px;
+    height: 80%;
+  }
+  .fullBox .bottomBox .allChartBox .typeChartBox div {
+    min-width: 150px;
+  }
+  .fullBox .bottomBox .allChartBox .typeChartBox div canvas {
+    min-width: 150px;
+    max-width: 250px;
+  }
+  .fullBox .bottomBox .otherUserTxtBox {
+    margin-top: 100px;
+  }
+  .fullBox .bottomBox .otherUserTxtBox p:nth-of-type(1) {
+    font-size: 1.8rem;
+  }
+  .fullBox .bottomBox .otherUserTxtBox p:nth-of-type(2) {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 767px) {
+  .fullBox .topBox .topContentBox {
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 1400px;
+    width: 80vw;
+  }
+  .fullBox .topBox .textBox {
+    font-size: 2.5rem;
+    width: 100%;
+  }
+  .fullBox .topBox .textBox p:nth-of-type(2) {
+    font-size: 1.2rem;
+    min-width: 310px;
+  }
+  .fullBox .topBox .imgBox {
+    width: 100%;
+    height: 30vh;
+    justify-content: space-around;
+    transform: translateY(5%);
+    flex-direction: row;
+  }
+  .fullBox .topBox .imgBox .topImgBox {
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
+  }
+  .fullBox .topBox .imgBox div:nth-of-type(1) {
+    transform: translate(0%, -20%);
+  }
+  .fullBox .topBox .imgBox div:nth-of-type(2) {
+    transform: translate(0%, 20%);
+  }
+  .fullBox .topBox .imgBox div:nth-of-type(3) {
+    transform: translate(0%, -20%);
+  }
+  .fullBox .bottomBox {
+    margin-top: 100px;
+    width: 80vw;
+  }
+  .fullBox .bottomBox .b_textBox {
+    margin-bottom: 0px;
+  }
+  .fullBox .bottomBox .b_textBox p:nth-of-type(1) {
+    font-size: 1.5rem;
+  }
+  .fullBox .bottomBox .b_textBox p:nth-of-type(2) {
+    font-size: 1.1rem;
+  }
+  .fullBox .bottomBox .top3ImgBox {
+    min-height: 30vh;
+    min-height: 300px;
+    width: 90vw;
+  }
+  .fullBox .bottomBox .top3ImgBox .imgBox {
+    min-width: 100px;
+    margin: 0 10px;
+  }
+  .fullBox .bottomBox .top3ImgBox .imgBox:nth-child(2) {
+    transform: scale(1.2);
+  }
+  .fullBox .bottomBox .top3ImgBox .imgBox:nth-child(2) .rank {
+    background-color: #ff3d6b;
+    font-size: 1.4rem !important;
+  }
+  .fullBox .bottomBox .top3ImgBox .imgBox .imgWrap .rank {
+    width: 30px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  .fullBox .bottomBox .top3ImgBox .imgBox .imgWrap .likeField {
+    min-width: 40px;
+    padding: 5px 10px;
+  }
+  .fullBox .bottomBox .top3ImgBox .imgBox .imgWrap .likeField p {
+    font-size: 0.9rem;
+  }
+  .fullBox .bottomBox .top3ImgBox .imgBox .imgWrap .likeField .likeBtnBox {
+    width: 22px;
+    height: 22px;
+  }
+  .fullBox .bottomBox .b_chartTextBox {
+    margin-top: 80px;
+    margin-bottom: 30px;
+  }
+  .fullBox .bottomBox .b_chartTextBox p:nth-of-type(1) {
+    font-size: 1.5rem;
+  }
+  .fullBox .bottomBox .b_chartTextBox p:nth-of-type(2) {
+    font-size: 1.1rem;
+  }
+  .fullBox .bottomBox .allChartBox {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+  .fullBox .bottomBox .allChartBox .styleChartBox {
+    width: 70%;
+    min-width: 150px;
+    height: 50%;
+  }
+  .fullBox .bottomBox .allChartBox .styleChartBox div {
+    min-width: 150px;
+  }
+  .fullBox .bottomBox .allChartBox .styleChartBox div canvas {
+    min-width: 150px;
+    max-width: 200px;
+    max-height: 200px;
+  }
+  .fullBox .bottomBox .allChartBox .styleChartBox p {
+    font-size: 1.2rem;
+  }
+  .fullBox .bottomBox .allChartBox .typeChartBox {
+    width: 70%;
+    min-width: 150px;
+    height: 50%;
+    margin-bottom: 30px;
+  }
+  .fullBox .bottomBox .allChartBox .typeChartBox div {
+    min-width: 150px;
+  }
+  .fullBox .bottomBox .allChartBox .typeChartBox div canvas {
+    min-width: 150px;
+    max-width: 200px;
+    max-height: 200px;
+  }
+  .fullBox .bottomBox .allChartBox .typeChartBox p {
+    font-size: 1.2rem;
+  }
+  .fullBox .bottomBox .otherUserTxtBox {
+    margin-top: 100px;
+  }
+  .fullBox .bottomBox .otherUserTxtBox p:nth-of-type(1) {
+    font-size: 1.5rem;
+  }
+  .fullBox .bottomBox .otherUserTxtBox p:nth-of-type(2) {
+    font-size: 1rem;
+  }
+  .fullBox .bottomBox .creator {
+    font-size: 1rem;
+  }
+  .fullBox .bottomBox .randomImgBox {
+    width: 80vw;
+    height: 75vh;
+    justify-content: space-around;
+  }
+  .fullBox .bottomBox .randomImgBox .refreshBtnBox {
+    font-size: 1rem;
+  }
+  .fullBox .bottomBox .randomImgBox .refreshBtnBox svg {
+    width: 16px;
+  }
+  .fullBox .bottomBox .randomImgBox .s_imgBox {
+    width: 30%;
+  }
+  .fullBox .bottomBox .randomImgBox .s_imgBox .imgWrap {
+    min-width: 80px;
+    max-width: 150px;
+  }
+  .fullBox .bottomBox .randomImgBox .s_imgBox .imgWrap .likeField {
+    padding: 3px 8px;
+    min-width: 55px;
+  }
+  .fullBox .bottomBox .randomImgBox .s_imgBox .imgWrap .likeField p {
+    font-size: 0.9rem;
+  }
+  .fullBox .bottomBox .randomImgBox .s_imgBox .imgWrap .likeField .likeBtnBox {
+    width: 20px;
+  }
+  .fullBox .bottomBox .randomImgBox .s_imgBox .creator {
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=others.module.css.map */

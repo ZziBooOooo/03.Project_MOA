@@ -1,0 +1,150 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+:root {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  cursor: default;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  tab-size: 4;
+}
+html,
+body {
+  height: 100%;
+  font-family: "Pretendard-Regular";
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.swiper {
+  position: relative;
+  padding: 0px 60px !important; /* 버튼의 높이만큼 값을 추가 */
+}
+.swiper-slide {
+  min-width: 150px;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px !important;
+  height: 40px !important;
+  background-color: rgba(22, 22, 22, 0.514);
+  border-radius: 5px;
+  z-index: 100;
+  color: rgb(217, 223, 230) !important;
+  transition: 0.2s;
+  box-shadow: 3px 3px 5px solid black;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  /* background-color: rgba(22, 22, 22, 0.356); */
+  font-size: 28px !important;
+  font-weight: bold;
+  /* color: rgb(255, 255, 255); */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  /* background-color: rgba(22, 22, 22, 0.356); */
+  color: rgb(255, 255, 255) !important;
+  transform: translateY(-2px);
+}
+.swiper-button-next:active,
+.swiper-button-prev:active {
+  /* background-color: rgba(22, 22, 22, 0.356); */
+  color: rgb(22, 150, 255) !important;
+  transform: translateY(0px);
+}
+
+@media (max-width: 768px) {
+  .swiper-pagination-bullets {
+    display: none;
+  }
+}
+
+/* slick plug-in */
+
+.slider_container {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 200%;
+  left: -0%;
+  /* transform: translateX(-25%); */
+  position: absolute;
+  /* border: 1px solid black; */
+}
+
+.slider_container::after {
+  content: "";
+  height: 250px;
+  position: absolute;
+  top: -10%;
+  left: 0%;
+  width: 100px;
+  z-index: 2;
+  background: linear-gradient(
+    to right,
+    rgba(245, 245, 245, 1) 0%,
+    rgba(245, 245, 245, 0) 100%
+  );
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+.slick-track {
+  display: flex;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  display: none;
+}
+
+.slickPicture {
+  margin-bottom: 20%;
+}
+
+.slider-item.paused {
+  font-size: 1.375rem;
+  font-weight: bold;
+  margin-left: 25%;
+}
