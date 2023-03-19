@@ -5,14 +5,13 @@ import { useEffect } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
 
-
 export default function LoginPage() {
-  useEffect(() => {
-    axios
-      .get("/api/mission/missionCount")
-      .then((res) => console.log(res))
-      .catch((err) => console.error(err));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("/api/mission/missionCount")
+  //     .then((res) => console.log(res))
+  //     .catch((err) => console.error(err));
+  // }, []);
 
   return (
     <>

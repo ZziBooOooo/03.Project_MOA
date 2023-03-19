@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   const database = client.db("DataMoa");
   const userCollection = database.collection("user");
 
-  console.log(req.body.liked);
+  // console.log(req.body.liked);
 
   //otehrs 페이지 접속 시 DB에 저장된 유저들의 데이터를 받아온다.
   if (req.method === "GET") {
@@ -20,7 +20,7 @@ export default async function handler(req, res) {
 
   if (req.method === "POST" && req.body.liked == true) {
     console.log("추가");
-    console.log(req.body.liked);
+    // console.log(req.body.liked);
     try {
       const { likeData, currentUserId, currentName } = req.body;
 
@@ -30,7 +30,7 @@ export default async function handler(req, res) {
       };
       const update = { $inc: { "imgUrl.$.like": 1 } };
       userCollection.updateOne(filter, update, (err, res) => {
-        console.log(res.matchedCount); // 이미지 url과 이름이 동일한 결과의 수
+        // console.log(res.matchedCount); // 이미지 url과 이름이 동일한 결과의 수
         if (err) throw err;
         console.log(`document add complete`);
       });
@@ -57,7 +57,7 @@ export default async function handler(req, res) {
 
   if (req.method === "POST" && req.body.liked == false) {
     console.log("삭제");
-    console.log(req.body.liked);
+    // console.log(req.body.liked);
     try {
       const { likeData, currentUserId, currentName } = req.body;
       const filter = {
