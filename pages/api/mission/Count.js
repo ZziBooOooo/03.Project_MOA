@@ -4,7 +4,7 @@ import { connectToDatabase } from "@/database/connect";
 const CronJob = require("cron").CronJob;
 
 const job = new CronJob(
-  "50 3 * * *",
+  "0 0 * * *",
   async function () {
     console.log("일해라 working!!");
     const { client } = await connectToDatabase();
