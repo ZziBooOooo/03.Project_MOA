@@ -32,7 +32,7 @@ const Index = () => {
 
   // onClick 함수 실행
   const checkMissionCount = () => {
-    if (countNum < 50) {
+    if (countNum < 300) {
       router.push("/mission/missionModal");
     } else {
       router.push("/mission/missionEnd");
@@ -53,6 +53,8 @@ const Index = () => {
         </div>
         <div className={style.example}>
           <Image
+            className={style.exampleImg}
+            layout="resposive"
             src="/assets/images/mission/example.png"
             alt="example"
             width={650}

@@ -298,6 +298,7 @@
 .mainSection .description_container .description p {
   font-size: 1.75rem;
   font-weight: 500;
+  color: #727375;
 }
 .mainSection .alert {
   color: #727375;
@@ -665,17 +666,154 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .section03 .guide_container {
-    overflow: hidden;
+  .mainSection .description_container {
+    flex-direction: column;
+  }
+  .mainSection .description_container .description h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10%;
+    line-height: 1.2;
+  }
+  .mainSection .description_container .description p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 10%;
+    color: #727375;
+  }
+  .mainSection .description_container .example .exampleImg {
+    width: 100%;
+    height: 45%;
+  }
+  .mainSection .alert {
+    margin-top: 10vh;
+  }
+  .mainSection button {
+    font-size: 1.2rem;
+    width: 180px;
+    height: 50px;
+  }
+  .missionSuccess .slogan {
+    text-align: center;
+  }
+  .missionSuccess .reward {
+    font-size: 1.3rem;
+  }
+  .missionRetry .slogan {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .missionRetry button {
+    margin-top: 10%;
+  }
+  .missionEnd .slogan {
+    font-size: 2.5rem;
+  }
+  .missionCoinBox {
+    width: 70%;
+  }
+  .missionCoinBox > p {
+    margin-bottom: 20%;
+  }
+  .missionCoinBox .missionCoinBox_item li {
+    width: 30%;
+    height: 150px;
+  }
+  .missionDiaryBox .titleBox h2 {
+    font-size: 2rem;
+  }
+  .missionDiaryBox .titleBox .bookIcon {
+    width: 50px;
+    height: 54px;
+  }
+  .missionDiaryBox p {
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 767px) {
-  .section03 .guide_container {
-    overflow: hidden;
+  .mainSection .description_container {
+    flex-direction: column;
   }
-}
-@media (max-width: 479px) {
-  .section03 .guide_container {
-    overflow: hidden;
+  .mainSection .description_container .description h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10%;
+    line-height: 1.2;
+  }
+  .mainSection .description_container .description p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 10%;
+    color: #727375;
+  }
+  .mainSection .description_container .example .exampleImg {
+    width: 100%;
+    height: 45%;
+  }
+  .mainSection .alert {
+    margin-top: 10vh;
+  }
+  .mainSection button {
+    font-size: 1.2rem;
+    width: 180px;
+    height: 50px;
+  }
+  .missionSuccess .slogan {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  .missionSuccess .reward {
+    font-size: 1.3rem;
+  }
+  .missionSuccess button {
+    width: 250px;
+  }
+  .missionRetry .slogan {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  .missionRetry button {
+    margin-top: 20%;
+    width: 250px;
+  }
+  .missionEnd .slogan {
+    font-size: 2rem;
+  }
+  .missionEnd .end_message {
+    font-size: 1.6rem;
+  }
+  .missionCatchBox .canvas {
+    height: 60%;
+  }
+  .missionCoinBox > h2 {
+    font-size: 2rem;
+  }
+  .missionCoinBox > p {
+    font-size: 1rem;
+    margin-bottom: 15%;
+  }
+  .missionCoinBox .missionCoinBox_item {
+    flex-direction: column;
+  }
+  .missionCoinBox .missionCoinBox_item li {
+    justify-content: center;
+    width: 100%;
+    height: 160px;
+    margin-bottom: 5%;
+    border-radius: 20px;
+  }
+  .missionDiaryBox {
+    padding: 5%;
+  }
+  .missionDiaryBox .titleBox h2 {
+    font-size: 1.2rem;
+  }
+  .missionDiaryBox .titleBox .bookIcon {
+    width: 28px;
+    height: 32px;
+  }
+  .missionDiaryBox p {
+    font-size: 1.3rem;
+    overflow-wrap: anywhere;
   }
 }/*# sourceMappingURL=mission.module.css.map */

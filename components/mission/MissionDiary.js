@@ -44,6 +44,7 @@ const MissionDiary = () => {
       <div className={style.titleBox}>
         <h2>오늘은 나에게 어떤 의미인가요?</h2>
         <Image
+          className={style.bookIcon}
           src="/assets/images/mission/book.png"
           alt="book"
           width={60}
