@@ -25,11 +25,10 @@
   row-gap: 0.5%;
 }
 .myalbumContent .myalbum_img {
-  width: 17%;
-  height: 235px;
+  width: 205px;
+  height: 205px;
   border-radius: 16px;
   position: relative;
-  perspective: 17%;
 }
 .myalbumContent .myalbum_img:hover .myalbum_front {
   transform: rotateY(180deg);
@@ -39,7 +38,6 @@
 }
 .myalbumContent .myalbum_img .myalbum_front {
   width: 100%;
-  height: 100%;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   transition: 0.8s;
@@ -50,8 +48,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: auto;
+  height: 205px;
   display: block;
   box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
   border-radius: 16px;
@@ -60,8 +57,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 204px;
+  width: 205px;
+  height: 205px;
   background-color: aliceblue;
   box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
   border-radius: 16px;
@@ -89,5 +86,252 @@
 }
 
 /* ================================================================ */
-/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
-/* 767px *//*# sourceMappingURL=myalbumcontent.module.css.map */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .myalbumContent {
+    margin-top: 80px;
+    margin-bottom: 120px;
+    width: 100%;
+    font-family: "Pretendard-Regular";
+  }
+  .myalbumContent .noData > P {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #817a7a;
+  }
+  .myalbumContent .myalbum_box {
+    width: 63%;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .myalbumContent .myalbum_img {
+    width: 205px;
+    height: 205px;
+    border-radius: 16px;
+    position: relative;
+  }
+  .myalbumContent .myalbum_img:hover .myalbum_front {
+    transform: rotateY(180deg);
+  }
+  .myalbumContent .myalbum_img:hover .myalbum_back {
+    transform: rotateY(0deg);
+  }
+  .myalbumContent .myalbum_img .myalbum_front {
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    transition: 0.8s;
+    position: absolute;
+    transform: rotateY(0deg);
+  }
+  .myalbumContent .myalbum_img .myalbum_front > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 205px;
+    display: block;
+    box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+    border-radius: 16px;
+  }
+  .myalbumContent .myalbum_img .myalbum_back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 205px;
+    height: 205px;
+    background-color: aliceblue;
+    box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+    border-radius: 16px;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    transition: 0.8s;
+    transform: rotateY(-180deg);
+  }
+  .myalbumContent .myalbum_img .myalbum_back > p {
+    font-size: 1.2rem;
+    margin: 60px auto 25px;
+    width: 80%;
+    text-align: center;
+    font-weight: bold;
+    color: #3e4041;
+  }
+  .myalbumContent .myalbum_img .myalbum_back > button {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    height: 31.38px;
+    background-color: #2288ff;
+    color: azure;
+    border-radius: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .myalbumContent {
+    margin-top: 80px;
+    margin-bottom: 120px;
+    width: 100%;
+    font-family: "Pretendard-Regular";
+  }
+  .myalbumContent .noData > P {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #817a7a;
+  }
+  .myalbumContent .myalbum_box {
+    width: 63%;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .myalbumContent .myalbum_img {
+    width: 140px;
+    height: 140px;
+    border-radius: 16px;
+    position: relative;
+  }
+  .myalbumContent .myalbum_img:hover .myalbum_front {
+    transform: rotateY(180deg);
+  }
+  .myalbumContent .myalbum_img:hover .myalbum_back {
+    transform: rotateY(0deg);
+  }
+  .myalbumContent .myalbum_img .myalbum_front {
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    transition: 0.8s;
+    position: absolute;
+    transform: rotateY(0deg);
+  }
+  .myalbumContent .myalbum_img .myalbum_front > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 140px;
+    display: block;
+    box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+    border-radius: 16px;
+  }
+  .myalbumContent .myalbum_img .myalbum_back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 140px;
+    background-color: aliceblue;
+    box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+    border-radius: 16px;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    transition: 0.8s;
+    transform: rotateY(-180deg);
+  }
+  .myalbumContent .myalbum_img .myalbum_back > p {
+    font-size: 0.8rem;
+    margin: 40px auto 25px;
+    width: 80%;
+    text-align: center;
+    font-weight: bold;
+    color: #3e4041;
+  }
+  .myalbumContent .myalbum_img .myalbum_back > button {
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+    height: 25px;
+    background-color: #2288ff;
+    color: azure;
+    border-radius: 30px;
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 479px) {
+  .myalbumContent {
+    margin-top: -90px;
+    margin-bottom: 0px;
+    width: 100%;
+    font-family: "Pretendard-Regular";
+  }
+  .myalbumContent .noData > P {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #817a7a;
+  }
+  .myalbumContent .myalbum_box {
+    width: 63%;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .myalbumContent .myalbum_img {
+    width: 100px;
+    height: 100px;
+    border-radius: 16px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .myalbumContent .myalbum_img:hover .myalbum_front {
+    transform: rotateY(180deg);
+  }
+  .myalbumContent .myalbum_img:hover .myalbum_back {
+    transform: rotateY(0deg);
+  }
+  .myalbumContent .myalbum_img .myalbum_front {
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    transition: 0.8s;
+    position: absolute;
+    transform: rotateY(0deg);
+  }
+  .myalbumContent .myalbum_img .myalbum_front > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+    display: block;
+    box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+    border-radius: 16px;
+  }
+  .myalbumContent .myalbum_img .myalbum_back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: aliceblue;
+    box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+    border-radius: 16px;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    transition: 0.8s;
+    transform: rotateY(-180deg);
+  }
+  .myalbumContent .myalbum_img .myalbum_back > p {
+    font-size: 0.6rem;
+    margin: 30px auto 15px;
+    width: 80%;
+    text-align: center;
+    font-weight: bold;
+    color: #3e4041;
+  }
+  .myalbumContent .myalbum_img .myalbum_back > button {
+    display: block;
+    margin: 0 auto;
+    width: 70px;
+    height: 20px;
+    background-color: #2288ff;
+    color: azure;
+    border-radius: 30px;
+    font-size: 0.6rem;
+  }
+}/*# sourceMappingURL=myalbumcontent.module.css.map */
