@@ -61,7 +61,6 @@ const Header = () => {
     backgroundColor:
       scrollPosition > 100 ? "rgba(255, 255, 255)" : "transparent",
     borderBottom: scrollPosition > 100 ? "1px solid #E2E8EE" : "transparent",
-    backdropFilter: scrollPosition > 100 ? "blur(30px)" : "blur(0px)",
   };
 
   return (
@@ -169,8 +168,52 @@ const Header = () => {
               </div>
             </>
           ) : (
-            <p onClick={() => router.push("/login")}>로그인</p>
+            <p
+              onClick={() => router.push("/login")}
+              className={style.mobileShow}
+            >
+              로그인
+            </p>
           )}
+        </div>
+      </div>
+      <div className={style.mobileMenu}>
+        <div>
+          <p
+            onClick={() => {
+              router.push("/mission");
+            }}
+          >
+            미션하기
+          </p>
+          <p
+            onClick={() => {
+              router.push("/buypage");
+            }}
+          >
+            구매하기
+          </p>
+          <p
+            onClick={() => {
+              router.push("/generate");
+            }}
+          >
+            만들기
+          </p>
+          <p
+            onClick={() => {
+              router.push("/myalbum");
+            }}
+          >
+            앨범
+          </p>
+          <p
+            onClick={() => {
+              router.push("/generate/others");
+            }}
+          >
+            좋아요
+          </p>
         </div>
       </div>
     </div>
