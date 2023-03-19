@@ -53,6 +53,8 @@ const Index = () => {
         </div>
         <div className={style.example}>
           <Image
+            className={style.exampleImg}
+            layout="resposive"
             src="/assets/images/mission/example.png"
             alt="example"
             width={650}

@@ -33,8 +33,8 @@ const MissionCatch = () => {
 
       const moveTargetGhost = () => {
         // const y = (Math.random() * (canvasTarget.bottom - canvasTarget.top)) + (canvasTarget.bottom - canvasTarget.top);
-        const y = (Math.random() * ((canvasTarget.height) - 80)) ;
-        const x = (Math.random() * ((canvasTarget.width) - 80));
+        const y = (Math.random() * ((canvasTarget.height) - targetGhostHeight)) ;
+        const x = (Math.random() * ((canvasTarget.width) - targetGhostWidth));
         console.log(x, y)
         setTargetGhostPosition({ x, y });
       };
