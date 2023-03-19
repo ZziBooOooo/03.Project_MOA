@@ -20,7 +20,7 @@ const Header = () => {
 
   const userWord =
     typeof window !== "undefined" && window.sessionStorage.getItem("userData")
-      ? window.sessionStorage.getItem("totalWordCount") || "null"
+      ? window.sessionStorage.getItem("totalWordCount") || null
       : null;
 
   useEffect(() => {
