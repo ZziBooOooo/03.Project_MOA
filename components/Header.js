@@ -10,7 +10,7 @@ import { signOut } from "next-auth/react";
 const Header = () => {
   const router = useRouter();
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [selectedPage, setSelectedPage] = useState(0);
+  const [selectedPage, setSelectedPage] = useState(null);
   const { userData } = useContext(buyContext);
 
   const userCoin =
@@ -22,8 +22,6 @@ const Header = () => {
     typeof window !== "undefined" && window.sessionStorage.getItem("userData")
       ? JSON.parse(window.sessionStorage.getItem("totalWordCount")) || null
       : null;
-
-  console.log(userData);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,6 +53,10 @@ const Header = () => {
     }
   };
 
+  function resetSelectPage() {
+    setSelectedPage(null);
+  }
+
   const headerStyle = {
     backgroundColor:
       scrollPosition > 100 ? "rgba(255, 255, 255)" : "transparent",
@@ -65,7 +67,13 @@ const Header = () => {
   return (
     <div className={style.headerBox} style={headerStyle}>
       <div className={style.headerContainer}>
-        <div className={style.header_leftBox} onClick={() => router.push("/")}>
+        <div
+          className={style.header_leftBox}
+          onClick={() => {
+            router.push("/");
+            resetSelectPage();
+          }}
+        >
           {/* <p><img src="@/public/assets/images/logo.png"/></p> */}
           <Image
             src={logo}
