@@ -113,6 +113,20 @@
     transform: scale(1);
   }
 }
+@-webkit-keyframes tests {
+  0% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 @keyframes tests {
   0% {
     transform: scale(0);
@@ -168,6 +182,23 @@
 .banner_box .moaicon2 .te {
   -webkit-animation: test ease 0.5s;
           animation: test ease 0.5s;
+}
+@-webkit-keyframes test {
+  0% {
+    transform: scale(0) translateY(-100px);
+  }
+  25% {
+    transform: scale(0.3);
+  }
+  75% {
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 @-webkit-keyframes test {
   0% {
@@ -456,16 +487,6 @@
     top: 30%;
     left: 16%;
   }
-  @-webkit-keyframes liani {
-    0% {
-      top: 30%;
-      left: 16%;
-    }
-    100% {
-      top: 32%;
-      left: 16%;
-    }
-  }
   @keyframes liani {
     0% {
       top: 30%;
@@ -481,20 +502,6 @@
        object-fit: contain;
     -webkit-animation: test ease 0.6s;
             animation: test ease 0.6s;
-  }
-  @-webkit-keyframes tests {
-    0% {
-      transform: scale(0);
-    }
-    75% {
-      transform: scale(1);
-    }
-    90% {
-      transform: scale(0.8);
-    }
-    100% {
-      transform: scale(1);
-    }
   }
   @keyframes tests {
     0% {
@@ -521,16 +528,6 @@
     animation-direction: alternate-reverse;
     width: 8%;
   }
-  @-webkit-keyframes liani2 {
-    0% {
-      top: 70%;
-      left: 30%;
-    }
-    100% {
-      top: 72%;
-      left: 30%;
-    }
-  }
   @keyframes liani2 {
     0% {
       top: 70%;
@@ -551,23 +548,6 @@
   .banner_box .moaicon2 .te {
     -webkit-animation: test ease 0.5s;
             animation: test ease 0.5s;
-  }
-  @-webkit-keyframes test {
-    0% {
-      transform: scale(0) translateY(-100px);
-    }
-    25% {
-      transform: scale(0.3);
-    }
-    75% {
-      transform: scale(1);
-    }
-    90% {
-      transform: scale(0.8);
-    }
-    100% {
-      transform: scale(1);
-    }
   }
   @keyframes test {
     0% {
@@ -596,16 +576,6 @@
     right: 22%;
     top: 60%;
     width: 7.5%;
-  }
-  @-webkit-keyframes liani3 {
-    0% {
-      right: 22%;
-      top: 60%;
-    }
-    100% {
-      right: 22%;
-      top: 62%;
-    }
   }
   @keyframes liani3 {
     0% {
@@ -840,16 +810,6 @@
     top: 30%;
     left: 16%;
   }
-  @-webkit-keyframes liani {
-    0% {
-      top: 30%;
-      left: 16%;
-    }
-    100% {
-      top: 32%;
-      left: 16%;
-    }
-  }
   @keyframes liani {
     0% {
       top: 30%;
@@ -865,20 +825,6 @@
        object-fit: contain;
     -webkit-animation: test ease 0.6s;
             animation: test ease 0.6s;
-  }
-  @-webkit-keyframes tests {
-    0% {
-      transform: scale(0);
-    }
-    75% {
-      transform: scale(1);
-    }
-    90% {
-      transform: scale(0.8);
-    }
-    100% {
-      transform: scale(1);
-    }
   }
   @keyframes tests {
     0% {
@@ -905,16 +851,6 @@
     animation-direction: alternate-reverse;
     width: 8%;
   }
-  @-webkit-keyframes liani2 {
-    0% {
-      top: 70%;
-      left: 30%;
-    }
-    100% {
-      top: 72%;
-      left: 30%;
-    }
-  }
   @keyframes liani2 {
     0% {
       top: 70%;
@@ -935,23 +871,6 @@
   .banner_box .moaicon2 .te {
     -webkit-animation: test ease 0.5s;
             animation: test ease 0.5s;
-  }
-  @-webkit-keyframes test {
-    0% {
-      transform: scale(0) translateY(-100px);
-    }
-    25% {
-      transform: scale(0.3);
-    }
-    75% {
-      transform: scale(1);
-    }
-    90% {
-      transform: scale(0.8);
-    }
-    100% {
-      transform: scale(1);
-    }
   }
   @keyframes test {
     0% {
@@ -980,16 +899,6 @@
     right: 22%;
     top: 60%;
     width: 7.5%;
-  }
-  @-webkit-keyframes liani3 {
-    0% {
-      right: 22%;
-      top: 60%;
-    }
-    100% {
-      right: 22%;
-      top: 62%;
-    }
   }
   @keyframes liani3 {
     0% {
@@ -1087,12 +996,19 @@
     align-items: center;
     width: 7%;
   }
+
   .content_box .content_item .content_coinlist .content_coinlist_top .coin_count > img {
+
     width: 30px;
     height: 30px;
     margin-right: 10px;
   }
-  .content_box .content_item .content_coinlist .content_coinlist_top .coin_count > span {
+  .content_box
+    .content_item
+    .content_coinlist
+    .content_coinlist_top
+    .coin_count
+    > span {
     font-size: 0.8rem;
     font-weight: bold;
     color: #353535;
@@ -1215,26 +1131,14 @@
     line-height: 58px;
   }
   .banner_box .moaicon1 {
-    -webkit-animation: liani ease-in-out 0.5s;
-            animation: liani ease-in-out 0.5s;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
+    animation: liani ease-in-out 0.5s;
+    animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
     position: absolute;
     width: 7%;
     top: 30%;
     left: 16%;
     display: none;
-  }
-  @-webkit-keyframes liani {
-    0% {
-      top: 30%;
-      left: 16%;
-    }
-    100% {
-      top: 32%;
-      left: 16%;
-    }
   }
   @keyframes liani {
     0% {
@@ -1248,23 +1152,8 @@
   }
   .banner_box .moaicon1 > img {
     -o-object-fit: contain;
-       object-fit: contain;
-    -webkit-animation: test ease 0.6s;
-            animation: test ease 0.6s;
-  }
-  @-webkit-keyframes tests {
-    0% {
-      transform: scale(0);
-    }
-    75% {
-      transform: scale(1);
-    }
-    90% {
-      transform: scale(0.8);
-    }
-    100% {
-      transform: scale(1);
-    }
+    object-fit: contain;
+    animation: test ease 0.6s;
   }
   @keyframes tests {
     0% {
@@ -1284,23 +1173,11 @@
     position: absolute;
     top: 70%;
     left: 30%;
-    -webkit-animation: liani2 ease-in-out 0.5s;
-            animation: liani2 ease-in-out 0.5s;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
+    animation: liani2 ease-in-out 0.5s;
+    animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
     width: 8%;
     display: none;
-  }
-  @-webkit-keyframes liani2 {
-    0% {
-      top: 70%;
-      left: 30%;
-    }
-    100% {
-      top: 72%;
-      left: 30%;
-    }
   }
   @keyframes liani2 {
     0% {
@@ -1317,28 +1194,10 @@
     transform: scale(0);
     opacity: 0;
     -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
   }
   .banner_box .moaicon2 .te {
-    -webkit-animation: test ease 0.5s;
-            animation: test ease 0.5s;
-  }
-  @-webkit-keyframes test {
-    0% {
-      transform: scale(0) translateY(-100px);
-    }
-    25% {
-      transform: scale(0.3);
-    }
-    75% {
-      transform: scale(1);
-    }
-    90% {
-      transform: scale(0.8);
-    }
-    100% {
-      transform: scale(1);
-    }
+    animation: test ease 0.5s;
   }
   @keyframes test {
     0% {
@@ -1358,26 +1217,14 @@
     }
   }
   .banner_box > .moaicon3 {
-    -webkit-animation: liani3 ease-in-out 0.5s;
-            animation: liani3 ease-in-out 0.5s;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
+    animation: liani3 ease-in-out 0.5s;
+    animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
     position: absolute;
     right: 22%;
     top: 60%;
     width: 7.5%;
     display: none;
-  }
-  @-webkit-keyframes liani3 {
-    0% {
-      right: 22%;
-      top: 60%;
-    }
-    100% {
-      right: 22%;
-      top: 62%;
-    }
   }
   @keyframes liani3 {
     0% {
@@ -1398,10 +1245,9 @@
     opacity: 0;
   }
   .banner_box > .moaicon3 .so {
-    -webkit-animation: test ease 0.5s;
-            animation: test ease 0.5s;
+    animation: test ease 0.5s;
     -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
   }
   @keyframes test {
     0% {
@@ -1444,7 +1290,9 @@
     height: 426px;
     border-radius: 20px;
     background-color: white;
-    box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+    box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05),
+      0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05),
+      0 12px 24px rgba(145, 145, 145, 0.05);
     /* 컨텐츠 영역 상단 부분 */
     /* 컨텐츠 영역 하단 부분 */
   }
@@ -1456,32 +1304,60 @@
     justify-content: space-between;
     flex-wrap: wrap;
   }
-  .content_box .content_item .content_coinlist .content_coinlist_top .check_list {
+  .content_box
+    .content_item
+    .content_coinlist
+    .content_coinlist_top
+    .check_list {
     display: flex;
     width: 100%;
   }
-  .content_box .content_item .content_coinlist .content_coinlist_top .check_list > img {
+  .content_box
+    .content_item
+    .content_coinlist
+    .content_coinlist_top
+    .check_list
+    > img {
     width: 30px;
     height: 30px;
   }
-  .content_box .content_item .content_coinlist .content_coinlist_top .check_list > p {
+  .content_box
+    .content_item
+    .content_coinlist
+    .content_coinlist_top
+    .check_list
+    > p {
     margin-left: 5px;
     font-size: 0.8rem;
     font-weight: bold;
     color: #4a4a4a;
   }
-  .content_box .content_item .content_coinlist .content_coinlist_top .coin_count {
+  .content_box
+    .content_item
+    .content_coinlist
+    .content_coinlist_top
+    .coin_count {
     display: flex;
     align-items: center;
     width: 7%;
     display: none;
   }
-  .content_box .content_item .content_coinlist .content_coinlist_top .coin_count > img {
+  .content_box
+    .content_item
+    .content_coinlist
+    .content_coinlist_top
+    .coin_count
+    > img {
     width: 30px;
     height: 30px;
     margin-right: 10px;
   }
-  .content_box .content_item .content_coinlist .content_coinlist_top .coin_count > span {
+  .content_box
+    .content_item
+    .content_coinlist
+    .content_coinlist_top
+    .coin_count
+    > span {
     font-size: 0.8rem;
     font-weight: bold;
     color: #353535;
@@ -1506,33 +1382,59 @@
     background-color: #e6f3ff;
     height: 75px;
     border-radius: 5px;
-    box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+    box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05),
+      0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05),
+      0 12px 24px rgba(145, 145, 145, 0.05);
     cursor: pointer;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
   }
-  .content_box .content_item .content_coinlist .content_coinlist_bot .coin2:hover {
+  .content_box
+    .content_item
+    .content_coinlist
+    .content_coinlist_bot
+    .coin2:hover {
     transition: 0.3s;
     background-color: #3f8efc;
   }
-  .content_box .content_item .content_coinlist .content_coinlist_bot .coin2:hover > p {
+  .content_box
+    .content_item
+    .content_coinlist
+    .content_coinlist_bot
+    .coin2:hover
+    > p {
     color: #e6f3ff;
     transition: 0.3s;
   }
-  .content_box .content_item .content_coinlist .content_coinlist_bot .coin2:hover > span {
+  .content_box
+    .content_item
+    .content_coinlist
+    .content_coinlist_bot
+    .coin2:hover
+    > span {
     color: #e6f3ff;
     transition: 0.3s;
   }
-  .content_box .content_item .content_coinlist .content_coinlist_bot .coin2 > img {
+  .content_box
+    .content_item
+    .content_coinlist
+    .content_coinlist_bot
+    .coin2
+    > img {
     width: 30px;
     height: 30px;
     margin: 0;
     margin-top: 15px;
     margin-left: 15px;
   }
-  .content_box .content_item .content_coinlist .content_coinlist_bot .coin2 > p {
+  .content_box
+    .content_item
+    .content_coinlist
+    .content_coinlist_bot
+    .coin2
+    > p {
     color: #4c9eff;
     font-size: 1rem;
     font-weight: bold;
@@ -1540,7 +1442,12 @@
     margin-top: 15px;
     margin-left: 10px;
   }
-  .content_box .content_item .content_coinlist .content_coinlist_bot .coin2 > span {
+  .content_box
+    .content_item
+    .content_coinlist
+    .content_coinlist_bot
+    .coin2
+    > span {
     width: 70%;
     margin-left: 30px;
     margin-top: -8%;
@@ -1549,4 +1456,7 @@
     font-size: 0.6rem;
   }
   /* ======== 구매 컨텐츠  카테고리 =================== */
-}/*# sourceMappingURL=buy.module.css.map */
+
+} /*# sourceMappingURL=buy.module.css.map */
+
+

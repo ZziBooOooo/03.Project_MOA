@@ -122,10 +122,11 @@
     justify-content: center;
   }
   .myalbum_banner .myalbum_phone {
-    width: 40%;
+    width: 50%;
     height: 100%;
     margin-top: 15%;
     display: flex;
+    justify-content: center;
   }
   .myalbum_banner .myalbum_phone .phoneImg01 {
     display: block;
@@ -133,12 +134,12 @@
     transform: translateY(750px);
     transition: 1.3s;
     opacity: 0;
-    width: 40%;
+    width: 60%;
     -o-object-fit: contain;
        object-fit: contain;
   }
   .myalbum_banner .myalbum_phone .phoneImg02 {
-    display: block;
+    display: none;
     margin-top: 20%;
     margin-right: 20px;
     transform: translateY(600px);
@@ -149,7 +150,7 @@
        object-fit: contain;
   }
   .myalbum_banner .myalbum_textbox {
-    width: 26%;
+    width: 50%;
     opacity: 0;
     transition: 2.6s;
   }
@@ -161,9 +162,8 @@
   .myalbum_banner .myalbum_textbox > p {
     font-size: 1rem;
     font-weight: 600;
-    padding-top: 30px;
+    padding-top: 10px;
     color: #bababa;
-    margin-left: 8px;
   }
 }
 @media (max-width: 479px) {

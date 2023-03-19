@@ -7,7 +7,7 @@
   font-family: "Pretendard-Regular";
 
   .Category_box {
-    width: 63%;
+    width: 70%;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -20,11 +20,15 @@
       height: 50px;
       background: #fff;
       box-shadow: $grayBGshadow;
-      border-radius: 20px;
+      border-radius: 24px;
       text-align: center;
       line-height: 50px;
       color: #8e8b8b;
       font-weight: bold;
+    }
+
+    li:last-child {
+      width: 15%;
     }
   }
 }
@@ -38,7 +42,7 @@
     font-family: "Pretendard-Regular";
 
     .Category_box {
-      width: 63%;
+      width: 70%;
       height: 100%;
       margin: 0 auto;
       display: flex;
@@ -48,15 +52,19 @@
       > li {
         cursor: pointer;
         width: 14.5%;
+        padding: 0px 5px;
         height: 50px;
         background: #fff;
         box-shadow: $grayBGshadow;
-        border-radius: 20px;
+        border-radius: 24px;
         text-align: center;
         line-height: 50px;
         color: #8e8b8b;
         font-weight: bold;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
+      }
+      li:last-child {
+        width: 18%;
       }
     }
   }
@@ -68,10 +76,12 @@
     background-color: #f7f7f7;
     height: 200px;
     font-family: "Pretendard-Regular";
+    display: flex;
+    align-items: center;
 
     .Category_box {
-      width: 63%;
-      height: 100%;
+      width: 70%;
+      height: 80%;
       margin: 0 auto;
       display: flex;
       list-style: none;
@@ -80,16 +90,20 @@
       flex-wrap: wrap;
       > li {
         cursor: pointer;
-        width: 25%;
+        width: 30%;
         height: 50px;
         background: #fff;
         box-shadow: $grayBGshadow;
-        border-radius: 20px;
+        border-radius: 24px;
         text-align: center;
         line-height: 50px;
         color: #8e8b8b;
         font-weight: bold;
-        font-size: 0.6rem;
+        font-size: 0.9rem;
+      }
+
+      li:last-child {
+        width: 30%;
       }
     }
   }
@@ -103,7 +117,7 @@
     font-family: "Pretendard-Regular";
 
     .Category_box {
-      width: 63%;
+      width: 80%;
       height: 100%;
       margin: 0 auto;
       display: flex;
@@ -114,15 +128,15 @@
       > li {
         cursor: pointer;
         width: 30%;
-        height: 50px;
+        height: 40px;
         background: #fff;
         box-shadow: $grayBGshadow;
-        border-radius: 20px;
+        border-radius: 24px;
         text-align: center;
-        line-height: 50px;
+        line-height: 40px;
         color: #8e8b8b;
         font-weight: bold;
-        font-size: 0.6rem;
+        font-size: 0.8rem;
       }
     }
   }

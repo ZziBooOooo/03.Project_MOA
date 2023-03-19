@@ -8,7 +8,7 @@
   font-family: "Pretendard-Regular";
 }
 .myalbumCategory .Category_box {
-  width: 63%;
+  width: 70%;
   height: 100%;
   margin: 0 auto;
   display: flex;
@@ -22,11 +22,14 @@
   height: 50px;
   background: #fff;
   box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
-  border-radius: 20px;
+  border-radius: 24px;
   text-align: center;
   line-height: 50px;
   color: #8e8b8b;
   font-weight: bold;
+}
+.myalbumCategory .Category_box li:last-child {
+  width: 15%;
 }
 
 /* ================================================================ */
@@ -38,7 +41,7 @@
     font-family: "Pretendard-Regular";
   }
   .myalbumCategory .Category_box {
-    width: 63%;
+    width: 70%;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -49,15 +52,19 @@
   .myalbumCategory .Category_box > li {
     cursor: pointer;
     width: 14.5%;
+    padding: 0px 5px;
     height: 50px;
     background: #fff;
     box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
-    border-radius: 20px;
+    border-radius: 24px;
     text-align: center;
     line-height: 50px;
     color: #8e8b8b;
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+  }
+  .myalbumCategory .Category_box li:last-child {
+    width: 18%;
   }
 }
 @media (max-width: 767px) {
@@ -66,10 +73,12 @@
     background-color: #f7f7f7;
     height: 200px;
     font-family: "Pretendard-Regular";
+    display: flex;
+    align-items: center;
   }
   .myalbumCategory .Category_box {
-    width: 63%;
-    height: 100%;
+    width: 70%;
+    height: 80%;
     margin: 0 auto;
     display: flex;
     list-style: none;
@@ -79,16 +88,19 @@
   }
   .myalbumCategory .Category_box > li {
     cursor: pointer;
-    width: 25%;
+    width: 30%;
     height: 50px;
     background: #fff;
     box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
-    border-radius: 20px;
+    border-radius: 24px;
     text-align: center;
     line-height: 50px;
     color: #8e8b8b;
     font-weight: bold;
-    font-size: 0.6rem;
+    font-size: 0.9rem;
+  }
+  .myalbumCategory .Category_box li:last-child {
+    width: 30%;
   }
 }
 @media (max-width: 479px) {
@@ -99,7 +111,7 @@
     font-family: "Pretendard-Regular";
   }
   .myalbumCategory .Category_box {
-    width: 63%;
+    width: 80%;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -111,14 +123,14 @@
   .myalbumCategory .Category_box > li {
     cursor: pointer;
     width: 30%;
-    height: 50px;
+    height: 40px;
     background: #fff;
     box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
-    border-radius: 20px;
+    border-radius: 24px;
     text-align: center;
-    line-height: 50px;
+    line-height: 40px;
     color: #8e8b8b;
     font-weight: bold;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
 }/*# sourceMappingURL=myalbumcategory.module.css.map */

@@ -27,6 +27,19 @@
   margin: 80px auto 0;
   cursor: pointer;
 }
+.loginBack .loginBox div:nth-of-type(2) img {
+  transition: 0.3s;
+}
+.loginBack .loginBox div:nth-of-type(2) img:hover {
+  transform: translateY(-5px);
+}
+.loginBack .loginBox div:nth-of-type(2) img:active {
+  transform: translateY(0px);
+}
+.loginBack .loginBox > img {
+  transition: 0.3s;
+}
+
 /* ============================================================== */
 @media (min-width: 768px) and (max-width: 1023px) {
   .loginBack {

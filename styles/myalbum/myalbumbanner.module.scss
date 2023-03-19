@@ -124,10 +124,12 @@
     justify-content: center;
 
     .myalbum_phone {
-      width: 40%;
+      width: 50%;
       height: 100%;
       margin-top: 15%;
       display: flex;
+      // align-items: center;
+      justify-content: center;
 
       .phoneImg01 {
         display: block;
@@ -135,11 +137,12 @@
         transform: translateY(750px);
         transition: 1.3s;
         opacity: 0;
-        width: 40%;
+        width: 60%;
         object-fit: contain;
       }
       .phoneImg02 {
-        display: block;
+        display: none;
+        // display: block;
         margin-top: 20%;
         margin-right: 20px;
         transform: translateY(600px);
@@ -150,10 +153,9 @@
       }
     }
     .myalbum_textbox {
-      width: 26%;
+      width: 50%;
       opacity: 0;
       transition: 2.6s;
-
       > h3 {
         font-size: 2rem;
         font-weight: bold;
@@ -162,9 +164,9 @@
       > p {
         font-size: 1rem;
         font-weight: 600;
-        padding-top: 30px;
+        padding-top: 10px;
         color: #bababa;
-        margin-left: 8px;
+        // margin-left: 8px;
       }
     }
   }

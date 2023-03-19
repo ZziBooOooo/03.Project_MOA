@@ -29,6 +29,7 @@
   height: 205px;
   border-radius: 16px;
   position: relative;
+  cursor: pointer;
 }
 .myalbumContent .myalbum_img:hover .myalbum_front {
   transform: rotateY(180deg);
