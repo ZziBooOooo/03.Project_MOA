@@ -63,7 +63,10 @@
   display: flex;
   justify-content: center;
 }
-.headerBox .headerContainer .header_rightBox .profileWrap .myInfoDiv {
+.headerBox .headerContainer .header_rightBox .profileImg {
+  transition: 0.5s;
+}
+.headerBox .headerContainer .header_rightBox .myInfoDiv {
   width: 160px;
   height: 190px;
   padding-top: 10px;
@@ -74,43 +77,42 @@
   background-color: white;
   box-shadow: 5px 5px 15px rgb(192, 192, 192);
   z-index: 5;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: 0.5s;
   transform: translateY(-8px);
   transform-origin: 100% 0%;
-  opacity: 0;
 }
-.headerBox .headerContainer .header_rightBox .profileWrap .myInfoDiv hr {
+.headerBox .headerContainer .header_rightBox .hr {
   width: 80%;
   height: 2px;
   background-color: rgb(238, 238, 238);
   margin: 5px 0 8px 0;
   border: 0;
 }
-.headerBox .headerContainer .header_rightBox .profileWrap .myInfoDiv div {
+.headerBox .headerContainer .header_rightBox .profileWrap:hover .myInfoDiv {
+  display: flex;
+  transform: translateY(0px);
+  opacity: 1;
+}
+.headerBox .headerContainer .header_rightBox .profileWrap:hover .profileImg {
+  transform: scale(1.1);
+}
+.headerBox .headerContainer .header_rightBox .myInfoDiv div {
   width: 75%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
 }
-.headerBox .headerContainer .header_rightBox .profileWrap .myInfoDiv div:last-child p {
+.headerBox .headerContainer .header_rightBox .myInfoDiv div:last-child p {
   opacity: 0.5;
   transition: 0.2s;
 }
-.headerBox .headerContainer .header_rightBox .profileWrap .myInfoDiv div:last-child:hover p {
+.headerBox .headerContainer .header_rightBox .myInfoDiv div:last-child:hover p {
   opacity: 1;
-}
-.headerBox .headerContainer .header_rightBox .profileWrap:hover .myInfoDiv {
-  transform: translateY(0px);
-  opacity: 1;
-}
-.headerBox .headerContainer .header_rightBox .profileWrap:hover .profileImg {
-  transition: 0.5s;
-  transform: scale(1.1);
 }
 .headerBox .headerContainer .header_rightBox .selectedPage {
   font-weight: bold;
@@ -128,6 +130,9 @@
   border-radius: 24px;
   background-color: #d6ecf8;
 }
+.headerBox .mobileMenu {
+  display: none;
+}
 
 .footerBox {
   bottom: 0;
@@ -137,8 +142,7 @@
   color: #fff;
 }
 .footerBox .footerContainer {
-  max-width: 1200px;
-  width: 70vw;
+  width: 59.5vw;
   margin: 0 auto;
   padding-top: 6vh;
 }
@@ -154,4 +158,527 @@
 }
 .footerBox .footerContainer .footer_detail p a {
   text-decoration: underline;
+}
+
+/* ==================================================================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .headerBox {
+    z-index: 9000;
+    width: 100%;
+    font-family: "Pretendard-Regular";
+    color: #3b3d3f;
+    position: fixed;
+  }
+  .headerBox .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 0%;
+    max-width: 1200px;
+    width: 70vw;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .headerBox .headerContainer .header_leftBox {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+  }
+  .headerBox .headerContainer .header_leftBox > img {
+    width: 27px;
+  }
+  .headerBox .headerContainer .header_leftBox p {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  .headerBox .headerContainer .header_rightBox {
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+    align-items: center;
+    font-weight: bold;
+    height: 40px;
+  }
+  .headerBox .headerContainer .header_rightBox p {
+    position: relative;
+    cursor: pointer;
+    margin-left: 3%;
+    padding: 0.8% 3.5%;
+    font-size: 1rem;
+
+
+  }
+  .headerBox .headerContainer .header_rightBox .profileWrap {
+    position: relative;
+    cursor: pointer;
+    margin-left: 3%;
+    padding: 0.8% 3.5%;
+    min-width: 70px;
+    display: flex;
+    justify-content: center;
+  }
+  .headerBox .headerContainer .header_rightBox .profileWrap > img {
+    width: 32px;
+    height: 32px;
+  }
+  .headerBox .headerContainer .header_rightBox .profileImg {
+    transition: 0.5s;
+  }
+  .headerBox .headerContainer .header_rightBox .myInfoDiv {
+    width: 160px;
+    height: 190px;
+    padding-top: 10px;
+    position: absolute;
+    top: 110%;
+    left: 0%;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 5px 5px 15px rgb(192, 192, 192);
+    z-index: 5;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    transform: translateY(-8px);
+    transform-origin: 100% 0%;
+  }
+  .headerBox .headerContainer .header_rightBox .hr {
+    width: 80%;
+    height: 2px;
+    background-color: rgb(238, 238, 238);
+    margin: 5px 0 8px 0;
+    border: 0;
+  }
+  .headerBox .headerContainer .header_rightBox .profileWrap:hover .myInfoDiv {
+    display: flex;
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  .headerBox .headerContainer .header_rightBox .profileWrap:hover .profileImg {
+    transform: scale(1.1);
+  }
+  .headerBox .headerContainer .header_rightBox .myInfoDiv div {
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .headerBox .headerContainer .header_rightBox .myInfoDiv div:last-child p {
+    opacity: 0.5;
+    transition: 0.2s;
+  }
+  .headerBox .headerContainer .header_rightBox .myInfoDiv div:last-child:hover p {
+    opacity: 1;
+  }
+  .headerBox .headerContainer .header_rightBox .selectedPage {
+    font-weight: bold;
+  }
+  .headerBox .headerContainer .header_rightBox .selectedPage::after {
+    content: "";
+    display: block;
+    min-width: 50px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    border-radius: 24px;
+    background-color: #d6ecf8;
+  }
+  .mobileMenu {
+    display: none;
+  }
+  .footerBox {
+    bottom: 0;
+    width: 100%;
+    height: 31vh;
+    background-color: #2d3747;
+    color: #fff;
+  }
+  .footerBox .footerContainer {
+    max-width: 1200px;
+    width: 59.5vw;
+    margin: 0 auto;
+    padding-top: 6vh;
+  }
+  .footerBox .footerContainer .footer_title {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  .footerBox .footerContainer .footer_detail {
+    margin-top: 2%;
+  }
+  .footerBox .footerContainer .footer_detail p {
+    color: #bdb5b5;
+    font-size: 0.9rem;
+  }
+  .footerBox .footerContainer .footer_detail p a {
+    text-decoration: underline;
+  }
+}
+@media (max-width: 767px) {
+  .headerBox {
+    z-index: 9000;
+    width: 100%;
+    font-family: "Pretendard-Regular";
+    color: #3b3d3f;
+    position: fixed;
+  }
+  .headerBox .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 0%;
+    max-width: 1200px;
+    width: 90vw;
+
+    height: 100%;
+    margin: 0 auto;
+  }
+  .headerBox .headerContainer .header_leftBox {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+  }
+  .headerBox .headerContainer .header_leftBox > img {
+    width: 22px;
+  }
+  .headerBox .headerContainer .header_leftBox p {
+    display: block;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .headerBox .headerContainer .header_rightBox {
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+    align-items: center;
+    font-weight: bold;
+    height: 40px;
+  }
+  .headerBox .headerContainer .header_rightBox p {
+    position: relative;
+    cursor: pointer;
+    margin-left: 1%;
+    padding: 0.8% 3.5%;
+    font-size: 0.9rem;
+
+
+  .headerBox .headerContainer .header_rightBox .profileWrap {
+    position: relative;
+    cursor: pointer;
+    margin-left: 1%;
+    padding: 0.8% 3.5%;
+    min-width: 70px;
+    display: flex;
+    justify-content: center;
+  }
+  .headerBox .headerContainer .header_rightBox .profileWrap > img {
+    width: 25px;
+    height: 25px;
+  }
+  .headerBox .headerContainer .header_rightBox .profileImg {
+    transition: 0.5s;
+  }
+  .headerBox .headerContainer .header_rightBox .myInfoDiv {
+    width: 120px;
+    height: 170px;
+    padding-top: 10px;
+    position: absolute;
+    top: 110%;
+    left: 0%;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 5px 5px 15px rgb(192, 192, 192);
+    z-index: 5;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    transform: translateY(-8px);
+    transform-origin: 100% 0%;
+  }
+  .headerBox .headerContainer .header_rightBox .hr {
+    width: 80%;
+    height: 2px;
+    background-color: rgb(238, 238, 238);
+    margin: 5px 0 8px 0;
+    border: 0;
+  }
+  .headerBox .headerContainer .header_rightBox .profileWrap:hover .myInfoDiv {
+    display: flex;
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  .headerBox .headerContainer .header_rightBox .profileWrap:hover .profileImg {
+    transform: scale(1.1);
+  }
+  .headerBox .headerContainer .header_rightBox .myInfoDiv div {
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .headerBox .headerContainer .header_rightBox .myInfoDiv div img {
+    width: 20px;
+    height: 20px;
+  }
+  .headerBox .headerContainer .header_rightBox .myInfoDiv div:last-child p {
+    opacity: 0.5;
+    transition: 0.2s;
+  }
+  .headerBox .headerContainer .header_rightBox .myInfoDiv div:last-child:hover p {
+    opacity: 1;
+  }
+  .headerBox .headerContainer .header_rightBox .selectedPage {
+    font-weight: bold;
+  }
+  .headerBox .headerContainer .header_rightBox .selectedPage::after {
+    content: "";
+    display: block;
+    min-width: 30px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    border-radius: 24px;
+    background-color: #d6ecf8;
+  }
+  .mobileMenu {
+    display: none;
+  }
+  .footerBox {
+    bottom: 0;
+    width: 100%;
+    height: 31vh;
+    background-color: #2d3747;
+    color: #fff;
+  }
+  .footerBox .footerContainer {
+    max-width: 1200px;
+    width: 59.5vw;
+    margin: 0 auto;
+    padding-top: 6vh;
+  }
+  .footerBox .footerContainer .footer_title {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  .footerBox .footerContainer .footer_detail {
+    margin-top: 2%;
+  }
+  .footerBox .footerContainer .footer_detail p {
+    color: #bdb5b5;
+    font-size: 0.9rem;
+  }
+  .footerBox .footerContainer .footer_detail p a {
+    text-decoration: underline;
+  }
+}
+@media (max-width: 479px) {
+  .headerBox {
+    z-index: 9000;
+    width: 100%;
+    font-family: "Pretendard-Regular";
+    color: #3b3d3f;
+    position: fixed;
+  }
+  .headerBox .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 0%;
+    max-width: 1200px;
+    width: 70vw;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .headerBox .headerContainer .header_leftBox {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+  }
+  .headerBox .headerContainer .header_leftBox > img {
+    width: 22px;
+  }
+  .headerBox .headerContainer .header_leftBox p {
+    display: block;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .headerBox .headerContainer .header_rightBox {
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+    align-items: center;
+    font-weight: bold;
+    height: 40px;
+  }
+  .headerBox .headerContainer .header_rightBox > p {
+    position: relative;
+    cursor: pointer;
+    margin-left: 1%;
+    padding: 0.8% 3.5%;
+    font-size: 0.8rem;
+
+    display: none;
+  }
+  .headerBox .headerContainer .header_rightBox .mobileShow {
+    display: block;
+  }
+  .headerBox .headerContainer .header_rightBox .profileWrap {
+    position: relative;
+    cursor: pointer;
+    margin-left: 1%;
+    padding: 0.8% 3.5%;
+    min-width: 70px;
+    display: flex;
+    justify-content: center;
+  }
+  .headerBox .headerContainer .header_rightBox .profileWrap > img {
+    width: 25px;
+    height: 25px;
+  }
+  .headerBox .headerContainer .header_rightBox .profileImg {
+    transition: 0.5s;
+  }
+  .headerBox .headerContainer .header_rightBox .myInfoDiv {
+    width: 120px;
+    height: 140px;
+    padding-top: 10px;
+    position: absolute;
+    top: 110%;
+    left: 0%;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 5px 5px 15px rgb(192, 192, 192);
+    z-index: 5;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    transform: translateY(-8px);
+    transform-origin: 100% 0%;
+  }
+  .headerBox .headerContainer .header_rightBox .hr {
+    width: 80%;
+    height: 2px;
+    background-color: rgb(238, 238, 238);
+    margin: 5px 0 8px 0;
+    border: 0;
+  }
+  .headerBox .headerContainer .header_rightBox .profileWrap:hover .myInfoDiv {
+    display: flex;
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  .headerBox .headerContainer .header_rightBox .profileWrap:hover .profileImg {
+    transform: scale(1.1);
+  }
+  .headerBox .headerContainer .header_rightBox .myInfoDiv div {
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .headerBox .headerContainer .header_rightBox .myInfoDiv div img {
+    width: 20px;
+    height: 20px;
+  }
+  .headerBox .headerContainer .header_rightBox .myInfoDiv div:last-child p {
+    opacity: 0.5;
+    transition: 0.2s;
+  }
+  .headerBox .headerContainer .header_rightBox .myInfoDiv div:last-child:hover p {
+    opacity: 1;
+  }
+  .headerBox .headerContainer .header_rightBox .selectedPage {
+    font-weight: bold;
+  }
+  .headerBox .headerContainer .header_rightBox .selectedPage::after {
+    content: "";
+    display: block;
+    min-width: 30px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    border-radius: 24px;
+    background-color: #d6ecf8;
+  }
+  .headerBox .mobileMenu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    background: #ffffff;
+    box-shadow: 0px -4px 4px -4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 10px 0px 0px;
+  }
+  .headerBox .mobileMenu > div {
+    margin: 0 auto;
+    width: 80vw;
+
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+  }
+  .headerBox .mobileMenu > div > p {
+    font-family: "Pretendard-Regular";
+    font-size: 0.9em;
+    color: rgb(46, 46, 46);
+    font-weight: bold;
+    cursor: pointer;
+
+  }
+  .footerBox {
+    bottom: 0;
+    width: 100%;
+    height: 31vh;
+    background-color: #2d3747;
+    color: #fff;
+  }
+  .footerBox .footerContainer {
+    max-width: 1200px;
+    width: 59.5vw;
+    margin: 0 auto;
+    padding-top: 6vh;
+  }
+  .footerBox .footerContainer .footer_title {
+    font-weight: bold;
+    font-size: 0.7rem;
+  }
+  .footerBox .footerContainer .footer_detail {
+    margin-top: 2%;
+  }
+  .footerBox .footerContainer .footer_detail p {
+    color: #bdb5b5;
+    font-size: 0.6rem;
+  }
+  .footerBox .footerContainer .footer_detail p a {
+    text-decoration: underline;
+  }
 }/*# sourceMappingURL=common.module.css.map */
