@@ -9,11 +9,11 @@ export default async function handler(req, res) {
   if (req.method === "GET") {
     try {
       const currentUserEmail = req.query.currentUserEmail;
-      console.log(currentUserEmail);
+      // console.log(currentUserEmail);
       const currentUser = await userCollection.findOne({
         useremail: currentUserEmail,
       });
-      console.log(currentUser);
+      // console.log(currentUser);
       res.status(200).json(currentUser.words);
     } catch (error) {
       console.error(error);
