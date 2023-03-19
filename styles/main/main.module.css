@@ -50,7 +50,30 @@
   height: 4px;
   background-color: #d4d5d9;
   border-radius: 50%;
-  animation: scrollDown 2.5s infinite;
+  -webkit-animation: scrollDown 2.5s infinite;
+          animation: scrollDown 2.5s infinite;
+}
+@-webkit-keyframes scrollDown {
+  0% {
+    top: 14px;
+    opacity: 0;
+  }
+  15% {
+    top: 14px;
+    opacity: 1;
+  }
+  30% {
+    top: 14px;
+    opacity: 1;
+  }
+  45% {
+    top: 34px;
+    opacity: 1;
+  }
+  100% {
+    top: 34px;
+    opacity: 0;
+  }
 }
 @keyframes scrollDown {
   0% {
