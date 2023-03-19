@@ -4,6 +4,8 @@ import CoinImage from "@/components/main/CoinImage";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Slick from "../components/main/Slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Main = () => {
   const router = useRouter();
@@ -43,8 +45,8 @@ const Main = () => {
               <Image
                 src="/assets/images/main/checkCircle.png"
                 alt="check"
-                width={55}
-                height={55}
+                width={35}
+                height={35}
                 className={style.guide_icon}
               />
               <p className={style.mission_title}>하루 한번 참여</p>
@@ -57,8 +59,8 @@ const Main = () => {
               <Image
                 src="/assets/images/main/slot.png"
                 alt="slot"
-                width={55}
-                height={55}
+                width={35}
+                height={35}
                 className={style.guide_icon}
               />
               <p className={style.mission_title}>랜덤 참여</p>
@@ -71,8 +73,8 @@ const Main = () => {
               <Image
                 src="/assets/images/main/moneypocket.png"
                 alt="moneypocket"
-                width={55}
-                height={55}
+                width={35}
+                height={35}
                 className={style.guide_icon}
               />
               <p className={style.mission_title}>코인 적립</p>
@@ -126,10 +128,10 @@ const Main = () => {
               <div className={style.content}>
                 <div className={style.iconBox}>
                   <Image
-                    src="/assets/images/main/thumbs-up 4.png"
+                    src="/assets/images/main/thumbsUp.png"
                     alt="thumbs"
-                    width={75}
-                    height={75}
+                    width={110}
+                    height={120}
                     className={style.guide_icon}
                   />
                 </div>
@@ -146,8 +148,8 @@ const Main = () => {
                   <Image
                     src="/assets/images/main/star (1) 4 (1).png"
                     alt="star"
-                    width={75}
-                    height={75}
+                    width={130}
+                    height={140}
                     className={style.guide_icon}
                   />
                 </div>
@@ -167,9 +169,9 @@ const Main = () => {
                 <div className={style.iconBox}>
                   <Image
                     src="/assets/images/main/pxArt.png"
-                    alt="star"
-                    width={75}
-                    height={75}
+                    alt="pxArt"
+                    width={110}
+                    height={110}
                     className={style.guide_icon}
                   />
                 </div>
@@ -184,9 +186,9 @@ const Main = () => {
                 <div className={style.iconBox}>
                   <Image
                     src="/assets/images/main/down.png"
-                    alt="star"
-                    width={75}
-                    height={75}
+                    alt="down"
+                    width={110}
+                    height={110}
                     className={style.guide_icon}
                   />
                 </div>
@@ -220,91 +222,73 @@ const Main = () => {
                 <Image
                   src="/assets/images/main/img01.png"
                   alt="img01"
-                  width={239}
-                  height={139}
+                  width={225}
+                  height={225}
                   className={style.picture}
                 />
-                <p>
-                  {" "}
-                  A computer from <br></br>
-                  the 90s in the style <br></br>
-                  of vaporwave
-                </p>
               </li>
               <li className={style.album_content}>
                 <Image
                   src="/assets/images/main/img02.png"
                   alt="img02"
-                  width={239}
-                  height={139}
+                  width={225}
+                  height={225}
                   className={style.picture}
                 />
-                <p>
-                  {" "}
-                  A computer from <br></br>
-                  the 90s in the style <br></br>
-                  of vaporwave
-                </p>
               </li>
               <li className={style.album_content}>
                 <Image
                   src="/assets/images/main/img03.png"
                   alt="img03"
-                  width={239}
-                  height={139}
+                  width={225}
+                  height={225}
                   className={style.picture}
                 />
-                <p>
-                  {" "}
-                  A computer from <br></br>
-                  the 90s in the style <br></br>
-                  of vaporwave
-                </p>
               </li>
               <li className={style.album_content}>
                 <Image
                   src="/assets/images/main/img04.png"
                   alt="img04"
-                  width={239}
-                  height={139}
+                  width={225}
+                  height={225}
                   className={style.picture}
                 />
-                <p>
-                  {" "}
-                  A computer from <br></br>
-                  the 90s in the style <br></br>
-                  of vaporwave
-                </p>
               </li>
               <li className={style.album_content}>
                 <Image
                   src="/assets/images/main/img05.png"
                   alt="img05"
-                  width={239}
-                  height={139}
+                  width={225}
+                  height={225}
                   className={style.picture}
                 />
-                <p>
-                  {" "}
-                  A computer from <br></br>
-                  the 90s in the style <br></br>
-                  of vaporwave
-                </p>
               </li>
               <li className={style.album_content}>
                 <Image
                   src="/assets/images/main/img06.png"
                   alt="img06"
-                  width={239}
-                  height={139}
+                  width={225}
+                  height={225}
                   className={style.picture}
                 />
-                <p>
-                  {" "}
-                  A computer from <br></br>
-                  the 90s in the style <br></br>
-                  of vaporwave
-                </p>
+              </li>
+              <li className={style.album_content}>
+                <Image
+                  src="/assets/images/main/img07.png"
+                  alt="img07"
+                  width={225}
+                  height={225}
+                  className={style.picture}
+                />
+              </li>
+              <li className={style.album_content}>
+                <Image
+                  src="/assets/images/main/img08.png"
+                  alt="img08"
+                  width={225}
+                  height={225}
+                  className={style.picture}
+                />
               </li>
             </ul>
           </div>

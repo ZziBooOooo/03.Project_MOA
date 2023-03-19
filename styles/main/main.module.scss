@@ -29,90 +29,62 @@
     word-spacing: 2%;
   }
 
-  .scrolldown {
-    --color: #d4d4d8;
-    --sizeX: 30px;
-    --sizeY: 50px;
-    position: relative;
-    width: var(--sizeX);
-    height: var(--sizeY);
-    margin-top: 13%;
-    margin-left: auto;
-    margin-right: auto;
-    border: calc(var(--sizeX) / 10) solid var(--color);
-    border-radius: 50px;
-    box-sizing: border-box;
-    margin-bottom: 16px;
-  }
+  .scroll {
+    &__down {
+      position: absolute;
+      margin-top: 9%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   
-  .scrolldown::before {
-    content: "";
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    width: 6px;
-    height: 6px;
-    margin-left: -3px;
-    background-color: var(--color);
-    border-radius: 100%;
-    animation: scrolldown-anim 2s infinite;
-    box-sizing: border-box;
-    box-shadow: 0px -5px 3px 1px #ffffff66;
-  }
+    &__mouse {
+      position: relative;
+      display: inline-block;
+      width: 34px;
+      height: 54px;
+      border: 2px solid #d4d5d9;
+      border-radius: 20px;
+    }
   
-  @keyframes scrolldown-anim {
+    &__wheel {
+      position: absolute;
+      top: 14px;
+      left: 13px;
+      width: 4px;
+      height: 4px;
+      background-color: #d4d5d9;
+      border-radius: 50%;
+      animation: scrollDown 2.5s infinite;
+    }
+  }
+
+  @keyframes scrollDown {
     0% {
+      top: 14px;
       opacity: 0;
-      height: 6px;
     }
-    40% {
+  
+    15% {
+      top: 14px;
       opacity: 1;
-      height: 10px;
     }
-    80% {
-      transform: translate(0, 20px);
-      height: 10px;
-      opacity: 0;
+  
+    30% {
+      top: 14px;
+      opacity: 1;
     }
+  
+    45% {
+      top: 34px;
+      opacity: 1;
+    }
+  
     100% {
-      height: 3px;
+      top: 34px;
       opacity: 0;
     }
   }
-  .chevrons {
-    padding: 6px 0 0 0;
-    margin-left: -3px;
-    margin-top: 48px;
-    width: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .chevrondown {
-    padding-bottom: 9px;
-    margin-top: -6px;
-    position: relative;
-    border: solid var(--color);
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    transform: rotate(45deg);
-  }
-  .chevrondown:nth-child(odd) {
-    animation: pulse 500ms ease infinite alternate;
-  }
-  .chevrondown:nth-child(even) {
-    animation: pulse 500ms ease infinite alternate 250ms;
-  }
-  @keyframes pulse {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 0.5;
-    }
-  }
+
   
   
 }
@@ -120,7 +92,8 @@
 
 .section02 {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  padding-bottom: 5%;
   .guideBox {
     max-width: 1200px;
     width: 70vw;
@@ -158,35 +131,42 @@
         padding-top: 7%;
         font-size: 1.75rem;
         font-weight: bold;
+        color: $softGRAYFtColor;
       }
     }
     
     .guide_content{
       max-width: 1200px;
       width: 70vw;
-      height: 44vh;
+      // height: 44vh;
       background-color: #F5F5F5;
       border-radius: 20px;
       margin: 0 auto;
       margin-top: 5%;
+      padding: 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-left: 6.4%;
-      padding-right: 6.4%;
       box-shadow: $grayBGshadow;
 
       .guide_container{
         width: 30%;
-        height: 60%;
+        // height: 60%;
         background-color: white;
         border-radius: 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 4%;
+        padding: 2% 4%;
         box-shadow: $grayBGshadow;
-        .guide_icon{
+        .imgBox{
+          width: 55px;
+          height: 55px;
+          background-color: #F4F7FF;
+          border-radius: 10px;
+          align-items: center;
+          display: flex;
+          justify-content: center;
           margin-bottom: 5%;
         }
         .mission_title{
@@ -196,9 +176,7 @@
         }
         .mission_detail{
           font-size: 1.3rem;
-          // font-weight: bold;
           margin-bottom: 5%;
-
         }
       }
 
@@ -210,7 +188,8 @@
 
 .section03 {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  padding-bottom: 10%;
   .guideBox {
     max-width: 1200px;
     width: 70vw;
@@ -238,6 +217,7 @@
           padding-top: 21vh;
           font-size: 1.75rem;
           font-weight: bold;
+          color: $softGRAYFtColor;
         }
       }
     }
@@ -248,16 +228,14 @@
       justify-content: flex-end;
       align-items: center;
       .guide_container{
-        width: 338px;
+        width: 310px;
         height: 332px;
         background-color: #F5F5F5;
         border-radius: 20px;
         display: flex;
         position: relative;
-        left: 20%;
         justify-content: center;
         align-items: center;
-        margin: 0 auto;
         box-shadow: $grayBGshadow;
       }
       
@@ -267,7 +245,7 @@
 
 .section04 {
   width: 100%;
-  height: 128vh;
+  height: 100%;
   background-color: #F5F5F5;
   .guideBox {
     max-width: 1200px;
@@ -309,20 +287,20 @@
         margin-bottom: 13vh;
         .content{
           display: flex;
-          width: 50%;
+          width: 46%;
           .iconBox{
-            width: 13vw;
-            height: 20vh;
+            width: 250px;
+            height: 200px;
             background-color: #ffff;
             border-radius: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
-            // box-shadow: 2px 5px 40px 0 rgb(0 0 0 / 8%);
             box-shadow: $grayBGshadow;
+            margin-right: 5%;
           }
           .textBox{
-            margin-left: 2.5vw;
+            margin-left: 2%;
             padding: 5%;
             .icon_title{
               font-size: 1.75rem;
@@ -337,12 +315,14 @@
       }
       .detail_container02{
         .content{
+          justify-content: space-between;
           .iconBox{
+            margin-right: 0;
             order: 1;
           }
           div:nth-child(2){
             margin-left: 0;
-            margin-right: 2.5vw;
+            // margin-right: 2.5vw;
             padding: 5% 5% 5% 0%; 
           }
 
@@ -356,7 +336,8 @@
 
 .section05 {
   width: 100%;
-  height: 150vh;
+  height: 100%;
+  padding-bottom: 10%;
   .guideBox{
     max-width: 1200px;
     width: 70vw;
@@ -380,13 +361,10 @@
     }
     .guide_content{
       max-width: 1200px;
-      min-height: 728px;
       width: 70vw;
-      height: 77vh;
       margin-top: 5%;      
       background-color: #F5F5F5;
       border-radius: 20px;
-      // box-shadow: 1px 2px 5px rgb(224 224 224);
       box-shadow: $grayBGshadow;
       .albumBox{
         list-style: none;
@@ -395,22 +373,11 @@
         justify-content: center;
         align-items: center;
         .album_content{
-          width: 280px; //23%;
-          height: 290px; //40%;
-          background-color: #ffff;
-          border-radius: 10px;
-          margin: 4% 3% 0% 3%;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          padding-bottom: 2%;
-          // box-shadow: 1px 2px 4px rgb(214 214 214);
-          box-shadow: $grayBGshadow;
-          p{
-            margin-top: 8%;
-            font-weight: bold;
-          }
+          padding: 3%;
         }
       }
     }
