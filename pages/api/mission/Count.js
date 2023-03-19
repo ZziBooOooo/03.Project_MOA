@@ -24,3 +24,7 @@ const job = new CronJob(
 );
 
 job.start();
+
+export default function handler(req, res) {
+  res.status(200).json({ message: "Cron job started." });
+}

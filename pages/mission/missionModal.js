@@ -54,8 +54,8 @@ const MissionModal = () => {
   return (
     <>
       <div className={style.modalWrapper}>
-        <div className={style.missionModal}><MissionDiary /></div>
-        {/* <div className={style.missionModal}>{getRandomComponent()}</div> */}
+        {/* <div className={style.missionModal}><MissonMotionBox /></div> */}
+        <div className={style.missionModal}>{getRandomComponent()}</div>
       </div>
     </>
   );

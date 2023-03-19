@@ -487,16 +487,16 @@
   font-size: 1.5625rem;
   margin-bottom: 10%;
 }
-.missionTreeBox .quizBox form {
+.missionTreeBox .quizBox .formBox {
   width: 80%;
-  border-bottom: 2px solid gray;
   margin: 0 auto;
+  border-bottom: 2px solid gray;
 }
-.missionTreeBox .quizBox form input {
+.missionTreeBox .quizBox .formBox input {
   margin-bottom: 3%;
   text-align: center;
 }
-.missionTreeBox .quizBox form input:focus {
+.missionTreeBox .quizBox .formBox input:focus {
   outline: none;
 }
 
@@ -729,6 +729,29 @@
   .missionDiaryBox p {
     font-size: 1.4rem;
   }
+  .missionTreeBox {
+    width: 80%;
+  }
+  .missionTreeBox .quizBox {
+    margin-top: 20%;
+    justify-content: space-between;
+  }
+  .missionTreeBox .quizBox .quiz {
+    padding: 5%;
+  }
+  .missionTreeBox .quizBox .quiz .title {
+    font-size: 1.8rem;
+  }
+  .missionTreeBox .quizBox .quiz .detail {
+    font-size: 1.1rem;
+    overflow-wrap: anywear;
+  }
+  .missionTreeBox .quizBox .quiz .formBox {
+    width: 90%;
+  }
+  .missionTreeBox .quizBox .quiz .formBox form input {
+    font-size: 0.8rem;
+  }
 }
 @media (max-width: 767px) {
   .mainSection .description_container {
@@ -803,7 +826,8 @@
     border-radius: 20px;
   }
   .missionDiaryBox {
-    padding: 5%;
+    padding: 10%;
+    overflow-wrap: anywhere;
   }
   .missionDiaryBox .titleBox h2 {
     font-size: 1.2rem;
@@ -813,7 +837,77 @@
     height: 32px;
   }
   .missionDiaryBox p {
-    font-size: 1.3rem;
-    overflow-wrap: anywhere;
+    font-size: 1rem;
+  }
+  .missionDiaryBox .formBox {
+    margin-top: 30%;
+    width: 100%;
+  }
+  .missionDiaryBox .formBox input {
+    font-size: 1.2rem;
+    height: 150px;
+  }
+  .missionTreeBox .quizBox {
+    margin-top: 10%;
+    flex-direction: column;
+  }
+  .missionTreeBox .quizBox .imgBox {
+    width: 100%;
+    height: 100%;
+  }
+  .missionTreeBox .quizBox .imgBox img {
+    width: 100%;
+    height: 100%;
+  }
+  .missionTreeBox .quizBox .quiz {
+    width: 100%;
+    margin-top: 5%;
+  }
+  .missionTreeBox .quizBox .quiz .title {
+    font-size: 1.5rem;
+  }
+  .missionTreeBox .quizBox .quiz .detail {
+    font-size: 1rem;
+    overflow-wrap: anywear;
+  }
+  .missionTreeBox .quizBox .quiz .formBox {
+    width: 90%;
+  }
+  .missionTreeBox .quizBox .quiz .formBox form input {
+    font-size: 0.8rem;
+  }
+  .missionMotionBox .missionBox > div {
+    width: 100px;
+    height: 100px;
+  }
+  .missionMotionBox img {
+    width: 50px;
+    height: 50px;
+  }
+}
+/* 데스크톱 화면에서는 input 요소 보여주기 */
+@media (min-width: 768px) {
+  .input_container {
+    display: block;
+  }
+  .textarea_container {
+    display: none;
+  }
+}
+/* 모바일 기기에서는 textarea 요소 보여주기 */
+@media (max-width: 767px) {
+  .input_container {
+    display: none;
+  }
+  .textarea_container {
+    display: block;
+    width: 90%;
+    resize: none;
+    height: 100px;
+    padding: 2%;
+  }
+  .textarea_container:focus {
+    outline: none;
+    box-shadow: none;
   }
 }/*# sourceMappingURL=mission.module.css.map */

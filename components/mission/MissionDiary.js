@@ -55,6 +55,17 @@ const MissionDiary = () => {
       <div className={style.formBox}>
         <form onSubmit={handleSubmit}>
           <input
+            className={style.input_container}
+            type="text"
+            maxlength="90"
+            style={{ border: "none" }}
+            value={diary}
+            onChange={handleChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+          />
+          <textarea
+            className={style.textarea_container}
             type="text"
             maxlength="90"
             style={{ border: "none" }}

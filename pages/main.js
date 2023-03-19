@@ -41,7 +41,7 @@ const Main = () => {
 
           <div className={style.guide_content}>
             <div className={style.guide_container}>
-              <div className={style.imgBox}>   
+              <div className={style.imgBox}>
                 <Image
                   src="/assets/images/main/checkCircle.png"
                   alt="check"
@@ -57,7 +57,7 @@ const Main = () => {
             </div>
 
             <div className={style.guide_container}>
-              <div className={style.imgBox}>  
+              <div className={style.imgBox}>
                 <Image
                   src="/assets/images/main/slot.png"
                   alt="slot"
@@ -73,7 +73,7 @@ const Main = () => {
             </div>
 
             <div className={style.guide_container}>
-              <div className={style.imgBox}>  
+              <div className={style.imgBox}>
                 <Image
                   src="/assets/images/main/moneypocket.png"
                   alt="moneypocket"
