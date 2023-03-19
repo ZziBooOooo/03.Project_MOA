@@ -523,23 +523,25 @@
   color: #2288ff;
   margin-bottom: 10%;
 }
-.missionDiaryBox form {
+.missionDiaryBox .formBox {
   width: 70%;
-  border-bottom: 2px solid gray;
   margin: 0 auto;
+  border-bottom: 2px solid gray;
+}
+.missionDiaryBox .formBox form {
   display: flex;
 }
-.missionDiaryBox form input {
+.missionDiaryBox .formBox form input {
   cursor: pointer;
   width: 95%;
-  margin-bottom: 2%;
   text-align: center;
   font-size: 1.25rem;
+  margin: 1%;
 }
-.missionDiaryBox form input:focus {
+.missionDiaryBox .formBox form input:focus {
   outline: none;
 }
-.missionDiaryBox form:focus-within {
+.missionDiaryBox .formBox:focus-within {
   border-bottom: 2px solid #2288ff;
 }
 
@@ -660,4 +662,20 @@
 }
 .missionCatchBox .canvas img {
   cursor: pointer;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section03 .guide_container {
+    overflow: hidden;
+  }
+}
+@media (max-width: 767px) {
+  .section03 .guide_container {
+    overflow: hidden;
+  }
+}
+@media (max-width: 479px) {
+  .section03 .guide_container {
+    overflow: hidden;
+  }
 }/*# sourceMappingURL=mission.module.css.map */
