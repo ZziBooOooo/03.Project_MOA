@@ -257,6 +257,7 @@
     margin-bottom: 0px;
     width: 100%;
     font-family: "Pretendard-Regular";
+    z-index: -1;
   }
   .myalbumContent .noData > P {
     text-align: center;
