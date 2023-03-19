@@ -136,6 +136,7 @@ const Others = () => {
           <div className={style.imgBox}>
             <AnimatePresence>
               {imgUrlArr.map((url, key) => {
+                console.log(key);
                 return (
                   <motion.div
                     className={style.topImgBox}
