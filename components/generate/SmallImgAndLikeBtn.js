@@ -35,7 +35,7 @@ const SmallImgAndLikeBtn = ({ idx, data, userDatas }) => {
 
     let newLiked = !liked;
     setLiked(newLiked);
-    console.log(newLiked);
+    // console.log(newLiked);
 
     if (newLiked) {
       setLikeCount(likeCount + 1);
@@ -52,7 +52,7 @@ const SmallImgAndLikeBtn = ({ idx, data, userDatas }) => {
         currentName,
       })
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
       })
       .catch((error) => {
         console.log(error);

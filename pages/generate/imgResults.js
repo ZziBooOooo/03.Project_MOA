@@ -34,7 +34,7 @@ const ImgResults = () => {
 
   // 번역요청 - 파파고 api
   async function translateKoreanToEnglish(koreanText) {
-    console.log(koreanText);
+    // console.log(koreanText);
     const params = {
       source: "ko",
       target: "en",
@@ -45,7 +45,7 @@ const ImgResults = () => {
       const translatedText = res.data.translatedText;
       setEnPrompt(translatedText);
       // setPrompt(translatedText);
-      console.log(translatedText);
+      // console.log(translatedText);
       return translatedText;
     } catch (error) {
       console.error(error);
@@ -60,7 +60,7 @@ const ImgResults = () => {
           null
         : null;
     // console.log(token);
-    console.log(prompt);
+    // console.log(prompt);
     if (prompt != "") {
       setError(false);
       setLoading(true);
@@ -121,7 +121,7 @@ const ImgResults = () => {
 
   // propmt는 번역, 이미지 생성시에 사용됨
   useEffect(() => {
-    console.log(results);
+    // console.log(results);
     if (prompt) {
       generateImages();
     } else {

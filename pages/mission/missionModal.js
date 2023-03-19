@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import style from "@/styles/mission/mission.module.css";
 import { useRouter } from "next/router";
@@ -21,7 +20,6 @@ const componentList = [
   MissionDiary,
   MissionCatch,
   MissionCoinBox,
-
 ];
 
 // 랜덤한 컴포넌트를 생성하여 반환
@@ -30,7 +28,6 @@ const getRandomComponent = () => {
   const RandomComponent = componentList[randomIndex];
   return <RandomComponent />;
 };
-
 
 const MissionModal = () => {
   const router = useRouter();
@@ -54,7 +51,6 @@ const MissionModal = () => {
     addCount();
   }, []);
 
-
   return (
     <>
       <div className={style.modalWrapper}>
@@ -64,7 +60,4 @@ const MissionModal = () => {
   );
 };
 
-
 export default MissionModal;
-
-
