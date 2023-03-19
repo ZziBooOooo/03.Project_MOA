@@ -15,12 +15,12 @@ const Header = () => {
 
   const userCoin =
     typeof window !== "undefined" && window.sessionStorage.getItem("userData")
-      ? JSON.parse(window.sessionStorage.getItem("totalCoinCount")) || null
+      ? window.sessionStorage.getItem("totalCoinCount") || null
       : null;
 
   const userWord =
     typeof window !== "undefined" && window.sessionStorage.getItem("userData")
-      ? JSON.parse(window.sessionStorage.getItem("totalWordCount")) || null
+      ? window.sessionStorage.getItem("totalWordCount") || "null"
       : null;
 
   useEffect(() => {
