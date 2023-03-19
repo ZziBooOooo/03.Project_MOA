@@ -551,23 +551,25 @@
     color: $mainColor;
     margin-bottom: 10%;
   }
-  form {
+  .formBox{
     width: 70%;
-    border-bottom: 2px solid gray;
     margin: 0 auto;
-    display: flex;
-    input {
-      cursor: pointer;
-      width: 95%;
-      margin-bottom: 2%;
-      text-align: center;
-      font-size: 1.25rem;
-    }
-    input:focus {
-      outline: none;
+    border-bottom: 2px solid gray;
+    form{
+      display: flex;
+      input {
+        cursor: pointer;
+        width: 95%;
+        text-align: center;
+        font-size: 1.25rem;
+        margin: 1%;
+      }
+      input:focus {
+        outline: none;
+      }
     }
   }
-  form:focus-within {
+  .formBox:focus-within {
     border-bottom: 2px solid $mainColor;
   }
 }
@@ -696,3 +698,37 @@
   }
 }
 
+@include tablet {
+  .section02{}
+  .section02{}
+  .section03{
+    .guide_container{
+      overflow: hidden;
+    }
+  }
+  .section04{}
+  .section05{}
+}
+
+@include mobile {
+  .section02{}
+  .section02{}
+  .section03{
+    .guide_container{
+      overflow: hidden;
+    }
+  }
+  .section04{}
+  .section05{}
+}
+@include minimobile{
+  .section02{}
+  .section02{}
+  .section03{
+    .guide_container{
+      overflow: hidden;
+    }
+  }
+  .section04{}
+  .section05{}
+}

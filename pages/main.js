@@ -12,14 +12,13 @@ const Main = () => {
   return (
     <>
       <section className={style.section01}>
-        <p>모아서 그리자!</p>
+        <p>모아서 그리자! </p>
         <h1>아티스트가 되는 공간. 모아 </h1>
         <button onClick={() => router.push("/mission")}>시작하기</button>
-        <div className={style.scrolldown}>
-          <div className={style.chevrons}>
-            <div className={style.chevrondown}></div>
-            <div className={style.chevrondown}></div>
-          </div>
+        <div className={style.scroll__down}>
+          <span className={style.scroll__mouse}>
+            <span className={style.scroll__wheel}></span>
+          </span>
         </div>
       </section>
 
@@ -42,13 +41,15 @@ const Main = () => {
 
           <div className={style.guide_content}>
             <div className={style.guide_container}>
-              <Image
-                src="/assets/images/main/checkCircle.png"
-                alt="check"
-                width={35}
-                height={35}
-                className={style.guide_icon}
-              />
+              <div className={style.imgBox}>   
+                <Image
+                  src="/assets/images/main/checkCircle.png"
+                  alt="check"
+                  width={30}
+                  height={30}
+                  className={style.guide_icon}
+                />
+              </div>
               <p className={style.mission_title}>하루 한번 참여</p>
               <p className={style.mission_detail}>
                 미션은 하루에 한번 <br></br>참여할 수 있어요.
@@ -56,13 +57,15 @@ const Main = () => {
             </div>
 
             <div className={style.guide_container}>
-              <Image
-                src="/assets/images/main/slot.png"
-                alt="slot"
-                width={35}
-                height={35}
-                className={style.guide_icon}
-              />
+              <div className={style.imgBox}>  
+                <Image
+                  src="/assets/images/main/slot.png"
+                  alt="slot"
+                  width={35}
+                  height={35}
+                  className={style.guide_icon}
+                />
+              </div>
               <p className={style.mission_title}>랜덤 참여</p>
               <p className={style.mission_detail}>
                 미션은 매일 <br></br> 랜덤으로 주어져요.
@@ -70,13 +73,15 @@ const Main = () => {
             </div>
 
             <div className={style.guide_container}>
-              <Image
-                src="/assets/images/main/moneypocket.png"
-                alt="moneypocket"
-                width={35}
-                height={35}
-                className={style.guide_icon}
-              />
+              <div className={style.imgBox}>  
+                <Image
+                  src="/assets/images/main/moneypocket.png"
+                  alt="moneypocket"
+                  width={30}
+                  height={30}
+                  className={style.guide_icon}
+                />
+              </div>
               <p className={style.mission_title}>코인 적립</p>
               <p className={style.mission_detail}>
                 모은 코인으로 <br></br> 코인을 적립해드려요.

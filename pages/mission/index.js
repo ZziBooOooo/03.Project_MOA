@@ -32,7 +32,7 @@ const Index = () => {
 
   // onClick 함수 실행
   const checkMissionCount = () => {
-    if (countNum < 3) {
+    if (countNum < 50) {
       router.push("/mission/missionModal");
     } else {
       router.push("/mission/missionEnd");

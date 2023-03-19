@@ -32,7 +32,7 @@
   .scroll {
     &__down {
       position: absolute;
-      margin-top: 9%;
+      margin-top: 15%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
@@ -188,8 +188,7 @@
 
 .section03 {
   width: 100%;
-  height: 100%;
-  padding-bottom: 10%;
+  height: 100vh;
   .guideBox {
     max-width: 1200px;
     width: 70vw;

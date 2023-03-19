@@ -51,30 +51,32 @@ const MissionDiary = () => {
         />
       </div>
       <p>오늘 느꼈던 감정, 혹은 있었던 일을 한줄로 기록해 보세요.</p>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          maxlength="90"
-          style={{ border: "none" }}
-          value={diary}
-          onChange={handleChange}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          placeholder={"그냥 나가시면 코인을 받으실 수 없어요. ಥ_ಥ"}
-        />
-        {/* <FontAwesomeIcon icon={faArrowTurnDownLeft} /> */}
-        <button type="submit">
-          <FontAwesomeIcon
-            icon={faPencil}
-            style={{
-              fontSize: "1.25em",
-              marginBottom: "2%",
-              color: isClicked ? "#2585F5" : "#C9C9C9",
-            }}
-            onClick={handleClick}
+      <div className={style.formBox}>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            maxlength="90"
+            style={{ border: "none" }}
+            value={diary}
+            onChange={handleChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
           />
-        </button>
-      </form>
+          {/* <FontAwesomeIcon icon={faArrowTurnDownLeft} /> */}
+          <button type="submit">
+            <FontAwesomeIcon
+              icon={faPencil}
+              style={{
+                fontSize: "1.25em",
+                marginBottom: "2%",
+                color: isClicked ? "#2585F5" : "#C9C9C9",
+              }}
+              onClick={handleClick}
+            />
+          </button>
+        </form>
+      </div>
+
     </div>
   );
 };

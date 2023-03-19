@@ -877,16 +877,6 @@
     align-items: center;
     width: 7%;
   }
-<<<<<<< HEAD
-  .content_box .content_item .content_coinlist .content_coinlist_top .coin_count > img {
-    width: 35px;
-    height: 35px;
-    margin-right: 10px;
-  }
-  .content_box .content_item .content_coinlist .content_coinlist_top .coin_count > span {
-    font-size: 1rem;
-=======
-
   .content_box .content_item .content_coinlist .content_coinlist_top .coin_count > img {
     width: 30px;
     height: 30px;
@@ -894,8 +884,6 @@
   }
   .content_box .content_item .content_coinlist .content_coinlist_top .coin_count > span {
     font-size: 0.8rem;
-
->>>>>>> c7fda74b9973c2f8358b6e5699c5a04f21b5f7a2
     font-weight: bold;
     color: #353535;
   }
@@ -952,10 +940,6 @@
     font-size: 1rem;
   }
   /* ======== 구매 컨텐츠  카테고리 =================== */
-<<<<<<< HEAD
-}/*# sourceMappingURL=buy.module.css.map */
-=======
-
 }
 @media (max-width: 479px) {
   .banner_box {
@@ -1021,26 +1005,14 @@
     line-height: 58px;
   }
   .banner_box .moaicon1 {
-    -webkit-animation: liani ease-in-out 0.5s;
-            animation: liani ease-in-out 0.5s;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
+    animation: liani ease-in-out 0.5s;
+    animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
     position: absolute;
     width: 7%;
     top: 30%;
     left: 16%;
     display: none;
-  }
-  @-webkit-keyframes liani {
-    0% {
-      top: 30%;
-      left: 16%;
-    }
-    100% {
-      top: 32%;
-      left: 16%;
-    }
   }
   @keyframes liani {
     0% {
@@ -1055,22 +1027,7 @@
   .banner_box .moaicon1 > img {
     -o-object-fit: contain;
        object-fit: contain;
-    -webkit-animation: test ease 0.6s;
-            animation: test ease 0.6s;
-  }
-  @-webkit-keyframes tests {
-    0% {
-      transform: scale(0);
-    }
-    75% {
-      transform: scale(1);
-    }
-    90% {
-      transform: scale(0.8);
-    }
-    100% {
-      transform: scale(1);
-    }
+    animation: test ease 0.6s;
   }
   @keyframes tests {
     0% {
@@ -1090,23 +1047,11 @@
     position: absolute;
     top: 70%;
     left: 30%;
-    -webkit-animation: liani2 ease-in-out 0.5s;
-            animation: liani2 ease-in-out 0.5s;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
+    animation: liani2 ease-in-out 0.5s;
+    animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
     width: 8%;
     display: none;
-  }
-  @-webkit-keyframes liani2 {
-    0% {
-      top: 70%;
-      left: 30%;
-    }
-    100% {
-      top: 72%;
-      left: 30%;
-    }
   }
   @keyframes liani2 {
     0% {
@@ -1126,25 +1071,7 @@
        object-fit: contain;
   }
   .banner_box .moaicon2 .te {
-    -webkit-animation: test ease 0.5s;
-            animation: test ease 0.5s;
-  }
-  @-webkit-keyframes test {
-    0% {
-      transform: scale(0) translateY(-100px);
-    }
-    25% {
-      transform: scale(0.3);
-    }
-    75% {
-      transform: scale(1);
-    }
-    90% {
-      transform: scale(0.8);
-    }
-    100% {
-      transform: scale(1);
-    }
+    animation: test ease 0.5s;
   }
   @keyframes test {
     0% {
@@ -1164,26 +1091,14 @@
     }
   }
   .banner_box > .moaicon3 {
-    -webkit-animation: liani3 ease-in-out 0.5s;
-            animation: liani3 ease-in-out 0.5s;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
+    animation: liani3 ease-in-out 0.5s;
+    animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
     position: absolute;
     right: 22%;
     top: 60%;
     width: 7.5%;
     display: none;
-  }
-  @-webkit-keyframes liani3 {
-    0% {
-      right: 22%;
-      top: 60%;
-    }
-    100% {
-      right: 22%;
-      top: 62%;
-    }
   }
   @keyframes liani3 {
     0% {
@@ -1204,8 +1119,7 @@
     opacity: 0;
   }
   .banner_box > .moaicon3 .so {
-    -webkit-animation: test ease 0.5s;
-            animation: test ease 0.5s;
+    animation: test ease 0.5s;
     -o-object-fit: contain;
        object-fit: contain;
   }
@@ -1356,6 +1270,3 @@
   }
   /* ======== 구매 컨텐츠  카테고리 =================== */
 }/*# sourceMappingURL=buy.module.css.map */
-
-
->>>>>>> c7fda74b9973c2f8358b6e5699c5a04f21b5f7a2
