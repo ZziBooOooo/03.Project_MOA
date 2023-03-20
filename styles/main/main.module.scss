@@ -146,6 +146,7 @@
       box-shadow: $grayBGshadow;
 
       .guide_container {
+        overflow: hidden; 
         width: 30%;
         // height: 60%;
         background-color: white;
