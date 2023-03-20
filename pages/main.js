@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import style from "@/styles/main/main.module.css";
 import CoinImage from "@/components/main/CoinImage";
 import Image from "next/image";
@@ -8,8 +8,10 @@ import { useRouter } from "next/router";
 import Slick from "../components/main/Slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { buyContext } from "@/contexts/buy/buyPageContext";
 
 const Main = () => {
+  const { userData } = useContext(buyContext);
   const router = useRouter();
   useEffect(() => {
     const cookies = parseCookies();
@@ -41,12 +43,21 @@ const Main = () => {
       console.log("Mission count request not sent.");
     }
   }, []);
+
+  const handlePageClick = () => {
+    if (userData) {
+      router.push("/mission");
+    } else {
+      router.push("/login");
+    }
+  };
+
   return (
     <>
       <section className={style.section01}>
         <p>모아서 그리자! </p>
         <h1>아티스트가 되는 공간. 모아 </h1>
-        <button onClick={() => router.push("/mission")}>시작하기</button>
+        <button onClick={handlePageClick}>시작하기</button>
         <div className={style.scroll__down}>
           <span className={style.scroll__mouse}>
             <span className={style.scroll__wheel}></span>
