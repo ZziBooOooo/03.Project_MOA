@@ -2,11 +2,45 @@ import React, { useEffect } from "react";
 import style from "@/styles/main/main.module.css";
 import CoinImage from "@/components/main/CoinImage";
 import Image from "next/image";
+import axios from "axios";
+import { parseCookies } from "nookies";
 import { useRouter } from "next/router";
 import Slick from "../components/main/Slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Main = () => {
   const router = useRouter();
+  useEffect(() => {
+    const cookies = parseCookies();
+    const lastRequestTime = cookies.lastRequestTime
+      ? new Date(cookies.lastRequestTime)
+      : null;
+    const now = new Date();
+
+    // 현재 시간이 오전 12시 이후이고, 마지막 요청 시간이 오늘 날짜가 아닐 경우에만 요청을 보냄
+    if (
+      now.getHours() >= 0 &&
+      (!lastRequestTime || lastRequestTime.getDate() !== now.getDate())
+    ) {
+      axios
+        .get("/api/mission/Count")
+        .then(() => {
+          document.cookie = `lastRequestTime=${now}; path=/; expires=${new Date(
+            now.getFullYear(),
+            now.getMonth(),
+            now.getDate() + 1,
+            0,
+            0,
+            0
+          )}`;
+          console.log("Mission count request sent.");
+        })
+        .catch((err) => console.error(err));
+    } else {
+      console.log("Mission count request not sent.");
+    }
+  }, []);
   return (
     <>
       <section className={style.section01}>

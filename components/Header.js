@@ -23,8 +23,6 @@ const Header = () => {
       ? JSON.parse(window.sessionStorage.getItem("totalWordCount")) || null
       : null;
 
-  console.log(userData);
-
   useEffect(() => {
     const handleScroll = () => {
       const position = window.pageYOffset;
