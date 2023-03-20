@@ -514,7 +514,7 @@
         margin-bottom: 10%;
       }
     }
-    .formBox{
+    .formBox {
       width: 80%;
       margin: 0 auto;
       border-bottom: 2px solid gray;
@@ -552,11 +552,11 @@
     color: $mainColor;
     margin-bottom: 10%;
   }
-  .formBox{
+  .formBox {
     width: 70%;
     margin: 0 auto;
     border-bottom: 2px solid gray;
-    form{
+    form {
       display: flex;
       input {
         cursor: pointer;
@@ -696,114 +696,113 @@
   }
 }
 
-
 @include tablet {
-  .mainSection{
-    .description_container{
+  .mainSection {
+    .description_container {
       flex-direction: column;
-      .description{
-        h1{
+      .description {
+        h1 {
           font-size: 2rem;
           text-align: center;
           margin-bottom: 10%;
           line-height: 1.2;
         }
-        p{
+        p {
           font-size: 1.2rem;
           text-align: center;
           margin-bottom: 10%;
           color: $softGRAYFtColor;
         }
       }
-      .example{
-        .exampleImg{
+      .example {
+        .exampleImg {
           width: 100%;
           height: 45%;
         }
       }
     }
-    .alert{
+    .alert {
       margin-top: 10vh;
     }
-    button{
+    button {
       font-size: 1.2rem;
       width: 180px;
       height: 50px;
     }
   }
 
-  .missionSuccess{
-    .slogan{
+  .missionSuccess {
+    .slogan {
       text-align: center;
     }
-    .reward{
+    .reward {
       font-size: 1.3rem;
     }
   }
 
-  .missionRetry{
-    .slogan{
+  .missionRetry {
+    .slogan {
       font-size: 2.5rem;
       text-align: center;
     }
-    
-    button{
+
+    button {
       margin-top: 10%;
     }
   }
-  
-  .missionEnd{
-    .slogan{
+
+  .missionEnd {
+    .slogan {
       font-size: 2.5rem;
     }
   }
 
-  .missionCoinBox{
+  .missionCoinBox {
     width: 70%;
-    > p{
+    > p {
       margin-bottom: 20%;
     }
-    .missionCoinBox_item{
-      li{
+    .missionCoinBox_item {
+      li {
         width: 30%;
         height: 150px;
       }
     }
   }
 
-  .missionDiaryBox{
-    .titleBox{
-      h2{
+  .missionDiaryBox {
+    .titleBox {
+      h2 {
         font-size: 2rem;
       }
-      .bookIcon{
+      .bookIcon {
         width: 50px;
         height: 54px;
       }
     }
-    p{
+    p {
       font-size: 1.4rem;
     }
   }
 
-  .missionTreeBox{
+  .missionTreeBox {
     width: 80%;
     .quizBox {
       margin-top: 20%;
       justify-content: space-between;
-      .quiz{
+      .quiz {
         padding: 5%;
-        .title{
-          font-size:1.8rem;
+        .title {
+          font-size: 1.8rem;
         }
-        .detail{
+        .detail {
           font-size: 1.1rem;
           overflow-wrap: anywear;
         }
-        .formBox{
+        .formBox {
           width: 90%;
-          form{
-            input{
+          form {
+            input {
               font-size: 0.8rem;
             }
           }
@@ -814,92 +813,92 @@
 }
 
 @include mobile {
-  .mainSection{
-    .description_container{
+  .mainSection {
+    .description_container {
       flex-direction: column;
-      .description{
-        h1{
+      .description {
+        h1 {
           font-size: 2rem;
           text-align: center;
           margin-bottom: 10%;
           line-height: 1.2;
         }
-        p{
+        p {
           font-size: 1.2rem;
           text-align: center;
           margin-bottom: 10%;
           color: $softGRAYFtColor;
         }
       }
-      .example{
-        .exampleImg{
+      .example {
+        .exampleImg {
           width: 100%;
           height: 45%;
         }
       }
     }
-    .alert{
+    .alert {
       margin-top: 10vh;
     }
-    button{
+    button {
       font-size: 1.2rem;
       width: 180px;
       height: 50px;
     }
   }
-  
-  .missionSuccess{
-    .slogan{
+
+  .missionSuccess {
+    .slogan {
       font-size: 2.2rem;
       text-align: center;
     }
-    .reward{
+    .reward {
       font-size: 1.3rem;
     }
 
-    button{
+    button {
       width: 250px;
     }
   }
 
-  .missionRetry{
-    .slogan{
+  .missionRetry {
+    .slogan {
       font-size: 2.2rem;
       text-align: center;
     }
 
-    button{
+    button {
       margin-top: 20%;
       width: 250px;
     }
   }
 
-  .missionEnd{
-    .slogan{
+  .missionEnd {
+    .slogan {
       font-size: 2rem;
     }
-    .end_message{
+    .end_message {
       font-size: 1.6rem;
     }
   }
 
-  .missionCatchBox{
-    .canvas{
+  .missionCatchBox {
+    .canvas {
       height: 60%;
     }
   }
 
-  .missionCoinBox{
-    > h2{
+  .missionCoinBox {
+    > h2 {
       font-size: 2rem;
     }
-    > p{
+    > p {
       font-size: 1rem;
       margin-bottom: 15%;
     }
-    .missionCoinBox_item{
+    .missionCoinBox_item {
       flex-direction: column;
-      li{
+      li {
         justify-content: center;
         width: 100%;
         height: 160px;
@@ -909,59 +908,57 @@
     }
   }
 
-  .missionDiaryBox{
+  .missionDiaryBox {
     padding: 10%;
     overflow-wrap: anywhere;
-    .titleBox{
-      h2{
+    .titleBox {
+      h2 {
         font-size: 1.2rem;
       }
-      .bookIcon{
+      .bookIcon {
         width: 28px;
         height: 32px;
       }
     }
-    p{
+    p {
       font-size: 1rem;
-      
     }
-    .formBox{
+    .formBox {
       margin-top: 30%;
       width: 100%;
-      input{
+      input {
         font-size: 1.2rem;
         height: 150px;
-        
       }
     }
   }
 
-  .missionTreeBox{
+  .missionTreeBox {
     .quizBox {
       margin-top: 10%;
       flex-direction: column;
-      .imgBox{
+      .imgBox {
         width: 100%;
         height: 100%;
-        img{
+        img {
           width: 100%;
-           height: 100%;
+          height: 100%;
         }
       }
-      .quiz{
+      .quiz {
         width: 100%;
         margin-top: 5%;
-        .title{
-          font-size:1.5rem;
+        .title {
+          font-size: 1.5rem;
         }
-        .detail{
+        .detail {
           font-size: 1rem;
           overflow-wrap: anywear;
         }
-        .formBox{
+        .formBox {
           width: 90%;
-          form{
-            input{
+          form {
+            input {
               font-size: 0.8rem;
             }
           }
@@ -970,24 +967,251 @@
     }
   }
 
-  .missionMotionBox{
-    .missionBox{
-      > div{
+  .missionMotionBox {
+    .textBox {
+      & p:nth-of-type(1) {
+        font-size: 1.5rem;
+        color: $bascitFtcolor;
+      }
+      & p:nth-of-type(2) {
+        font-size: 0.8rem;
+        color: $mainColor;
+      }
+    }
+    .missionBox {
+      > div {
         width: 100px;
         height: 100px;
       }
     }
-    img{
+    img {
       width: 50px;
       height: 50px;
     }
   }
+  .missionClickCount {
+    max-width: 1200px;
+    width: 70vw;
+    height: 700px;
+    background-color: white;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    transition: 0.5s;
+    .timeBox {
+    }
+    .textBox {
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      & p:nth-of-type(1) {
+        font-size: 1.5rem;
+        color: $bascitFtcolor;
+      }
+      & p:nth-of-type(2) {
+        font-size: 0.8rem;
+        color: $mainColor;
+      }
+    }
+    .goalBox {
+      margin-top: 60px;
+      p {
+        font-size: 2rem;
+        color: $bascitFtcolor;
+        font-weight: bold;
+      }
+    }
+
+    .missionBox {
+      width: 250px;
+      height: 250px;
+      background-color: $mainColor;
+      border-radius: 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: $grayBGshadow;
+
+      p {
+        font-size: 5rem;
+        font-weight: bold;
+        color: white;
+      }
+      &.boxAniOn {
+        animation: shakeBox 0.4s linear forwards;
+      }
+      @keyframes shakeBox {
+        0% {
+          transform: translateY(0);
+        }
+
+        100% {
+          transform: translateY(-20px);
+        }
+      }
+    }
+    &.bgOn {
+      animation: complete 12s linear infinite;
+      transition: background-color 3s ease-in-out;
+    }
+    @keyframes complete {
+      0% {
+        background-color: #f79bc1;
+      }
+      25% {
+        background-color: #ffca8d;
+      }
+      50% {
+        background-color: #c2e092;
+      }
+      75% {
+        background-color: #92d0e0;
+      }
+      100% {
+        background-color: #be9bf7;
+      }
+    }
+  }
 }
 
-@include minimobile{
-  
-}
+@include minimobile {
+  .modalWrapper {
+    .missionModal {
+      height: 400px;
+    }
+  }
+  .missionMotionBox {
+    padding: 0;
+    height: 350px;
+    .timeBox {
+      font-size: 1.6rem;
+    }
+    .textBox {
+      & p:nth-of-type(1) {
+        font-size: 1.3rem;
+        color: $bascitFtcolor;
+      }
+      & p:nth-of-type(2) {
+        font-size: 0.6rem;
+        color: $mainColor;
+      }
+    }
+    .missionBox {
+      height: 200px;
+      > div {
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+      }
+      img {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+  .missionClickCount {
+    max-width: 1200px;
+    width: 70vw;
+    height: 350px;
+    background-color: white;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    transition: 0.5s;
+    .timeBox {
+      font-size: 1.6rem;
+    }
+    .textBox {
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      & p:nth-of-type(1) {
+        font-size: 1.3rem;
+        color: $bascitFtcolor;
+      }
+      & p:nth-of-type(2) {
+        text-align: center;
+        font-size: 0.8rem;
+        color: $mainColor;
+      }
+    }
+    .goalBox {
+      margin-top: 10px;
+      p {
+        font-size: 1rem;
+        color: $bascitFtcolor;
+        font-weight: bold;
+      }
+    }
 
+    .missionBox {
+      width: 150px;
+      height: 150px;
+      background-color: $mainColor;
+      border-radius: 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: $grayBGshadow;
+
+      p {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: white;
+      }
+      &.boxAniOn {
+        animation: shakeBox 0.4s linear forwards;
+        width: 150px;
+        height: 150px;
+      }
+      @keyframes shakeBox {
+        0% {
+          transform: translateY(0);
+        }
+
+        100% {
+          transform: translateY(-20px);
+        }
+      }
+    }
+    &.bgOn {
+      animation: complete 12s linear infinite;
+      transition: background-color 3s ease-in-out;
+    }
+    @keyframes complete {
+      0% {
+        background-color: #f79bc1;
+      }
+      25% {
+        background-color: #ffca8d;
+      }
+      50% {
+        background-color: #c2e092;
+      }
+      75% {
+        background-color: #92d0e0;
+      }
+      100% {
+        background-color: #be9bf7;
+      }
+    }
+  }
+}
 
 /* 데스크톱 화면에서는 input 요소 보여주기 */
 @media (min-width: 768px) {
@@ -1016,4 +1240,3 @@
     }
   }
 }
-
