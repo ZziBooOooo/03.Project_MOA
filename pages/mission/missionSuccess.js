@@ -61,8 +61,8 @@ const MissionSuccess = () => {
           +<span>1</span>코인{" "}
         </p>
         <Image
-          src="/assets/images/mission/success.png"
-          alt="example"
+          src="/assets/images/mission/fail.png"
+          alt="success"
           width={400}
           height={400}
         />
