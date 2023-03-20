@@ -947,6 +947,14 @@
   .missionTreeBox .quizBox .quiz .formBox form input {
     font-size: 0.8rem;
   }
+  .missionMotionBox .textBox p:nth-of-type(1) {
+    font-size: 1.5rem;
+    color: #3b3d3f;
+  }
+  .missionMotionBox .textBox p:nth-of-type(2) {
+    font-size: 0.8rem;
+    color: #2288ff;
+  }
   .missionMotionBox .missionBox > div {
     width: 100px;
     height: 100px;
@@ -954,6 +962,269 @@
   .missionMotionBox img {
     width: 50px;
     height: 50px;
+  }
+  .missionClickCount {
+    max-width: 1200px;
+    width: 70vw;
+    height: 700px;
+    background-color: white;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    transition: 0.5s;
+  }
+  .missionClickCount .textBox {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .missionClickCount .textBox p:nth-of-type(1) {
+    font-size: 1.5rem;
+    color: #3b3d3f;
+  }
+  .missionClickCount .textBox p:nth-of-type(2) {
+    font-size: 0.8rem;
+    color: #2288ff;
+  }
+  .missionClickCount .goalBox {
+    margin-top: 60px;
+  }
+  .missionClickCount .goalBox p {
+    font-size: 2rem;
+    color: #3b3d3f;
+    font-weight: bold;
+  }
+  .missionClickCount .missionBox {
+    width: 250px;
+    height: 250px;
+    background-color: #2288ff;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+  }
+  .missionClickCount .missionBox p {
+    font-size: 5rem;
+    font-weight: bold;
+    color: white;
+  }
+  .missionClickCount .missionBox.boxAniOn {
+    -webkit-animation: shakeBox 0.4s linear forwards;
+            animation: shakeBox 0.4s linear forwards;
+  }
+  @-webkit-keyframes shakeBox {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-20px);
+    }
+  }
+  @keyframes shakeBox {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-20px);
+    }
+  }
+  .missionClickCount.bgOn {
+    -webkit-animation: complete 12s linear infinite;
+            animation: complete 12s linear infinite;
+    transition: background-color 3s ease-in-out;
+  }
+  @-webkit-keyframes complete {
+    0% {
+      background-color: #f79bc1;
+    }
+    25% {
+      background-color: #ffca8d;
+    }
+    50% {
+      background-color: #c2e092;
+    }
+    75% {
+      background-color: #92d0e0;
+    }
+    100% {
+      background-color: #be9bf7;
+    }
+  }
+  @keyframes complete {
+    0% {
+      background-color: #f79bc1;
+    }
+    25% {
+      background-color: #ffca8d;
+    }
+    50% {
+      background-color: #c2e092;
+    }
+    75% {
+      background-color: #92d0e0;
+    }
+    100% {
+      background-color: #be9bf7;
+    }
+  }
+}
+@media (max-width: 479px) {
+  .modalWrapper .missionModal {
+    height: 400px;
+  }
+  .missionMotionBox {
+    padding: 0;
+    height: 350px;
+  }
+  .missionMotionBox .timeBox {
+    font-size: 1.6rem;
+  }
+  .missionMotionBox .textBox p:nth-of-type(1) {
+    font-size: 1.3rem;
+    color: #3b3d3f;
+  }
+  .missionMotionBox .textBox p:nth-of-type(2) {
+    font-size: 0.6rem;
+    color: #2288ff;
+  }
+  .missionMotionBox .missionBox {
+    height: 200px;
+  }
+  .missionMotionBox .missionBox > div {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+  }
+  .missionMotionBox .missionBox img {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+  }
+  .missionClickCount {
+    max-width: 1200px;
+    width: 70vw;
+    height: 350px;
+    background-color: white;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    transition: 0.5s;
+  }
+  .missionClickCount .timeBox {
+    font-size: 1.6rem;
+  }
+  .missionClickCount .textBox {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .missionClickCount .textBox p:nth-of-type(1) {
+    font-size: 1.3rem;
+    color: #3b3d3f;
+  }
+  .missionClickCount .textBox p:nth-of-type(2) {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #2288ff;
+  }
+  .missionClickCount .goalBox {
+    margin-top: 10px;
+  }
+  .missionClickCount .goalBox p {
+    font-size: 1rem;
+    color: #3b3d3f;
+    font-weight: bold;
+  }
+  .missionClickCount .missionBox {
+    width: 150px;
+    height: 150px;
+    background-color: #2288ff;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+  }
+  .missionClickCount .missionBox p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+  }
+  .missionClickCount .missionBox.boxAniOn {
+    -webkit-animation: shakeBox 0.4s linear forwards;
+            animation: shakeBox 0.4s linear forwards;
+    width: 150px;
+    height: 150px;
+  }
+  @-webkit-keyframes shakeBox {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-20px);
+    }
+  }
+  @keyframes shakeBox {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-20px);
+    }
+  }
+  .missionClickCount.bgOn {
+    -webkit-animation: complete 12s linear infinite;
+            animation: complete 12s linear infinite;
+    transition: background-color 3s ease-in-out;
+  }
+  @-webkit-keyframes complete {
+    0% {
+      background-color: #f79bc1;
+    }
+    25% {
+      background-color: #ffca8d;
+    }
+    50% {
+      background-color: #c2e092;
+    }
+    75% {
+      background-color: #92d0e0;
+    }
+    100% {
+      background-color: #be9bf7;
+    }
+  }
+  @keyframes complete {
+    0% {
+      background-color: #f79bc1;
+    }
+    25% {
+      background-color: #ffca8d;
+    }
+    50% {
+      background-color: #c2e092;
+    }
+    75% {
+      background-color: #92d0e0;
+    }
+    100% {
+      background-color: #be9bf7;
+    }
   }
 }
 /* 데스크톱 화면에서는 input 요소 보여주기 */

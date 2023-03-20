@@ -476,7 +476,7 @@
     margin-top: 10%;
   }
   .section05 .guideBox .guide_content .albumBox li:nth-of-type(7),
-  .section05 .guideBox .guide_content .albumBox li:nth-of-type(8) {
+.section05 .guideBox .guide_content .albumBox li:nth-of-type(8) {
     display: none;
   }
   .section05 .guideBox .guide_content .albumBox .album_content img {
@@ -650,8 +650,8 @@
     width: 80vw;
   }
   .section05 .guideBox .guide_content .albumBox li:nth-of-type(5),
-  .section05 .guideBox .guide_content .albumBox li:nth-of-type(6) li:nth-of-type(7),
-  .section05 .guideBox .guide_content .albumBox li:nth-of-type(8) {
+.section05 .guideBox .guide_content .albumBox li:nth-of-type(6) li:nth-of-type(7),
+.section05 .guideBox .guide_content .albumBox li:nth-of-type(8) {
     display: none;
   }
   .section05 .guideBox .guide_content .albumBox .album_content img {
