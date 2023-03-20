@@ -1,14 +1,13 @@
 @import "../../styles/variable";
 
 .myalbumCategory {
-  margin-top: 0px;
   width: 100%;
   background-color: #f7f7f7;
   height: 120px;
   font-family: "Pretendard-Regular";
 
   .Category_box {
-    width: 1200px;
+    width: 70%;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -21,11 +20,124 @@
       height: 50px;
       background: #fff;
       box-shadow: $grayBGshadow;
-      border-radius: 20px;
+      border-radius: 24px;
       text-align: center;
       line-height: 50px;
       color: #8e8b8b;
       font-weight: bold;
+    }
+
+    li:last-child {
+      width: 15%;
+    }
+  }
+}
+/* ================================================================ */
+
+@include tablet {
+  .myalbumCategory {
+    width: 100%;
+    background-color: #f7f7f7;
+    height: 120px;
+    font-family: "Pretendard-Regular";
+
+    .Category_box {
+      width: 70%;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      list-style: none;
+      justify-content: space-between;
+      align-items: center;
+      > li {
+        cursor: pointer;
+        width: 14.5%;
+        padding: 0px 5px;
+        height: 50px;
+        background: #fff;
+        box-shadow: $grayBGshadow;
+        border-radius: 24px;
+        text-align: center;
+        line-height: 50px;
+        color: #8e8b8b;
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+      li:last-child {
+        width: 18%;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .myalbumCategory {
+    width: 100%;
+    background-color: #f7f7f7;
+    height: 200px;
+    font-family: "Pretendard-Regular";
+    display: flex;
+    align-items: center;
+
+    .Category_box {
+      width: 70%;
+      height: 80%;
+      margin: 0 auto;
+      display: flex;
+      list-style: none;
+      gap: 5%;
+      align-items: center;
+      flex-wrap: wrap;
+      > li {
+        cursor: pointer;
+        width: 30%;
+        height: 50px;
+        background: #fff;
+        box-shadow: $grayBGshadow;
+        border-radius: 24px;
+        text-align: center;
+        line-height: 50px;
+        color: #8e8b8b;
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+
+      li:last-child {
+        width: 30%;
+      }
+    }
+  }
+}
+
+@include minimobile {
+  .myalbumCategory {
+    width: 100%;
+    background-color: #f7f7f7;
+    height: 150px;
+    font-family: "Pretendard-Regular";
+
+    .Category_box {
+      width: 80%;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      list-style: none;
+      gap: 1%;
+      align-items: center;
+      flex-wrap: wrap;
+      > li {
+        cursor: pointer;
+        width: 30%;
+        height: 40px;
+        background: #fff;
+        box-shadow: $grayBGshadow;
+        border-radius: 24px;
+        text-align: center;
+        line-height: 40px;
+        color: #8e8b8b;
+        font-weight: bold;
+        font-size: 0.8rem;
+      }
     }
   }
 }

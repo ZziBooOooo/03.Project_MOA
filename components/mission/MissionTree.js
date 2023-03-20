@@ -76,9 +76,11 @@ const MissionTree = () => {
                 <div className={style.quiz}>
                     <p className={style.title}>코인 갯수 찾기!</p>
                     <p className={style.detail}>그림 속 코인을 시간안에 찾아보세요</p>
-                    <form onSubmit={handleSubmit}>
-                        <input type="number" min="0" placeholder='숫자를 입력해 주세요' style={{border:"none" }} value={num} onChange={handleChange}/>
-                    </form>
+                    <div className={style.formBox}>
+                        <form onSubmit={handleSubmit}>
+                            <input type="number" min="0" placeholder='숫자를 입력해 주세요' style={{border:"none" }} value={num} onChange={handleChange}/>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

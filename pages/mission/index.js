@@ -1,10 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import style from "@/styles/mission/mission.module.css";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import axios from "axios";
 
 const Index = () => {
   const router = useRouter();
+  const [countNum, setCountNum] = useState(null);
+
+  const parsedUserEmail =
+    typeof window !== "undefined" && window.sessionStorage.getItem("userData")
+      ? JSON.parse(window.sessionStorage.getItem("userData")).useremail || null
+      : null;
+
+  async function getMissionCount() {
+    console.log(" 겟요청");
+    try {
+      const response = await axios.get("/api/mission/addCounter", {
+        params: { email: parsedUserEmail },
+      });
+      console.log(response);
+      setCountNum(response.data.missionCount);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  useEffect(() => {
+    getMissionCount();
+  }, []);
+
+  // onClick 함수 실행
+  const checkMissionCount = () => {
+    if (countNum < 3) {
+      router.push("/mission/missionModal");
+    } else {
+      router.push("/mission/missionEnd");
+    }
+  };
 
   return (
     <section className={style.mainSection}>
@@ -20,6 +53,8 @@ const Index = () => {
         </div>
         <div className={style.example}>
           <Image
+            className={style.exampleImg}
+            layout="resposive"
             src="/assets/images/mission/example.png"
             alt="example"
             width={650}
@@ -28,9 +63,7 @@ const Index = () => {
         </div>
       </div>
       <p className={style.alert}>버튼을 클릭하면 미션이 바로 시작돼요.</p>
-      <button onClick={() => router.push("/mission/missionModal")}>
-        미션 시작하기
-      </button>
+      <button onClick={() => checkMissionCount()}>미션 시작하기</button>
     </section>
   );
 };

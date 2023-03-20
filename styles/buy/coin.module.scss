@@ -9,7 +9,7 @@
 
   .content_item {
     margin: 100px auto;
-    width: 1200px;
+    width: 62%;
     > h3 {
       margin: 0 auto;
       font-size: 2rem;
@@ -145,7 +145,7 @@
       .content_coinlist_top {
         margin: 0 auto;
         padding-top: 100px;
-        width: 1050px;
+        width: 90%;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -190,7 +190,7 @@
       } /* 컨텐츠 영역 상단 부분 */
       .content_coinlist_bot {
         margin: 70px auto 0;
-        width: 1050px;
+        width: 90%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -332,7 +332,7 @@
         } /* 구매할 단어들  */
       } /* 컨텐츠 영역 하단 부분 */
       .pageButton {
-        width: 1050px;
+        width: 90%;
         margin: 10px auto 0;
         display: flex;
         justify-content: right;
@@ -348,3 +348,1074 @@
     }
   }
 } /* ======== 구매 컨텐츠  카테고리 =================== */
+
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+@include tablet {
+  .content_box {
+    margin-top: 200px;
+    background-color: #ffff;
+    width: 100%;
+    height: 1000px;
+    font-family: "Pretendard-Regular";
+
+    .content_item {
+      margin: 100px auto;
+      width: 70vw;
+      > h3 {
+        margin: 0 auto;
+        font-size: 1.6rem;
+        color: $bascitFtcolor;
+        font-weight: bold;
+      }
+      .content_coinlist {
+        margin: 60px auto 0;
+        width: 100%;
+        height: 620px;
+        border-radius: 20px;
+        background-color: #f7f7f7;
+        box-shadow: $grayBGshadow;
+        position: relative;
+
+        .buyComModal {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 20%;
+          left: 0;
+          .buyComModal_box {
+            margin: 20% auto 0;
+            background: #ffffff;
+            box-shadow: $grayBGshadow;
+            border-radius: 12px;
+            width: 420px;
+            height: 180px;
+            overflow: auto;
+            .buyComModal_text {
+              width: 350px;
+              margin: 50px auto 0;
+              display: flex;
+              flex-wrap: wrap;
+              text-align: center;
+              position: relative;
+
+              > div {
+                width: 10%;
+                height: 50px;
+              }
+              > p {
+                width: 100%;
+                font-size: 1.6rem;
+                font-weight: bold;
+                color: #2288ff;
+              }
+              > span {
+                width: 100%;
+                display: block;
+                color: #848484;
+                font-size: 1rem;
+                font-weight: 600;
+              }
+            }
+            > button {
+              display: block;
+              margin: 20px auto 0;
+              width: 89px;
+              height: 28px;
+              background: #2288ff;
+              border-radius: 20px;
+              color: #fff;
+              font-weight: bold;
+            }
+          }
+        } /* 구매완료 모달 */
+
+        .buyNotModal {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+
+          top: 20%;
+          left: 0;
+          .buyNotModal_box {
+            margin: 20% auto 0;
+            background: #ffffff;
+            box-shadow: $grayBGshadow;
+            border-radius: 12px;
+            width: 420px;
+            height: 180px;
+            overflow: auto;
+            .buyNotModal_text {
+              width: 350px;
+              margin: 50px auto 0;
+              display: flex;
+              flex-wrap: wrap;
+              text-align: center;
+              position: relative;
+              &::before {
+                content: "";
+                position: absolute;
+                top: 27%;
+                left: 9%;
+                background-image: url("../../public/assets/images/buy/notBuy.png");
+                background-size: cover;
+                width: 35px;
+                height: 35px;
+              }
+
+              > div {
+                width: 10%;
+                height: 50px;
+              }
+              > p {
+                width: 100%;
+                font-size: 1.6rem;
+                font-weight: bold;
+                color: #030101;
+              }
+              > span {
+                width: 100%;
+                display: block;
+                color: #848484;
+                font-size: 1rem;
+                font-weight: 600;
+              }
+            }
+            > button {
+              display: block;
+              margin: 20px auto 0;
+              width: 89px;
+              height: 28px;
+              background: #fcb836;
+              border-radius: 20px;
+              color: #fff;
+              font-weight: bold;
+            }
+          }
+        } /* 구매부족 모달 */
+
+        .content_coinlist_top {
+          margin: 0 auto;
+          padding-top: 100px;
+          width: 90%;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          .check_list {
+            display: flex;
+            width: 50%;
+
+            > img {
+              width: 40px;
+              height: 40px;
+            }
+            > p {
+              margin-left: 10px;
+              font-size: 1.5rem;
+              font-weight: bold;
+              color: #4a4a4a;
+            }
+          }
+          .coin_count {
+            display: flex;
+            align-items: center;
+            width: 7%;
+
+            > img {
+              width: 35px;
+              height: 35px;
+              margin-right: 10px;
+            }
+            > span {
+              font-size: 1rem;
+              font-weight: bold;
+              color: #353535;
+            }
+          }
+          > p {
+            width: 90%;
+            font-size: 1.2rem;
+            color: #a7a7a7;
+            font-weight: 500;
+            margin-left: 52px;
+          }
+        } /* 컨텐츠 영역 상단 부분 */
+        .content_coinlist_bot {
+          margin: 70px auto 0;
+          width: 90%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .content_word {
+            width: 55%;
+            height: 325px;
+
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            > button:disabled {
+              opacity: 0.5;
+              cursor: not-allowed;
+            }
+            > .isd {
+              height: 45px;
+              line-height: 45px;
+              text-align: center;
+              width: 22.3%;
+              background: #ffffff;
+              box-shadow: $grayBGshadow;
+              border-radius: 5px;
+              cursor: pointer;
+              font-size: 0.8rem;
+            }
+            > .nod {
+              cursor: pointer;
+              height: 45px;
+              line-height: 45px;
+              text-align: center;
+              width: 22.3%;
+              background: #ffffff;
+              border: solid 2px #3f8efc;
+              box-shadow: $grayBGshadow;
+              border-radius: 5px;
+              position: relative;
+              font-size: 0.8em;
+              &::before {
+                content: "";
+                background-image: url("../../public/assets/images/buy/checklist.png");
+                background-size: cover;
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 4%;
+              }
+            }
+          } /* 단어 리스트들  */
+          .content_buy_word {
+            width: 40%;
+            height: 270px;
+            background-color: #ffffff;
+            box-shadow: $grayBGshadow;
+            border-radius: 20px;
+            .totalCoin {
+              margin: 30px auto 0;
+              width: 80%;
+              display: flex;
+              justify-content: space-between;
+              > p {
+                color: #a1a1a1;
+                font-size: 1rem;
+                font-weight: bold;
+              }
+              > div {
+                display: flex;
+                align-items: center;
+                > img {
+                  width: 25px;
+                  margin-right: 8px;
+                }
+                > span {
+                  font-size: 1rem;
+                  font-weight: bold;
+                  color: #353535;
+                }
+              }
+            } /* 구매할 총비용 */
+            .buyword_list {
+              margin: 40px auto 0;
+              width: 80%;
+              height: 100px;
+              display: flex;
+              flex-wrap: wrap;
+              gap: 1px;
+              border-bottom: 1px solid #edebeb;
+              overflow-y: auto;
+              overflow-x: hidden;
+              &::-webkit-scrollbar {
+                width: 6px; /* 스크롤바의 너비 */
+              }
+
+              &::-webkit-scrollbar-thumb {
+                height: 10%; /* 스크롤바의 길이 */
+                background: #3f8efc; /* 스크롤바의 색상 */
+                border-radius: 10px;
+              }
+
+              &::-webkit-scrollbar-track {
+                background-color: none; /*스크롤바 뒷 배경 색상*/
+              }
+              .buyword_item {
+                width: 48%;
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+
+                > div {
+                  display: flex;
+                  align-items: center;
+                  > img {
+                    width: 20px;
+                    margin-right: 5px;
+                  }
+                  > span {
+                    font-weight: bold;
+                    color: #8a8686;
+                    font-size: 1rem;
+                  }
+                }
+                > P {
+                  margin-left: 10px;
+                  font-weight: bold;
+                  font-size: 1rem;
+                  color: #4a4a4a;
+                }
+              }
+            } /* 구매할 리스트 단어들 */
+            > button {
+              display: block;
+              margin: 20px auto 0;
+              width: 95px;
+              height: 30px;
+              border-radius: 50px;
+              background-color: #3f8efc;
+              color: #fff;
+            } /* 구매버튼 */
+          } /* 구매할 단어들  */
+        } /* 컨텐츠 영역 하단 부분 */
+        .pageButton {
+          width: 90%;
+          margin: 10px auto 0;
+          display: flex;
+          justify-content: right;
+          gap: 10px;
+          > div {
+            cursor: pointer;
+            > img {
+              width: 28px;
+              height: 28px;
+            }
+          }
+        } /* 컨텐츠 페이지 이동 버튼 */
+      }
+    }
+  } /* ======== 구매 컨텐츠  카테고리 =================== */
+}
+
+@include mobile {
+  .content_box {
+    margin-top: 200px;
+    background-color: #ffff;
+    width: 100%;
+    height: 1000px;
+    font-family: "Pretendard-Regular";
+
+    .content_item {
+      margin: 100px auto;
+      width: 70vw;
+      > h3 {
+        margin: 0 auto;
+        font-size: 1.6rem;
+        color: $bascitFtcolor;
+        font-weight: bold;
+      }
+      .content_coinlist {
+        margin: 60px auto 0;
+        width: 100%;
+        height: 620px;
+        border-radius: 20px;
+        background-color: #f7f7f7;
+        box-shadow: $grayBGshadow;
+        position: relative;
+
+        .buyComModal {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 25%;
+          left: 0;
+          .buyComModal_box {
+            margin: 20% auto 0;
+            background: #ffffff;
+            box-shadow: $grayBGshadow;
+            border-radius: 12px;
+            width: 350px;
+            height: 180px;
+            overflow: auto;
+            .buyComModal_text {
+              width: 300px;
+              margin: 50px auto 0;
+              display: flex;
+              flex-wrap: wrap;
+              text-align: center;
+              position: relative;
+
+              > div {
+                width: 10%;
+                height: 50px;
+              }
+              > p {
+                width: 100%;
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: #2288ff;
+              }
+              > span {
+                width: 100%;
+                display: block;
+                color: #848484;
+                font-size: 0.8rem;
+                font-weight: 600;
+              }
+            }
+            > button {
+              display: block;
+              margin: 20px auto 0;
+              width: 89px;
+              height: 28px;
+              background: #2288ff;
+              border-radius: 20px;
+              color: #fff;
+              font-weight: bold;
+            }
+          }
+        } /* 구매완료 모달 */
+
+        .buyNotModal {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+
+          top: 25%;
+          left: 0;
+          .buyNotModal_box {
+            margin: 20% auto 0;
+            background: #ffffff;
+            box-shadow: $grayBGshadow;
+            border-radius: 12px;
+            width: 350px;
+            height: 180px;
+            overflow: auto;
+            .buyNotModal_text {
+              width: 300px;
+              margin: 50px auto 0;
+              display: flex;
+              flex-wrap: wrap;
+              text-align: center;
+              position: relative;
+              &::before {
+                content: "";
+                position: absolute;
+                top: 27%;
+                left: 9%;
+                background-image: url("../../public/assets/images/buy/notBuy.png");
+                background-size: cover;
+                width: 30px;
+                height: 30px;
+              }
+
+              > div {
+                width: 10%;
+                height: 50px;
+              }
+              > p {
+                width: 100%;
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: #030101;
+              }
+              > span {
+                width: 100%;
+                display: block;
+                color: #848484;
+                font-size: 0.8rem;
+                font-weight: 600;
+              }
+            }
+            > button {
+              display: block;
+              margin: 20px auto 0;
+              width: 89px;
+              height: 28px;
+              background: #fcb836;
+              border-radius: 20px;
+              color: #fff;
+              font-weight: bold;
+            }
+          }
+        } /* 구매부족 모달 */
+
+        .content_coinlist_top {
+          margin: 0 auto;
+          padding-top: 100px;
+          width: 90%;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          .check_list {
+            display: flex;
+            width: 50%;
+
+            > img {
+              width: 40px;
+              height: 40px;
+            }
+            > p {
+              margin-left: 10px;
+              font-size: 1.2rem;
+              font-weight: bold;
+              color: #4a4a4a;
+            }
+          }
+          .coin_count {
+            display: flex;
+            align-items: center;
+            width: 7%;
+
+            > img {
+              width: 30px;
+              height: 30px;
+              margin-right: 10px;
+            }
+            > span {
+              font-size: 0.9rem;
+              font-weight: bold;
+              color: #353535;
+            }
+          }
+          > p {
+            margin-top: -3%;
+            width: 90%;
+            font-size: 0.8rem;
+            color: #a7a7a7;
+            font-weight: 500;
+            margin-left: 52px;
+          }
+        } /* 컨텐츠 영역 상단 부분 */
+        .content_coinlist_bot {
+          margin: 70px auto 0;
+          width: 90%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .content_word {
+            width: 50%;
+            height: 325px;
+
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            > button:disabled {
+              opacity: 0.5;
+              cursor: not-allowed;
+            }
+            > .isd {
+              height: 45px;
+              line-height: 45px;
+              text-align: center;
+              width: 21%;
+              background: #ffffff;
+              box-shadow: $grayBGshadow;
+              border-radius: 5px;
+              cursor: pointer;
+              font-size: 0.7rem;
+            }
+            > .nod {
+              cursor: pointer;
+              height: 45px;
+              line-height: 45px;
+              text-align: center;
+              width: 21%;
+              background: #ffffff;
+              border: solid 2px #3f8efc;
+              box-shadow: $grayBGshadow;
+              border-radius: 5px;
+              position: relative;
+              font-size: 0.7rem;
+              &::before {
+                content: "";
+                background-image: url("../../public/assets/images/buy/checklist.png");
+                background-size: cover;
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 4%;
+              }
+            }
+          } /* 단어 리스트들  */
+          .content_buy_word {
+            width: 45%;
+            height: 270px;
+            background-color: #ffffff;
+            box-shadow: $grayBGshadow;
+            border-radius: 20px;
+            .totalCoin {
+              margin: 30px auto 0;
+              width: 80%;
+              display: flex;
+              justify-content: space-between;
+              > p {
+                color: #a1a1a1;
+                font-size: 0.8rem;
+                font-weight: bold;
+              }
+              > div {
+                display: flex;
+                align-items: center;
+                > img {
+                  width: 20px;
+                  margin-right: 8px;
+                }
+                > span {
+                  font-size: 0.8rem;
+                  font-weight: bold;
+                  color: #353535;
+                }
+              }
+            } /* 구매할 총비용 */
+            .buyword_list {
+              margin: 40px auto 0;
+              width: 80%;
+              height: 100px;
+              display: flex;
+              flex-wrap: wrap;
+              gap: 1px;
+              border-bottom: 1px solid #edebeb;
+              overflow-y: auto;
+              overflow-x: hidden;
+              &::-webkit-scrollbar {
+                width: 6px; /* 스크롤바의 너비 */
+              }
+
+              &::-webkit-scrollbar-thumb {
+                height: 10%; /* 스크롤바의 길이 */
+                background: #3f8efc; /* 스크롤바의 색상 */
+                border-radius: 10px;
+              }
+
+              &::-webkit-scrollbar-track {
+                background-color: none; /*스크롤바 뒷 배경 색상*/
+              }
+              .buyword_item {
+                width: 51%;
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+
+                > div {
+                  display: flex;
+                  align-items: center;
+                  > img {
+                    width: 15px;
+                    margin-right: 5px;
+                  }
+                  > span {
+                    font-weight: bold;
+                    color: #8a8686;
+                    font-size: 0.8rem;
+                  }
+                }
+                > P {
+                  margin-left: 10px;
+                  font-weight: bold;
+                  font-size: 0.8rem;
+                  color: #4a4a4a;
+                }
+              }
+            } /* 구매할 리스트 단어들 */
+            > button {
+              display: block;
+              margin: 20px auto 0;
+              width: 95px;
+              height: 30px;
+              border-radius: 50px;
+              background-color: #3f8efc;
+              color: #fff;
+            } /* 구매버튼 */
+          } /* 구매할 단어들  */
+        } /* 컨텐츠 영역 하단 부분 */
+        .pageButton {
+          width: 90%;
+          margin: 10px auto 0;
+          display: flex;
+          justify-content: right;
+          gap: 10px;
+          > div {
+            cursor: pointer;
+            > img {
+              width: 28px;
+              height: 28px;
+            }
+          }
+        } /* 컨텐츠 페이지 이동 버튼 */
+      }
+    }
+  } /* ======== 구매 컨텐츠  카테고리 =================== */
+}
+
+@include minimobile {
+  .content_box {
+    margin-top: 100px;
+    background-color: #ffff;
+    width: 100%;
+    height: 1000px;
+    font-family: "Pretendard-Regular";
+
+    .content_item {
+      margin: 100px auto;
+      width: 70vw;
+      > h3 {
+        margin: 0 auto;
+        font-size: 1.2rem;
+        color: $bascitFtcolor;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+      .content_coinlist {
+        margin: 0 auto;
+
+        width: 100%;
+        height: 700px;
+        border-radius: 20px;
+        background-color: #f7f7f7;
+        box-shadow: $grayBGshadow;
+        position: relative;
+
+        .buyComModal {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 50%;
+          left: 0;
+          .buyComModal_box {
+            margin: 20% auto 0;
+            background: #ffffff;
+            box-shadow: $grayBGshadow;
+            border-radius: 12px;
+            width: 220px;
+            height: 150px;
+            overflow: auto;
+            .buyComModal_text {
+              width: 170px;
+              margin: 50px auto 0;
+              display: flex;
+              flex-wrap: wrap;
+              text-align: center;
+              position: relative;
+
+              > div {
+                width: 10%;
+                height: 50px;
+              }
+              > p {
+                width: 100%;
+                font-size: 0.8rem;
+                font-weight: bold;
+                color: #2288ff;
+              }
+              > span {
+                width: 100%;
+                display: block;
+                color: #848484;
+                font-size: 0.5rem;
+                font-weight: 600;
+              }
+            }
+            > button {
+              display: block;
+              margin: 20px auto 0;
+              width: 60px;
+              height: 20px;
+              line-height: 20px;
+              font-size: 0.8rem;
+              background: #2288ff;
+              border-radius: 20px;
+              color: #fff;
+              font-weight: bold;
+            }
+          }
+        } /* 구매완료 모달 */
+
+        .buyNotModal {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+
+          top: 50%;
+          left: 0;
+          .buyNotModal_box {
+            margin: 20% auto 0;
+            background: #ffffff;
+            box-shadow: $grayBGshadow;
+            border-radius: 12px;
+            width: 220px;
+            height: 150px;
+            overflow: auto;
+            .buyNotModal_text {
+              width: 170px;
+              margin: 50px auto 0;
+              display: flex;
+              flex-wrap: wrap;
+              text-align: center;
+              position: relative;
+              &::before {
+                content: "";
+                position: absolute;
+                top: 27%;
+                left: 1%;
+                background-image: url("../../public/assets/images/buy/notBuy.png");
+                background-size: cover;
+                width: 20px;
+                height: 20px;
+              }
+
+              > div {
+                width: 10%;
+                height: 50px;
+              }
+              > p {
+                width: 100%;
+                font-size: 0.8rem;
+                font-weight: bold;
+                color: #030101;
+              }
+              > span {
+                width: 100%;
+                display: block;
+                color: #848484;
+                font-size: 0.5rem;
+                font-weight: 600;
+              }
+            }
+            > button {
+              display: block;
+              margin: 20px auto 0;
+              width: 60px;
+              height: 20px;
+              background: #fcb836;
+              border-radius: 20px;
+              color: #fff;
+              font-weight: bold;
+              font-size: 0.8rem;
+              line-height: 20px;
+            }
+          }
+        } /* 구매부족 모달 */
+
+        .content_coinlist_top {
+          margin: 0 auto;
+          padding-top: 60px;
+          width: 90%;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          .check_list {
+            display: flex;
+            width: 50%;
+
+            > img {
+              width: 30px;
+              height: 30px;
+            }
+            > p {
+              margin-left: 10px;
+              font-size: 0.8rem;
+              font-weight: bold;
+              color: #4a4a4a;
+            }
+          }
+          .coin_count {
+            display: flex;
+            align-items: center;
+            width: 7%;
+
+            > img {
+              width: 15px;
+              height: 15px;
+              margin-right: 2px;
+            }
+            > span {
+              font-size: 0.6rem;
+              font-weight: bold;
+              color: #353535;
+            }
+          }
+          > p {
+            margin-top: -5%;
+            width: 90%;
+            font-size: 0.6rem;
+            color: #a7a7a7;
+            font-weight: 500;
+            margin-left: 40px;
+          }
+        } /* 컨텐츠 영역 상단 부분 */
+        .content_coinlist_bot {
+          margin: 30px auto 0;
+          width: 90%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+
+          .content_word {
+            width: 90%;
+            height: 325px;
+
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            > button:disabled {
+              opacity: 0.5;
+              cursor: not-allowed;
+            }
+            > .isd {
+              height: 45px;
+              line-height: 45px;
+              text-align: center;
+              width: 21%;
+              background: #ffffff;
+              box-shadow: $grayBGshadow;
+              border-radius: 5px;
+              cursor: pointer;
+              font-size: 0.7rem;
+            }
+            > .nod {
+              cursor: pointer;
+              height: 45px;
+              line-height: 45px;
+              text-align: center;
+              width: 21%;
+              background: #ffffff;
+              border: solid 2px #3f8efc;
+              box-shadow: $grayBGshadow;
+              border-radius: 5px;
+              position: relative;
+              font-size: 0.7rem;
+              &::before {
+                content: "";
+                background-image: url("../../public/assets/images/buy/checklist.png");
+                background-size: cover;
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 4%;
+              }
+            }
+          } /* 단어 리스트들  */
+          .content_buy_word {
+            width: 90%;
+            height: 200px;
+            background-color: #ffffff;
+            box-shadow: $grayBGshadow;
+            border-radius: 20px;
+            .totalCoin {
+              margin: 30px auto 0;
+              width: 80%;
+              display: flex;
+              justify-content: space-between;
+              > p {
+                color: #a1a1a1;
+                font-size: 0.8rem;
+                font-weight: bold;
+              }
+              > div {
+                display: flex;
+                align-items: center;
+                > img {
+                  width: 20px;
+                  margin-right: 8px;
+                }
+                > span {
+                  font-size: 0.8rem;
+                  font-weight: bold;
+                  color: #353535;
+                }
+              }
+            } /* 구매할 총비용 */
+            .buyword_list {
+              margin: 5px auto 0;
+              width: 80%;
+              height: 100px;
+              display: flex;
+              flex-wrap: wrap;
+              gap: 1px;
+              border-bottom: 1px solid #edebeb;
+              overflow-y: auto;
+              overflow-x: hidden;
+              &::-webkit-scrollbar {
+                width: 6px; /* 스크롤바의 너비 */
+              }
+
+              &::-webkit-scrollbar-thumb {
+                height: 10%; /* 스크롤바의 길이 */
+                background: #3f8efc; /* 스크롤바의 색상 */
+                border-radius: 10px;
+              }
+
+              &::-webkit-scrollbar-track {
+                background-color: none; /*스크롤바 뒷 배경 색상*/
+              }
+              .buyword_item {
+                width: 51%;
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+
+                > div {
+                  display: flex;
+                  align-items: center;
+                  > img {
+                    width: 15px;
+                    margin-right: 5px;
+                  }
+                  > span {
+                    font-weight: bold;
+                    color: #8a8686;
+                    font-size: 0.8rem;
+                  }
+                }
+                > P {
+                  margin-left: 10px;
+                  font-weight: bold;
+                  font-size: 0.8rem;
+                  color: #4a4a4a;
+                }
+              }
+            } /* 구매할 리스트 단어들 */
+            > button {
+              display: block;
+              margin: 10px auto 0;
+              width: 75px;
+              height: 20px;
+              border-radius: 50px;
+              background-color: #3f8efc;
+              color: #fff;
+              font-size: 0.6rem;
+            } /* 구매버튼 */
+          } /* 구매할 단어들  */
+        } /* 컨텐츠 영역 하단 부분 */
+        .pageButton {
+          width: 90%;
+          margin: 20px auto 0;
+          display: flex;
+          justify-content: right;
+          gap: 10px;
+          margin-right: 30px;
+          > div {
+            cursor: pointer;
+            > img {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        } /* 컨텐츠 페이지 이동 버튼 */
+      }
+    }
+  } /* ======== 구매 컨텐츠  카테고리 =================== */
+}

@@ -2,14 +2,13 @@
 /*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
 /*반응형, 브라우저 크기가 1024px 이상일때*/
 .myalbumCategory {
-  margin-top: 0px;
   width: 100%;
   background-color: #f7f7f7;
   height: 120px;
   font-family: "Pretendard-Regular";
 }
 .myalbumCategory .Category_box {
-  width: 1200px;
+  width: 70%;
   height: 100%;
   margin: 0 auto;
   display: flex;
@@ -23,9 +22,115 @@
   height: 50px;
   background: #fff;
   box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
-  border-radius: 20px;
+  border-radius: 24px;
   text-align: center;
   line-height: 50px;
   color: #8e8b8b;
   font-weight: bold;
+}
+.myalbumCategory .Category_box li:last-child {
+  width: 15%;
+}
+
+/* ================================================================ */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .myalbumCategory {
+    width: 100%;
+    background-color: #f7f7f7;
+    height: 120px;
+    font-family: "Pretendard-Regular";
+  }
+  .myalbumCategory .Category_box {
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .myalbumCategory .Category_box > li {
+    cursor: pointer;
+    width: 14.5%;
+    padding: 0px 5px;
+    height: 50px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+    border-radius: 24px;
+    text-align: center;
+    line-height: 50px;
+    color: #8e8b8b;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  .myalbumCategory .Category_box li:last-child {
+    width: 18%;
+  }
+}
+@media (max-width: 767px) {
+  .myalbumCategory {
+    width: 100%;
+    background-color: #f7f7f7;
+    height: 200px;
+    font-family: "Pretendard-Regular";
+    display: flex;
+    align-items: center;
+  }
+  .myalbumCategory .Category_box {
+    width: 70%;
+    height: 80%;
+    margin: 0 auto;
+    display: flex;
+    list-style: none;
+    gap: 5%;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .myalbumCategory .Category_box > li {
+    cursor: pointer;
+    width: 30%;
+    height: 50px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+    border-radius: 24px;
+    text-align: center;
+    line-height: 50px;
+    color: #8e8b8b;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  .myalbumCategory .Category_box li:last-child {
+    width: 30%;
+  }
+}
+@media (max-width: 479px) {
+  .myalbumCategory {
+    width: 100%;
+    background-color: #f7f7f7;
+    height: 150px;
+    font-family: "Pretendard-Regular";
+  }
+  .myalbumCategory .Category_box {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    list-style: none;
+    gap: 1%;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .myalbumCategory .Category_box > li {
+    cursor: pointer;
+    width: 30%;
+    height: 40px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+    border-radius: 24px;
+    text-align: center;
+    line-height: 40px;
+    color: #8e8b8b;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
 }/*# sourceMappingURL=myalbumcategory.module.css.map */

@@ -7,9 +7,8 @@
   font-family: "Pretendard-Regular";
   overflow: hidden;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 4%;
+  justify-content: center;
 }
 .myalbum_banner .myalbum_phone {
   width: 40%;
@@ -23,6 +22,9 @@
   transform: translateY(750px);
   transition: 1.3s;
   opacity: 0;
+  width: 40%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .myalbum_banner .myalbum_phone .phoneImg02 {
   display: block;
@@ -31,6 +33,9 @@
   transform: translateY(600px);
   transition: 1.8s;
   opacity: 0;
+  width: 40%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .myalbum_banner .myalbum_textbox {
   width: 33%;
@@ -48,4 +53,173 @@
   padding-top: 30px;
   color: #bababa;
   margin-left: 8px;
+}
+
+/* ================================================================ */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .myalbum_banner {
+    width: 100%;
+    height: 720px;
+    font-family: "Pretendard-Regular";
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .myalbum_banner .myalbum_phone {
+    width: 40%;
+    height: 100%;
+    margin-top: 15%;
+    display: flex;
+  }
+  .myalbum_banner .myalbum_phone .phoneImg01 {
+    display: block;
+    margin-top: 10%;
+    transform: translateY(750px);
+    transition: 1.3s;
+    opacity: 0;
+    width: 40%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .myalbum_banner .myalbum_phone .phoneImg02 {
+    display: block;
+    margin-top: 30%;
+    margin-right: 50px;
+    transform: translateY(600px);
+    transition: 1.8s;
+    opacity: 0;
+    width: 40%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .myalbum_banner .myalbum_textbox {
+    width: 30%;
+    opacity: 0;
+    transition: 2.6s;
+  }
+  .myalbum_banner .myalbum_textbox > h3 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #3b3d3f;
+  }
+  .myalbum_banner .myalbum_textbox > p {
+    font-size: 1rem;
+    font-weight: 600;
+    padding-top: 30px;
+    color: #bababa;
+    margin-left: 8px;
+  }
+}
+@media (max-width: 767px) {
+  .myalbum_banner {
+    width: 100%;
+    height: 650px;
+    font-family: "Pretendard-Regular";
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .myalbum_banner .myalbum_phone {
+    width: 50%;
+    height: 100%;
+    margin-top: 15%;
+    display: flex;
+    justify-content: center;
+  }
+  .myalbum_banner .myalbum_phone .phoneImg01 {
+    display: block;
+    margin-top: 10%;
+    transform: translateY(750px);
+    transition: 1.3s;
+    opacity: 0;
+    width: 60%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .myalbum_banner .myalbum_phone .phoneImg02 {
+    display: none;
+    margin-top: 20%;
+    margin-right: 20px;
+    transform: translateY(600px);
+    transition: 1.8s;
+    opacity: 0;
+    width: 40%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .myalbum_banner .myalbum_textbox {
+    width: 50%;
+    opacity: 0;
+    transition: 2.6s;
+  }
+  .myalbum_banner .myalbum_textbox > h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3b3d3f;
+  }
+  .myalbum_banner .myalbum_textbox > p {
+    font-size: 1rem;
+    font-weight: 600;
+    padding-top: 10px;
+    color: #bababa;
+  }
+}
+@media (max-width: 479px) {
+  .myalbum_banner {
+    width: 100%;
+    height: 500px;
+    font-family: "Pretendard-Regular";
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .myalbum_banner .myalbum_phone {
+    width: 40%;
+    height: 100%;
+    margin-top: 15%;
+    display: flex;
+    display: none;
+  }
+  .myalbum_banner .myalbum_phone .phoneImg01 {
+    display: block;
+    margin-top: 10%;
+    transform: translateY(750px);
+    transition: 1.3s;
+    opacity: 0;
+    width: 40%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .myalbum_banner .myalbum_phone .phoneImg02 {
+    display: block;
+    margin-top: 20%;
+    margin-right: 20px;
+    transform: translateY(600px);
+    transition: 1.8s;
+    opacity: 0;
+    width: 40%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .myalbum_banner .myalbum_textbox {
+    width: 100%;
+    opacity: 0;
+    transition: 2.6s;
+    text-align: center;
+  }
+  .myalbum_banner .myalbum_textbox > h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3b3d3f;
+  }
+  .myalbum_banner .myalbum_textbox > p {
+    font-size: 1rem;
+    font-weight: 600;
+    padding-top: 30px;
+    color: #bababa;
+    margin-left: 8px;
+  }
 }/*# sourceMappingURL=myalbumbanner.module.css.map */

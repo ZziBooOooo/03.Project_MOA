@@ -16,7 +16,7 @@
   }
 
   .myalbum_box {
-    width: 1200px;
+    width: 63%;
     height: 600px;
     margin: 0 auto;
     display: flex;
@@ -27,11 +27,12 @@
     row-gap: 0.5%;
   }
   .myalbum_img {
-    width: 17%;
-    height: 235px;
+    width: 205px;
+    height: 205px;
     border-radius: 16px;
     position: relative;
-    perspective: 17%;
+    cursor: pointer;
+
     &:hover .myalbum_front {
       transform: rotateY(180deg);
     }
@@ -41,7 +42,7 @@
 
     .myalbum_front {
       width: 100%;
-      height: 100%;
+
       backface-visibility: hidden;
       transition: 0.8s;
       position: absolute;
@@ -50,8 +51,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: auto;
+        height: 205px;
         display: block;
         box-shadow: $grayBGshadow;
         border-radius: 16px;
@@ -62,8 +62,8 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 204px;
+      width: 205px;
+      height: 205px;
       background-color: aliceblue;
       box-shadow: $grayBGshadow;
       border-radius: 16px;
@@ -86,6 +86,282 @@
         background-color: #2288ff;
         color: azure;
         border-radius: 30px;
+      }
+    }
+  }
+}
+/* ================================================================ */
+
+@include tablet {
+  .myalbumContent {
+    margin-top: 80px;
+    margin-bottom: 120px;
+    width: 100%;
+    font-family: "Pretendard-Regular";
+
+    .noData {
+      > P {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #817a7a;
+      }
+    }
+
+    .myalbum_box {
+      width: 63%;
+      height: 500px;
+      margin: 0 auto;
+      display: flex;
+
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .myalbum_img {
+      width: 205px;
+      height: 205px;
+      border-radius: 16px;
+      position: relative;
+
+      &:hover .myalbum_front {
+        transform: rotateY(180deg);
+      }
+      &:hover .myalbum_back {
+        transform: rotateY(0deg);
+      }
+
+      .myalbum_front {
+        width: 100%;
+
+        backface-visibility: hidden;
+        transition: 0.8s;
+        position: absolute;
+        transform: rotateY(0deg);
+        > img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 205px;
+          display: block;
+          box-shadow: $grayBGshadow;
+          border-radius: 16px;
+        }
+      }
+
+      .myalbum_back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 205px;
+        height: 205px;
+        background-color: aliceblue;
+        box-shadow: $grayBGshadow;
+        border-radius: 16px;
+        backface-visibility: hidden;
+        transition: 0.8s;
+        transform: rotateY(-180deg);
+        > p {
+          font-size: 1.2rem;
+          margin: 60px auto 25px;
+          width: 80%;
+          text-align: center;
+          font-weight: bold;
+          color: #3e4041;
+        }
+        > button {
+          display: block;
+          margin: 0 auto;
+          width: 120px;
+          height: 31.38px;
+          background-color: #2288ff;
+          color: azure;
+          border-radius: 30px;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .myalbumContent {
+    margin-top: 80px;
+    margin-bottom: 120px;
+    width: 100%;
+    font-family: "Pretendard-Regular";
+
+    .noData {
+      > P {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #817a7a;
+      }
+    }
+
+    .myalbum_box {
+      width: 63%;
+      height: 500px;
+      margin: 0 auto;
+      display: flex;
+
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .myalbum_img {
+      width: 140px;
+      height: 140px;
+      border-radius: 16px;
+      position: relative;
+
+      &:hover .myalbum_front {
+        transform: rotateY(180deg);
+      }
+      &:hover .myalbum_back {
+        transform: rotateY(0deg);
+      }
+
+      .myalbum_front {
+        width: 100%;
+
+        backface-visibility: hidden;
+        transition: 0.8s;
+        position: absolute;
+        transform: rotateY(0deg);
+        > img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 140px;
+          display: block;
+          box-shadow: $grayBGshadow;
+          border-radius: 16px;
+        }
+      }
+
+      .myalbum_back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 140px;
+        height: 140px;
+        background-color: aliceblue;
+        box-shadow: $grayBGshadow;
+        border-radius: 16px;
+        backface-visibility: hidden;
+        transition: 0.8s;
+        transform: rotateY(-180deg);
+        > p {
+          font-size: 0.8rem;
+          margin: 40px auto 25px;
+          width: 80%;
+          text-align: center;
+          font-weight: bold;
+          color: #3e4041;
+        }
+        > button {
+          display: block;
+          margin: 0 auto;
+          width: 80px;
+          height: 25px;
+          background-color: #2288ff;
+          color: azure;
+          border-radius: 30px;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+@include minimobile {
+  .myalbumContent {
+    margin-top: -90px;
+    margin-bottom: 0px;
+    width: 100%;
+    font-family: "Pretendard-Regular";
+    z-index: -1;
+
+    .noData {
+      > P {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #817a7a;
+      }
+    }
+
+    .myalbum_box {
+      width: 63%;
+      height: 500px;
+      margin: 0 auto;
+      display: flex;
+
+      flex-wrap: wrap;
+
+      align-content: center;
+    }
+    .myalbum_img {
+      width: 100px;
+      height: 100px;
+      border-radius: 16px;
+      position: relative;
+      margin-bottom: 20px;
+
+      &:hover .myalbum_front {
+        transform: rotateY(180deg);
+      }
+      &:hover .myalbum_back {
+        transform: rotateY(0deg);
+      }
+
+      .myalbum_front {
+        width: 100%;
+
+        backface-visibility: hidden;
+        transition: 0.8s;
+        position: absolute;
+        transform: rotateY(0deg);
+        > img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100px;
+          display: block;
+          box-shadow: $grayBGshadow;
+          border-radius: 16px;
+        }
+      }
+
+      .myalbum_back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        background-color: aliceblue;
+        box-shadow: $grayBGshadow;
+        border-radius: 16px;
+        backface-visibility: hidden;
+        transition: 0.8s;
+        transform: rotateY(-180deg);
+        > p {
+          font-size: 0.6rem;
+          margin: 30px auto 15px;
+          width: 80%;
+          text-align: center;
+          font-weight: bold;
+          color: #3e4041;
+        }
+        > button {
+          display: block;
+          margin: 0 auto;
+          width: 70px;
+          height: 20px;
+          background-color: #2288ff;
+          color: azure;
+          border-radius: 30px;
+          font-size: 0.6rem;
+        }
       }
     }
   }

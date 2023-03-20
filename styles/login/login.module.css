@@ -1,1 +1,129 @@
-/*# sourceMappingURL=login.module.css.map */
+@charset "UTF-8";
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+.loginBack {
+  margin-top: 80px;
+  width: 100%;
+  height: 100vh;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginBack .loginBox {
+  width: 48vw;
+  height: 55vh;
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+  border-radius: 12px;
+  text-align: center;
+}
+.loginBack .loginBox .loginAni > img {
+  margin: 140px auto 0;
+  transform: rotate(70deg);
+}
+.loginBack .loginBox > div {
+  width: 40%;
+  margin: 80px auto 0;
+  cursor: pointer;
+}
+.loginBack .loginBox div:nth-of-type(2) img {
+  transition: 0.3s;
+}
+.loginBack .loginBox div:nth-of-type(2) img:hover {
+  transform: translateY(-5px);
+}
+.loginBack .loginBox div:nth-of-type(2) img:active {
+  transform: translateY(0px);
+}
+.loginBack .loginBox > img {
+  transition: 0.3s;
+}
+
+/* ============================================================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .loginBack {
+    margin-top: 80px;
+    width: 100%;
+    height: 100vh;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .loginBack .loginBox {
+    width: 70vw;
+    height: 55vh;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+    border-radius: 12px;
+    text-align: center;
+  }
+  .loginBack .loginBox .loginAni > img {
+    margin: 140px auto 0;
+    transform: rotate(70deg);
+  }
+  .loginBack .loginBox > div {
+    width: 40%;
+    margin: 80px auto 0;
+    cursor: pointer;
+  }
+}
+@media (max-width: 767px) {
+  .loginBack {
+    margin-top: 80px;
+    width: 100%;
+    height: 100vh;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .loginBack .loginBox {
+    width: 70vw;
+    height: 55vh;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+    border-radius: 12px;
+    text-align: center;
+  }
+  .loginBack .loginBox .loginAni > img {
+    margin: 140px auto 0;
+    transform: rotate(70deg);
+  }
+  .loginBack .loginBox > div {
+    width: 40%;
+    margin: 80px auto 0;
+    cursor: pointer;
+  }
+}
+@media (max-width: 479px) {
+  .loginBack {
+    margin-top: 80px;
+    width: 100%;
+    height: 70vh;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .loginBack .loginBox {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px rgba(145, 145, 145, 0.05), 0 4px 8px rgba(145, 145, 145, 0.05), 0 6px 12px rgba(145, 145, 145, 0.05), 0 12px 24px rgba(145, 145, 145, 0.05);
+    border-radius: 12px;
+    text-align: center;
+  }
+  .loginBack .loginBox .loginAni > img {
+    width: 100px;
+    height: 100px;
+    margin: 140px auto 0;
+    transform: rotate(70deg);
+  }
+  .loginBack .loginBox > div {
+    width: 40%;
+    margin: 50px auto 0;
+    cursor: pointer;
+  }
+}/*# sourceMappingURL=login.module.css.map */

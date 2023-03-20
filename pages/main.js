@@ -44,14 +44,13 @@ const Main = () => {
   return (
     <>
       <section className={style.section01}>
-        <p>모아서 그리자!</p>
+        <p>모아서 그리자! </p>
         <h1>아티스트가 되는 공간. 모아 </h1>
         <button onClick={() => router.push("/mission")}>시작하기</button>
-        <div className={style.scrolldown}>
-          <div className={style.chevrons}>
-            <div className={style.chevrondown}></div>
-            <div className={style.chevrondown}></div>
-          </div>
+        <div className={style.scroll__down}>
+          <span className={style.scroll__mouse}>
+            <span className={style.scroll__wheel}></span>
+          </span>
         </div>
       </section>
 
@@ -74,13 +73,15 @@ const Main = () => {
 
           <div className={style.guide_content}>
             <div className={style.guide_container}>
-              <Image
-                src="/assets/images/main/checkCircle.png"
-                alt="check"
-                width={55}
-                height={55}
-                className={style.guide_icon}
-              />
+              <div className={style.imgBox}>
+                <Image
+                  src="/assets/images/main/checkCircle.png"
+                  alt="check"
+                  width={30}
+                  height={30}
+                  className={style.guide_icon}
+                />
+              </div>
               <p className={style.mission_title}>하루 한번 참여</p>
               <p className={style.mission_detail}>
                 미션은 하루에 한번 <br></br>참여할 수 있어요.
@@ -88,13 +89,15 @@ const Main = () => {
             </div>
 
             <div className={style.guide_container}>
-              <Image
-                src="/assets/images/main/slot.png"
-                alt="slot"
-                width={55}
-                height={55}
-                className={style.guide_icon}
-              />
+              <div className={style.imgBox}>
+                <Image
+                  src="/assets/images/main/slot.png"
+                  alt="slot"
+                  width={35}
+                  height={35}
+                  className={style.guide_icon}
+                />
+              </div>
               <p className={style.mission_title}>랜덤 참여</p>
               <p className={style.mission_detail}>
                 미션은 매일 <br></br> 랜덤으로 주어져요.
@@ -102,13 +105,15 @@ const Main = () => {
             </div>
 
             <div className={style.guide_container}>
-              <Image
-                src="/assets/images/main/moneypocket.png"
-                alt="moneypocket"
-                width={55}
-                height={55}
-                className={style.guide_icon}
-              />
+              <div className={style.imgBox}>
+                <Image
+                  src="/assets/images/main/moneypocket.png"
+                  alt="moneypocket"
+                  width={30}
+                  height={30}
+                  className={style.guide_icon}
+                />
+              </div>
               <p className={style.mission_title}>코인 적립</p>
               <p className={style.mission_detail}>
                 모은 코인으로 <br></br> 코인을 적립해드려요.
@@ -160,10 +165,10 @@ const Main = () => {
               <div className={style.content}>
                 <div className={style.iconBox}>
                   <Image
-                    src="/assets/images/main/thumbs-up 4.png"
+                    src="/assets/images/main/thumbsUp.png"
                     alt="thumbs"
-                    width={75}
-                    height={75}
+                    width={110}
+                    height={120}
                     className={style.guide_icon}
                   />
                 </div>
@@ -180,8 +185,8 @@ const Main = () => {
                   <Image
                     src="/assets/images/main/star (1) 4 (1).png"
                     alt="star"
-                    width={75}
-                    height={75}
+                    width={130}
+                    height={140}
                     className={style.guide_icon}
                   />
                 </div>
@@ -201,9 +206,9 @@ const Main = () => {
                 <div className={style.iconBox}>
                   <Image
                     src="/assets/images/main/pxArt.png"
-                    alt="star"
-                    width={75}
-                    height={75}
+                    alt="pxArt"
+                    width={110}
+                    height={110}
                     className={style.guide_icon}
                   />
                 </div>
@@ -218,9 +223,9 @@ const Main = () => {
                 <div className={style.iconBox}>
                   <Image
                     src="/assets/images/main/down.png"
-                    alt="star"
-                    width={75}
-                    height={75}
+                    alt="down"
+                    width={110}
+                    height={110}
                     className={style.guide_icon}
                   />
                 </div>
@@ -254,91 +259,73 @@ const Main = () => {
                 <Image
                   src="/assets/images/main/img01.png"
                   alt="img01"
-                  width={239}
-                  height={139}
+                  width={225}
+                  height={225}
                   className={style.picture}
                 />
-                <p>
-                  {" "}
-                  A computer from <br></br>
-                  the 90s in the style <br></br>
-                  of vaporwave
-                </p>
               </li>
               <li className={style.album_content}>
                 <Image
                   src="/assets/images/main/img02.png"
                   alt="img02"
-                  width={239}
-                  height={139}
+                  width={225}
+                  height={225}
                   className={style.picture}
                 />
-                <p>
-                  {" "}
-                  A computer from <br></br>
-                  the 90s in the style <br></br>
-                  of vaporwave
-                </p>
               </li>
               <li className={style.album_content}>
                 <Image
                   src="/assets/images/main/img03.png"
                   alt="img03"
-                  width={239}
-                  height={139}
+                  width={225}
+                  height={225}
                   className={style.picture}
                 />
-                <p>
-                  {" "}
-                  A computer from <br></br>
-                  the 90s in the style <br></br>
-                  of vaporwave
-                </p>
               </li>
               <li className={style.album_content}>
                 <Image
                   src="/assets/images/main/img04.png"
                   alt="img04"
-                  width={239}
-                  height={139}
+                  width={225}
+                  height={225}
                   className={style.picture}
                 />
-                <p>
-                  {" "}
-                  A computer from <br></br>
-                  the 90s in the style <br></br>
-                  of vaporwave
-                </p>
               </li>
               <li className={style.album_content}>
                 <Image
                   src="/assets/images/main/img05.png"
                   alt="img05"
-                  width={239}
-                  height={139}
+                  width={225}
+                  height={225}
                   className={style.picture}
                 />
-                <p>
-                  {" "}
-                  A computer from <br></br>
-                  the 90s in the style <br></br>
-                  of vaporwave
-                </p>
               </li>
               <li className={style.album_content}>
                 <Image
                   src="/assets/images/main/img06.png"
                   alt="img06"
-                  width={239}
-                  height={139}
+                  width={225}
+                  height={225}
                   className={style.picture}
                 />
-                <p>
-                  {" "}
-                  A computer from <br></br>
-                  the 90s in the style <br></br>
-                  of vaporwave
-                </p>
+              </li>
+              <li className={style.album_content}>
+                <Image
+                  src="/assets/images/main/img07.png"
+                  alt="img07"
+                  width={225}
+                  height={225}
+                  className={style.picture}
+                />
+              </li>
+              <li className={style.album_content}>
+                <Image
+                  src="/assets/images/main/img08.png"
+                  alt="img08"
+                  width={225}
+                  height={225}
+                  className={style.picture}
+                />
               </li>
             </ul>
           </div>
