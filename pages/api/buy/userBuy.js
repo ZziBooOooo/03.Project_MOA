@@ -38,7 +38,7 @@ export default async function handler(req, res) {
             useremail: email,
             name: name,
             profile: profile,
-            coin: 10,
+            coin: 20,
             missionCount: 0,
             words: {
               WordCoin2: [
