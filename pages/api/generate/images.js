@@ -29,9 +29,10 @@ export default async function handler(req, res) {
 
     res.status(200).json({ result: response.data.data });
 
-    // const token = req.headers.authorization;
+    // const token = req.headers.authorization;y
   } catch (error) {
-    console.error(error);
+    // console.error(error);
+    console.log(error.response);
     res.status(500).json({ error: "Failed to generate image" });
   }
 }

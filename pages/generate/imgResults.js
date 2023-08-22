@@ -67,8 +67,6 @@ const ImgResults = () => {
       const translatedText = await translateKoreanToEnglish(prompt);
       console.log(translatedText);
       let fullUserSentenceKR = prompt;
-      // const regex = /(?<=^[^,]+,)[^,]+(?=,[^,]+$)/g;
-      // const UserSentenceKR = fullUserSentenceKR.match(regex);
       axios
         .post("/api/generate/images", {
           p: translatedText,
@@ -157,9 +155,9 @@ const ImgResults = () => {
     setTimeout(() => {
       setShowModal(false);
     }, 2000);
-    setTimeout(() => {
-      router.push("/myalbum");
-    }, 2200);
+    // setTimeout(() => {
+    //   router.push("/myalbum");
+    // }, 2200);
   }
 
   function closeModal() {
