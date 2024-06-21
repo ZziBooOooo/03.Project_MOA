@@ -97,9 +97,5 @@ export default async function handler(req, res) {
       }
       break;
     /* 코인 차감 , 단어주기 */
-
-    default:
-      res.setHeader("Allow", ["GET", "PUT", "POST"]);
-      res.status(405).json({ error: `Method ${method} not allowed` });
   }
 }

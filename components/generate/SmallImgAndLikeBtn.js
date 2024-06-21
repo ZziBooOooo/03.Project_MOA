@@ -8,6 +8,7 @@ import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
 
 const SmallImgAndLikeBtn = ({ idx, data, userDatas }) => {
+  // console.log(data, data.like);
   const [liked, setLiked] = useState("");
   const [isAnimating, setIsAnimating] = useState(false);
   const [filteredData, setFilteredData] = useState(null);
@@ -74,6 +75,10 @@ const SmallImgAndLikeBtn = ({ idx, data, userDatas }) => {
       setLiked(isLiked);
     }
   }, [filteredData, data.imgId]);
+
+  useEffect(() => {
+    setLikeCount(data.like);
+  }, [data]);
 
   return (
     <div className={style.s_imgBox}>

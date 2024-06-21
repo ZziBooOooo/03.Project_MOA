@@ -8,7 +8,7 @@ import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
 import { AnimatePresence, motion } from "framer-motion";
 
-const ImageAndLikeBtn = ({ idx, data, userDatas }) => {
+const ImageAndLikeBtn = ({ idx, data, userDatas, fillterTopImgFun }) => {
   const [liked, setLiked] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [filteredData, setFilteredData] = useState(null);
@@ -39,7 +39,6 @@ const ImageAndLikeBtn = ({ idx, data, userDatas }) => {
 
     let newLiked = !liked;
     setLiked(newLiked);
-    console.log(newLiked);
 
     if (newLiked) {
       setLikeCount(likeCount + 1);
@@ -61,6 +60,10 @@ const ImageAndLikeBtn = ({ idx, data, userDatas }) => {
       .catch((error) => {
         console.log(error);
       });
+
+    // 상단 3개 이미지 중 좋아요 클릭 시
+    // 다시 top3 이미지 선정함
+    // 하트 갯수가 증가해야하는데 -> state로 처리중 (db통신 x)
   }
 
   useEffect(() => {

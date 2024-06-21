@@ -20,6 +20,7 @@ const Others = () => {
   const [userDatas, setUserDatas] = useState([]);
   const [top3Data, setTop3Data] = useState([]);
   const [randomData, setRandomData] = useState([]);
+  const [refreshClick, setRefreshClick] = useState(false);
 
   function mergeImgUrlArray() {
     // const copyUserData = JSON.parse(JSON.stringify(userDatas));
@@ -53,11 +54,13 @@ const Others = () => {
 
   function getRandomImg() {
     const allImgArr = mergeImgUrlArray();
-
     const allImgCount = allImgArr.length;
     const randomImgArr = getRandomImgFromArray(allImgArr, allImgCount);
+    // console.log(randomImgArr);
     setRandomData(randomImgArr);
   }
+  // console.log(userDatas);
+
   async function fillterTopImg() {
     // userDatas에서 가장 많은 하트 개수의 이미지 객체를 한 배열에 담는다
     const sortedUserDatas =
@@ -80,7 +83,7 @@ const Others = () => {
     setTop3Data(sortedLikes);
   }
   function refreshRandomImg() {
-    getRandomImg();
+    setRefreshClick((prev) => !prev);
   }
 
   useEffect(() => {
@@ -88,22 +91,23 @@ const Others = () => {
       try {
         const res = await axios.get("/api/generate/userData");
         setUserDatas(res.data);
-        // console.log(res.data);
       } catch (err) {
         console.error(err);
       }
     }
     fetchData();
-  }, []);
+  }, [refreshClick]);
 
+  // 의존성배열에 userData만 있어야 하는게 아님
+  // 하트 개수가 변할 때마다 실시간 업데이트가 필요함
+  // 해결? -> small 좋아요 누를 때마다 다시 db 데이터 받아옴
+  // 문제 -> 하단 이미지가 다시 랜덤으로 들어옴
   useEffect(() => {
     if (userDatas) {
       fillterTopImg();
       getRandomImg();
     }
   }, [userDatas]);
-
-  console.log(top3Data);
 
   return (
     <div className={style.fullBox}>
@@ -136,7 +140,6 @@ const Others = () => {
           <div className={style.imgBox}>
             <AnimatePresence>
               {imgUrlArr.map((url, key) => {
-                console.log(key);
                 return (
                   <motion.div
                     className={style.topImgBox}
