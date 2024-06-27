@@ -30,59 +30,26 @@ const ImgResults = () => {
   const { imgType } = useContext(selectTypeContext);
   const { imgStyle } = useContext(selectStyleContext);
 
-  // const currentUserEmail = userSaveData.useremail;
-
-  // 번역요청 - 파파고 api
-  async function translateKoreanToEnglish(koreanText) {
-    // console.log(koreanText);
-    const params = {
-      source: "ko",
-      target: "en",
-      text: koreanText,
-    };
-    try {
-      const res = await axios.post("/api/generate/translate", params);
-      const translatedText = res.data.translatedText;
-      setEnPrompt(translatedText);
-      // setPrompt(translatedText);
-      // console.log(translatedText);
-      return translatedText;
-    } catch (error) {
-      console.error(error);
-    }
-  }
 
   // 이미지 생성요청 -> 번역함수 먼저실행
-  async function generateImages() {
+  async function generateImages(userSentence) {
     const currentUserEmail =
-      typeof window !== "undefined" && window.sessionStorage.getItem("userData")
-        ? JSON.parse(window.sessionStorage.getItem("userData")).useremail ||
-          null
-        : null;
-    // console.log(token);
-    // console.log(prompt);
-    if (prompt != "") {
-      setError(false);
-      setLoading(true);
-      const translatedText = await translateKoreanToEnglish(prompt);
-      console.log(translatedText);
-      let fullUserSentenceKR = prompt;
-      axios
-        .post("/api/generate/images", {
-          p: translatedText,
-          currentUserEmail,
-          title: fullUserSentenceKR,
-          type: imgType,
-          style: imgStyle,
-        })
-        .then(async (res) => {
-          setResults(res.data.result);
-          setLoading(false);
-        })
-        .catch((err) => {
-          setLoading(false);
-          setError(true);
+    typeof window !== "undefined" && window.sessionStorage.getItem("userData")
+    ? JSON.parse(window.sessionStorage.getItem("userData")).useremail ||
+    null
+    : null;
+    if (userSentence) {
+      try {
+        const res = await axios.post("/api/generate/images", {
+          p: userSentence,
         });
+        console.log('생성 요청')
+        setResults(res.data.result);
+      } catch (err) {
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
     } else {
       setError(true);
     }
@@ -119,32 +86,31 @@ const ImgResults = () => {
 
   // propmt는 번역, 이미지 생성시에 사용됨
   useEffect(() => {
-    // console.log(results);
-    if (prompt) {
-      generateImages();
-    } else {
-      // setPrompt(userSentence);
+    const type =
+      typeof window !== "undefined" && window.sessionStorage.getItem("userData")
+        ? window.sessionStorage.getItem("type")
+        : null;
+    const sentence =
+      typeof window !== "undefined" && window.sessionStorage.getItem("userData")
+        ? window.sessionStorage.getItem("sentence")
+        : null;
+    const style =
+      typeof window !== "undefined" && window.sessionStorage.getItem("userData")
+        ? window.sessionStorage.getItem("style")
+        : null;
+    const userSentence = `${style},${sentence},${type}`;
 
-      const type =
-        typeof window !== "undefined" &&
-        window.sessionStorage.getItem("userData")
-          ? window.sessionStorage.getItem("type")
-          : null;
-      const sentence =
-        typeof window !== "undefined" &&
-        window.sessionStorage.getItem("userData")
-          ? window.sessionStorage.getItem("sentence")
-          : null;
-      const style =
-        typeof window !== "undefined" &&
-        window.sessionStorage.getItem("userData")
-          ? window.sessionStorage.getItem("style")
-          : null;
-      const userSentence = `${style},${sentence},${type}`;
-
+    if (!prompt && userSentence) {
       setPrompt(userSentence);
+      generateImages(userSentence)
     }
   }, [prompt]);
+
+/*   useEffect(() => {
+    if (prompt) {
+      generateImages();
+    }
+  }, [prompt]); */
 
   function openModal(url) {
     setShowModal(true);

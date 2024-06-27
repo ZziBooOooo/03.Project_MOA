@@ -1,10 +1,11 @@
 import { connectToDatabase } from "@/database/connect";
 
 export default async function handler(req, res) {
-  const { method } = req;
   const { client } = await connectToDatabase();
   const db = client.db("DataMoa");
   const userCollection = db.collection("user");
+  const { method } = req;
+  console.log(method)
   const { name, email, profile } = req.body;
 
   switch (method) {

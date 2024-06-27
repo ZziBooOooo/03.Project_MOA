@@ -6,7 +6,6 @@ export const UserSaveDataContext = createContext(null); /* 이거 불러서 쓰�
 
 const UserSaveDataComponent = (props) => {
   const [userSaveData, setuserSaveData] = useState(); /* 사용자 데이터 */
-  // 새로고침해도 데이터유지 -? 로컬이나 세션에도 저장?-?
 
   const { data, status } = useSession();
 
@@ -59,7 +58,6 @@ const UserSaveDataComponent = (props) => {
     >
       {props.children}
     </UserSaveDataContext.Provider>
-    /* 이거 불러서 쓰세요 */
   );
 };
 
