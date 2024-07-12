@@ -12,6 +12,7 @@ import { UserSaveDataContext } from "@/contexts/UserSaveDataComponent";
 import { motion, AnimatePresence } from "framer-motion";
 import SaveModal from "@/components/generate/SaveModal";
 import Loading from "@/components/generate/Loading";
+import InfoModal from "@/components/generate/InfoModal";
 
 const ImgResults = () => {
   const [prompt, setPrompt] = useState(null);
@@ -84,6 +85,7 @@ const ImgResults = () => {
     }
   }
 
+
   // propmt는 번역, 이미지 생성시에 사용됨
   useEffect(() => {
     const type =
@@ -101,8 +103,8 @@ const ImgResults = () => {
     const userSentence = `${style},${sentence},${type}`;
 
     if (!prompt && userSentence) {
-      setPrompt(userSentence);
-      generateImages(userSentence)
+      // setPrompt(userSentence);
+      // generateImages(userSentence)
     }
   }, [prompt]);
 
@@ -112,15 +114,16 @@ const ImgResults = () => {
     }
   }, [prompt]); */
 
-  function openModal(url) {
-    setShowModal(true);
-    saveImage(url);
-
+  function scrollToTop(){
     const bottomBoxTop = bottomBoxRef.current.offsetTop;
     window.scrollTo({ left: 0, top: bottomBoxTop, behavior: "smooth" });
-    setTimeout(() => {
-      setShowModal(false);
-    }, 2000);
+  }
+
+  function openModal(url) {
+    setShowModal(true);
+    // saveImage(url);
+
+   
     // setTimeout(() => {
     //   router.push("/myalbum");
     // }, 2200);
@@ -129,6 +132,25 @@ const ImgResults = () => {
   function closeModal() {
     setShowModal(false);
   }
+
+  function showLoadingContent(){
+    scrollToTop();
+    setLoading((prev)=>!prev);
+
+    setTimeout(()=>{
+      setLoading((prev)=>!prev);
+    },2700)
+
+    setTimeout(()=>{
+      openModal()
+    },3500)
+
+  }
+
+  /* api 키 만료메세지 모달 생성 */
+  useEffect(()=>{
+    showLoadingContent()
+  },[])
 
   return (
     <div className={`${style.fullBox} ${r_style.fullBox}`}>
@@ -141,9 +163,21 @@ const ImgResults = () => {
         ) : (
           <></>
         )}
-        {loading && <Loading />}
+          <AnimatePresence>
+        {loading && (
+          <motion.div
+            key="loading"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.7 }} // Adjust duration as needed
+          >
+            <Loading />
+          </motion.div>
+        )}
+        </AnimatePresence>
 
-        {loading == 0 && error == 0 ? (
+{/*         {loading == 0 && error == 0 ? (
           <>
             <div className={r_style.textBox}>
               <div className={r_style.firstTextBox}>
@@ -173,11 +207,12 @@ const ImgResults = () => {
           </>
         ) : (
           ""
-        )}
+        )} */}
 
         <AnimatePresence>
           {showModal && (
-            <SaveModal closeModal={closeModal} openModal={openModal} />
+            // <SaveModal closeModal={closeModal} openModal={openModal} />
+            <InfoModal/>
           )}
         </AnimatePresence>
       </div>
