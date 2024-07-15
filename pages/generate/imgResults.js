@@ -212,7 +212,7 @@ const ImgResults = () => {
         <AnimatePresence>
           {showModal && (
             // <SaveModal closeModal={closeModal} openModal={openModal} />
-            <InfoModal/>
+            <InfoModal closeModal={closeModal} />
           )}
         </AnimatePresence>
       </div>

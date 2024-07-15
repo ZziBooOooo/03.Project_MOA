@@ -1,51 +1,83 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { motion } from "framer-motion";
 import r_style from "@/styles/generate/results.module.scss";
+import Image from "next/image";
+import logo from "../../public/assets/images/logo.png";
 
-const boxVars = { // 부모의 variants 객체
+const bgVars = { // 부모의 variants 객체
     start: { 
       opacity: 0,
-      scale: 0.5,
     },
     end: { 
       opacity: 1,
-      scale: 1, 
-      rotateZ: 360, 
       transition: { 
         type: "spring", 
-        duration: 0.5,
-        bounce: 0.5, 
+        duration: 1.5,
         delayChildren: 0.5,  // 자식 컴포넌트는 0.5초 느리게 나타나게 하는 속성
-        staggerChildren: 0.2, //  자식 컴포넌트 하나 나타나고 그다음 컴포넌트에 0.2초 딜레이 부여
+        // staggerChildren: 0.2, //  자식 컴포넌트 하나 나타나고 그다음 컴포넌트에 0.2초 딜레이 부여
       }
-    }
+    },
+    exit: { opacity: 0, transition: { delay:0.8, duration: 0.7 } }
   }
   
-  const circleVars = { // 자식의 variants 객체
+  const modalVars = { // 자식의 variants 객체
     start: {
-        opacity: 0,
-      y: 10
+      opacity: 0,
+      y: "-45%",
+      x:"-50%"
     },
     end: {
       opacity: 1,
-      y: 0,
+      y: "-50%",
+      transition:{
+        type: "spring", 
+        duration: 1,
+      }
     },
+    exit: {opacity: 0, y:"-45%", transition: { duration: 0.8 } }
   }
 
-const InfoModal = () => {
+const InfoModal = ({closeModal}) => {
+
+  useEffect(()=>{
+    document.body.style.overflow = 'hidden';
+    
+    // 모달이 언마운트 될 때 스크롤 복구
+    return()=>{
+      document.body.style.overflow = 'auto';
+    }
+  },[])
     
 
   return (
     <motion.div 
-        variants={boxVars}
+        variants={bgVars}
         initial="start"
         animate="end"
-        className={r_style.modalBgDiv}>
+        exit="exit"
+        className={r_style.modalBgDiv}
+        onClick={closeModal}>
         <motion.div
-            variants={circleVars}
+            variants={modalVars}
             className={r_style.modalContainer}>
-      <div className={r_style.modalBox}>
-        <h2>저장완료</h2>
+          <div className={r_style.modalBox} >
+            <div>
+              <Image
+            src={logo}
+            alt="Logo"
+            width={110}
+            height={110}
+            style={{ transform: "rotate(-70deg)" }}
+          />
+            </div>
+            <div>
+            <h3>안내의 말씀</h3>
+            <p>OPEN AI의 api 유료화 정책으로 인해</p>
+            <p>이미지 생성기능은 현재 지원되지 않습니다.</p>
+            <p>앨범페이지로 이동해 그동안 MOA의 유저들이</p>
+            <p>생성한 이미지를 구경할 수 있어요.</p>
+            </div>
+            <button className={r_style.moveBtn}>이동하기</button>
       </div>
         </motion.div>
     </motion.div>
