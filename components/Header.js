@@ -151,7 +151,9 @@ const Header = () => {
                   <hr />
                   <div
                     onClick={() =>
-                      signOut({ callbackUrl: "http://localhost:3000/login" })
+                      signOut({
+                        callbackUrl: "https://03-project-moa.vercel.app/login",
+                      })
                     }
                   >
                     <p>
