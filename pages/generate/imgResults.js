@@ -31,20 +31,19 @@ const ImgResults = () => {
   const { imgType } = useContext(selectTypeContext);
   const { imgStyle } = useContext(selectStyleContext);
 
-
   // 이미지 생성요청 -> 번역함수 먼저실행
   async function generateImages(userSentence) {
     const currentUserEmail =
-    typeof window !== "undefined" && window.sessionStorage.getItem("userData")
-    ? JSON.parse(window.sessionStorage.getItem("userData")).useremail ||
-    null
-    : null;
+      typeof window !== "undefined" && window.sessionStorage.getItem("userData")
+        ? JSON.parse(window.sessionStorage.getItem("userData")).useremail ||
+          null
+        : null;
     if (userSentence) {
       try {
         const res = await axios.post("/api/generate/images", {
           p: userSentence,
         });
-        console.log('생성 요청')
+        console.log("생성 요청");
         setResults(res.data.result);
       } catch (err) {
         setError(true);
@@ -85,7 +84,6 @@ const ImgResults = () => {
     }
   }
 
-
   // propmt는 번역, 이미지 생성시에 사용됨
   useEffect(() => {
     const type =
@@ -108,13 +106,13 @@ const ImgResults = () => {
     }
   }, [prompt]);
 
-/*   useEffect(() => {
+  /*   useEffect(() => {
     if (prompt) {
       generateImages();
     }
   }, [prompt]); */
 
-  function scrollToTop(){
+  function scrollToTop() {
     const bottomBoxTop = bottomBoxRef.current.offsetTop;
     window.scrollTo({ left: 0, top: bottomBoxTop, behavior: "smooth" });
   }
@@ -123,7 +121,6 @@ const ImgResults = () => {
     setShowModal(true);
     // saveImage(url);
 
-   
     // setTimeout(() => {
     //   router.push("/myalbum");
     // }, 2200);
@@ -133,24 +130,23 @@ const ImgResults = () => {
     setShowModal(false);
   }
 
-  function showLoadingContent(){
+  function showLoadingContent() {
     scrollToTop();
-    setLoading((prev)=>!prev);
+    setLoading((prev) => !prev);
 
-    setTimeout(()=>{
-      setLoading((prev)=>!prev);
-    },2700)
+    setTimeout(() => {
+      setLoading((prev) => !prev);
+    }, 2000);
 
-    setTimeout(()=>{
-      openModal()
-    },3500)
-
+    setTimeout(() => {
+      openModal();
+    }, 2500);
   }
 
   /* api 키 만료메세지 모달 생성 */
-  useEffect(()=>{
-    showLoadingContent()
-  },[])
+  useEffect(() => {
+    showLoadingContent();
+  }, []);
 
   return (
     <div className={`${style.fullBox} ${r_style.fullBox}`}>
@@ -163,21 +159,21 @@ const ImgResults = () => {
         ) : (
           <></>
         )}
-          <AnimatePresence>
-        {loading && (
-          <motion.div
-            key="loading"
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.7 }} // Adjust duration as needed
-          >
-            <Loading />
-          </motion.div>
-        )}
+        <AnimatePresence>
+          {loading && (
+            <motion.div
+              key="loading"
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.7 }} // Adjust duration as needed
+            >
+              <Loading />
+            </motion.div>
+          )}
         </AnimatePresence>
 
-{/*         {loading == 0 && error == 0 ? (
+        {/*         {loading == 0 && error == 0 ? (
           <>
             <div className={r_style.textBox}>
               <div className={r_style.firstTextBox}>
