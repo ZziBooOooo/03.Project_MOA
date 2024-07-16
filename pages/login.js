@@ -30,9 +30,7 @@ export default function LoginPage() {
 
           <motion.div
             onClick={() => {
-              signIn("google", {
-                callbackUrl: "https://03-project-moa.vercel.app",
-              });
+              signIn("google", { callbackUrl: "http://localhost:3000" });
             }}
             className={style.googleBtn}
             initial={{ scale: 0, opacity: 0 }}

@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   const db = client.db("DataMoa");
   const userCollection = db.collection("user");
   const { method } = req;
-  console.log(method)
+  console.log(method);
   const { name, email, profile } = req.body;
 
   switch (method) {
@@ -15,14 +15,14 @@ export default async function handler(req, res) {
         const users = await userCollection.findOne({
           useremail: req.query.email,
         });
-        // console.log(users);
+        console.log(users);
         if (users) {
           res.status(200).json({ status: "exist", users: users });
         } else {
           res.status(200).json({ status: "noExist" });
         }
       } catch (e) {
-        console.error("에러뜸");
+        console.error("Error during GET request:", e);
         res.status(500).json({ error: "Something went wrong" });
       }
       break;
@@ -32,7 +32,8 @@ export default async function handler(req, res) {
       try {
         const existingUser = await userCollection.findOne({ useremail: email });
         if (existingUser && existingUser.useremail == email) {
-          console.log("등록된 사용자");
+          console.log("등록된 유저");
+          res.status(200).json({ message: "등록된 유저입니다." });
           return;
         } else {
           await userCollection.insertOne({
@@ -60,8 +61,8 @@ export default async function handler(req, res) {
                 { id: 40, isDone: true, coinNum: 4, word: "먹는다" },
                 { id: 41, isDone: true, coinNum: 4, word: "그린다" },
                 { id: 42, isDone: true, coinNum: 4, word: "논다" },
-                { id: 42, isDone: true, coinNum: 4, word: "쉰다" },
-                { id: 42, isDone: true, coinNum: 4, word: "걷는다" },
+                { id: 43, isDone: true, coinNum: 4, word: "쉰다" },
+                { id: 44, isDone: true, coinNum: 4, word: "걷는다" },
               ],
             },
             imgUrl: [],
@@ -74,7 +75,7 @@ export default async function handler(req, res) {
             .json({ message: "User saved successfully", users: savedUser });
         }
       } catch (e) {
-        console.error(e);
+        console.error("Error during POST request:", e);
         res.status(500).json({ error: "Something went wrong" });
       }
       break;
@@ -93,7 +94,7 @@ export default async function handler(req, res) {
         );
         res.status(200).json(result);
       } catch (e) {
-        console.error(e);
+        console.error("Error during PUT request:", e);
         res.status(500).json({ error: "Something went wrong" });
       }
       break;
