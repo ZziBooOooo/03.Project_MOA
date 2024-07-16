@@ -149,11 +149,7 @@ const Header = () => {
                     </p>
                   </div>
                   <hr />
-                  <div
-                    onClick={() =>
-                      signOut({ callbackUrl: "http://localhost:3000/login" })
-                    }
-                  >
+                  <div onClick={() => signOut({ callbackUrl: "/login" })}>
                     <p>
                       <Image
                         src={"/assets/images/main/out.png"}

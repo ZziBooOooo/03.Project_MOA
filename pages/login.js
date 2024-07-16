@@ -30,7 +30,9 @@ export default function LoginPage() {
 
           <motion.div
             onClick={() => {
-              signIn("google", { callbackUrl: "http://localhost:3000" });
+              signIn("google", {
+                callbackUrl: "/",
+              });
             }}
             className={style.googleBtn}
             initial={{ scale: 0, opacity: 0 }}
