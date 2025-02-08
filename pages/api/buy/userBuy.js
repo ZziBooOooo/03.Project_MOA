@@ -4,13 +4,14 @@ export default async function handler(req, res) {
   const { client } = await connectToDatabase();
   const db = client.db("DataMoa");
   const userCollection = db.collection("user");
+  // console.log(userCollection)
   const { method } = req;
-  console.log(method);
+  // console.log(method);
   const { name, email, profile } = req.body;
 
   switch (method) {
     case "GET":
-      // console.log(req.query);
+      console.log(req.query.email);
       try {
         const users = await userCollection.findOne({
           useremail: req.query.email,

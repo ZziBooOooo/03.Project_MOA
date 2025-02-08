@@ -92,7 +92,14 @@
   margin: 5px 0 8px 0;
   border: 0;
 }
-.headerBox .headerContainer .header_rightBox .profileWrap:hover .myInfoDiv {
+.headerBox .headerContainer .header_rightBox .profileContainer {
+  position: relative;
+  display: inline-block;
+  height: 60px;
+  margin-top: 20px;
+}
+.headerBox .headerContainer .header_rightBox .profileContainer:hover .myInfoDiv,
+.headerBox .headerContainer .header_rightBox .myInfoDiv.active {
   display: flex;
   transform: translateY(0px);
   opacity: 1;
@@ -209,6 +216,9 @@
     margin-left: 3%;
     padding: 0.8% 3.5%;
     font-size: 1rem;
+  }
+  .headerBox .headerContainer .header_rightBox .profileContainer {
+    margin-top: 30px;
   }
   .headerBox .headerContainer .header_rightBox .profileWrap {
     position: relative;
@@ -369,6 +379,9 @@
     margin-left: 1%;
     padding: 0.8% 3.5%;
     font-size: 0.9rem;
+  }
+  .headerBox .headerContainer .header_rightBox .profileContainer {
+    margin-top: 35px;
   }
   .headerBox .headerContainer .header_rightBox .profileWrap {
     position: relative;

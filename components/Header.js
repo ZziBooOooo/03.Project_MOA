@@ -11,6 +11,7 @@ const Header = () => {
   const router = useRouter();
   const [scrollPosition, setScrollPosition] = useState(0);
   const [selectedPage, setSelectedPage] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
   const { userData } = useContext(buyContext);
 
   const userCoin =
@@ -97,68 +98,83 @@ const Header = () => {
           ))}
           {userData ? (
             <>
-              <div className={style.profileWrap}>
-                <Image
-                  src={userData.profile}
-                  width={36}
-                  height={36}
-                  alt="프로필 이미지"
-                  className={style.profileImg}
-                  unoptimized={true}
-                  style={{ borderRadius: "50%" }}
-                />
-                <div className={style.myInfoDiv}>
-                  <div>
-                    <p>
-                      <Image
-                        src={"/assets/images/main/user.png"}
-                        alt="유저 아이콘 이미지"
-                        width={24}
-                        height={24}
-                      />
-                    </p>
-                    <p>{userData.name}</p>
-                  </div>
-                  <div>
-                    <p>
-                      <Image
-                        src={"/assets/images/main/cent.png"}
-                        alt="동전 이미지"
-                        width={24}
-                        height={24}
-                      />
-                    </p>
-                    <p>{userCoin ? userCoin : userData.coin}개</p>
-                  </div>
-                  <div>
-                    <p>
-                      <Image
-                        src={"/assets/images/main/book.png"}
-                        alt="책 이미지"
-                        width={24}
-                        height={24}
-                      />
-                    </p>
-                    <p>
-                      {userWord
-                        ? userWord
-                        : userData.words.WordCoin2.length +
-                          userData.words.WordCoin3.length +
-                          userData.words.WordCoin4.length}
-                      개
-                    </p>
-                  </div>
-                  <hr />
-                  <div onClick={() => signOut({ callbackUrl: "/login" })}>
-                    <p>
-                      <Image
-                        src={"/assets/images/main/out.png"}
-                        alt="로그아웃 아이콘 "
-                        width={24}
-                        height={24}
-                      />
-                    </p>
-                    <p>로그아웃</p>
+              <div
+                className={style.profileContainer}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
+                <div className={style.profileWrap}>
+                  <Image
+                    src={userData.profile}
+                    width={36}
+                    height={36}
+                    alt="프로필 이미지"
+                    className={style.profileImg}
+                    unoptimized={true}
+                    style={{ borderRadius: "50%" }}
+                  />
+                  <div
+                    className={`${style.myInfoDiv} ${
+                      isHovered ? style.active : ""
+                    }`}
+                  >
+                    <div>
+                      <p>
+                        <Image
+                          src={"/assets/images/main/user.png"}
+                          alt="유저 아이콘 이미지"
+                          width={24}
+                          height={24}
+                        />
+                      </p>
+                      <p>{userData.name}</p>
+                    </div>
+                    <div>
+                      <p>
+                        <Image
+                          src={"/assets/images/main/cent.png"}
+                          alt="동전 이미지"
+                          width={24}
+                          height={24}
+                        />
+                      </p>
+                      <p>{userCoin ? userCoin : userData.coin}개</p>
+                    </div>
+                    <div>
+                      <p>
+                        <Image
+                          src={"/assets/images/main/book.png"}
+                          alt="책 이미지"
+                          width={24}
+                          height={24}
+                        />
+                      </p>
+                      <p>
+                        {userWord
+                          ? userWord
+                          : userData.words.WordCoin2.length +
+                            userData.words.WordCoin3.length +
+                            userData.words.WordCoin4.length}
+                        개
+                      </p>
+                    </div>
+                    <hr />
+                    <div
+                      onClick={() => {
+                        sessionStorage.removeItem("userData");
+                        signOut({ callbackUrl: "/login" });
+                      }}
+                    >
+                      <p>
+                        <Image
+                          src={"/assets/images/main/out.png"}
+                          alt="로그아웃 아이콘 "
+                          width={24}
+                          height={24}
+                        />
+                      </p>
+                      <p>로그아웃</p>
+                    </div>
                   </div>
                 </div>
               </div>

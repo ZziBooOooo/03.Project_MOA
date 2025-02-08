@@ -57,7 +57,7 @@ const MissionDiary = () => {
           <input
             className={style.input_container}
             type="text"
-            maxlength="90"
+            maxLength="90"
             style={{ border: "none" }}
             value={diary}
             onChange={handleChange}
@@ -67,7 +67,7 @@ const MissionDiary = () => {
           <textarea
             className={style.textarea_container}
             type="text"
-            maxlength="90"
+            maxLength="90"
             style={{ border: "none" }}
             value={diary}
             onChange={handleChange}
@@ -88,7 +88,6 @@ const MissionDiary = () => {
           </button>
         </form>
       </div>
-
     </div>
   );
 };

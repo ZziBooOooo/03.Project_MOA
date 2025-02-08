@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { wordCountContext } from "@/contexts/generate/wordCountContext";
 import { userWordContext } from "@/contexts/generate/userWordContext";
 import { userSentenceContext } from "@/contexts/generate/userSentenceContext";
-import { UserSaveDataContext } from "@/contexts/UserSaveDataComponent";
+import { buyContext } from "@/contexts/buy/buyPageContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
@@ -38,23 +38,35 @@ const Word = () => {
   const { userWords, setUserWords } = useContext(userWordContext);
   const { userSentence, setUserSentence } = useContext(userSentenceContext);
 
-
-  
-
+  const { userData } = useContext(buyContext);
 
   const { data } = useSession(); /* 로그인 세션 */
   const router = useRouter();
 
   // 페이지 접속할때마다 데이터 받아오게 해야함
-  async function getUserDatas() {
+  /*   async function getUserDatas() {
+    let parsedUserEmail = null;
     // *** 새로고침하면 session을 바로 못받아온다.
     // 로그인성공하면 세션스토리지에 저장하고 받아온다
-    const parsedUserEmail =
+    parsedUserEmail =
       typeof window !== "undefined" && window.sessionStorage.getItem("userData")
         ? JSON.parse(window.sessionStorage.getItem("userData")).useremail ||
           null
         : null;
     // console.log(parsedUserEmail);
+
+    if (userData?.users?.name === "게스트") {
+      console.log("lll");
+      parsedUserEmail =
+        typeof window !== "undefined" &&
+        window.sessionStorage.getItem("userData")
+          ? JSON.parse(window.sessionStorage.getItem("userData")).users
+              .useremail || null
+          : null;
+    }
+
+    console.log(parsedUserEmail);
+
     try {
       const response1 = await axios.get("/api/buy/userBuy", {
         params: { email: parsedUserEmail },
@@ -78,7 +90,62 @@ const Word = () => {
     } catch (error) {
       console.error(error);
     }
+  } */
+
+  async function getUserDatas() {
+    let parsedUserEmail = null;
+
+    if (typeof window !== "undefined") {
+      const storedUserData = sessionStorage.getItem("userData");
+
+      if (storedUserData) {
+        try {
+          const parsedData = JSON.parse(storedUserData);
+
+          // ✅ Ensure parsedData has the correct structure before accessing `useremail`
+          parsedUserEmail =
+            parsedData?.users?.useremail || parsedData?.useremail || null;
+        } catch (error) {
+          console.error("Error parsing userData from sessionStorage:", error);
+          parsedUserEmail = null;
+        }
+      }
+    }
+
+    if (!parsedUserEmail) {
+      console.warn("No valid user email found in sessionStorage.");
+      return;
+    }
+
+    console.log("Parsed User Email:", parsedUserEmail);
+
+    try {
+      const response1 = await axios.get("/api/buy/userBuy", {
+        params: { email: parsedUserEmail },
+      });
+
+      if (!response1.data.users || !response1.data.users.useremail) {
+        console.warn("Invalid response format:", response1.data);
+        return;
+      }
+
+      const response2 = await axios.get("/api/generate/wordcontroll", {
+        params: { currentUserEmail: response1.data.users.useremail },
+      });
+
+      if (response2.data) {
+        const UserWord_DB = response2.data;
+        const userWordArr = Object.values(UserWord_DB).flat();
+
+        if (userWordArr.length > 0) {
+          setUserWords(userWordArr);
+        }
+      }
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
   }
+
   // 유저의 단어목록을 받아오는 함수
   // 코인개수별로 나눠진 데이터를 한개의 배열로 합쳤다.
 

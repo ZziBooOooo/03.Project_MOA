@@ -73,20 +73,45 @@ const BuyContextCom = (props) => {
 
   const [userData, setuserData] = useState(); /* 사용자 데이터 */
   const { data } = useSession(); /* 로그인 세션 */
+  const [guestLoginStatus, setGuestLoginStatus] = useState(false);
 
   const userGetData = async () => {
     try {
-      const response = await axios
-        .get("/api/buy/userBuy", {
-          params: { email: data?.user?.email },
-        })
-        .then((res) => {
-          setuserData(res.data.users);
-        });
+      const response = await axios.get("/api/buy/userBuy", {
+        params: { email: data?.user?.email },
+      });
+      setuserData(response.data.users);
     } catch (error) {
       console.error(error);
     }
   }; /* 사용자 정보 */
+
+  useEffect(() => {
+    const fetchGuestUserData = async () => {
+      const storedUserData = sessionStorage.getItem("userData");
+
+      if (storedUserData) {
+        const parsedUserData = JSON.parse(storedUserData);
+        // console.log(parsedUserData);
+
+        if (parsedUserData?.users?.useremail === "projectmoatest@gmail.com") {
+          console.log("Fetching additional data for guest user...");
+
+          try {
+            const extraResponse = await axios.get("/api/buy/userBuy", {
+              params: { email: parsedUserData.users.useremail },
+            });
+
+            setuserData(extraResponse.data.users);
+          } catch (error) {
+            console.error("Error fetching guest user data:", error);
+          }
+        }
+      }
+    };
+
+    fetchGuestUserData();
+  }, [guestLoginStatus]);
 
   const userBuyData = async (coinTotal, buyWord, wordName) => {
     try {
@@ -115,6 +140,7 @@ const BuyContextCom = (props) => {
         userBuyData,
         userData,
         setuserData,
+        setGuestLoginStatus,
       }}
     >
       {props.children}
