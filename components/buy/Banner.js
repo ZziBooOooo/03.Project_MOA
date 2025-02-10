@@ -1,9 +1,11 @@
 import { buyContext } from "@/contexts/buy/buyPageContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import style from "styles/buy/buy.module.scss";
 
 export default function Banner() {
   const { userData } = useContext(buyContext);
+  const [sessionUserData, setSessionUserData] = useState(null);
+  const [userWordCount, setUsesWordCount] = useState(0);
 
   const wordLength =
     userData &&
@@ -13,6 +15,38 @@ export default function Banner() {
   if (typeof window !== "undefined") {
     sessionStorage.setItem("totalWordCount", wordLength);
   }
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedUserData = sessionStorage.getItem("userData");
+
+      if (storedUserData) {
+        try {
+          const parsedData = JSON.parse(storedUserData);
+          setSessionUserData(parsedData);
+          console.log("User Data loaded from sessionStorage:", parsedData);
+
+          if (parsedData.users.name === "게스트") {
+            const wordLength1 =
+              parsedData &&
+              parsedData.users.words.WordCoin2.length +
+                parsedData.users.words.WordCoin3.length +
+                parsedData.users.words.WordCoin4.length;
+            console.log(wordLength1);
+
+            setUsesWordCount(wordLength1);
+            if (typeof window !== "undefined") {
+              sessionStorage.setItem("totalWordCount", wordLength1);
+            }
+          }
+        } catch (error) {
+          console.error("Error parsing userData from sessionStorage:", error);
+        }
+      } else {
+        console.warn("No userData found in sessionStorage.");
+      }
+    }
+  }, []);
 
   const [io, setio] = useState(false);
   const [so, setso] = useState(false);

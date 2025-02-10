@@ -22,6 +22,7 @@ const MissionSuccess = () => {
       await axios.post("/api/mission/addCoin", {
         email: parsedUserEmail,
       });
+      console.log(parsedUserEmail);
     } catch (err) {
       console.log(err);
     }

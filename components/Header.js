@@ -161,7 +161,7 @@ const Header = () => {
                     <hr />
                     <div
                       onClick={() => {
-                        sessionStorage.removeItem("userData");
+                        sessionStorage.clear();
                         signOut({ callbackUrl: "/login" });
                       }}
                     >

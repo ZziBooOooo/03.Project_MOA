@@ -100,7 +100,7 @@ const InfoModal = ({ closeModal }) => {
             <motion.div variants={contentVars}>
               <p>OPEN AI의 api 유료화 정책으로 인해</p>
               <p>이미지 생성기능은 현재 지원되지 않습니다.</p>
-              <p>앨범페이지로 이동 그동안 MOA의 유저들이</p>
+              <p>앨범페이지로 이동해 그동안 MOA의 유저들이</p>
               <p>생성한 이미지를 구경할 수 있어요.</p>
             </motion.div>
           </div>
