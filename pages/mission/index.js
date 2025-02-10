@@ -88,7 +88,6 @@ const Index = () => {
       <div className={style.description_container}>
         <div className={style.description}>
           <h1>
-            {countNum}
             매일 새롭게 주어지는 <br /> 미션에 도전해 보세요.
           </h1>
           <p>
