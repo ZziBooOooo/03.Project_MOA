@@ -1,20 +1,11 @@
 import { buyContext } from "@/contexts/buy/buyPageContext";
 import { useContext, useEffect, useState } from "react";
 import style from "styles/buy/buy.module.scss";
-
+import axios from "axios";
 export default function Banner() {
   const { userData } = useContext(buyContext);
   const [sessionUserData, setSessionUserData] = useState(null);
   const [userWordCount, setUsesWordCount] = useState(0);
-
-  const wordLength =
-    userData &&
-    userData.words.WordCoin2.length +
-      userData.words.WordCoin3.length +
-      userData.words.WordCoin4.length; /* 나의 단어 몇개인지 */
-  if (typeof window !== "undefined") {
-    sessionStorage.setItem("totalWordCount", wordLength);
-  }
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -23,30 +14,51 @@ export default function Banner() {
       if (storedUserData) {
         try {
           const parsedData = JSON.parse(storedUserData);
-          setSessionUserData(parsedData);
-          console.log("User Data loaded from sessionStorage:", parsedData);
+          let email;
 
-          if (parsedData.users.name === "게스트") {
-            const wordLength1 =
-              parsedData &&
-              parsedData.users.words.WordCoin2.length +
-                parsedData.users.words.WordCoin3.length +
-                parsedData.users.words.WordCoin4.length;
-            console.log(wordLength1);
+          if (parsedData?.users?.name === "게스트") {
+            email = parsedData?.users?.useremail || null;
+          } else {
+            email = parsedData?.useremail || null;
+          }
 
-            setUsesWordCount(wordLength1);
-            if (typeof window !== "undefined") {
-              sessionStorage.setItem("totalWordCount", wordLength1);
-            }
+          if (email) {
+            fetchUserData(email); //  유저 데이터 가져오기
+          } else {
+            console.warn("No valid email found in sessionStorage.");
           }
         } catch (error) {
-          console.error("Error parsing userData from sessionStorage:", error);
+          console.error("Error parsing session data:", error);
         }
-      } else {
-        console.warn("No userData found in sessionStorage.");
       }
     }
   }, []);
+
+  async function fetchUserData(email) {
+    try {
+      const response = await axios.get("/api/buy/userBuy", {
+        params: { email: email },
+      });
+      console.log(response.data);
+      let parsedData = response.data;
+      if (response.data.status === "exist") {
+        const wordLength =
+          parsedData &&
+          parsedData.users.words.WordCoin2.length +
+            parsedData.users.words.WordCoin3.length +
+            parsedData.users.words.WordCoin4.length;
+        setUsesWordCount(wordLength);
+
+        if (typeof window !== "undefined") {
+          sessionStorage.setItem("totalWordCount", wordLength);
+        }
+      } else {
+        console.warn("User does not exist.");
+      }
+    } catch (err) {
+      console.error("Error fetching user data:", err);
+    }
+  }
 
   const [io, setio] = useState(false);
   const [so, setso] = useState(false);
@@ -67,7 +79,7 @@ export default function Banner() {
         <div className={style.myword_count}>
           <span>나의 단어</span>
           <div></div>
-          <p>{wordLength}개</p> {/* 나의 단어 갯수 들어갈곳 */}
+          <p>{userWordCount}개</p> {/* 나의 단어 갯수 들어갈곳 */}
         </div>
       </div>
       <div className={style.moaicon1}>

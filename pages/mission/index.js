@@ -6,61 +6,77 @@ import axios from "axios";
 
 const Index = () => {
   const router = useRouter();
-
-  // ✅ Store email in state
-  const [parsedUserEmail, setParsedUserEmail] = useState(null);
   const [countNum, setCountNum] = useState(null);
+  const [userEmail, setUserEmail] = useState(null);
 
-  async function getUserDatas() {
+  useEffect(() => {
     if (typeof window !== "undefined") {
       const storedUserData = sessionStorage.getItem("userData");
 
       if (storedUserData) {
         try {
           const parsedData = JSON.parse(storedUserData);
-          const email =
-            parsedData?.users?.useremail || parsedData?.useremail || null;
-          setParsedUserEmail(email);
-          // console.log("Parsed User Email:", email);
+          let email;
+
+          if (parsedData?.users?.name === "게스트") {
+            email = parsedData?.users?.useremail || null;
+          } else {
+            email = parsedData?.useremail || null;
+          }
+
+          if (email) {
+            setUserEmail(email); //  이메일 상태 저장
+            fetchUserData(email); //  유저 데이터 가져오기
+          } else {
+            console.warn("No valid email found in sessionStorage.");
+          }
         } catch (error) {
-          console.error("Error parsing userData from sessionStorage:", error);
+          console.error("Error parsing session data:", error);
         }
       } else {
-        console.warn("No valid user email found in sessionStorage.");
+        console.warn("No userData found in sessionStorage.");
       }
     }
-  }
-
-  async function getMissionCount() {
-    if (!parsedUserEmail) {
-      console.warn("No email available for mission count request.");
-      return;
-    }
-
-    try {
-      // console.log("GET 요청 시작");
-      const response = await axios.get("/api/mission/addCounter", {
-        params: { email: parsedUserEmail },
-      });
-      // console.log("Mission count response:", response, parsedUserEmail);
-      setCountNum(response.data.missionCount);
-    } catch (err) {
-      console.error("Error fetching mission count:", err);
-    }
-  }
-
-  useEffect(() => {
-    getUserDatas();
   }, []);
 
-  useEffect(() => {
-    if (parsedUserEmail) {
-      getMissionCount();
-    }
-  }, [parsedUserEmail]); // ✅ Fetch mission count only after the email is set
+  async function fetchUserData(email) {
+    try {
+      const response = await axios.get("/api/buy/userBuy", {
+        params: { email: email },
+      });
 
+      if (response.data.status === "exist") {
+        setCountNum(response.data.users.missionCount ?? 0);
+      } else {
+        console.warn("User does not exist.");
+      }
+    } catch (err) {
+      console.error("Error fetching user data:", err);
+    }
+  }
+
+  //  미션 성공 시 missionCount 증가
+  async function addCoinCounter() {
+    if (!userEmail) return;
+
+    try {
+      const response = await axios.post("/api/mission/addCounter", {
+        email: userEmail,
+      });
+
+      console.log("POST request successful:", response.data);
+
+      //  성공적으로 증가하면 다시 DB에서 최신 데이터 가져오기
+      fetchUserData(userEmail);
+    } catch (err) {
+      console.error("Error in POST request:", err);
+    }
+  }
+
+  // 미션 시작 시 countNum 확인 후 페이지 이동
   const checkMissionCount = () => {
     if (countNum < 3) {
+      addCoinCounter(); //  미션 카운트 증가
       router.push("/mission/missionModal");
     } else {
       router.push("/mission/missionEnd");

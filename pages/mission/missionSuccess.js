@@ -8,35 +8,49 @@ import axios from "axios";
 
 const MissionSuccess = () => {
   const router = useRouter();
-
-  const parsedUserEmail =
-    typeof window !== "undefined" && window.sessionStorage.getItem("userData")
-      ? JSON.parse(window.sessionStorage.getItem("userData")).useremail || null
-      : null;
-
   const [size, setSize] = useState({ width: 0, height: 0 });
   const wrapper = useRef(null);
 
-  async function addCoinCounter() {
-    try {
-      await axios.post("/api/mission/addCoin", {
-        email: parsedUserEmail,
-      });
-      console.log(parsedUserEmail);
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
   useEffect(() => {
-    addCoinCounter();
-  }, []);
+    if (typeof window !== "undefined") {
+      const storedUserData = sessionStorage.getItem("userData");
+      // console.log("Stored userData in sessionStorage:", storedUserData);
 
-  useEffect(() => {
-    if (wrapper.current) {
-      const width = wrapper.current.offsetWidth;
-      const height = wrapper.current.offsetHeight;
-      setSize({ width, height });
+      if (storedUserData) {
+        try {
+          const parsedData = JSON.parse(storedUserData);
+          let email;
+
+          if (parsedData?.users?.name === "게스트") {
+            email = parsedData?.users?.useremail || null;
+          } else {
+            email = parsedData?.useremail || null;
+          }
+
+          // console.log("Selected email:", email);
+
+          if (email) {
+            async function addCoinCounter() {
+              try {
+                const response = await axios.post("/api/mission/addCoin", {
+                  email: email,
+                });
+                // console.log("POST request successful:", response.data);
+              } catch (err) {
+                console.error("Error in POST request:", err);
+              }
+            }
+
+            addCoinCounter();
+          } else {
+            console.warn("No valid email found in sessionStorage.");
+          }
+        } catch (error) {
+          console.error("Error parsing session data:", error);
+        }
+      } else {
+        console.warn("No userData found in sessionStorage.");
+      }
     }
   }, []);
 

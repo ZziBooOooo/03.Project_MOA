@@ -23,27 +23,18 @@ export default async function handler(req, res) {
     }
   }
   if (req.method === "POST") {
-    const { email } = req.body; // ✅ req.body가 JSON 형식으로 파싱됨
-    console.log("Received email:", email);
+    const { email } = req.body;
+    // 해당 이메일을 가진 사용자를 찾아서 missionCount를 1 증가시킵니다.
+    console.log(req.body);
 
-    if (!email) {
-      return res.status(400).json({ error: "Email is required" });
-    }
+    const result = await userCollection.updateOne(
+      { useremail: req.body.email },
+      { $inc: { missionCount: 1 } }
+    );
 
-    try {
-      const result = await userCollection.updateOne(
-        { useremail: email },
-        { $inc: { missionCount: 1 } }
-      );
-
-      console.log(`Mission attempts updated for ${result.modifiedCount} user.`);
-      res.status(200).json({ message: "Mission attempts updated." });
-    } catch (error) {
-      console.error("Error updating mission count:", error);
-      res.status(500).json({ error: "Internal Server Error" });
-    }
-  } else {
-    res.setHeader("Allow", ["POST"]);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+    console.log(
+      `Mission attempts updated for ${result.modifiedCount} user - add 1 count`
+    );
+    res.status(200).json({ message: "Mission attempts updated." });
   }
 }

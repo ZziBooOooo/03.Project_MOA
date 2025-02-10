@@ -101,8 +101,6 @@ const Word = () => {
       if (storedUserData) {
         try {
           const parsedData = JSON.parse(storedUserData);
-
-          // ✅ Ensure parsedData has the correct structure before accessing `useremail`
           parsedUserEmail =
             parsedData?.users?.useremail || parsedData?.useremail || null;
         } catch (error) {

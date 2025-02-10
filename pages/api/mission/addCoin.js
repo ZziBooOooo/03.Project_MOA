@@ -13,7 +13,9 @@ export default async function handler(req, res) {
       { $inc: { coin: 1 } }
     );
 
-    console.log(`Mission attempts updated for ${result.modifiedCount} user.`);
+    console.log(
+      `Mission attempts updated for ${result.modifiedCount} user - add 1 coin`
+    );
     res.status(200).json({ message: "Mission attempts updated." });
   }
 }
