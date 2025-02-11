@@ -19,17 +19,27 @@
   text-align: center;
   position: relative;
 }
+.loginBack .loginBox .loginAni {
+  cursor: auto;
+}
 .loginBack .loginBox .loginAni > img {
-  margin: 140px auto 0;
+  margin: 110px auto 0;
   transform: rotate(70deg);
 }
 .loginBack .loginBox > div {
   width: 40%;
-  margin: 30px auto 0;
+  margin: 0px auto 0;
   cursor: pointer;
+}
+.loginBack .loginBox div:nth-of-type(2) {
+  margin-top: 35px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
 }
 .loginBack .loginBox div:nth-of-type(2) img {
   transition: 0.2s;
+  max-width: 350px;
 }
 .loginBack .loginBox div:nth-of-type(2) img:hover {
   transform: translateY(-5px);
@@ -41,24 +51,36 @@
   transition: 0.3s;
 }
 .loginBack .loginBox .guestBox {
-  font-size: 19px;
-  color: #9fa1a5;
+  font-size: 20px;
+  color: #eff2f3;
   cursor: default;
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 50px;
-  margin-top: 80px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+.loginBack .loginBox .guestBox .googleBtn {
+  background-color: white;
+  color: #2288ff;
+  box-shadow: 1px 3px 5px rgb(201, 207, 209);
+}
+.loginBack .loginBox .guestBox .googleBtn:hover {
+  transform: translateY(-3px);
+  color: #2288ff;
 }
 .loginBack .loginBox .guestBox span {
+  width: 280px;
+  background-color: #2288ff;
   display: inline-block;
+  border-radius: 24px;
+  padding: 9px 60px;
   transition: 0.2s;
   cursor: pointer;
-  margin-right: 45px;
+  box-shadow: 1px 3px 5px rgb(155, 162, 165);
 }
 .loginBack .loginBox .guestBox span:hover {
   transform: translateY(-3px);
-  color: #3387e7;
+  color: #eff2f3;
 }
 .loginBack .loginBox .guestBox span:active {
   transform: translateY(0px);
@@ -87,7 +109,7 @@
     text-align: center;
   }
   .loginBack .loginBox .loginAni > img {
-    margin: 140px auto 0;
+    margin: 110px auto 0;
     transform: rotate(70deg);
   }
   .loginBack .loginBox > div {
@@ -97,19 +119,17 @@
   }
   .loginBack .loginBox .guestBox {
     font-size: 18px;
-    color: #9fa1a5;
     cursor: default;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 50px;
-    margin-top: 100px;
   }
   .loginBack .loginBox .guestBox span {
+    width: 240px;
     display: inline-block;
     transition: 0.3s;
     cursor: pointer;
-    margin-right: 45px;
   }
   .loginBack .loginBox .guestBox span:hover {
     transform: translateY(-3px);
@@ -137,7 +157,7 @@
     text-align: center;
   }
   .loginBack .loginBox .loginAni > img {
-    margin: 140px auto 0;
+    margin: 90px auto 0;
     transform: rotate(70deg);
   }
   .loginBack .loginBox > div {
@@ -147,19 +167,16 @@
   }
   .loginBack .loginBox .guestBox {
     font-size: 16px;
-    color: #9fa1a5;
     cursor: default;
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 50px;
-    margin-top: 130px;
+    justify-content: center;
+    align-items: center;
   }
   .loginBack .loginBox .guestBox span {
+    width: 200px;
     display: inline-block;
     transition: 0.3s;
     cursor: pointer;
-    margin-right: 45px;
   }
   .loginBack .loginBox .guestBox span:hover {
     transform: translateY(-3px);
@@ -199,7 +216,6 @@
   }
   .loginBack .loginBox .guestBox {
     font-size: 16px;
-    color: #4e4d4d;
     cursor: default;
     display: flex;
     flex-direction: column;
@@ -209,7 +225,6 @@
     display: inline-block;
     transition: 0.3s;
     cursor: pointer;
-    margin-left: 50px;
   }
   .loginBack .loginBox .guestBox span:hover {
     transform: translateY(-3px);

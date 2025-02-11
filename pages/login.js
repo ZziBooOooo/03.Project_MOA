@@ -36,10 +36,10 @@ export default function LoginPage() {
         <div className={style.loginBox}>
           <motion.div
             className={style.loginAni}
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 0.8,
+              duration: 1,
               delay: 0.2,
               ease: [0, 0.71, 0.2, 1.01],
             }}
@@ -58,31 +58,33 @@ export default function LoginPage() {
                 callbackUrl: "/",
               });
             }}
-            className={style.googleBtn}
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
+            className={style.guestBox}
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 0.7,
-              delay: 0.4,
+              duration: 0.9,
+              delay: 0.6,
               ease: [0, 0.71, 0.2, 1.01],
             }}
           >
-            <img src="/assets/images/login/btn_google_signin_light_normal_web@2x.png" />
+            <span className={style.googleBtn}>
+              {/* <FontAwesomeIcon icon={faArrowRight} size="sm" /> */}
+              Google login
+            </span>
           </motion.div>
           <motion.div
             className={style.guestBox}
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 0.7,
-              delay: 0.6,
+              duration: 0.9,
+              delay: 0.9,
               ease: [0, 0.71, 0.2, 1.01],
             }}
             onClick={() => handleGuestLogin(router, setGuestLoginStatus)}
           >
-            <div></div>
             <span>
-              <FontAwesomeIcon icon={faArrowRight} size="sm" />
+              {/* <FontAwesomeIcon icon={faArrowRight} size="sm" /> */}
               Guest login
             </span>
           </motion.div>
