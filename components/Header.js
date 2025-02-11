@@ -37,6 +37,14 @@ const Header = () => {
     };
   }, []);
 
+  // 🔹 현재 URL을 기준으로 selectedPage 설정
+  useEffect(() => {
+    const currentPageIndex = pages.findIndex(
+      (page) => page.path === router.pathname
+    );
+    setSelectedPage(currentPageIndex);
+  }, [router.pathname]); // 🔹 URL이 변경될 때마다 실행됨
+
   const pages = [
     { title: "미션하기", path: "/mission" },
     { title: "구매하기", path: "/buypage" },
@@ -85,12 +93,21 @@ const Header = () => {
           <p>MOA</p>
         </div>
         <div className={style.header_rightBox}>
-          {pages.map((page, index) => (
+          {/* {pages.map((page, index) => (
             <p
               key={index}
               className={
                 selectedPage === index ? style.selectedPage : undefined
               }
+              onClick={() => handlePageClick(index)}
+            >
+              {page.title}
+            </p>
+          ))} */}
+          {pages.map((page, index) => (
+            <p
+              key={index}
+              className={selectedPage === index ? style.selectedPage : ""}
               onClick={() => handlePageClick(index)}
             >
               {page.title}
