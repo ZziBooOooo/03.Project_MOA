@@ -13,7 +13,7 @@ import { buyContext } from "@/contexts/buy/buyPageContext";
 const Main = () => {
   const { userData } = useContext(buyContext);
   const router = useRouter();
-  useEffect(() => {
+  /*   useEffect(() => {
     const cookies = parseCookies();
     const lastRequestTime = cookies.lastRequestTime
       ? new Date(cookies.lastRequestTime)
@@ -42,7 +42,7 @@ const Main = () => {
     } else {
       console.log("Mission count request not sent.");
     }
-  }, []);
+  }, []); */
 
   const handlePageClick = () => {
     if (userData) {

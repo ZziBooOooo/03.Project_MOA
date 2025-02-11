@@ -15,8 +15,11 @@ export default function CoinCotent2({ onChange }) {
   const [buyNot, setbuyNot] = useState(false); /* 구매 부족 모달 */
   const [buyCom, setbuyCom] = useState(false); /* 구매 완료 모달 */
   const wordName = "words.WordCoin2"; /* 단어 추가 분류 */
+  sessionStorage.setItem("totalCoinCount", userData?.coin || 0);
 
-  sessionStorage.setItem("totalCoinCount", userData.coin);
+  useEffect(() => {
+    console.log("userData:", userData);
+  }, [userData]);
 
   function buyUpdate(id) {
     let buyadd = WordCoin2.find((res) => res.id === id);
