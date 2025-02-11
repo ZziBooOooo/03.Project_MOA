@@ -98,7 +98,6 @@ const Index = () => {
         <div className={style.example}>
           <Image
             className={style.exampleImg}
-            layout="responsive"
             src="/assets/images/mission/example.png"
             alt="example"
             width={650}

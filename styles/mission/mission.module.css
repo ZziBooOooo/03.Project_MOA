@@ -289,6 +289,9 @@
   align-items: center;
   margin-top: 5vh;
 }
+.mainSection .description_container .description {
+  margin-right: 15px;
+}
 .mainSection .description_container .description h1 {
   font-size: 3.125rem;
   font-weight: bold;
