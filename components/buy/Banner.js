@@ -39,7 +39,7 @@ export default function Banner() {
       const response = await axios.get("/api/buy/userBuy", {
         params: { email: email },
       });
-      console.log(response.data);
+      // console.log(response.data);
       let parsedData = response.data;
       if (response.data.status === "exist") {
         const wordLength =

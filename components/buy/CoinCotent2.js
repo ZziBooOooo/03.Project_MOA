@@ -1,25 +1,64 @@
 import style from "styles/buy/coin.module.scss";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import axios from "axios";
 import { useContext } from "react";
 import { buyContext } from "@/contexts/buy/buyPageContext";
 import BuyNotModal from "./BuyNotModal";
 import BuyComplete from "./BuyComplete";
 
 export default function CoinCotent2({ onChange }) {
-  const { WordCoin2, userData, userGetData, userBuyData } =
-    useContext(buyContext);
+  const { WordCoin2, userGetData, userBuyData } = useContext(buyContext);
+
+  const [userData, setUserData] = useState(null);
 
   const [buyWord, setbuyWord] = useState([]); /* 구매할 단어 배열 */
   const [coinTotal, setcoinTotal] = useState(0); /* 구매할 단어 코인 합계 */
   const [buyNot, setbuyNot] = useState(false); /* 구매 부족 모달 */
   const [buyCom, setbuyCom] = useState(false); /* 구매 완료 모달 */
   const wordName = "words.WordCoin2"; /* 단어 추가 분류 */
-  sessionStorage.setItem("totalCoinCount", userData?.coin || 0);
+  // sessionStorage.setItem("totalCoinCount", userData?.coin || null);
 
   useEffect(() => {
-    console.log("userData:", userData);
-  }, [userData]);
+    if (typeof window !== "undefined") {
+      const storedUserData = sessionStorage.getItem("userData");
+
+      if (storedUserData) {
+        try {
+          const parsedData = JSON.parse(storedUserData);
+          let email;
+
+          if (parsedData?.users?.name === "게스트") {
+            email = parsedData?.users?.useremail || null;
+          } else {
+            email = parsedData?.useremail || null;
+          }
+
+          if (email) {
+            fetchUserData(email); //  유저 데이터 가져오기
+          } else {
+            console.warn("No valid email found in sessionStorage.");
+          }
+        } catch (error) {
+          console.error("Error parsing session data:", error);
+        }
+      }
+    }
+  }, []);
+
+  async function fetchUserData(email) {
+    try {
+      const response = await axios.get("/api/buy/userBuy", {
+        params: { email: email },
+      });
+      console.log(response.data);
+      let parsedData = response.data;
+      console.log(parsedData);
+      setUserData(parsedData.users);
+    } catch (err) {
+      console.error("Error fetching user data:", err);
+    }
+  }
 
   function buyUpdate(id) {
     let buyadd = WordCoin2.find((res) => res.id === id);

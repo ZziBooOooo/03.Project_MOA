@@ -1,10 +1,52 @@
 import style from "styles/buy/buy.module.scss";
 import { motion } from "framer-motion";
-import { useContext } from "react";
+import axios from "axios";
+import { useContext, useEffect, useState } from "react";
 import { buyContext } from "@/contexts/buy/buyPageContext";
 
 export default function BuyContent({ onChange }) {
-  const { userData } = useContext(buyContext);
+  // const { userData } = useContext(buyContext);
+  const [userCoinCount, setUserCoinCount] = useState(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedUserData = sessionStorage.getItem("userData");
+
+      if (storedUserData) {
+        try {
+          const parsedData = JSON.parse(storedUserData);
+          let email;
+
+          if (parsedData?.users?.name === "게스트") {
+            email = parsedData?.users?.useremail || null;
+          } else {
+            email = parsedData?.useremail || null;
+          }
+          if (email) {
+            fetchUserData(email); //  유저 데이터 가져오기
+          } else {
+            console.warn("No valid email found in sessionStorage.");
+          }
+        } catch (error) {
+          console.error("Error parsing session data:", error);
+        }
+      }
+    }
+  }, []);
+
+  async function fetchUserData(email) {
+    try {
+      const response = await axios.get("/api/buy/userBuy", {
+        params: { email: email },
+      });
+      // console.log(response.data);
+      let parsedData = response.data;
+      setUserCoinCount(parsedData.users.coin);
+    } catch (err) {
+      console.error("Error fetching user data:", err);
+    }
+  }
+
   return (
     <motion.div
       key="CoinCotent1"
@@ -23,7 +65,7 @@ export default function BuyContent({ onChange }) {
             </div>
             <div className={style.coin_count}>
               <img src="/assets/images/buy/smallcoin.png" />
-              <span>{userData && userData.coin}</span>{" "}
+              <span>{userCoinCount}</span>
               {/* 코인 카운터 들어갈곳 */}
             </div>
             <p>코인별로 단어의 내용이 조금씩 달라요</p>

@@ -115,14 +115,28 @@ const BuyContextCom = (props) => {
 
   const userBuyData = async (coinTotal, buyWord, wordName) => {
     try {
+      // 게스트 여부 확인 후 email 할당
+      const email =
+        userData?.users?.name === "게스트"
+          ? userData?.users?.useremail
+          : userData?.useremail;
+
+      // 게스트 여부에 따른 코인 차감 로직
+      const updatedCoin =
+        userData?.users?.name === "게스트"
+          ? Math.max(0, userData?.users?.coin - coinTotal)
+          : Math.max(0, userData?.coin - coinTotal);
+
       const response = await axios.put("/api/buy/userBuy", {
-        useremail: userData?.useremail,
-        updateCoin: userData?.coin <= 0 ? 0 : userData.coin - coinTotal,
+        useremail: email, // 올바른 email 값 전달
+        updateCoin: updatedCoin, // 코인 차감 처리
         updateWord: buyWord,
         wordName,
       });
+
+      console.log("User purchase successful:", response);
     } catch (error) {
-      console.error(error);
+      console.error("Error updating user data:", error);
     }
   }; /* 사용자 구매 코인차감, 단어 주기*/
 
