@@ -60,6 +60,7 @@
   margin-left: 3%;
   padding: 0.8% 3.5%;
   min-width: 70px;
+  height: 36px;
   display: flex;
   justify-content: center;
 }

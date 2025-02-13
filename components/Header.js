@@ -113,7 +113,7 @@ const Header = () => {
               {page.title}
             </p>
           ))}
-          {userData ? (
+          {userData && userData.name ? (
             <>
               <div
                 className={style.profileContainer}
@@ -122,7 +122,9 @@ const Header = () => {
               >
                 <div className={style.profileWrap}>
                   <Image
-                    src={userData.profile}
+                    src={
+                      userData?.profile || "/assets/images/default-profile.png"
+                    }
                     width={36}
                     height={36}
                     alt="프로필 이미지"
