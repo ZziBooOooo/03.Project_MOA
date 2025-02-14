@@ -5,30 +5,12 @@ import { useRouter } from "next/router";
 import { useContext } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { buyContext } from "@/contexts/buy/buyPageContext";
-
-async function handleGuestLogin(router, setGuestLoginStatus) {
-  try {
-    const response = await axios.get("/api/buy/userBuy", {
-      params: { email: "projectmoatest@gmail.com" },
-    });
-    sessionStorage.setItem("userData", JSON.stringify(response.data));
-    console.log("Guest login successful:", response.data);
-    setGuestLoginStatus(true);
-
-    setTimeout(() => {
-      router.push("/");
-    }, 300);
-  } catch (error) {
-    console.error("Guest login failed:", error);
-  }
-}
+import { UserSaveDataContext } from "@/contexts/UserSaveDataComponent";
 
 export default function LoginPage() {
   const router = useRouter();
-  const { setGuestLoginStatus } = useContext(buyContext);
+  const { handleGuestLogin } = useContext(UserSaveDataContext);
 
   return (
     <>
@@ -67,10 +49,7 @@ export default function LoginPage() {
               ease: [0, 0.71, 0.2, 1.01],
             }}
           >
-            <span className={style.googleBtn}>
-              {/* <FontAwesomeIcon icon={faArrowRight} size="sm" /> */}
-              Google login
-            </span>
+            <span className={style.googleBtn}>Google login</span>
           </motion.div>
           <motion.div
             className={style.guestBox}
@@ -81,12 +60,9 @@ export default function LoginPage() {
               delay: 0.9,
               ease: [0, 0.71, 0.2, 1.01],
             }}
-            onClick={() => handleGuestLogin(router, setGuestLoginStatus)}
+            onClick={() => handleGuestLogin(router)}
           >
-            <span>
-              {/* <FontAwesomeIcon icon={faArrowRight} size="sm" /> */}
-              Guest login
-            </span>
+            <span>Guest login</span>
           </motion.div>
         </div>
       </div>

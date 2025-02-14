@@ -1,10 +1,21 @@
 import style from "styles/buy/coin.module.scss";
 import { motion } from "framer-motion";
+import { useContext, useEffect } from "react";
+import { buyContext } from "@/contexts/buy/buyPageContext";
 
 export default function BuyComplete({ setbuyCom }) {
+  const { userData } = useContext(buyContext);
+
   function modalClose() {
     setbuyCom(false);
   }
+
+  useEffect(() => {
+    // console.log(userData);
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("userData", JSON.stringify(userData));
+    }
+  }, [userData]);
 
   return (
     <motion.div

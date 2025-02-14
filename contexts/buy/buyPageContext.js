@@ -76,13 +76,26 @@ const BuyContextCom = (props) => {
   const [guestLoginStatus, setGuestLoginStatus] = useState(false);
 
   const userGetData = async () => {
-    try {
-      const response = await axios.get("/api/buy/userBuy", {
-        params: { email: data?.user?.email },
-      });
-      setuserData(response.data.users);
-    } catch (error) {
-      console.error(error);
+    const storedUserData = sessionStorage.getItem("userData");
+
+    if (storedUserData) {
+      const parsedData = JSON.parse(storedUserData);
+      let email;
+
+      if (parsedData?.users?.name === "게스트") {
+        email = parsedData?.users?.useremail || null;
+      } else {
+        email = parsedData?.useremail || null;
+      }
+      try {
+        const extraResponse = await axios.get("/api/buy/userBuy", {
+          params: { email: email },
+        });
+
+        setuserData(extraResponse.data.users);
+      } catch (error) {
+        console.error("Error fetching guest user data:", error);
+      }
     }
   }; /* 사용자 정보 */
 
@@ -91,21 +104,24 @@ const BuyContextCom = (props) => {
       const storedUserData = sessionStorage.getItem("userData");
 
       if (storedUserData) {
-        const parsedUserData = JSON.parse(storedUserData);
-        // console.log(parsedUserData);
+        const parsedData = JSON.parse(storedUserData);
 
-        if (parsedUserData?.users?.useremail === "projectmoatest@gmail.com") {
-          console.log("Fetching additional data for guest user...");
+        let email;
 
-          try {
-            const extraResponse = await axios.get("/api/buy/userBuy", {
-              params: { email: parsedUserData.users.useremail },
-            });
+        if (parsedData?.users?.name === "게스트") {
+          email = parsedData?.users?.useremail || null;
+        } else {
+          email = parsedData?.useremail || null;
+        }
 
-            setuserData(extraResponse.data.users);
-          } catch (error) {
-            console.error("Error fetching guest user data:", error);
-          }
+        try {
+          const extraResponse = await axios.get("/api/buy/userBuy", {
+            params: { email: email },
+          });
+
+          setuserData(extraResponse.data.users);
+        } catch (error) {
+          console.error("Error fetching guest user data:", error);
         }
       }
     };
@@ -114,6 +130,7 @@ const BuyContextCom = (props) => {
   }, [guestLoginStatus]);
 
   const userBuyData = async (coinTotal, buyWord, wordName) => {
+    console.log("userGetData 실행됨!"); // 실행 여부 확인용 로그 추가
     try {
       // 게스트 여부 확인 후 email 할당
       const email =
@@ -134,7 +151,8 @@ const BuyContextCom = (props) => {
         wordName,
       });
 
-      console.log("User purchase successful:", response);
+      console.log("단어 구매 완료");
+      await userGetData();
     } catch (error) {
       console.error("Error updating user data:", error);
     }

@@ -3,7 +3,7 @@ import style from "../styles/common.module.css";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import logo from "../public/assets/images/logo.svg";
-
+import { UserSaveDataContext } from "@/contexts/UserSaveDataComponent";
 import { buyContext } from "@/contexts/buy/buyPageContext";
 import { signOut } from "next-auth/react";
 
@@ -13,6 +13,7 @@ const Header = () => {
   const [selectedPage, setSelectedPage] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
   const { userData } = useContext(buyContext);
+  const { userSaveData } = useContext(UserSaveDataContext);
 
   const userCoin =
     typeof window !== "undefined" && window.sessionStorage.getItem("userData")
@@ -55,7 +56,7 @@ const Header = () => {
 
   const handlePageClick = (index) => {
     setSelectedPage(index);
-    if (userData) {
+    if (userSaveData) {
       router.push(pages[index].path);
     } else {
       router.push("/login");
@@ -93,17 +94,6 @@ const Header = () => {
           <p>MOA</p>
         </div>
         <div className={style.header_rightBox}>
-          {/* {pages.map((page, index) => (
-            <p
-              key={index}
-              className={
-                selectedPage === index ? style.selectedPage : undefined
-              }
-              onClick={() => handlePageClick(index)}
-            >
-              {page.title}
-            </p>
-          ))} */}
           {pages.map((page, index) => (
             <p
               key={index}
@@ -113,7 +103,7 @@ const Header = () => {
               {page.title}
             </p>
           ))}
-          {userData && userData.name ? (
+          {userSaveData ? (
             <>
               <div
                 className={style.profileContainer}
@@ -122,9 +112,7 @@ const Header = () => {
               >
                 <div className={style.profileWrap}>
                   <Image
-                    src={
-                      userData?.profile || "/assets/images/default-profile.png"
-                    }
+                    src={userSaveData.profile}
                     width={36}
                     height={36}
                     alt="프로필 이미지"
@@ -146,7 +134,7 @@ const Header = () => {
                           height={24}
                         />
                       </p>
-                      <p>{userData.name}</p>
+                      <p>{userSaveData.name}</p>
                     </div>
                     <div>
                       <p>
@@ -157,7 +145,7 @@ const Header = () => {
                           height={24}
                         />
                       </p>
-                      <p>{userCoin ? userCoin : userData.coin}개</p>
+                      <p>{userCoin ? userCoin : userSaveData.coin}개</p>
                     </div>
                     <div>
                       <p>
@@ -171,9 +159,9 @@ const Header = () => {
                       <p>
                         {userWord
                           ? userWord
-                          : userData.words.WordCoin2.length +
-                            userData.words.WordCoin3.length +
-                            userData.words.WordCoin4.length}
+                          : userSaveData.words.WordCoin2.length +
+                            userSaveData.words.WordCoin3.length +
+                            userSaveData.words.WordCoin4.length}
                         개
                       </p>
                     </div>

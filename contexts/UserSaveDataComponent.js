@@ -8,8 +8,29 @@ export const UserSaveDataContext = createContext(null);
 
 const UserSaveDataComponent = (props) => {
   const [userSaveData, setuserSaveData] = useState(); /* 사용자 데이터 */
-
+  const [isGuest, setIsGuest] = useState(false); // 게스트 로그인 여부
   const { data, status } = useSession();
+
+  async function handleGuestLogin(router) {
+    console.log("실행");
+    try {
+      const response = await axios.get("/api/buy/userBuy", {
+        params: { email: "projectmoatest@gmail.com" }, // 테스트 계정
+      });
+
+      setuserSaveData(response.data.users);
+      setIsGuest(true); // 게스트 로그인 상태 변경
+      sessionStorage.setItem("userData", JSON.stringify(response.data.users));
+
+      console.log("게스트 로그인 성공:", response.data.users);
+
+      setTimeout(() => {
+        router.push("/");
+      }, 300);
+    } catch (error) {
+      console.error("게스트 로그인 실패:", error);
+    }
+  }
 
   async function saveUserToDB() {
     try {
@@ -32,8 +53,7 @@ const UserSaveDataComponent = (props) => {
       },
     });
     if (dbUser.data.status == "exist") {
-      console.log(dbUser.data.users);
-      console.log("db에 이미 있는 유저");
+      console.log("db 존재 회원", dbUser.data.users);
       setuserSaveData(dbUser.data.users);
       sessionStorage.setItem("userData", JSON.stringify(dbUser.data.users));
     } else if (dbUser.data.status == "noExist") {
@@ -54,6 +74,8 @@ const UserSaveDataComponent = (props) => {
       value={{
         userSaveData,
         setuserSaveData,
+        isGuest,
+        handleGuestLogin,
       }}
     >
       {props.children}

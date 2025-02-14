@@ -8,7 +8,12 @@ import BuyNotModal from "./BuyNotModal";
 import BuyComplete from "./BuyComplete";
 
 export default function CoinCotent2({ onChange }) {
-  const { WordCoin2, userGetData, userBuyData } = useContext(buyContext);
+  const {
+    WordCoin2,
+    userGetData,
+    userBuyData,
+    userData: userDataContext,
+  } = useContext(buyContext);
 
   const [userData, setUserData] = useState(null);
 
@@ -51,9 +56,9 @@ export default function CoinCotent2({ onChange }) {
       const response = await axios.get("/api/buy/userBuy", {
         params: { email: email },
       });
-      console.log(response.data);
       let parsedData = response.data;
-      console.log(parsedData);
+
+      // 구글로그인인경우는..?
       setUserData(parsedData.users);
     } catch (err) {
       console.error("Error fetching user data:", err);
@@ -109,7 +114,7 @@ export default function CoinCotent2({ onChange }) {
             </div>
             <div className={style.coin_count}>
               <img src="/assets/images/buy/smallcoin.png" />
-              <span>{userData && userData.coin}</span>{" "}
+              <span>{userDataContext && userDataContext.coin}</span>{" "}
               {/* 유저 코인 갯수 들어갈곳 */}
             </div>
             <p>이 단어들은 2개의 코인이 필요해요</p>
@@ -126,8 +131,10 @@ export default function CoinCotent2({ onChange }) {
                   key={res.id}
                   onClick={() => buyUpdate(res.id)}
                   disabled={
-                    userData &&
-                    userData.words.WordCoin2.some((el) => el.word === res.word)
+                    userDataContext &&
+                    userDataContext.words.WordCoin2.some(
+                      (el) => el.word === res.word
+                    )
                   }
                   /* 사용자가 이미 데이터가 있는경우 */
                 >

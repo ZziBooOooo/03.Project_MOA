@@ -1,21 +1,69 @@
 import style from "styles/buy/coin.module.scss";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import axios from "axios";
 import { useContext } from "react";
 import { buyContext } from "@/contexts/buy/buyPageContext";
 import BuyNotModal from "./BuyNotModal";
 import BuyComplete from "./BuyComplete";
 
 export default function CoinCotent4({ onChange }) {
-  const { WordCoin4, userData, userGetData, userBuyData } =
-    useContext(buyContext);
+  const {
+    WordCoin4,
+    userGetData,
+    userBuyData,
+    userData: userDataContext,
+  } = useContext(buyContext);
+
+  const [userData, setUserData] = useState(null);
+
   const [buyWord, setbuyWord] = useState([]); /* 구매할 단어 배열 */
   const [coinTotal, setcoinTotal] = useState(0); /* 구매할 단어 코인 합계 */
   const [buyNot, setbuyNot] = useState(false); /* 구매 부족 모달 */
   const [buyCom, setbuyCom] = useState(false); /* 구매 완료 모달 */
   const wordName = "words.WordCoin4"; /* 단어 추가 분류 */
+  // sessionStorage.setItem("totalCoinCount", userData?.coin || null);
 
-  sessionStorage.setItem("totalCoinCount", userData?.coin || 0);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedUserData = sessionStorage.getItem("userData");
+
+      if (storedUserData) {
+        try {
+          const parsedData = JSON.parse(storedUserData);
+          let email;
+
+          if (parsedData?.users?.name === "게스트") {
+            email = parsedData?.users?.useremail || null;
+          } else {
+            email = parsedData?.useremail || null;
+          }
+
+          if (email) {
+            fetchUserData(email); //  유저 데이터 가져오기
+          } else {
+            console.warn("No valid email found in sessionStorage.");
+          }
+        } catch (error) {
+          console.error("Error parsing session data:", error);
+        }
+      }
+    }
+  }, []);
+
+  async function fetchUserData(email) {
+    try {
+      const response = await axios.get("/api/buy/userBuy", {
+        params: { email: email },
+      });
+      let parsedData = response.data;
+
+      // 구글로그인인경우는..?
+      setUserData(parsedData.users);
+    } catch (err) {
+      console.error("Error fetching user data:", err);
+    }
+  }
 
   function buyUpdate(id) {
     let buyadd = WordCoin4.find((res) => res.id === id);
@@ -31,7 +79,7 @@ export default function CoinCotent4({ onChange }) {
   } /* 구매할 단어를 누르면 구매페이지에 추가되고 다시누르면 삭제 */
 
   function buyDecision() {
-    if (userData && userData.coin < buyWord.length * 4) {
+    if (userData && userData.coin < buyWord.length * 2) {
       setbuyNot(true); /* 코인이 부족할시 모달 */
     } else {
       userBuyData(coinTotal, buyWord, wordName);
@@ -45,7 +93,7 @@ export default function CoinCotent4({ onChange }) {
   } /* 구매 버튼 */
 
   useEffect(() => {
-    setcoinTotal(buyWord.length * 4);
+    setcoinTotal(buyWord.length * 2);
   }, [buyWord, coinTotal]); /* 구매할 단어를 누르면 총몇코인이 필요한지 표시 */
 
   return (
@@ -61,13 +109,13 @@ export default function CoinCotent4({ onChange }) {
         <div className={style.content_coinlist}>
           <div className={style.content_coinlist_top}>
             <div className={style.check_list}>
-              <img src="/assets/images/buy/shopicon.png" alt="aa" />
+              <img src="/assets/images/buy/shopicon.png" />
               <p>단어를 구매하세요!</p>
             </div>
             <div className={style.coin_count}>
-              <img src="/assets/images/buy/smallcoin.png" alt="aa" />
-              <span>{userData && userData.coin}</span>{" "}
-              {/* 코인 카운터 들어갈곳 */}
+              <img src="/assets/images/buy/smallcoin.png" />
+              <span>{userDataContext && userDataContext.coin}</span>{" "}
+              {/* 유저 코인 갯수 들어갈곳 */}
             </div>
             <p>이 단어들은 4개의 코인이 필요해요</p>
           </div>
@@ -83,8 +131,10 @@ export default function CoinCotent4({ onChange }) {
                   key={res.id}
                   onClick={() => buyUpdate(res.id)}
                   disabled={
-                    userData &&
-                    userData.words.WordCoin4.some((el) => el.word === res.word)
+                    userDataContext &&
+                    userDataContext.words.WordCoin4.some(
+                      (el) => el.word === res.word
+                    )
                   }
                   /* 사용자가 이미 데이터가 있는경우 */
                 >
@@ -122,7 +172,7 @@ export default function CoinCotent4({ onChange }) {
               <img src="/assets/images/buy/pageBack.png" alt="aa" />
             </div>
             <div>
-              <img src="/assets/images/buy/nomove.png" alt="aa" />
+              <img src="/assets/images/buy/nomove.png" alt="aa" />{" "}
             </div>
           </div>
           {buyNot && (
