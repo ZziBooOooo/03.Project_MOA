@@ -26,6 +26,10 @@ export default function MyalbumType({ catePage }) {
     };
   } /* 이미지 다운로드 */
 
+  useEffect(() => {
+    console.log(userData);
+  }, [userData]);
+
   return (
     <>
       {userData && userData.imgUrl.some((res) => res.type === catePage) ? (

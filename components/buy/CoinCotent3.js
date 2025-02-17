@@ -99,9 +99,9 @@ export default function CoinCotent3({ onChange }) {
   return (
     <motion.div
       key="CoinCotent3"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      initial={{ y: -10 }}
+      animate={{ y: 0 }}
+      exit={{ y: -10 }}
       className={style.content_box}
     >
       <div className={style.content_item}>

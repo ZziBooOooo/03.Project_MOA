@@ -50,9 +50,9 @@ export default function BuyContent({ onChange }) {
   return (
     <motion.div
       key="CoinCotent1"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      initial={{ y: -10 }}
+      animate={{ y: 0 }}
+      exit={{ y: -10 }}
       className={style.content_box}
     >
       <div className={style.content_item}>
