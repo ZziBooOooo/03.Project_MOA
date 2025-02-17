@@ -1,14 +1,24 @@
 import { MongoClient } from "mongodb";
 
-// db 연결 -> env로 분리해서 각자 사용
-const client = new MongoClient(process.env.MONGODB_URI, {
+const uri = process.env.MONGODB_URI;
+const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-});
+};
+
+let client;
+let clientPromise;
+
+if (!global._mongoClientPromise) {
+  client = new MongoClient(uri, options);
+  clientPromise = client.connect();
+  global._mongoClientPromise = clientPromise;
+} else {
+  clientPromise = global._mongoClientPromise;
+}
+
 export async function connectToDatabase() {
-  if (!client.isConnected()) {
-    await client.connect();
-  }
+  const client = await clientPromise;
   const db = client.db("DataMoa");
   return { client, db };
 }

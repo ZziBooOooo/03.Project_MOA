@@ -26,6 +26,14 @@ const Header = () => {
       : null;
 
   useEffect(() => {
+    if (userSaveData) {
+      console.log(userSaveData.profile);
+    } else {
+      console.log("userSaveData is not loaded yet.");
+    }
+  }, [userSaveData]); // 🔹 userSaveData가 업데이트될 때 실행
+
+  useEffect(() => {
     const handleScroll = () => {
       const position = window.pageYOffset;
       setScrollPosition(position);
@@ -112,7 +120,7 @@ const Header = () => {
               >
                 <div className={style.profileWrap}>
                   <Image
-                    src={userSaveData.profile}
+                    src={userSaveData?.profile}
                     width={36}
                     height={36}
                     alt="프로필 이미지"
@@ -120,6 +128,7 @@ const Header = () => {
                     unoptimized={true}
                     style={{ borderRadius: "50%" }}
                   />
+
                   <div
                     className={`${style.myInfoDiv} ${
                       isHovered ? style.active : ""
